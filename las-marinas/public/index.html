@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veterinaria Las Marinas · Victoria, San Fernando</title>
+  <meta name="description" content="Veterinaria Las Marinas en Victoria, GBA. Consultas, vacunas, cirugías y pet shop. 4.7 estrellas en Google. Turnos por WhatsApp." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Veterinaria Las Marinas · Victoria" />
+  <meta property="og:description" content="Tu veterinaria de barrio con más de 20 años de trayectoria. Turnos por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde:    #2D4A3E;
+      --verde-oscuro: #1a2e26;
+      --crema:    #F7F2E8;
+      --blanco:   #FDFAF5;
+      --terracota:#C4714A;
+      --terracota-hover: #b0623c;
+      --menta:    #eaf3ee;
+      --texto:    #1a1a18;
+      --muted:    #6b7a74;
+      --wa:       #25D366;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--crema);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: var(--verde);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--crema);
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .nav-logo span { color: #d4956a; }
+    .nav-cta {
+      background: var(--terracota);
+      color: var(--crema);
+      border: none;
+      padding: 9px 20px;
+      border-radius: 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--terracota-hover); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--verde);
+      padding: 64px 24px 52px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #d4956a;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 600;
+      color: var(--crema);
+      line-height: 1.2;
+      max-width: 540px;
+      margin: 0 auto 16px;
+    }
+    .hero h1 em { color: #d4956a; font-style: normal; }
+    .hero-sub {
+      font-size: 15px;
+      color: #a8c4b8;
+      max-width: 400px;
+      margin: 0 auto 36px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .btn-primary {
+      background: var(--terracota);
+      color: var(--crema);
+      border: none;
+      padding: 13px 28px;
+      border-radius: 28px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--terracota-hover); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--crema);
+      border: 1px solid rgba(247,242,232,0.3);
+      padding: 13px 28px;
+      border-radius: 28px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(247,242,232,0.6); }
+    .hero-badges {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 16px;
+      border-radius: 20px;
+      color: #c8ddd7;
+      font-size: 12px;
+    }
+    .badge i { color: #d4956a; font-size: 14px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 56px 24px; }
+    .section-inner { max-width: 660px; margin: 0 auto; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 600;
+      color: var(--verde);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    .divider {
+      width: 40px;
+      height: 3px;
+      background: var(--terracota);
+      border-radius: 2px;
+      margin: 14px auto 36px;
+    }
+
+    /* ── SERVICIOS ── */
+    .servicios-bg { background: var(--crema); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+    }
+    .service-card {
+      background: var(--blanco);
+      border: 1px solid rgba(45,74,62,0.1);
+      border-radius: 14px;
+      padding: 22px 16px 18px;
+      text-align: center;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .service-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(45,74,62,0.1); }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--menta);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .service-icon i { color: var(--verde); font-size: 22px; }
+    .service-name { font-size: 13px; font-weight: 500; color: var(--verde); margin-bottom: 5px; }
+    .service-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ── CONFIANZA ── */
+    .trust-section { background: var(--verde); }
+    .trust-section .section-title { color: var(--crema); }
+    .trust-section .section-sub { color: #a8c4b8; }
+    .stars { color: #f5c842; font-size: 22px; letter-spacing: 3px; margin-bottom: 10px; text-align: center; }
+    .rating-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      font-weight: 600;
+      color: var(--crema);
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .rating-label { font-size: 13px; color: #a8c4b8; text-align: center; margin-bottom: 40px; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .review-stars { color: #f5c842; font-size: 12px; margin-bottom: 10px; }
+    .review-text { font-size: 13px; color: #d0e4dc; line-height: 1.65; margin-bottom: 14px; font-style: italic; }
+    .review-author { font-size: 12px; color: #a8c4b8; font-weight: 500; }
+
+    /* ── INFO ── */
+    .info-section { background: var(--blanco); }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+    }
+    .info-block { display: flex; gap: 14px; align-items: flex-start; }
+    .info-icon-wrap {
+      width: 42px; height: 42px;
+      background: var(--menta);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .info-icon-wrap i { color: var(--verde); font-size: 20px; }
+    .info-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--terracota); margin-bottom: 4px; }
+    .info-val { font-size: 14px; font-weight: 500; color: var(--verde); line-height: 1.5; }
+    .info-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── CTA FINAL ── */
+    .cta-section { background: var(--crema); }
+    .cta-box {
+      background: var(--verde);
+      border-radius: 20px;
+      padding: 44px 32px;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--crema);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .cta-sub { font-size: 14px; color: #a8c4b8; margin-bottom: 28px; line-height: 1.65; }
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--wa);
+      color: #fff;
+      padding: 15px 36px;
+      border-radius: 32px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      transition: opacity 0.2s;
+    }
+    .wa-btn:hover { opacity: 0.9; }
+    .tel-link {
+      display: block;
+      color: #a8c4b8;
+      font-size: 13px;
+      margin-top: 14px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .tel-link:hover { color: var(--crema); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--verde-oscuro);
+      padding: 22px 24px;
+      text-align: center;
+    }
+    footer p { font-size: 12px; color: #6a8a7e; }
+    footer a { color: #d4956a; text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      nav { padding: 12px 16px; }
+      .hero, section { padding-left: 16px; padding-right: 16px; }
+      .cta-box { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="nav-logo">Las <span>Marinas</span></a>
+    <a class="nav-cta" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20pedir%20un%20turno." target="_blank" rel="noopener">
+      <i class="ti ti-brand-whatsapp"></i> Pedir turno
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="hero-eyebrow">Victoria · San Fernando · GBA Norte</p>
+    <h1>Tu veterinaria de barrio, desde hace <em>más de 20 años</em></h1>
+    <p class="hero-sub">Atención personalizada para perros y gatos. El Dr. Abel conoce a tu mascota por nombre.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20pedir%20un%20turno." target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp"></i> Pedí tu turno
+      </a>
+      <a class="btn-ghost" href="https://maps.app.goo.gl/ZRJuayRFGic4Ty9P9" target="_blank" rel="noopener">
+        <i class="ti ti-map-pin"></i> Cómo llegar
+      </a>
+    </div>
+    <div class="hero-badges">
+      <div class="badge"><i class="ti ti-star"></i> 4.7 en Google</div>
+      <div class="badge"><i class="ti ti-messages"></i> +160 reseñas</div>
+      <div class="badge"><i class="ti ti-stethoscope"></i> Clínica + Pet Shop</div>
+    </div>
+  </header>
+
+  <!-- SERVICIOS -->
+  <section class="servicios-bg">
+    <div class="section-inner">
+      <h2 class="section-title">¿Qué hacemos?</h2>
+      <p class="section-sub">Atención clínica completa para tu mascota</p>
+      <div class="divider"></div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-stethoscope"></i></div>
+          <div class="service-name">Consulta general</div>
+          <div class="service-desc">Revisación completa, diagnóstico y tratamiento</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-vaccine"></i></div>
+          <div class="service-name">Vacunación</div>
+          <div class="service-desc">Plan anual con carnet y recordatorio personalizado</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-scissors"></i></div>
+          <div class="service-name">Cirugías</div>
+          <div class="service-desc">Castraciones y procedimientos quirúrgicos</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-first-aid-kit"></i></div>
+          <div class="service-name">Urgencias</div>
+          <div class="service-desc">Atención de emergencias en horario comercial</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-shopping-bag"></i></div>
+          <div class="service-name">Pet shop</div>
+          <div class="service-desc">Alimentos, medicamentos y accesorios</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-heart-rate-monitor"></i></div>
+          <div class="service-name">Seguimiento</div>
+          <div class="service-desc">Control postoperatorio y enfermedades crónicas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANZA / RESEÑAS -->
+  <section class="trust-section">
+    <div class="section-inner">
+      <div class="stars">★★★★★</div>
+      <div class="rating-big">4.7</div>
+      <div class="rating-label">Promedio en Google · más de 160 reseñas verificadas</div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"El Dr. Abel tiene una gran calidez con los animales. Mi perra lo ama desde hace 6 años."</p>
+          <div class="review-author">— Cliente de Victoria</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Nos atendió de urgencia cuando mi gato fue atacado. Profesional y tranquilizador en todo momento."</p>
+          <div class="review-author">— Cliente de San Fernando</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Lo que más valoro es que conoce a mis mascotas de hace años. No es solo veterinario, es un referente."</p>
+          <div class="review-author">— Cliente recurrente</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORARIOS Y CONTACTO -->
+  <section class="info-section">
+    <div class="section-inner">
+      <h2 class="section-title">Dónde estamos y cuándo</h2>
+      <div class="divider"></div>
+      <div class="info-grid">
+        <div class="info-block">
+          <div class="info-icon-wrap"><i class="ti ti-map-pin"></i></div>
+          <div>
+            <div class="info-label">Dirección</div>
+            <div class="info-val">Av. Pres. Perón 2492</div>
+            <div class="info-sub">Victoria, San Fernando, GBA</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon-wrap"><i class="ti ti-clock"></i></div>
+          <div>
+            <div class="info-label">Horarios</div>
+            <div class="info-val">Lun–Vie: 9–13 / 16–19</div>
+            <div class="info-sub">Sábados: 9–13 · Dom: cerrado</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon-wrap"><i class="ti ti-phone"></i></div>
+          <div>
+            <div class="info-label">Teléfono</div>
+            <div class="info-val"><a href="tel:+541147253322" style="color:var(--verde);text-decoration:none;">011 4725-3322</a></div>
+            <div class="info-sub">También por WhatsApp</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon-wrap"><i class="ti ti-mail"></i></div>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-val"><a href="mailto:drfernandez@hotmail.com" style="color:var(--verde);text-decoration:none;font-size:13px;">drfernandez@hotmail.com</a></div>
+            <div class="info-sub">Consultas no urgentes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <div class="cta-box">
+      <h2 class="cta-title">¿Necesitás turno?</h2>
+      <p class="cta-sub">Escribinos por WhatsApp y te respondemos a la brevedad. Sin esperas, sin formularios.</p>
+      <a class="wa-btn" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20pedir%20un%20turno." target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp"></i> Escribir por WhatsApp
+      </a>
+      <a class="tel-link" href="tel:+541147253322">
+        <i class="ti ti-phone" style="font-size:12px;vertical-align:-1px;margin-right:4px;"></i> O llamanos al 011 4725-3322
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Veterinaria Las Marinas · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>
+  </footer>
+
+</body>
+</html>

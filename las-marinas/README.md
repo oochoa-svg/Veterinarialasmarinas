@@ -56,4 +56,18 @@ Ej: `vetlasmarinas.com.ar`
 - [ ] Número de WhatsApp: buscar `5491147253322` y reemplazar con el número real
 - [ ] Reseñas: podés actualizar el texto de los comentarios
 - [ ] Foto del local o del equipo: agregar una imagen en `/public/` y referenciarla en el hero
-- [ ] Dominio propio en `.firebaserc` y Firebase Console
+- [ ] Dominio propio en Firebase Console
+
+## Identidad de marca
+
+- Naranja principal: `#EF8A22`
+- Carbón (texto/fondos oscuros): `#2B2B2B`
+- Crema (fondo claro): `#FBF6EE`
+- Tipografías: Baloo 2 (títulos) + Nunito (texto)
+- Logo: emblema de huella sobre cuadro naranja (SVG embebido)
+
+## Deploy
+
+El deploy es automático vía GitHub Actions: cada push a `main` que toque
+`las-marinas/**` dispara `.github/workflows/firebase-deploy.yml` y publica
+en Firebase Hosting (proyecto `veterinarialasmarinas`).

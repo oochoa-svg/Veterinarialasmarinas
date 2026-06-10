@@ -4,19 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veterinaria Las Marinas · Victoria, San Fernando</title>
-  <meta name="description" content="Veterinaria Las Marinas en Victoria, GBA. Consultas, vacunas, cirugías y pet shop. 4.7 estrellas en Google. Turnos por WhatsApp." />
+  <meta name="description" content="Veterinaria Las Marinas en Victoria, GBA. Consultas, vacunas, cirugías y pet shop. 4.7 estrellas en Google. Consultanos por WhatsApp." />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#EF8A22" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Veterinaria Las Marinas · Victoria" />
-  <meta property="og:description" content="Tu veterinaria de barrio con más de 20 años de trayectoria. Turnos por WhatsApp." />
+  <meta property="og:description" content="Tu veterinaria de barrio con más de 20 años de trayectoria. Consultanos por WhatsApp." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tabler Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
@@ -25,31 +26,52 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --verde:    #2D4A3E;
-      --verde-oscuro: #1a2e26;
-      --crema:    #F7F2E8;
-      --blanco:   #FDFAF5;
-      --terracota:#C4714A;
-      --terracota-hover: #b0623c;
-      --menta:    #eaf3ee;
-      --texto:    #1a1a18;
-      --muted:    #6b7a74;
-      --wa:       #25D366;
+      --naranja:        #EF8A22;
+      --naranja-oscuro: #d9760f;
+      --naranja-suave:  #FDEFDA;
+      --naranja-tinte:  #FBE3C4;
+      --carbon:         #2B2B2B;
+      --carbon-suave:   #3a3a38;
+      --crema:          #FBF6EE;
+      --blanco:         #FFFFFF;
+      --texto:          #2b2b2b;
+      --muted:          #7a756c;
+      --wa:             #25D366;
+      --linea:          rgba(43,43,43,0.10);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Nunito', sans-serif;
       background: var(--crema);
       color: var(--texto);
-      line-height: 1.6;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── HUELLITAS DE FONDO ── */
+    .paw-bg {
+      position: absolute;
+      color: var(--naranja);
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .paw-bg.light { color: #ffffff; opacity: 0.05; }
+
+    .paw {
+      width: 1em; height: 1em;
+      display: inline-block;
+      fill: currentColor;
+      vertical-align: middle;
     }
 
     /* ── NAVBAR ── */
     nav {
-      background: var(--verde);
-      padding: 14px 32px;
+      background: var(--blanco);
+      border-bottom: 1px solid var(--linea);
+      padding: 12px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -58,105 +80,151 @@
       z-index: 100;
     }
     .nav-logo {
-      font-family: 'Playfair Display', serif;
-      color: var(--crema);
-      font-size: 18px;
-      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
     }
-    .nav-logo span { color: #d4956a; }
+    .nav-emblem {
+      width: 40px; height: 40px;
+      background: var(--naranja);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-emblem .paw { width: 24px; height: 24px; fill: #fff; }
+    .nav-logo-text {
+      font-family: 'Baloo 2', cursive;
+      line-height: 1;
+    }
+    .nav-logo-text b {
+      display: block;
+      color: var(--carbon);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .nav-logo-text span {
+      display: block;
+      color: var(--naranja);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
     .nav-cta {
-      background: var(--terracota);
-      color: var(--crema);
+      background: var(--naranja);
+      color: #fff;
       border: none;
-      padding: 9px 20px;
+      padding: 10px 20px;
       border-radius: 24px;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 7px;
       text-decoration: none;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.15s;
     }
-    .nav-cta:hover { background: var(--terracota-hover); }
+    .nav-cta:hover { background: var(--naranja-oscuro); transform: translateY(-1px); }
 
     /* ── HERO ── */
     .hero {
-      background: var(--verde);
-      padding: 64px 24px 52px;
+      position: relative;
+      background:
+        radial-gradient(circle at 80% 10%, var(--naranja-suave), transparent 45%),
+        var(--crema);
+      padding: 70px 24px 60px;
       text-align: center;
+      overflow: hidden;
     }
+    .hero-inner { position: relative; z-index: 2; }
+    .hero-emblem {
+      width: 96px; height: 96px;
+      background: var(--naranja);
+      border-radius: 28px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px;
+      box-shadow: 0 12px 30px rgba(239,138,34,0.35);
+    }
+    .hero-emblem .paw { width: 56px; height: 56px; fill: #fff; }
     .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 2px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: #d4956a;
-      margin-bottom: 16px;
+      color: var(--naranja-oscuro);
+      background: var(--naranja-suave);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
     }
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 5vw, 40px);
-      font-weight: 600;
-      color: var(--crema);
-      line-height: 1.2;
-      max-width: 540px;
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(30px, 5.5vw, 46px);
+      font-weight: 700;
+      color: var(--carbon);
+      line-height: 1.12;
+      max-width: 600px;
       margin: 0 auto 16px;
     }
-    .hero h1 em { color: #d4956a; font-style: normal; }
+    .hero h1 em { color: var(--naranja); font-style: normal; }
     .hero-sub {
-      font-size: 15px;
-      color: #a8c4b8;
-      max-width: 400px;
-      margin: 0 auto 36px;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 440px;
+      margin: 0 auto 32px;
     }
     .hero-btns {
       display: flex;
       gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 36px;
+      margin-bottom: 34px;
     }
     .btn-primary {
-      background: var(--terracota);
-      color: var(--crema);
+      background: var(--wa);
+      color: #fff;
       border: none;
-      padding: 13px 28px;
+      padding: 14px 28px;
       border-radius: 28px;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 15px;
+      font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-family: 'Inter', sans-serif;
+      gap: 9px;
+      font-family: 'Nunito', sans-serif;
       text-decoration: none;
-      transition: background 0.2s;
+      box-shadow: 0 8px 20px rgba(37,211,102,0.28);
+      transition: transform 0.15s, box-shadow 0.2s;
     }
-    .btn-primary:hover { background: var(--terracota-hover); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(37,211,102,0.36); }
     .btn-ghost {
-      background: transparent;
-      color: var(--crema);
-      border: 1px solid rgba(247,242,232,0.3);
-      padding: 13px 28px;
+      background: var(--blanco);
+      color: var(--carbon);
+      border: 1.5px solid var(--linea);
+      padding: 14px 26px;
       border-radius: 28px;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 15px;
+      font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Nunito', sans-serif;
       text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
+      transition: border-color 0.2s, transform 0.15s;
     }
-    .btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(247,242,232,0.6); }
+    .btn-ghost:hover { border-color: var(--naranja); color: var(--naranja-oscuro); transform: translateY(-2px); }
     .hero-badges {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -164,212 +232,250 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: var(--blanco);
+      border: 1px solid var(--linea);
       padding: 8px 16px;
       border-radius: 20px;
-      color: #c8ddd7;
-      font-size: 12px;
+      color: var(--carbon-suave);
+      font-size: 13px;
+      font-weight: 600;
     }
-    .badge i { color: #d4956a; font-size: 14px; }
+    .badge i { color: var(--naranja); font-size: 16px; }
 
     /* ── SECTIONS ── */
-    section { padding: 56px 24px; }
-    .section-inner { max-width: 660px; margin: 0 auto; }
+    section { position: relative; padding: 60px 24px; }
+    .section-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 2; }
     .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(22px, 3vw, 28px);
-      font-weight: 600;
-      color: var(--verde);
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(24px, 3.4vw, 32px);
+      font-weight: 700;
+      color: var(--carbon);
       text-align: center;
       margin-bottom: 8px;
     }
     .section-sub {
       text-align: center;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
       margin-bottom: 0;
     }
     .divider {
-      width: 40px;
-      height: 3px;
-      background: var(--terracota);
+      width: 56px;
+      height: 4px;
+      background: var(--naranja);
       border-radius: 2px;
-      margin: 14px auto 36px;
+      margin: 14px auto 38px;
     }
 
     /* ── SERVICIOS ── */
-    .servicios-bg { background: var(--crema); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 16px;
     }
     .service-card {
       background: var(--blanco);
-      border: 1px solid rgba(45,74,62,0.1);
-      border-radius: 14px;
-      padding: 22px 16px 18px;
+      border: 1px solid var(--linea);
+      border-radius: 18px;
+      padding: 24px 18px 20px;
       text-align: center;
-      transition: transform 0.15s, box-shadow 0.15s;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
     }
-    .service-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(45,74,62,0.1); }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(43,43,43,0.10); border-color: var(--naranja-tinte); }
     .service-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--menta);
-      border-radius: 12px;
+      width: 54px;
+      height: 54px;
+      background: var(--naranja-suave);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 12px;
+      margin: 0 auto 14px;
     }
-    .service-icon i { color: var(--verde); font-size: 22px; }
-    .service-name { font-size: 13px; font-weight: 500; color: var(--verde); margin-bottom: 5px; }
-    .service-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .service-icon i { color: var(--naranja-oscuro); font-size: 26px; }
+    .service-name { font-size: 15px; font-weight: 700; color: var(--carbon); margin-bottom: 5px; }
+    .service-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
 
-    /* ── CONFIANZA ── */
-    .trust-section { background: var(--verde); }
+    /* ── CONFIANZA / RESEÑAS (sección oscura de contraste) ── */
+    .trust-section { background: var(--carbon); overflow: hidden; }
     .trust-section .section-title { color: var(--crema); }
-    .trust-section .section-sub { color: #a8c4b8; }
-    .stars { color: #f5c842; font-size: 22px; letter-spacing: 3px; margin-bottom: 10px; text-align: center; }
+    .stars { color: #f5b942; font-size: 24px; letter-spacing: 4px; margin-bottom: 10px; text-align: center; }
     .rating-big {
-      font-family: 'Playfair Display', serif;
-      font-size: 60px;
-      font-weight: 600;
-      color: var(--crema);
+      font-family: 'Baloo 2', cursive;
+      font-size: 66px;
+      font-weight: 700;
+      color: var(--naranja);
       line-height: 1;
       text-align: center;
       margin-bottom: 6px;
     }
-    .rating-label { font-size: 13px; color: #a8c4b8; text-align: center; margin-bottom: 40px; }
+    .rating-label { font-size: 14px; color: #b6b1a8; text-align: center; margin-bottom: 42px; }
     .reviews-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 16px;
     }
     .review-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      padding: 22px;
     }
-    .review-stars { color: #f5c842; font-size: 12px; margin-bottom: 10px; }
-    .review-text { font-size: 13px; color: #d0e4dc; line-height: 1.65; margin-bottom: 14px; font-style: italic; }
-    .review-author { font-size: 12px; color: #a8c4b8; font-weight: 500; }
+    .review-stars { color: #f5b942; font-size: 13px; margin-bottom: 10px; letter-spacing: 2px; }
+    .review-text { font-size: 14px; color: #e4ddd2; line-height: 1.65; margin-bottom: 14px; }
+    .review-author { font-size: 13px; color: var(--naranja); font-weight: 700; }
 
     /* ── INFO ── */
     .info-section { background: var(--blanco); }
     .info-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 26px;
     }
     .info-block { display: flex; gap: 14px; align-items: flex-start; }
     .info-icon-wrap {
-      width: 42px; height: 42px;
-      background: var(--menta);
-      border-radius: 10px;
+      width: 46px; height: 46px;
+      background: var(--naranja-suave);
+      border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .info-icon-wrap i { color: var(--verde); font-size: 20px; }
-    .info-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--terracota); margin-bottom: 4px; }
-    .info-val { font-size: 14px; font-weight: 500; color: var(--verde); line-height: 1.5; }
-    .info-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .info-icon-wrap i { color: var(--naranja-oscuro); font-size: 22px; }
+    .info-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--naranja-oscuro); margin-bottom: 4px; }
+    .info-val { font-size: 15px; font-weight: 700; color: var(--carbon); line-height: 1.5; }
+    .info-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
     /* ── CTA FINAL ── */
     .cta-section { background: var(--crema); }
     .cta-box {
-      background: var(--verde);
-      border-radius: 20px;
-      padding: 44px 32px;
+      position: relative;
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+      border-radius: 26px;
+      padding: 48px 32px;
       text-align: center;
-      max-width: 520px;
+      max-width: 540px;
       margin: 0 auto;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(239,138,34,0.30);
     }
+    .cta-box .hero-inner { z-index: 2; }
     .cta-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      color: var(--crema);
+      font-family: 'Baloo 2', cursive;
+      font-size: 30px;
+      color: #fff;
       margin-bottom: 12px;
-      font-weight: 600;
+      font-weight: 700;
     }
-    .cta-sub { font-size: 14px; color: #a8c4b8; margin-bottom: 28px; line-height: 1.65; }
+    .cta-sub { font-size: 15px; color: rgba(255,255,255,0.92); margin-bottom: 28px; line-height: 1.65; }
     .wa-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--wa);
-      color: #fff;
-      padding: 15px 36px;
+      background: #fff;
+      color: var(--carbon);
+      padding: 15px 34px;
       border-radius: 32px;
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 700;
       text-decoration: none;
-      font-family: 'Inter', sans-serif;
-      transition: opacity 0.2s;
+      font-family: 'Nunito', sans-serif;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transition: transform 0.15s;
     }
-    .wa-btn:hover { opacity: 0.9; }
+    .wa-btn i { color: var(--wa); font-size: 20px; }
+    .wa-btn:hover { transform: translateY(-2px); }
     .tel-link {
       display: block;
-      color: #a8c4b8;
-      font-size: 13px;
-      margin-top: 14px;
+      color: rgba(255,255,255,0.92);
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 16px;
       text-decoration: none;
       transition: color 0.2s;
     }
-    .tel-link:hover { color: var(--crema); }
+    .tel-link:hover { color: #fff; }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--verde-oscuro);
-      padding: 22px 24px;
+      background: var(--carbon);
+      padding: 26px 24px;
       text-align: center;
     }
-    footer p { font-size: 12px; color: #6a8a7e; }
-    footer a { color: #d4956a; text-decoration: none; }
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .footer-logo .paw { width: 22px; height: 22px; fill: var(--naranja); }
+    .footer-logo b { font-family: 'Baloo 2', cursive; color: var(--crema); font-size: 16px; }
+    footer p { font-size: 13px; color: #9a958c; }
+    footer a { color: var(--naranja); text-decoration: none; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
-      nav { padding: 12px 16px; }
+      nav { padding: 10px 16px; }
+      .nav-cta { padding: 9px 16px; font-size: 13px; }
       .hero, section { padding-left: 16px; padding-right: 16px; }
-      .cta-box { padding: 32px 20px; }
+      .cta-box { padding: 36px 22px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Símbolo de huella reutilizable -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="paw" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="64" rx="23" ry="19"/>
+      <ellipse cx="24" cy="40" rx="8.5" ry="11.5"/>
+      <ellipse cx="42" cy="27" rx="8.5" ry="12.5"/>
+      <ellipse cx="58" cy="27" rx="8.5" ry="12.5"/>
+      <ellipse cx="76" cy="40" rx="8.5" ry="11.5"/>
+    </symbol>
+  </svg>
+
   <!-- NAVBAR -->
   <nav>
-    <a href="#" class="nav-logo">Las <span>Marinas</span></a>
-    <a class="nav-cta" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20pedir%20un%20turno." target="_blank" rel="noopener">
-      <i class="ti ti-brand-whatsapp"></i> Pedir turno
+    <a href="#" class="nav-logo">
+      <span class="nav-emblem"><svg class="paw"><use href="#paw"/></svg></span>
+      <span class="nav-logo-text">
+        <b>Las Marinas</b>
+        <span>Veterinaria</span>
+      </span>
+    </a>
+    <a class="nav-cta" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+      <i class="ti ti-brand-whatsapp"></i> Consultanos
     </a>
   </nav>
 
   <!-- HERO -->
   <header class="hero">
-    <p class="hero-eyebrow">Victoria · San Fernando · GBA Norte</p>
-    <h1>Tu veterinaria de barrio, desde hace <em>más de 20 años</em></h1>
-    <p class="hero-sub">Atención personalizada para perros y gatos. El Dr. Abel conoce a tu mascota por nombre.</p>
-    <div class="hero-btns">
-      <a class="btn-primary" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20pedir%20un%20turno." target="_blank" rel="noopener">
-        <i class="ti ti-brand-whatsapp"></i> Pedí tu turno
-      </a>
-      <a class="btn-ghost" href="https://maps.app.goo.gl/ZRJuayRFGic4Ty9P9" target="_blank" rel="noopener">
-        <i class="ti ti-map-pin"></i> Cómo llegar
-      </a>
-    </div>
-    <div class="hero-badges">
-      <div class="badge"><i class="ti ti-star"></i> 4.7 en Google</div>
-      <div class="badge"><i class="ti ti-messages"></i> +160 reseñas</div>
-      <div class="badge"><i class="ti ti-stethoscope"></i> Clínica + Pet Shop</div>
+    <svg class="paw-bg" style="top:40px;left:-10px;width:90px;transform:rotate(-20deg)"><use href="#paw"/></svg>
+    <svg class="paw-bg" style="top:140px;right:30px;width:60px;transform:rotate(25deg)"><use href="#paw"/></svg>
+    <svg class="paw-bg" style="bottom:30px;left:40px;width:50px;transform:rotate(10deg)"><use href="#paw"/></svg>
+    <div class="hero-inner">
+      <div class="hero-emblem"><svg class="paw"><use href="#paw"/></svg></div>
+      <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Victoria · San Fernando · GBA Norte</p>
+      <h1>Tu veterinaria de barrio, desde hace <em>más de 20 años</em></h1>
+      <p class="hero-sub">Atención personalizada para perros y gatos. El Dr. Abel conoce a tu mascota por nombre.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Consultanos por WhatsApp
+        </a>
+        <a class="btn-ghost" href="https://maps.app.goo.gl/ZRJuayRFGic4Ty9P9" target="_blank" rel="noopener">
+          <i class="ti ti-map-pin"></i> Cómo llegar
+        </a>
+      </div>
+      <div class="hero-badges">
+        <div class="badge"><i class="ti ti-star-filled"></i> 4.7 en Google</div>
+        <div class="badge"><i class="ti ti-messages"></i> +160 reseñas</div>
+        <div class="badge"><i class="ti ti-paw-filled"></i> Clínica + Pet Shop</div>
+      </div>
     </div>
   </header>
 
   <!-- SERVICIOS -->
-  <section class="servicios-bg">
+  <section>
     <div class="section-inner">
       <h2 class="section-title">¿Qué hacemos?</h2>
       <p class="section-sub">Atención clínica completa para tu mascota</p>
@@ -386,7 +492,7 @@
           <div class="service-desc">Plan anual con carnet y recordatorio personalizado</div>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="ti ti-scissors"></i></div>
+          <div class="service-icon"><i class="ti ti-medical-cross"></i></div>
           <div class="service-name">Cirugías</div>
           <div class="service-desc">Castraciones y procedimientos quirúrgicos</div>
         </div>
@@ -396,7 +502,7 @@
           <div class="service-desc">Atención de emergencias en horario comercial</div>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="ti ti-shopping-bag"></i></div>
+          <div class="service-icon"><i class="ti ti-bone"></i></div>
           <div class="service-name">Pet shop</div>
           <div class="service-desc">Alimentos, medicamentos y accesorios</div>
         </div>
@@ -411,6 +517,8 @@
 
   <!-- CONFIANZA / RESEÑAS -->
   <section class="trust-section">
+    <svg class="paw-bg light" style="top:30px;right:-10px;width:110px;transform:rotate(20deg)"><use href="#paw"/></svg>
+    <svg class="paw-bg light" style="bottom:40px;left:20px;width:70px;transform:rotate(-15deg)"><use href="#paw"/></svg>
     <div class="section-inner">
       <div class="stars">★★★★★</div>
       <div class="rating-big">4.7</div>
@@ -461,7 +569,7 @@
           <div class="info-icon-wrap"><i class="ti ti-phone"></i></div>
           <div>
             <div class="info-label">Teléfono</div>
-            <div class="info-val"><a href="tel:+541147253322" style="color:var(--verde);text-decoration:none;">011 4725-3322</a></div>
+            <div class="info-val"><a href="tel:+541147253322" style="color:var(--carbon);text-decoration:none;">011 4725-3322</a></div>
             <div class="info-sub">También por WhatsApp</div>
           </div>
         </div>
@@ -469,7 +577,7 @@
           <div class="info-icon-wrap"><i class="ti ti-mail"></i></div>
           <div>
             <div class="info-label">Email</div>
-            <div class="info-val"><a href="mailto:drfernandez@hotmail.com" style="color:var(--verde);text-decoration:none;font-size:13px;">drfernandez@hotmail.com</a></div>
+            <div class="info-val"><a href="mailto:drfernandez@hotmail.com" style="color:var(--carbon);text-decoration:none;font-size:14px;">drfernandez@hotmail.com</a></div>
             <div class="info-sub">Consultas no urgentes</div>
           </div>
         </div>
@@ -480,20 +588,28 @@
   <!-- CTA FINAL -->
   <section class="cta-section">
     <div class="cta-box">
-      <h2 class="cta-title">¿Necesitás turno?</h2>
-      <p class="cta-sub">Escribinos por WhatsApp y te respondemos a la brevedad. Sin esperas, sin formularios.</p>
-      <a class="wa-btn" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20pedir%20un%20turno." target="_blank" rel="noopener">
-        <i class="ti ti-brand-whatsapp"></i> Escribir por WhatsApp
-      </a>
-      <a class="tel-link" href="tel:+541147253322">
-        <i class="ti ti-phone" style="font-size:12px;vertical-align:-1px;margin-right:4px;"></i> O llamanos al 011 4725-3322
-      </a>
+      <svg class="paw-bg light" style="top:-10px;right:-10px;width:120px;transform:rotate(25deg);opacity:0.12"><use href="#paw"/></svg>
+      <svg class="paw-bg light" style="bottom:-15px;left:-5px;width:80px;transform:rotate(-10deg);opacity:0.12"><use href="#paw"/></svg>
+      <div class="hero-inner">
+        <h2 class="cta-title">¿Tenés una consulta?</h2>
+        <p class="cta-sub">Escribinos por WhatsApp y te respondemos a la brevedad. Sin esperas, sin formularios.</p>
+        <a class="wa-btn" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Escribir por WhatsApp
+        </a>
+        <a class="tel-link" href="tel:+541147253322">
+          <i class="ti ti-phone" style="font-size:13px;vertical-align:-1px;margin-right:4px;"></i> O llamanos al 011 4725-3322
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Veterinaria Las Marinas · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>
+    <div class="footer-logo">
+      <svg class="paw"><use href="#paw"/></svg>
+      <b>Veterinaria Las Marinas</b>
+    </div>
+    <p>© 2025 · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>
   </footer>
 
 </body>

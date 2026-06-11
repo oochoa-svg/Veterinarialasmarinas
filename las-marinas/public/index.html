@@ -151,7 +151,7 @@
     }
     .hero-emblem svg {
       width: 100%; height: auto; display: block;
-      filter: drop-shadow(0 10px 24px rgba(107,63,160,0.30));
+      filter: drop-shadow(0 10px 24px rgba(239,138,34,0.30));
     }
 
     @keyframes pulse-glow {
@@ -343,13 +343,13 @@
     .registro-card {
       background: var(--blanco);
       border: 1px solid var(--linea);
-      border-radius: 22px;
-      padding: 36px 30px;
-      max-width: 600px;
+      border-radius: 24px;
+      padding: 38px 32px;
+      max-width: 580px;
       margin: 0 auto;
-      box-shadow: 0 12px 34px rgba(43,43,43,0.08);
+      box-shadow: 0 20px 50px -20px rgba(43,43,43,0.22);
     }
-    .form-group { margin-bottom: 16px; }
+    .form-group { margin-bottom: 15px; }
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -358,49 +358,65 @@
     .form-legend {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-family: 'Baloo 2', cursive;
-      font-size: 16px;
+      gap: 9px;
+      font-size: 12px;
       font-weight: 700;
-      color: var(--violeta);
-      margin: 22px 0 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--naranja-oscuro);
+      margin: 26px 0 14px;
     }
     .form-legend:first-child { margin-top: 0; }
-    .form-legend i { color: var(--naranja); font-size: 19px; }
+    .form-legend::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--linea);
+    }
+    .form-legend i {
+      color: var(--naranja-oscuro);
+      font-size: 18px;
+      background: var(--naranja-suave);
+      width: 30px; height: 30px;
+      border-radius: 9px;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
     .form-group label {
       display: block;
       font-size: 13px;
-      font-weight: 700;
-      color: var(--carbon);
-      margin-bottom: 5px;
+      font-weight: 600;
+      color: var(--carbon-suave);
+      margin-bottom: 6px;
     }
     .form-group label .req { color: var(--naranja-oscuro); }
     .form-group input,
     .form-group select {
       width: 100%;
-      padding: 11px 13px;
-      border: 1.5px solid var(--linea);
-      border-radius: 11px;
+      padding: 13px 14px;
+      border: 1.5px solid transparent;
+      border-radius: 13px;
       font-family: 'Nunito', sans-serif;
-      font-size: 14.5px;
+      font-size: 15px;
       color: var(--texto);
-      background: var(--blanco);
-      transition: border-color 0.15s, box-shadow 0.15s;
+      background: #F4F1EA;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
     }
+    .form-group input::placeholder { color: #b3ab9d; }
     .form-group input:focus,
     .form-group select:focus {
       outline: none;
+      background: var(--blanco);
       border-color: var(--naranja);
-      box-shadow: 0 0 0 3px var(--naranja-suave);
+      box-shadow: 0 0 0 4px var(--naranja-suave);
     }
     .form-submit {
       width: 100%;
-      margin-top: 22px;
-      background: var(--naranja);
+      margin-top: 26px;
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
       color: #fff;
       border: none;
-      padding: 15px;
-      border-radius: 28px;
+      padding: 16px;
+      border-radius: 16px;
       font-family: 'Nunito', sans-serif;
       font-size: 16px;
       font-weight: 700;
@@ -409,9 +425,10 @@
       align-items: center;
       justify-content: center;
       gap: 9px;
-      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 10px 22px -8px rgba(239,138,34,0.6);
+      transition: transform 0.15s, box-shadow 0.2s;
     }
-    .form-submit:hover { background: var(--naranja-oscuro); transform: translateY(-2px); }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -8px rgba(239,138,34,0.7); }
     .form-submit:disabled { opacity: 0.6; cursor: progress; transform: none; }
     .form-note {
       font-size: 12px;
@@ -436,7 +453,7 @@
     .form-success .ok-icon i { color: var(--naranja-oscuro); font-size: 34px; }
     .form-success h3 {
       font-family: 'Baloo 2', cursive;
-      color: var(--violeta);
+      color: var(--naranja-oscuro);
       font-size: 22px;
       margin-bottom: 8px;
     }
@@ -567,12 +584,12 @@
     .team-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(43,43,43,0.10); }
     .team-avatar {
       width: 64px; height: 64px;
-      background: var(--violeta-suave);
+      background: var(--naranja-suave);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 14px;
     }
-    .team-avatar .caduceo { width: 32px; height: 32px; stroke: var(--violeta); }
+    .team-avatar .caduceo { width: 32px; height: 32px; }
     .team-name { font-family: 'Baloo 2', cursive; font-size: 17px; font-weight: 700; color: var(--carbon); margin-bottom: 4px; }
     .team-role { font-size: 13px; color: var(--naranja-oscuro); font-weight: 600; }
     .footer-logo b { font-family: 'Baloo 2', cursive; color: var(--crema); font-size: 16px; }
@@ -601,35 +618,35 @@
     </symbol>
     <!-- Caduceo veterinario (símbolo limpio) -->
     <symbol id="caduceo" viewBox="0 0 100 100">
-      <g fill="none" stroke="#6B3FA0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <g fill="none" stroke="#2B2B2B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
         <line x1="50" y1="15" x2="50" y2="86"/>
         <path d="M50 37 C 35 45, 65 53, 50 61 C 35 69, 65 77, 50 85"/>
         <path d="M50 37 C 65 45, 35 53, 50 61 C 65 69, 35 77, 50 85"/>
       </g>
-      <circle cx="50" cy="13" r="4.5" fill="#6B3FA0"/>
-      <path d="M50 27 C 39 20, 26 21, 19 30 C 29 28, 40 31, 50 37 Z" fill="#6B3FA0"/>
-      <path d="M50 27 C 61 20, 74 21, 81 30 C 71 28, 60 31, 50 37 Z" fill="#6B3FA0"/>
+      <circle cx="50" cy="13" r="4.5" fill="#2B2B2B"/>
+      <path d="M50 27 C 39 20, 26 21, 19 30 C 29 28, 40 31, 50 37 Z" fill="#2B2B2B"/>
+      <path d="M50 27 C 61 20, 74 21, 81 30 C 71 28, 60 31, 50 37 Z" fill="#2B2B2B"/>
     </symbol>
 
     <!-- Aro tipo cordón reutilizable -->
     <symbol id="rope-ring" viewBox="0 0 200 200">
       <circle cx="100" cy="100" r="80" fill="#fff"/>
-      <circle cx="100" cy="100" r="96" fill="none" stroke="#6B3FA0" stroke-width="2"/>
-      <circle cx="100" cy="100" r="89" fill="none" stroke="#6B3FA0" stroke-width="13"/>
-      <circle cx="100" cy="100" r="89" fill="none" stroke="#a07cc4" stroke-width="13"
+      <circle cx="100" cy="100" r="96" fill="none" stroke="#EF8A22" stroke-width="2"/>
+      <circle cx="100" cy="100" r="89" fill="none" stroke="#EF8A22" stroke-width="13"/>
+      <circle cx="100" cy="100" r="89" fill="none" stroke="#F6B25E" stroke-width="13"
               stroke-dasharray="7 11" stroke-linecap="round"/>
-      <circle cx="100" cy="100" r="81" fill="none" stroke="#6B3FA0" stroke-width="2"/>
+      <circle cx="100" cy="100" r="81" fill="none" stroke="#EF8A22" stroke-width="2"/>
     </symbol>
 
     <!-- Logo completo: medallón con texto (para el hero) -->
     <symbol id="logo-full" viewBox="0 0 200 200">
       <use href="#rope-ring"/>
       <use href="#caduceo" x="64" y="28" width="72" height="72"/>
-      <text x="100" y="126" text-anchor="middle" fill="#6B3FA0"
+      <text x="100" y="126" text-anchor="middle" fill="#EF8A22"
             font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700">M</text>
-      <text x="100" y="150" text-anchor="middle" fill="#6B3FA0"
+      <text x="100" y="150" text-anchor="middle" fill="#2B2B2B"
             font-family="'Baloo 2', cursive" font-size="18" font-weight="700">Las Marinas</text>
-      <text x="100" y="164" text-anchor="middle" fill="#6B3FA0"
+      <text x="100" y="164" text-anchor="middle" fill="#2B2B2B"
             font-family="'Nunito', sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.5">VETERINARIA</text>
     </symbol>
 
@@ -637,7 +654,7 @@
     <symbol id="logo-mark" viewBox="0 0 200 200">
       <use href="#rope-ring"/>
       <use href="#caduceo" x="58" y="26" width="84" height="84"/>
-      <text x="100" y="150" text-anchor="middle" fill="#6B3FA0"
+      <text x="100" y="150" text-anchor="middle" fill="#EF8A22"
             font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700">M</text>
     </symbol>
   </svg>

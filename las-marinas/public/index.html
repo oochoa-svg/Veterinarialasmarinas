@@ -23,6 +23,88 @@
   <!-- Tabler Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 
+  <!-- Schema.org: datos del negocio + rating (para resultados enriquecidos en Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VeterinaryCare",
+    "name": "Veterinaria Las Marinas",
+    "image": "https://veterinarialasmarinas.web.app/img/favicon.svg",
+    "url": "https://veterinarialasmarinas.web.app",
+    "telephone": "+541147253322",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Pres. Perón 2492",
+      "addressLocality": "Victoria",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "areaServed": ["Victoria", "San Fernando", "GBA Norte"],
+    "priceRange": "$$",
+    "paymentAccepted": "Efectivo, Tarjeta de débito, Tarjeta de crédito, Transferencia, Mercado Pago",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00", "closes": "13:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "16:00", "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00", "closes": "13:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "160"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué formas de pago aceptan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Aceptamos efectivo, tarjeta de débito, tarjeta de crédito (con opción de cuotas), y transferencia / Mercado Pago." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Atienden urgencias?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos urgencias en horario comercial. Escribinos o llamanos por WhatsApp al 11 5182-7408 y te indicamos cómo proceder lo antes posible." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Necesito turno o puedo ir directamente?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Podés acercarte en nuestro horario de atención. Para evitar esperas, te recomendamos escribirnos por WhatsApp y coordinar un horario." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hacen castraciones y cirugías?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, realizamos castraciones y procedimientos quirúrgicos con la evaluación previa correspondiente." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cada cuánto tengo que vacunar y desparasitar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La vacunación es anual y la desparasitación interna, en general, cada 3 meses. El plan exacto depende de la edad y el estilo de vida de la mascota." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Tienen pet shop?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, contamos con alimentos, medicamentos y accesorios para perros y gatos." }
+      }
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -596,12 +678,137 @@
     footer p { font-size: 13px; color: #9a958c; }
     footer a { color: var(--naranja); text-decoration: none; }
 
+    /* ── WHATSAPP FLOTANTE ── */
+    .wa-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 200;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--wa);
+      color: #fff;
+      padding: 14px 20px 14px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.45);
+      animation: wa-pulse 2.6s ease-in-out infinite;
+      transition: transform 0.15s;
+    }
+    .wa-float:hover { transform: scale(1.05); }
+    .wa-float i { font-size: 26px; }
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
+      50%      { box-shadow: 0 8px 30px rgba(37,211,102,0.75); }
+    }
+    @media (max-width: 480px) {
+      .wa-float { right: 16px; bottom: 16px; padding: 14px; }
+      .wa-float .wa-label { display: none; }
+      .wa-float i { font-size: 28px; }
+    }
+
+    /* ── CONTENIDO EDUCATIVO ── */
+    .edu-section { background: var(--blanco); }
+    .edu-card {
+      background: var(--crema);
+      border: 1px solid var(--linea);
+      border-radius: 22px;
+      padding: 32px 30px;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+    .edu-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--naranja-suave);
+      color: var(--naranja-oscuro);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .edu-card h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 24px;
+      color: var(--carbon);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+    .edu-card p { font-size: 15px; color: var(--carbon-suave); margin-bottom: 14px; }
+    .edu-card h4 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 17px;
+      color: var(--naranja-oscuro);
+      margin: 22px 0 10px;
+    }
+    .edu-list { list-style: none; margin-bottom: 8px; }
+    .edu-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14.5px;
+      color: var(--carbon-suave);
+      margin-bottom: 9px;
+    }
+    .edu-list li i { color: var(--naranja); font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+    .edu-callout {
+      background: var(--blanco);
+      border-left: 4px solid var(--naranja);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--carbon-suave);
+      margin-top: 18px;
+    }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--crema); }
+    .faq-list { max-width: 660px; margin: 0 auto; }
+    .faq-item {
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--carbon);
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary .chev {
+      color: var(--naranja);
+      font-size: 20px;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary .chev { transform: rotate(180deg); }
+    .faq-answer { padding: 0 20px 18px; font-size: 14.5px; color: var(--carbon-suave); line-height: 1.65; }
+    .faq-answer strong { color: var(--carbon); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
       nav { padding: 10px 16px; }
       .nav-cta { padding: 9px 16px; font-size: 13px; }
       .hero, section { padding-left: 16px; padding-right: 16px; }
       .cta-box { padding: 36px 22px; }
+      .edu-card { padding: 26px 20px; }
     }
   </style>
 </head>
@@ -761,6 +968,44 @@
     </div>
   </section>
 
+  <!-- CONTENIDO EDUCATIVO -->
+  <section class="edu-section">
+    <div class="section-inner">
+      <h2 class="section-title">Cuidados de tu mascota</h2>
+      <p class="section-sub">Consejos del equipo de Las Marinas</p>
+      <div class="divider"></div>
+      <article class="edu-card">
+        <span class="edu-tag"><i class="ti ti-bug"></i> Salud preventiva</span>
+        <h3>Desparasitación: por qué es clave (y cada cuánto hacerla)</h3>
+        <p>
+          Los parásitos —internos (lombrices, giardia) y externos (pulgas, garrapatas)— son
+          mucho más que una molestia: pueden causar anemia, problemas digestivos, transmitir
+          enfermedades y, en algunos casos, contagiarse a las personas de la casa, sobre todo
+          a los más chicos. La buena noticia es que prevenirlos es simple y económico.
+        </p>
+
+        <h4>¿Cada cuánto desparasitar?</h4>
+        <ul class="edu-list">
+          <li><i class="ti ti-paw"></i> <span><strong>Cachorros:</strong> desde los 15 días de vida, repitiendo cada 15 días hasta los 3 meses.</span></li>
+          <li><i class="ti ti-paw"></i> <span><strong>Adultos:</strong> desparasitación interna cada 3 meses como regla general.</span></li>
+          <li><i class="ti ti-paw"></i> <span><strong>Pulgas y garrapatas:</strong> protección mensual, sobre todo en primavera y verano.</span></li>
+        </ul>
+
+        <h4>Señales de alerta para consultar</h4>
+        <ul class="edu-list">
+          <li><i class="ti ti-alert-triangle"></i> <span>Diarrea o vómitos, panza hinchada o pérdida de peso.</span></li>
+          <li><i class="ti ti-alert-triangle"></i> <span>Rascado constante, caída de pelo o "puntitos" negros en la piel.</span></li>
+          <li><i class="ti ti-alert-triangle"></i> <span>Se "arrastra" sentado o ves restos tipo arroz cerca de la cola.</span></li>
+        </ul>
+
+        <div class="edu-callout">
+          💡 Cada mascota es distinta: el plan ideal depende de la edad, el peso y el estilo de
+          vida. Escribinos y armamos el calendario de desparasitación y vacunación a medida.
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- CONFIANZA / RESEÑAS -->
   <section class="trust-section">
     <svg class="paw-bg light" style="top:30px;right:-10px;width:110px;transform:rotate(20deg)"><use href="#paw"/></svg>
@@ -872,6 +1117,67 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-inner">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <p class="section-sub">Lo que más nos consultan</p>
+      <div class="divider"></div>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>¿Qué formas de pago aceptan? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Aceptamos <strong>efectivo, tarjeta de débito, tarjeta de crédito (con opción de cuotas),
+            y transferencia / Mercado Pago</strong>. Consultanos por las promociones vigentes.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Atienden urgencias? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Sí. Atendemos <strong>urgencias en horario comercial</strong>. Si tu mascota necesita
+            atención inmediata, escribinos o llamanos por <strong>WhatsApp al 11 5182-7408</strong>
+            (botón verde abajo a la derecha) y te indicamos cómo proceder lo antes posible.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Necesito turno o puedo ir directamente? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Podés acercarte en nuestro horario de atención. Para evitar esperas, te recomendamos
+            escribirnos por WhatsApp y coordinar un horario.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Hacen castraciones y cirugías? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Sí, realizamos <strong>castraciones y procedimientos quirúrgicos</strong> con la
+            evaluación previa correspondiente. Escribinos para coordinar día y los cuidados previos.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cada cuánto tengo que vacunar y desparasitar? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            La vacunación es anual y la desparasitación interna, en general, cada 3 meses. El plan
+            exacto depende de la edad y el estilo de vida. Registrá a tu mascota en el
+            <strong>Plan de vacunación</strong> y te recordamos cuándo toca cada dosis.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Tienen pet shop? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Sí, contamos con <strong>alimentos, medicamentos y accesorios</strong> para perros y gatos.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
   <!-- HORARIOS Y CONTACTO -->
   <section class="info-section">
     <div class="section-inner">
@@ -953,6 +1259,11 @@
     </div>
     <p>© 2025 · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>
   </footer>
+
+  <!-- WHATSAPP FLOTANTE (urgencias y consultas) -->
+  <a class="wa-float" href="https://wa.me/5491151827408?text=Hola!%20Tengo%20una%20consulta%2Furgencia." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <i class="ti ti-brand-whatsapp"></i><span class="wa-label">Escribinos</span>
+  </a>
 
   <script>
     // ── Formulario de registro / plan de vacunación ──

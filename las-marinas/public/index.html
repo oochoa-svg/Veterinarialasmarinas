@@ -7,8 +7,7 @@
   <meta name="description" content="Veterinaria Las Marinas en Victoria, GBA. Consultas, vacunas, cirugías y pet shop. 4.7 estrellas en Google. Consultanos por WhatsApp." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#EF8A22" />
-  <link rel="icon" type="image/png" href="img/logo-v2-160.png" />
-  <link rel="apple-touch-icon" href="img/logo-v2-160.png" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Veterinaria Las Marinas · Victoria" />
@@ -95,7 +94,7 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .nav-emblem img { width: 100%; height: 100%; object-fit: contain; }
+    .nav-emblem svg { width: 100%; height: 100%; display: block; }
     .nav-logo:hover .nav-emblem { animation: wiggle 0.5s ease; }
     .nav-logo-text {
       font-family: 'Baloo 2', cursive;
@@ -150,7 +149,7 @@
       margin: 0 auto 22px;
       animation: pulse-glow 3.5s ease-in-out infinite;
     }
-    .hero-emblem img {
+    .hero-emblem svg {
       width: 100%; height: auto; display: block;
       filter: drop-shadow(0 10px 24px rgba(107,63,160,0.30));
     }
@@ -441,7 +440,7 @@
       gap: 8px;
       margin-bottom: 10px;
     }
-    .footer-logo img { width: 30px; height: 30px; object-fit: contain; }
+    .footer-logo .footer-mark { width: 32px; height: 32px; display: block; }
 
     /* ── EQUIPO ── */
     .team-grid {
@@ -492,18 +491,53 @@
       <ellipse cx="58" cy="27" rx="8.5" ry="12.5"/>
       <ellipse cx="76" cy="40" rx="8.5" ry="11.5"/>
     </symbol>
-    <symbol id="caduceo" viewBox="0 0 100 100" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="50" y1="14" x2="50" y2="92"/>
-      <path d="M50 22 C 30 8, 8 16, 16 30 C 26 24, 40 28, 50 36 Z" fill="currentColor" stroke="none"/>
-      <path d="M50 22 C 70 8, 92 16, 84 30 C 74 24, 60 28, 50 36 Z" fill="currentColor" stroke="none"/>
-      <path d="M50 30 C 22 40, 78 52, 50 62 C 22 72, 78 84, 50 90"/>
+    <!-- Caduceo veterinario (símbolo limpio) -->
+    <symbol id="caduceo" viewBox="0 0 100 100">
+      <g fill="none" stroke="#6B3FA0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="50" y1="15" x2="50" y2="86"/>
+        <path d="M50 37 C 35 45, 65 53, 50 61 C 35 69, 65 77, 50 85"/>
+        <path d="M50 37 C 65 45, 35 53, 50 61 C 65 69, 35 77, 50 85"/>
+      </g>
+      <circle cx="50" cy="13" r="4.5" fill="#6B3FA0"/>
+      <path d="M50 27 C 39 20, 26 21, 19 30 C 29 28, 40 31, 50 37 Z" fill="#6B3FA0"/>
+      <path d="M50 27 C 61 20, 74 21, 81 30 C 71 28, 60 31, 50 37 Z" fill="#6B3FA0"/>
+    </symbol>
+
+    <!-- Aro tipo cordón reutilizable -->
+    <symbol id="rope-ring" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="80" fill="#fff"/>
+      <circle cx="100" cy="100" r="96" fill="none" stroke="#6B3FA0" stroke-width="2"/>
+      <circle cx="100" cy="100" r="89" fill="none" stroke="#6B3FA0" stroke-width="13"/>
+      <circle cx="100" cy="100" r="89" fill="none" stroke="#a07cc4" stroke-width="13"
+              stroke-dasharray="7 11" stroke-linecap="round"/>
+      <circle cx="100" cy="100" r="81" fill="none" stroke="#6B3FA0" stroke-width="2"/>
+    </symbol>
+
+    <!-- Logo completo: medallón con texto (para el hero) -->
+    <symbol id="logo-full" viewBox="0 0 200 200">
+      <use href="#rope-ring"/>
+      <use href="#caduceo" x="64" y="28" width="72" height="72"/>
+      <text x="100" y="126" text-anchor="middle" fill="#6B3FA0"
+            font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700">M</text>
+      <text x="100" y="150" text-anchor="middle" fill="#6B3FA0"
+            font-family="'Baloo 2', cursive" font-size="18" font-weight="700">Las Marinas</text>
+      <text x="100" y="164" text-anchor="middle" fill="#6B3FA0"
+            font-family="'Nunito', sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.5">VETERINARIA</text>
+    </symbol>
+
+    <!-- Logo compacto: medallón sin texto (para nav y footer) -->
+    <symbol id="logo-mark" viewBox="0 0 200 200">
+      <use href="#rope-ring"/>
+      <use href="#caduceo" x="58" y="26" width="84" height="84"/>
+      <text x="100" y="150" text-anchor="middle" fill="#6B3FA0"
+            font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700">M</text>
     </symbol>
   </svg>
 
   <!-- NAVBAR -->
   <nav>
     <a href="#" class="nav-logo">
-      <span class="nav-emblem"><img src="img/logo-v2-80.png" alt="Logo Las Marinas Veterinaria" /></span>
+      <span class="nav-emblem"><svg viewBox="0 0 200 200" role="img" aria-label="Logo Las Marinas Veterinaria"><use href="#logo-mark"/></svg></span>
       <span class="nav-logo-text">
         <b>Las Marinas</b>
         <span>Veterinaria</span>
@@ -520,7 +554,7 @@
     <svg class="paw-bg" style="top:140px;right:30px;width:60px;transform:rotate(25deg)"><use href="#paw"/></svg>
     <svg class="paw-bg" style="bottom:30px;left:40px;width:50px;transform:rotate(10deg)"><use href="#paw"/></svg>
     <div class="hero-inner">
-      <div class="hero-emblem"><img src="img/logo-v2-400.png" alt="Logo Las Marinas Veterinaria" /></div>
+      <div class="hero-emblem"><svg viewBox="0 0 200 200" role="img" aria-label="Logo Las Marinas Veterinaria"><use href="#logo-full"/></svg></div>
       <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Victoria · San Fernando · GBA Norte</p>
       <h1>Tu veterinaria de barrio, desde hace <em>más de 20 años</em></h1>
       <p class="hero-sub">Atención personalizada para perros y gatos. El Dr. Abel conoce a tu mascota por nombre.</p>
@@ -706,7 +740,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">
-      <img src="img/logo-v2-80.png" alt="Logo Las Marinas Veterinaria" />
+      <svg class="footer-mark" viewBox="0 0 200 200" role="img" aria-label="Logo Las Marinas Veterinaria"><use href="#logo-mark"/></svg>
       <b>Veterinaria Las Marinas</b>
     </div>
     <p>© 2025 · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>

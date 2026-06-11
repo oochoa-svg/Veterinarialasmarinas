@@ -30,6 +30,9 @@
       --naranja-oscuro: #d9760f;
       --naranja-suave:  #FDEFDA;
       --naranja-tinte:  #FBE3C4;
+      --violeta:        #6B3FA0;
+      --violeta-oscuro: #54317F;
+      --violeta-suave:  #F1EAF8;
       --carbon:         #2B2B2B;
       --carbon-suave:   #3a3a38;
       --crema:          #FBF6EE;
@@ -87,12 +90,14 @@
     }
     .nav-emblem {
       width: 40px; height: 40px;
-      background: var(--naranja);
-      border-radius: 12px;
+      background: var(--violeta);
+      border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
+      transition: transform 0.4s ease;
     }
-    .nav-emblem .paw { width: 24px; height: 24px; fill: #fff; }
+    .nav-emblem .caduceo { width: 24px; height: 24px; stroke: #fff; }
+    .nav-logo:hover .nav-emblem { animation: wiggle 0.5s ease; }
     .nav-logo-text {
       font-family: 'Baloo 2', cursive;
       line-height: 1;
@@ -142,14 +147,25 @@
     }
     .hero-inner { position: relative; z-index: 2; }
     .hero-emblem {
-      width: 96px; height: 96px;
-      background: var(--naranja);
-      border-radius: 28px;
+      width: 100px; height: 100px;
+      background: var(--violeta);
+      border: 4px solid var(--naranja);
+      border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 22px;
-      box-shadow: 0 12px 30px rgba(239,138,34,0.35);
+      animation: pulse-glow 3.5s ease-in-out infinite;
     }
-    .hero-emblem .paw { width: 56px; height: 56px; fill: #fff; }
+    .hero-emblem .caduceo { width: 52px; height: 52px; stroke: #fff; }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 10px 26px rgba(107,63,160,0.30); transform: scale(1); }
+      50%      { box-shadow: 0 14px 36px rgba(107,63,160,0.45); transform: scale(1.05); }
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25%      { transform: rotate(-12deg); }
+      75%      { transform: rotate(12deg); }
+    }
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -407,7 +423,33 @@
       gap: 8px;
       margin-bottom: 10px;
     }
-    .footer-logo .paw { width: 22px; height: 22px; fill: var(--naranja); }
+    .footer-logo .caduceo { width: 22px; height: 22px; stroke: var(--naranja); }
+
+    /* ── EQUIPO ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .team-card {
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      border-radius: 18px;
+      padding: 26px 18px;
+      text-align: center;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .team-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(43,43,43,0.10); }
+    .team-avatar {
+      width: 64px; height: 64px;
+      background: var(--violeta-suave);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .team-avatar .caduceo { width: 32px; height: 32px; stroke: var(--violeta); }
+    .team-name { font-family: 'Baloo 2', cursive; font-size: 17px; font-weight: 700; color: var(--carbon); margin-bottom: 4px; }
+    .team-role { font-size: 13px; color: var(--naranja-oscuro); font-weight: 600; }
     .footer-logo b { font-family: 'Baloo 2', cursive; color: var(--crema); font-size: 16px; }
     footer p { font-size: 13px; color: #9a958c; }
     footer a { color: var(--naranja); text-decoration: none; }
@@ -423,7 +465,7 @@
 </head>
 <body>
 
-  <!-- Símbolo de huella reutilizable -->
+  <!-- Símbolos reutilizables -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="paw" viewBox="0 0 100 100">
       <ellipse cx="50" cy="64" rx="23" ry="19"/>
@@ -432,18 +474,24 @@
       <ellipse cx="58" cy="27" rx="8.5" ry="12.5"/>
       <ellipse cx="76" cy="40" rx="8.5" ry="11.5"/>
     </symbol>
+    <symbol id="caduceo" viewBox="0 0 100 100" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="50" y1="14" x2="50" y2="92"/>
+      <path d="M50 22 C 30 8, 8 16, 16 30 C 26 24, 40 28, 50 36 Z" fill="currentColor" stroke="none"/>
+      <path d="M50 22 C 70 8, 92 16, 84 30 C 74 24, 60 28, 50 36 Z" fill="currentColor" stroke="none"/>
+      <path d="M50 30 C 22 40, 78 52, 50 62 C 22 72, 78 84, 50 90"/>
+    </symbol>
   </svg>
 
   <!-- NAVBAR -->
   <nav>
     <a href="#" class="nav-logo">
-      <span class="nav-emblem"><svg class="paw"><use href="#paw"/></svg></span>
+      <span class="nav-emblem"><svg class="caduceo"><use href="#caduceo"/></svg></span>
       <span class="nav-logo-text">
         <b>Las Marinas</b>
         <span>Veterinaria</span>
       </span>
     </a>
-    <a class="nav-cta" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+    <a class="nav-cta" href="https://wa.me/5491151827408?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
       <i class="ti ti-brand-whatsapp"></i> Consultanos
     </a>
   </nav>
@@ -454,12 +502,12 @@
     <svg class="paw-bg" style="top:140px;right:30px;width:60px;transform:rotate(25deg)"><use href="#paw"/></svg>
     <svg class="paw-bg" style="bottom:30px;left:40px;width:50px;transform:rotate(10deg)"><use href="#paw"/></svg>
     <div class="hero-inner">
-      <div class="hero-emblem"><svg class="paw"><use href="#paw"/></svg></div>
+      <div class="hero-emblem"><svg class="caduceo"><use href="#caduceo"/></svg></div>
       <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Victoria · San Fernando · GBA Norte</p>
       <h1>Tu veterinaria de barrio, desde hace <em>más de 20 años</em></h1>
       <p class="hero-sub">Atención personalizada para perros y gatos. El Dr. Abel conoce a tu mascota por nombre.</p>
       <div class="hero-btns">
-        <a class="btn-primary" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+        <a class="btn-primary" href="https://wa.me/5491151827408?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Consultanos por WhatsApp
         </a>
         <a class="btn-ghost" href="https://maps.app.goo.gl/ZRJuayRFGic4Ty9P9" target="_blank" rel="noopener">
@@ -510,6 +558,27 @@
           <div class="service-icon"><i class="ti ti-heart-rate-monitor"></i></div>
           <div class="service-name">Seguimiento</div>
           <div class="service-desc">Control postoperatorio y enfermedades crónicas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="info-section">
+    <div class="section-inner">
+      <h2 class="section-title">Nuestro equipo</h2>
+      <p class="section-sub">Profesionales que conocen a tu mascota por nombre</p>
+      <div class="divider"></div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar"><svg class="caduceo"><use href="#caduceo"/></svg></div>
+          <div class="team-name">Dr. Abel Fernández</div>
+          <div class="team-role">Veterinario Clínico</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar"><svg class="caduceo"><use href="#caduceo"/></svg></div>
+          <div class="team-name">Octavio Ochoa</div>
+          <div class="team-role">Veterinario Clínico</div>
         </div>
       </div>
     </div>
@@ -593,7 +662,7 @@
       <div class="hero-inner">
         <h2 class="cta-title">¿Tenés una consulta?</h2>
         <p class="cta-sub">Escribinos por WhatsApp y te respondemos a la brevedad. Sin esperas, sin formularios.</p>
-        <a class="wa-btn" href="https://wa.me/5491147253322?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+        <a class="wa-btn" href="https://wa.me/5491151827408?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Escribir por WhatsApp
         </a>
         <a class="tel-link" href="tel:+541147253322">
@@ -606,7 +675,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">
-      <svg class="paw"><use href="#paw"/></svg>
+      <svg class="caduceo"><use href="#caduceo"/></svg>
       <b>Veterinaria Las Marinas</b>
     </div>
     <p>© 2025 · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>

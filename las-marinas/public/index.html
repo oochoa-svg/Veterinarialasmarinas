@@ -7,6 +7,8 @@
   <meta name="description" content="Veterinaria Las Marinas en Victoria, GBA. Consultas, vacunas, cirugías y pet shop. 4.7 estrellas en Google. Consultanos por WhatsApp." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#EF8A22" />
+  <link rel="icon" type="image/png" href="img/logo-160.png" />
+  <link rel="apple-touch-icon" href="img/logo-160.png" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Veterinaria Las Marinas · Victoria" />
@@ -89,14 +91,14 @@
       text-decoration: none;
     }
     .nav-emblem {
-      width: 40px; height: 40px;
-      background: var(--violeta);
+      width: 42px; height: 42px;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
       transition: transform 0.4s ease;
+      overflow: hidden;
     }
-    .nav-emblem .caduceo { width: 24px; height: 24px; stroke: #fff; }
+    .nav-emblem img { width: 100%; height: 100%; object-fit: cover; }
     .nav-logo:hover .nav-emblem { animation: wiggle 0.5s ease; }
     .nav-logo-text {
       font-family: 'Baloo 2', cursive;
@@ -147,15 +149,16 @@
     }
     .hero-inner { position: relative; z-index: 2; }
     .hero-emblem {
-      width: 100px; height: 100px;
-      background: var(--violeta);
+      width: 120px; height: 120px;
       border: 4px solid var(--naranja);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 22px;
+      overflow: hidden;
+      background: var(--blanco);
       animation: pulse-glow 3.5s ease-in-out infinite;
     }
-    .hero-emblem .caduceo { width: 52px; height: 52px; stroke: #fff; }
+    .hero-emblem img { width: 100%; height: 100%; object-fit: cover; }
 
     @keyframes pulse-glow {
       0%, 100% { box-shadow: 0 10px 26px rgba(107,63,160,0.30); transform: scale(1); }
@@ -423,7 +426,7 @@
       gap: 8px;
       margin-bottom: 10px;
     }
-    .footer-logo .caduceo { width: 22px; height: 22px; stroke: var(--naranja); }
+    .footer-logo img { width: 28px; height: 28px; object-fit: cover; border-radius: 50%; }
 
     /* ── EQUIPO ── */
     .team-grid {
@@ -485,7 +488,7 @@
   <!-- NAVBAR -->
   <nav>
     <a href="#" class="nav-logo">
-      <span class="nav-emblem"><svg class="caduceo"><use href="#caduceo"/></svg></span>
+      <span class="nav-emblem"><img src="img/logo-80.png" alt="Logo Las Marinas Veterinaria" /></span>
       <span class="nav-logo-text">
         <b>Las Marinas</b>
         <span>Veterinaria</span>
@@ -502,7 +505,7 @@
     <svg class="paw-bg" style="top:140px;right:30px;width:60px;transform:rotate(25deg)"><use href="#paw"/></svg>
     <svg class="paw-bg" style="bottom:30px;left:40px;width:50px;transform:rotate(10deg)"><use href="#paw"/></svg>
     <div class="hero-inner">
-      <div class="hero-emblem"><svg class="caduceo"><use href="#caduceo"/></svg></div>
+      <div class="hero-emblem"><img src="img/logo-400.png" alt="Logo Las Marinas Veterinaria" /></div>
       <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Victoria · San Fernando · GBA Norte</p>
       <h1>Tu veterinaria de barrio, desde hace <em>más de 20 años</em></h1>
       <p class="hero-sub">Atención personalizada para perros y gatos. El Dr. Abel conoce a tu mascota por nombre.</p>
@@ -675,7 +678,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">
-      <svg class="caduceo"><use href="#caduceo"/></svg>
+      <img src="img/logo-80.png" alt="Logo Las Marinas Veterinaria" />
       <b>Veterinaria Las Marinas</b>
     </div>
     <p>© 2025 · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>

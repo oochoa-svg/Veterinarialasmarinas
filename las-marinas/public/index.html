@@ -338,6 +338,114 @@
     .review-text { font-size: 14px; color: #e4ddd2; line-height: 1.65; margin-bottom: 14px; }
     .review-author { font-size: 13px; color: var(--naranja); font-weight: 700; }
 
+    /* ── REGISTRO / VACUNACIÓN ── */
+    .registro-section { background: var(--crema); }
+    .registro-card {
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      border-radius: 22px;
+      padding: 36px 30px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 12px 34px rgba(43,43,43,0.08);
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-legend {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Baloo 2', cursive;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--violeta);
+      margin: 22px 0 12px;
+    }
+    .form-legend:first-child { margin-top: 0; }
+    .form-legend i { color: var(--naranja); font-size: 19px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--carbon);
+      margin-bottom: 5px;
+    }
+    .form-group label .req { color: var(--naranja-oscuro); }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1.5px solid var(--linea);
+      border-radius: 11px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14.5px;
+      color: var(--texto);
+      background: var(--blanco);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--naranja);
+      box-shadow: 0 0 0 3px var(--naranja-suave);
+    }
+    .form-submit {
+      width: 100%;
+      margin-top: 22px;
+      background: var(--naranja);
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 28px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .form-submit:hover { background: var(--naranja-oscuro); transform: translateY(-2px); }
+    .form-submit:disabled { opacity: 0.6; cursor: progress; transform: none; }
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 16px;
+    }
+    .form-success.show { display: block; }
+    .form-success .ok-icon {
+      width: 64px; height: 64px;
+      background: var(--naranja-suave);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .form-success .ok-icon i { color: var(--naranja-oscuro); font-size: 34px; }
+    .form-success h3 {
+      font-family: 'Baloo 2', cursive;
+      color: var(--violeta);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .form-success p { color: var(--muted); font-size: 14px; }
+    @media (max-width: 480px) {
+      .form-row { grid-template-columns: 1fr; }
+      .registro-card { padding: 28px 20px; }
+    }
+
     /* ── INFO ── */
     .info-section { background: var(--blanco); }
     .info-grid {
@@ -562,8 +670,8 @@
         <a class="btn-primary" href="https://wa.me/5491151827408?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Consultanos por WhatsApp
         </a>
-        <a class="btn-ghost" href="https://maps.app.goo.gl/ZRJuayRFGic4Ty9P9" target="_blank" rel="noopener">
-          <i class="ti ti-map-pin"></i> Cómo llegar
+        <a class="btn-ghost" href="#registro">
+          <i class="ti ti-vaccine"></i> Plan de vacunación
         </a>
       </div>
       <div class="hero-badges">
@@ -664,6 +772,89 @@
     </div>
   </section>
 
+  <!-- REGISTRO / PLAN DE VACUNACIÓN -->
+  <section class="registro-section" id="registro">
+    <div class="section-inner">
+      <h2 class="section-title">Plan de vacunación</h2>
+      <p class="section-sub">Registrá a tu mascota y te avisamos cuándo toca la próxima vacuna</p>
+      <div class="divider"></div>
+
+      <div class="registro-card">
+        <form id="registro-form" novalidate>
+          <div class="form-legend"><i class="ti ti-user"></i> Tus datos</div>
+          <div class="form-group">
+            <label for="tutor">Nombre y apellido <span class="req">*</span></label>
+            <input type="text" id="tutor" name="tutor" required autocomplete="name" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="celular">Celular <span class="req">*</span></label>
+              <input type="tel" id="celular" name="celular" required autocomplete="tel" placeholder="11 5555-5555" />
+            </div>
+          </div>
+
+          <div class="form-legend"><i class="ti ti-paw-filled"></i> Tu mascota</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mascota">Nombre <span class="req">*</span></label>
+              <input type="text" id="mascota" name="mascota" required />
+            </div>
+            <div class="form-group">
+              <label for="especie">Especie <span class="req">*</span></label>
+              <select id="especie" name="especie" required>
+                <option value="" selected disabled>Elegí…</option>
+                <option>Perro</option>
+                <option>Gato</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="raza">Raza <span style="color:var(--muted);font-weight:500">(opcional)</span></label>
+            <input type="text" id="raza" name="raza" />
+          </div>
+
+          <div class="form-legend"><i class="ti ti-vaccine"></i> Última vacunación</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vacuna">Vacuna aplicada</label>
+              <select id="vacuna" name="vacuna">
+                <option value="" selected disabled>Elegí…</option>
+                <option>Quíntuple / Séxtuple (perro)</option>
+                <option>Triple felina (gato)</option>
+                <option>Antirrábica</option>
+                <option>Polivalente / otra</option>
+                <option>No sé / a confirmar</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fecha">Fecha de aplicación</label>
+              <input type="date" id="fecha" name="fecha" />
+            </div>
+          </div>
+
+          <button type="submit" class="form-submit" id="registro-submit">
+            <i class="ti ti-send"></i> Enviar registro
+          </button>
+          <p class="form-note">
+            Usamos tus datos únicamente para recordarte las vacunas de tu mascota.
+            Nunca los compartimos con terceros.
+          </p>
+        </form>
+
+        <div class="form-success" id="registro-success">
+          <div class="ok-icon"><i class="ti ti-check"></i></div>
+          <h3>¡Registro recibido!</h3>
+          <p>Gracias por registrar a tu mascota. Te vamos a avisar cuando se acerque la fecha de la próxima vacuna. 🐾</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- HORARIOS Y CONTACTO -->
   <section class="info-section">
     <div class="section-inner">
@@ -745,6 +936,79 @@
     </div>
     <p>© 2025 · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>
   </footer>
+
+  <script>
+    // ── Formulario de registro / plan de vacunación ──
+    // Pegá acá la URL de tu Google Apps Script (ver README) para que los datos
+    // caigan en tu Google Sheet. Mientras esté vacío, el formulario envía los
+    // datos por WhatsApp a la veterinaria como respaldo.
+    const SHEET_ENDPOINT = "";
+    const WHATSAPP_NUMERO = "5491151827408";
+
+    (function () {
+      const form = document.getElementById("registro-form");
+      if (!form) return;
+      const btn = document.getElementById("registro-submit");
+      const success = document.getElementById("registro-success");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+
+        const data = {
+          tutor:   form.tutor.value.trim(),
+          email:   form.email.value.trim(),
+          celular: form.celular.value.trim(),
+          mascota: form.mascota.value.trim(),
+          especie: form.especie.value,
+          raza:    form.raza.value.trim(),
+          vacuna:  form.vacuna.value,
+          fecha:   form.fecha.value,
+          origen:  "Sitio web"
+        };
+
+        btn.disabled = true;
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i class="ti ti-loader-2"></i> Enviando…';
+
+        try {
+          if (SHEET_ENDPOINT) {
+            await fetch(SHEET_ENDPOINT, {
+              method: "POST",
+              mode: "no-cors",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams(data).toString()
+            });
+            showSuccess();
+          } else {
+            // Respaldo: abrir WhatsApp con los datos formateados
+            const msg =
+              "*Nuevo registro - Plan de vacunación*%0A%0A" +
+              "👤 Tutor: " + data.tutor + "%0A" +
+              "✉️ Email: " + data.email + "%0A" +
+              "📱 Celular: " + data.celular + "%0A%0A" +
+              "🐾 Mascota: " + data.mascota + "%0A" +
+              "Especie: " + data.especie + "%0A" +
+              (data.raza ? "Raza: " + data.raza + "%0A" : "") +
+              "%0A💉 Vacuna: " + (data.vacuna || "-") + "%0A" +
+              "Fecha: " + (data.fecha || "-");
+            window.open("https://wa.me/" + WHATSAPP_NUMERO + "?text=" + msg, "_blank");
+            showSuccess();
+          }
+        } catch (err) {
+          btn.disabled = false;
+          btn.innerHTML = original;
+          alert("Hubo un problema al enviar. Probá de nuevo o escribinos por WhatsApp.");
+        }
+      });
+
+      function showSuccess() {
+        form.style.display = "none";
+        success.classList.add("show");
+        success.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    })();
+  </script>
 
 </body>
 </html>

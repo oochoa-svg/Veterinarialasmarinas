@@ -60,11 +60,46 @@ Ej: `vetlasmarinas.com.ar`
 
 ## Identidad de marca
 
+- Violeta (logo/marca): `#6B3FA0`
 - Naranja principal: `#EF8A22`
 - Carbón (texto/fondos oscuros): `#2B2B2B`
 - Crema (fondo claro): `#FBF6EE`
 - Tipografías: Baloo 2 (títulos) + Nunito (texto)
-- Logo: emblema de huella sobre cuadro naranja (SVG embebido)
+- Logo: medallón vectorial (cordón + caduceo + "M") embebido como SVG
+
+## Formulario de vacunación → Google Sheets
+
+La sección "Plan de vacunación" guarda los registros en una planilla de Google.
+Mientras `SHEET_ENDPOINT` (en el `<script>` de `index.html`) esté vacío, el
+formulario envía los datos por WhatsApp como respaldo. Para conectarlo a una
+planilla:
+
+1. Creá una **Google Sheet** nueva (con tu cuenta `oochoa@fvet.uba.ar`).
+   Poné estos encabezados en la fila 1, columnas A–J:
+   `Fecha registro | Tutor | Email | Celular | Mascota | Especie | Raza | Vacuna | Fecha aplicación | Origen`
+2. En la Sheet: menú **Extensiones → Apps Script**. Borrá lo que haya y pegá:
+
+   ```javascript
+   function doPost(e) {
+     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+     const p = e.parameter;
+     sheet.appendRow([
+       new Date(), p.tutor, p.email, p.celular,
+       p.mascota, p.especie, p.raza, p.vacuna, p.fecha, p.origen
+     ]);
+     return ContentService.createTextOutput("ok");
+   }
+   ```
+
+3. **Implementar → Nueva implementación → Aplicación web**.
+   - Ejecutar como: **Yo**
+   - Quién tiene acceso: **Cualquier usuario**
+   - Implementar y autorizar los permisos. Copiá la **URL de la app web**
+     (termina en `/exec`).
+4. Pegá esa URL en `SHEET_ENDPOINT` dentro de `index.html`, commiteá y pusheá.
+   Listo: cada registro cae en la planilla.
+5. Para Beth Center: **Archivo → Descargar → CSV / Excel** desde la Sheet e
+   importá ese archivo.
 
 ## Deploy
 

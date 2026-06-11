@@ -113,9 +113,6 @@
       --naranja-oscuro: #d9760f;
       --naranja-suave:  #FDEFDA;
       --naranja-tinte:  #FBE3C4;
-      --violeta:        #6B3FA0;
-      --violeta-oscuro: #54317F;
-      --violeta-suave:  #F1EAF8;
       --carbon:         #2B2B2B;
       --carbon-suave:   #3a3a38;
       --crema:          #FBF6EE;
@@ -145,13 +142,6 @@
       z-index: 0;
     }
     .paw-bg.light { color: #ffffff; opacity: 0.05; }
-
-    .paw {
-      width: 1em; height: 1em;
-      display: inline-block;
-      fill: currentColor;
-      vertical-align: middle;
-    }
 
     /* ── NAVBAR ── */
     nav {
@@ -1089,6 +1079,7 @@
                 <option>Quíntuple / Séxtuple (perro)</option>
                 <option>Triple felina (gato)</option>
                 <option>Antirrábica</option>
+                <option>Tos de las perreras (Bordetella)</option>
                 <option>Polivalente / otra</option>
                 <option>No sé / a confirmar</option>
               </select>
@@ -1312,14 +1303,14 @@
             // Respaldo: abrir WhatsApp con los datos formateados
             const msg =
               "*Nuevo registro - Plan de vacunación*%0A%0A" +
-              "👤 Tutor: " + data.tutor + "%0A" +
-              "✉️ Email: " + data.email + "%0A" +
-              "📱 Celular: " + data.celular + "%0A%0A" +
-              "🐾 Mascota: " + data.mascota + "%0A" +
-              "Especie: " + data.especie + "%0A" +
-              (data.raza ? "Raza: " + data.raza + "%0A" : "") +
-              "%0A💉 Vacuna: " + (data.vacuna || "-") + "%0A" +
-              "Fecha: " + (data.fecha || "-");
+              "👤 Tutor: " + encodeURIComponent(data.tutor) + "%0A" +
+              "✉️ Email: " + encodeURIComponent(data.email) + "%0A" +
+              "📱 Celular: " + encodeURIComponent(data.celular) + "%0A%0A" +
+              "🐾 Mascota: " + encodeURIComponent(data.mascota) + "%0A" +
+              "Especie: " + encodeURIComponent(data.especie) + "%0A" +
+              (data.raza ? "Raza: " + encodeURIComponent(data.raza) + "%0A" : "") +
+              "%0A💉 Vacuna: " + encodeURIComponent(data.vacuna || "-") + "%0A" +
+              "Fecha: " + encodeURIComponent(data.fecha || "-");
             window.open("https://wa.me/" + WHATSAPP_NUMERO + "?text=" + msg, "_blank");
             showSuccess();
           }

@@ -358,6 +358,26 @@
     .info-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--naranja-oscuro); margin-bottom: 4px; }
     .info-val { font-size: 15px; font-weight: 700; color: var(--carbon); line-height: 1.5; }
     .info-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .map-wrap { margin-top: 38px; }
+    .map-wrap iframe {
+      width: 100%;
+      height: 320px;
+      border: 0;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(43,43,43,0.12);
+      display: block;
+    }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--naranja-oscuro);
+      text-decoration: none;
+    }
+    .map-link:hover { text-decoration: underline; }
 
     /* ── CTA FINAL ── */
     .cta-section { background: var(--crema); }
@@ -648,6 +668,19 @@
             <div class="info-sub">Consultas no urgentes</div>
           </div>
         </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps?q=Veterinaria+Las+Marinas,+Av.+Pres.+Per%C3%B3n+2492,+Victoria,+San+Fernando,+Buenos+Aires&output=embed&hl=es"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa: Veterinaria Las Marinas en Google Maps">
+        </iframe>
+        <a class="map-link" href="https://maps.app.goo.gl/ZRJuayRFGic4Ty9P9" target="_blank" rel="noopener">
+          <i class="ti ti-external-link"></i> Ver en Google Maps · 4.7 ★ con más de 160 reseñas
+        </a>
       </div>
     </div>
   </section>

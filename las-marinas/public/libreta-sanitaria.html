@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Libreta Sanitaria · Veterinaria Las Marinas</title>
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+<style>
+  :root{
+    --naranja:#EF8A22;
+    --naranja-oscuro:#C76A12;
+    --naranja-suave:#FBE3C7;
+    --carbon:#2B2B2B;
+    --carbon-suave:#4A4A4A;
+    --crema:#FBF6EE;
+    --blanco:#fff;
+    --linea:#E7E0D4;
+    --muted:#8a8478;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Nunito',sans-serif;
+    color:var(--carbon);
+    background:#ddd7cc;
+  }
+  h1,h2,h3,.brand{font-family:'Baloo 2',cursive;}
+
+  /* Barra de acciones (no se imprime) */
+  .toolbar{
+    position:sticky; top:0; z-index:10;
+    background:var(--carbon); color:#fff;
+    padding:12px 18px;
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    flex-wrap:wrap; font-size:14px;
+  }
+  .toolbar button{
+    background:var(--naranja); color:#fff; border:none;
+    padding:10px 22px; border-radius:24px; font-weight:700;
+    font-size:14px; cursor:pointer; font-family:'Nunito',sans-serif;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .toolbar button:hover{background:var(--naranja-oscuro);}
+  .toolbar span{color:#cfc9bd;}
+
+  /* Páginas A5 */
+  .page{
+    width:148mm; min-height:210mm;
+    margin:18px auto;
+    background:var(--crema);
+    box-shadow:0 6px 24px rgba(0,0,0,0.18);
+    padding:14mm 12mm;
+    position:relative;
+    overflow:hidden;
+  }
+  .page.dark{ background:var(--carbon); color:var(--crema); }
+  .paw-bg{ position:absolute; opacity:0.06; fill:var(--naranja); }
+  .page.dark .paw-bg{ opacity:0.08; }
+
+  /* Tapa */
+  .cover{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  .cover .medallion{ width:130px; height:130px; margin-bottom:22px; }
+  .cover h1{ font-size:30px; color:var(--naranja); margin:0 0 6px; font-weight:700; }
+  .cover .sub{ font-size:15px; color:var(--carbon-suave); margin-bottom:36px; }
+  .cover .clinic{ font-size:20px; font-weight:700; color:var(--carbon); margin-bottom:4px; }
+  .cover .addr{ font-size:13px; color:var(--muted); }
+  .cover .field-line{
+    width:80%; margin-top:48px; padding-top:50px;
+    border-top:1.5px dashed var(--naranja-oscuro);
+    text-align:center; font-size:14px; color:var(--carbon-suave);
+  }
+  .cover .field-line b{ display:block; font-size:18px; color:var(--carbon); margin-top:4px; font-family:'Baloo 2',cursive; }
+
+  /* Encabezado de página interior */
+  .pg-head{ display:flex; align-items:center; gap:10px; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid var(--naranja-suave); }
+  .pg-head svg{ width:34px; height:34px; flex-shrink:0; }
+  .pg-head h2{ font-size:18px; margin:0; color:var(--naranja-oscuro); }
+  .pg-head .pg-num{ margin-left:auto; font-size:12px; color:var(--muted); font-weight:700; }
+
+  /* Datos del paciente */
+  .data-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; margin-bottom:18px; }
+  .data-grid .full{ grid-column:1 / -1; }
+  .field{ }
+  .field label{ display:block; font-size:10.5px; font-weight:700; color:var(--naranja-oscuro); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:3px; }
+  .field .line{ border-bottom:1.3px solid var(--linea); height:22px; }
+  .section-title{ font-size:13px; font-weight:700; color:var(--carbon); margin:18px 0 10px; display:flex; align-items:center; gap:6px; }
+  .section-title i{ color:var(--naranja); }
+  .photo-box{
+    border:1.5px dashed var(--naranja-oscuro); border-radius:12px;
+    height:90px; display:flex; align-items:center; justify-content:center;
+    color:var(--muted); font-size:12px; text-align:center; gap:6px;
+    grid-column:1 / -1;
+  }
+
+  /* Tablas de registro */
+  table.reg{ width:100%; border-collapse:collapse; font-size:11px; }
+  table.reg th{
+    background:var(--naranja); color:#fff; font-weight:700;
+    padding:8px 5px; text-align:left; font-size:10.5px;
+  }
+  table.reg td{ border-bottom:1px solid var(--linea); padding:13px 5px; vertical-align:top; }
+  table.reg tr:nth-child(even) td{ background:rgba(239,138,34,0.05); }
+  table.reg th:first-child, table.reg td:first-child{ border-radius:0; }
+
+  .note-box{
+    margin-top:16px; padding:12px 14px; background:var(--naranja-suave);
+    border-radius:12px; font-size:11.5px; color:var(--carbon-suave); line-height:1.6;
+  }
+  .note-box b{ color:var(--carbon); }
+
+  /* Contratapa */
+  .back{ display:flex; flex-direction:column; height:100%; }
+  .back .top{ flex:1; }
+  .back h2{ color:var(--naranja); font-size:22px; margin-bottom:6px; }
+  .back .row{ display:flex; align-items:center; gap:12px; margin:14px 0; font-size:14px; }
+  .back .row i{ font-size:22px; color:var(--naranja); width:28px; text-align:center; flex-shrink:0; }
+  .back .row .lbl{ font-size:11px; color:#b6b1a8; display:block; }
+  .back .row .val{ font-weight:700; }
+  .back .footer{ text-align:center; font-size:11px; color:#9a958c; padding-top:18px; border-top:1px solid rgba(255,255,255,0.12); }
+  .back .vets{ margin-top:8px; font-size:12.5px; color:#cfc9bd; }
+
+  @media print{
+    body{ background:#fff; }
+    .toolbar{ display:none; }
+    .page{ margin:0; box-shadow:none; page-break-after:always; }
+    .page:last-child{ page-break-after:auto; }
+    @page{ size:148mm 210mm; margin:0; }
+  }
+  @media (max-width:480px){
+    .page{ width:100%; min-height:auto; padding:8mm; }
+    .data-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span><i class="ti ti-notebook"></i> Libreta Sanitaria — lista para imprimir en A5 (formato libreto)</span>
+  <button onclick="window.print()"><i class="ti ti-printer"></i> Imprimir / Guardar PDF</button>
+</div>
+
+<!-- Símbolos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="caduceo" viewBox="0 0 100 100">
+    <g fill="none" stroke="#2B2B2B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="50" y1="15" x2="50" y2="86"/>
+      <path d="M50 37 C 35 45, 65 53, 50 61 C 35 69, 65 77, 50 85"/>
+      <path d="M50 37 C 65 45, 35 53, 50 61 C 65 69, 35 77, 50 85"/>
+    </g>
+    <circle cx="50" cy="13" r="4.5" fill="#2B2B2B"/>
+    <path d="M50 27 C 39 20, 26 21, 19 30 C 29 28, 40 31, 50 37 Z" fill="#2B2B2B"/>
+    <path d="M50 27 C 61 20, 74 21, 81 30 C 71 28, 60 31, 50 37 Z" fill="#2B2B2B"/>
+  </symbol>
+  <symbol id="rope-ring" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="80" fill="#fff"/>
+    <circle cx="100" cy="100" r="96" fill="none" stroke="#EF8A22" stroke-width="2"/>
+    <circle cx="100" cy="100" r="89" fill="none" stroke="#EF8A22" stroke-width="13"/>
+    <circle cx="100" cy="100" r="89" fill="none" stroke="#F6B25E" stroke-width="13" stroke-dasharray="7 11" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="81" fill="none" stroke="#EF8A22" stroke-width="2"/>
+  </symbol>
+  <symbol id="logo-full" viewBox="0 0 200 200">
+    <use href="#rope-ring"/>
+    <use href="#caduceo" x="64" y="28" width="72" height="72"/>
+    <text x="100" y="126" text-anchor="middle" fill="#EF8A22" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700">M</text>
+    <text x="100" y="150" text-anchor="middle" fill="#2B2B2B" font-family="'Baloo 2', cursive" font-size="18" font-weight="700">Las Marinas</text>
+    <text x="100" y="164" text-anchor="middle" fill="#2B2B2B" font-family="'Nunito', sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.5">VETERINARIA</text>
+  </symbol>
+  <symbol id="paw" viewBox="0 0 100 100">
+    <ellipse cx="50" cy="64" rx="23" ry="19"/>
+    <ellipse cx="24" cy="40" rx="8.5" ry="11.5"/>
+    <ellipse cx="42" cy="27" rx="8.5" ry="12.5"/>
+    <ellipse cx="58" cy="27" rx="8.5" ry="12.5"/>
+    <ellipse cx="76" cy="40" rx="8.5" ry="11.5"/>
+  </symbol>
+</svg>
+
+<!-- 1. TAPA -->
+<div class="page cover">
+  <svg class="paw-bg" style="top:-20px;left:-30px;width:140px;transform:rotate(-15deg)"><use href="#paw"/></svg>
+  <svg class="paw-bg" style="bottom:30px;right:-20px;width:110px;transform:rotate(20deg)"><use href="#paw"/></svg>
+  <svg class="medallion" viewBox="0 0 200 200"><use href="#logo-full"/></svg>
+  <h1>Libreta Sanitaria</h1>
+  <div class="sub">Historial de salud y vacunación de tu mascota</div>
+  <div class="clinic">Veterinaria Las Marinas</div>
+  <div class="addr">Av. Pres. Perón 2492, Victoria, San Fernando</div>
+  <div class="field-line">
+    Esta libreta pertenece a
+    <b>____________________________</b>
+  </div>
+</div>
+
+<!-- 2. DATOS DEL PACIENTE -->
+<div class="page">
+  <div class="pg-head">
+    <svg viewBox="0 0 100 100"><use href="#caduceo"/></svg>
+    <h2>Datos del paciente</h2>
+    <span class="pg-num">pág. 2</span>
+  </div>
+
+  <div class="section-title"><i class="ti ti-paw-filled"></i> Mi mascota</div>
+  <div class="data-grid">
+    <div class="photo-box"><i class="ti ti-camera"></i> Foto de tu mascota (opcional)</div>
+    <div class="field"><label>Nombre</label><div class="line"></div></div>
+    <div class="field"><label>Especie</label><div class="line"></div></div>
+    <div class="field"><label>Raza</label><div class="line"></div></div>
+    <div class="field"><label>Sexo</label><div class="line"></div></div>
+    <div class="field"><label>Fecha de nacimiento</label><div class="line"></div></div>
+    <div class="field"><label>Color / Señas particulares</label><div class="line"></div></div>
+    <div class="field"><label>Esterilizado/a</label><div class="line"></div></div>
+    <div class="field"><label>Microchip / N° identificación</label><div class="line"></div></div>
+  </div>
+
+  <div class="section-title"><i class="ti ti-user"></i> Tutor responsable</div>
+  <div class="data-grid">
+    <div class="field full"><label>Nombre y apellido</label><div class="line"></div></div>
+    <div class="field"><label>Celular</label><div class="line"></div></div>
+    <div class="field"><label>Email</label><div class="line"></div></div>
+    <div class="field full"><label>Dirección</label><div class="line"></div></div>
+  </div>
+
+  <div class="note-box">
+    <b>Importante:</b> traé esta libreta a cada consulta. El equipo veterinario va a
+    registrar acá las vacunas, desparasitaciones y controles de tu mascota.
+  </div>
+</div>
+
+<!-- 3. PLAN DE VACUNACIÓN -->
+<div class="page">
+  <div class="pg-head">
+    <svg viewBox="0 0 100 100"><use href="#caduceo"/></svg>
+    <h2>Plan de vacunación</h2>
+    <span class="pg-num">pág. 3</span>
+  </div>
+  <table class="reg">
+    <thead>
+      <tr><th>Vacuna</th><th>Fecha</th><th>Próxima dosis</th><th>Veterinario / Sello</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="note-box">
+    <b>Vacunas frecuentes:</b> Quíntuple/Séxtuple y Antirrábica (perros) ·
+    Triple felina y ViLeF (gatos) · Tos de las perreras (Bordetella).
+    La vacunación es anual — registrá a tu mascota en
+    <b>vetlasmarinas.web.app</b> para recibir recordatorios.
+  </div>
+</div>
+
+<!-- 4. DESPARASITACIÓN -->
+<div class="page">
+  <div class="pg-head">
+    <svg viewBox="0 0 100 100"><use href="#caduceo"/></svg>
+    <h2>Desparasitación</h2>
+    <span class="pg-num">pág. 4</span>
+  </div>
+
+  <div class="section-title"><i class="ti ti-pill"></i> Desparasitación interna</div>
+  <table class="reg">
+    <thead><tr><th>Producto</th><th>Fecha</th><th>Próxima dosis</th><th>Veterinario / Sello</th></tr></thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title" style="margin-top:24px"><i class="ti ti-bug"></i> Desparasitación externa (pulgas y garrapatas)</div>
+  <table class="reg">
+    <thead><tr><th>Producto</th><th>Fecha</th><th>Próxima dosis</th><th>Veterinario / Sello</th></tr></thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    La desparasitación interna se recomienda cada <b>3 meses</b> y la externa según el
+    producto utilizado (consultá la duración con tu veterinario).
+  </div>
+</div>
+
+<!-- 5. CONTROLES Y CONSULTAS -->
+<div class="page">
+  <div class="pg-head">
+    <svg viewBox="0 0 100 100"><use href="#caduceo"/></svg>
+    <h2>Controles y consultas</h2>
+    <span class="pg-num">pág. 5</span>
+  </div>
+  <table class="reg">
+    <thead>
+      <tr><th style="width:16%">Fecha</th><th style="width:12%">Peso</th><th>Motivo / Observaciones</th><th style="width:18%">Veterinario</th></tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 6. CONTRATAPA -->
+<div class="page dark">
+  <svg class="paw-bg" style="top:20px;right:-20px;width:120px;transform:rotate(15deg)"><use href="#paw"/></svg>
+  <svg class="paw-bg" style="bottom:60px;left:-30px;width:140px;transform:rotate(-10deg)"><use href="#paw"/></svg>
+  <div class="back">
+    <div class="top">
+      <h2>Veterinaria Las Marinas</h2>
+      <div class="vets">Dr. Abel Fernández · Octavio Ochoa<br>Veterinarios clínicos</div>
+
+      <div class="row">
+        <i class="ti ti-map-pin"></i>
+        <div><span class="lbl">Dirección</span><span class="val">Av. Pres. Perón 2492, Victoria, San Fernando</span></div>
+      </div>
+      <div class="row">
+        <i class="ti ti-clock"></i>
+        <div><span class="lbl">Horarios</span><span class="val">Lun a Vie 9–13 / 16–19 · Sáb 9–13</span></div>
+      </div>
+      <div class="row">
+        <i class="ti ti-brand-whatsapp"></i>
+        <div><span class="lbl">WhatsApp — Dr. Abel</span><span class="val">11 5182-7408</span></div>
+      </div>
+      <div class="row">
+        <i class="ti ti-brand-whatsapp"></i>
+        <div><span class="lbl">WhatsApp — Octavio Ochoa</span><span class="val">11 7062-3869</span></div>
+      </div>
+      <div class="row">
+        <i class="ti ti-phone"></i>
+        <div><span class="lbl">Teléfono</span><span class="val">011 4725-3322</span></div>
+      </div>
+      <div class="row">
+        <i class="ti ti-world"></i>
+        <div><span class="lbl">Web</span><span class="val">veterinarialasmarinas.web.app</span></div>
+      </div>
+    </div>
+    <div class="footer">
+      Conservá esta libreta y traela a cada visita · ¡Gracias por confiar en nosotros! 🐾
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

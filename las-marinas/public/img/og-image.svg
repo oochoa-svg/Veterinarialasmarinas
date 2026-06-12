@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2B2B2B"/>
+      <stop offset="1" stop-color="#3a3a3a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- decorative paw prints -->
+  <g fill="#EF8A22" opacity="0.12">
+    <circle cx="1080" cy="90" r="60"/>
+    <circle cx="100" cy="540" r="80"/>
+  </g>
+
+  <!-- medallion -->
+  <g transform="translate(170,135) scale(1.8)">
+    <circle cx="100" cy="100" r="80" fill="#fff"/>
+    <circle cx="100" cy="100" r="96" fill="none" stroke="#EF8A22" stroke-width="2"/>
+    <circle cx="100" cy="100" r="89" fill="none" stroke="#EF8A22" stroke-width="13"/>
+    <circle cx="100" cy="100" r="89" fill="none" stroke="#F6B25E" stroke-width="13" stroke-dasharray="7 11" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="81" fill="none" stroke="#EF8A22" stroke-width="2"/>
+    <g fill="none" stroke="#2B2B2B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(64,28) scale(0.72)">
+      <line x1="50" y1="15" x2="50" y2="86"/>
+      <path d="M50 37 C 35 45, 65 53, 50 61 C 35 69, 65 77, 50 85"/>
+      <path d="M50 37 C 65 45, 35 53, 50 61 C 65 69, 35 77, 50 85"/>
+      <circle cx="50" cy="13" r="4.5" fill="#2B2B2B"/>
+      <path d="M50 27 C 39 20, 26 21, 19 30 C 29 28, 40 31, 50 37 Z" fill="#2B2B2B"/>
+      <path d="M50 27 C 61 20, 74 21, 81 30 C 71 28, 60 31, 50 37 Z" fill="#2B2B2B"/>
+    </g>
+    <text x="100" y="126" text-anchor="middle" fill="#EF8A22" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700">M</text>
+  </g>
+
+  <!-- texto -->
+  <text x="540" y="270" fill="#FBF6EE" font-family="'Baloo 2', Georgia, sans-serif" font-size="64" font-weight="700">Veterinaria</text>
+  <text x="540" y="345" fill="#EF8A22" font-family="'Baloo 2', Georgia, sans-serif" font-size="64" font-weight="700">Las Marinas</text>
+  <text x="540" y="400" fill="#cfc9bd" font-family="Arial, sans-serif" font-size="26" font-weight="400">Victoria, San Fernando · +20 años de trayectoria</text>
+  <text x="540" y="450" fill="#cfc9bd" font-family="Arial, sans-serif" font-size="26" font-weight="400">Consultas, vacunas, cirugías y pet shop</text>
+
+  <!-- rating -->
+  <text x="540" y="500" fill="#f5b942" font-family="Arial, sans-serif" font-size="28" font-weight="700">★★★★★ 4.7 · +160 reseñas en Google</text>
+</svg>

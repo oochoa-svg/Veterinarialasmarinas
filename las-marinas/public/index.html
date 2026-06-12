@@ -473,14 +473,49 @@
       background: #F4F1EA;
       transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
     }
-    .form-group input::placeholder { color: #b3ab9d; }
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1.5px solid transparent;
+      border-radius: 13px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      color: var(--texto);
+      background: #F4F1EA;
+      resize: vertical;
+      min-height: 90px;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #b3ab9d; }
     .form-group input:focus,
-    .form-group select:focus {
+    .form-group select:focus,
+    .form-group textarea:focus {
       outline: none;
       background: var(--blanco);
       border-color: var(--naranja);
       box-shadow: 0 0 0 4px var(--naranja-suave);
     }
+    .vacuna-checks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .vacuna-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1.5px solid transparent;
+      border-radius: 13px;
+      background: #F4F1EA;
+      font-size: 14px;
+      color: var(--texto);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .vacuna-check:hover { background: var(--naranja-suave); }
+    .vacuna-check input { width: 18px; height: 18px; accent-color: var(--naranja); flex-shrink: 0; }
     .form-submit {
       width: 100%;
       margin-top: 26px;
@@ -663,7 +698,22 @@
     }
     .team-avatar .caduceo { width: 32px; height: 32px; }
     .team-name { font-family: 'Baloo 2', cursive; font-size: 17px; font-weight: 700; color: var(--carbon); margin-bottom: 4px; }
-    .team-role { font-size: 13px; color: var(--naranja-oscuro); font-weight: 600; }
+    .team-role { font-size: 13px; color: var(--naranja-oscuro); font-weight: 600; margin-bottom: 14px; }
+    .team-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--naranja-suave);
+      color: var(--naranja-oscuro);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .team-wa i { color: var(--wa); font-size: 16px; }
+    .team-wa:hover { transform: translateY(-2px); background: var(--naranja-tinte); }
     .footer-logo b { font-family: 'Baloo 2', cursive; color: var(--crema); font-size: 16px; }
     footer p { font-size: 13px; color: #9a958c; }
     footer a { color: var(--naranja); text-decoration: none; }
@@ -948,11 +998,17 @@
           <div class="team-avatar"><svg class="caduceo"><use href="#caduceo"/></svg></div>
           <div class="team-name">Dr. Abel Fernández</div>
           <div class="team-role">Veterinario Clínico</div>
+          <a class="team-wa" href="https://wa.me/5491151827408?text=Hola%20Abel!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+            <i class="ti ti-brand-whatsapp"></i> Escribirle
+          </a>
         </div>
         <div class="team-card">
           <div class="team-avatar"><svg class="caduceo"><use href="#caduceo"/></svg></div>
           <div class="team-name">Octavio Ochoa</div>
           <div class="team-role">Veterinario Clínico</div>
+          <a class="team-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+            <i class="ti ti-brand-whatsapp"></i> Escribirle
+          </a>
         </div>
       </div>
     </div>
@@ -1071,24 +1127,26 @@
           </div>
 
           <div class="form-legend"><i class="ti ti-vaccine"></i> Última vacunación</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="vacuna">Vacuna aplicada</label>
-              <select id="vacuna" name="vacuna">
-                <option value="" selected disabled>Elegí…</option>
-                <option>Quíntuple / Séxtuple (perro)</option>
-                <option>Tos de las perreras (Bordetella)</option>
-                <option>Triple felina (gato)</option>
-                <option>ViLeF — Leucemia felina (gato)</option>
-                <option>Antirrábica</option>
-                <option>Otra</option>
-                <option>No sé / a confirmar</option>
-              </select>
+          <div class="form-group">
+            <label>Vacunas aplicadas <span style="color:var(--muted);font-weight:500">(podés marcar más de una)</span></label>
+            <div class="vacuna-checks">
+              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Quíntuple / Séxtuple (perro)" /> Quíntuple / Séxtuple (perro)</label>
+              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Tos de las perreras (Bordetella)" /> Tos de las perreras (Bordetella)</label>
+              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Triple felina (gato)" /> Triple felina (gato)</label>
+              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="ViLeF — Leucemia felina (gato)" /> ViLeF — Leucemia felina (gato)</label>
+              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Antirrábica" /> Antirrábica</label>
+              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Otra" /> Otra</label>
+              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="No sé / a confirmar" /> No sé / a confirmar</label>
             </div>
-            <div class="form-group">
-              <label for="fecha">Fecha de aplicación</label>
-              <input type="date" id="fecha" name="fecha" />
-            </div>
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha de aplicación</label>
+            <input type="date" id="fecha" name="fecha" />
+          </div>
+
+          <div class="form-group">
+            <label for="comentarios">Comentarios <span style="color:var(--muted);font-weight:500">(opcional)</span></label>
+            <textarea id="comentarios" name="comentarios" placeholder="Algo más que quieras contarnos…"></textarea>
           </div>
 
           <button type="submit" class="form-submit" id="registro-submit">
@@ -1263,7 +1321,7 @@
     // caigan en tu Google Sheet. Mientras esté vacío, el formulario envía los
     // datos por WhatsApp a la veterinaria como respaldo.
     const SHEET_ENDPOINT = "";
-    const WHATSAPP_NUMERO = "5491151827408";
+    const WHATSAPP_NUMERO = "5491170623869";
 
     (function () {
       const form = document.getElementById("registro-form");
@@ -1275,16 +1333,20 @@
         e.preventDefault();
         if (!form.checkValidity()) { form.reportValidity(); return; }
 
+        const vacunas = Array.from(form.querySelectorAll('input[name="vacuna"]:checked'))
+          .map(function (cb) { return cb.value; });
+
         const data = {
-          tutor:   form.tutor.value.trim(),
-          email:   form.email.value.trim(),
-          celular: form.celular.value.trim(),
-          mascota: form.mascota.value.trim(),
-          especie: form.especie.value,
-          raza:    form.raza.value.trim(),
-          vacuna:  form.vacuna.value,
-          fecha:   form.fecha.value,
-          origen:  "Sitio web"
+          tutor:       form.tutor.value.trim(),
+          email:       form.email.value.trim(),
+          celular:     form.celular.value.trim(),
+          mascota:     form.mascota.value.trim(),
+          especie:     form.especie.value,
+          raza:        form.raza.value.trim(),
+          vacuna:      vacunas.join(", "),
+          fecha:       form.fecha.value,
+          comentarios: form.comentarios.value.trim(),
+          origen:      "Sitio web"
         };
 
         btn.disabled = true;
@@ -1310,8 +1372,9 @@
               "🐾 Mascota: " + encodeURIComponent(data.mascota) + "%0A" +
               "Especie: " + encodeURIComponent(data.especie) + "%0A" +
               (data.raza ? "Raza: " + encodeURIComponent(data.raza) + "%0A" : "") +
-              "%0A💉 Vacuna: " + encodeURIComponent(data.vacuna || "-") + "%0A" +
-              "Fecha: " + encodeURIComponent(data.fecha || "-");
+              "%0A💉 Vacunas: " + encodeURIComponent(data.vacuna || "-") + "%0A" +
+              "Fecha: " + encodeURIComponent(data.fecha || "-") +
+              (data.comentarios ? "%0A%0A📝 Comentarios: " + encodeURIComponent(data.comentarios) : "");
             window.open("https://wa.me/" + WHATSAPP_NUMERO + "?text=" + msg, "_blank");
             showSuccess();
           }

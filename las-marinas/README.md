@@ -53,7 +53,7 @@ Ej: `vetlasmarinas.com.ar`
 
 ## Cosas a personalizar antes de publicar
 
-- [ ] Número de WhatsApp: buscar `5491147253322` y reemplazar con el número real
+- [x] Números de WhatsApp: Abel `5491151827408`, Octavio `5491170623869` (registro de vacunación llega a Octavio)
 - [ ] Reseñas: podés actualizar el texto de los comentarios
 - [ ] Foto del local o del equipo: agregar una imagen en `/public/` y referenciarla en el hero
 - [ ] Dominio propio en Firebase Console
@@ -75,8 +75,8 @@ formulario envía los datos por WhatsApp como respaldo. Para conectarlo a una
 planilla:
 
 1. Creá una **Google Sheet** nueva (con tu cuenta `oochoa@fvet.uba.ar`).
-   Poné estos encabezados en la fila 1, columnas A–J:
-   `Fecha registro | Tutor | Email | Celular | Mascota | Especie | Raza | Vacuna | Fecha aplicación | Origen`
+   Poné estos encabezados en la fila 1, columnas A–K:
+   `Fecha registro | Tutor | Email | Celular | Mascota | Especie | Raza | Vacunas | Fecha aplicación | Comentarios | Origen`
 2. En la Sheet: menú **Extensiones → Apps Script**. Borrá lo que haya y pegá:
 
    ```javascript
@@ -85,7 +85,7 @@ planilla:
      const p = e.parameter;
      sheet.appendRow([
        new Date(), p.tutor, p.email, p.celular,
-       p.mascota, p.especie, p.raza, p.vacuna, p.fecha, p.origen
+       p.mascota, p.especie, p.raza, p.vacuna, p.fecha, p.comentarios, p.origen
      ]);
      return ContentService.createTextOutput("ok");
    }

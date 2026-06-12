@@ -71,7 +71,13 @@
     border-top:1.5px dashed var(--naranja-oscuro);
     text-align:center; font-size:14px; color:var(--carbon-suave);
   }
-  .cover .field-line b{ display:block; font-size:18px; color:var(--carbon); margin-top:4px; font-family:'Baloo 2',cursive; }
+  .cover .field-line input{
+    display:block; width:100%; margin-top:6px; border:none; background:transparent;
+    text-align:center; font-size:18px; font-weight:700; color:var(--carbon);
+    font-family:'Baloo 2',cursive; padding:4px 0;
+  }
+  .cover .field-line input:focus{ outline:none; }
+  .cover .field-line input::placeholder{ color:#c9c2b4; font-weight:400; font-size:13px; }
 
   /* Encabezado de página interior */
   .pg-head{ display:flex; align-items:center; gap:10px; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid var(--naranja-suave); }
@@ -85,6 +91,13 @@
   .field{ }
   .field label{ display:block; font-size:10.5px; font-weight:700; color:var(--naranja-oscuro); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:3px; }
   .field .line{ border-bottom:1.3px solid var(--linea); height:22px; }
+  .fill{
+    width:100%; height:22px; border:none; border-bottom:1.3px solid var(--linea);
+    background:transparent; font-family:'Nunito',sans-serif; font-size:13px;
+    color:var(--carbon); padding:2px 0;
+  }
+  .fill:focus{ outline:none; border-bottom-color:var(--naranja); }
+  textarea.fill{ height:auto; min-height:48px; resize:vertical; border:1.3px solid var(--linea); border-radius:8px; padding:6px 8px; font-size:12px; }
   .section-title{ font-size:13px; font-weight:700; color:var(--carbon); margin:18px 0 10px; display:flex; align-items:center; gap:6px; }
   .section-title i{ color:var(--naranja); }
   .photo-box{
@@ -100,9 +113,14 @@
     background:var(--naranja); color:#fff; font-weight:700;
     padding:8px 5px; text-align:left; font-size:10.5px;
   }
-  table.reg td{ border-bottom:1px solid var(--linea); padding:13px 5px; vertical-align:top; }
+  table.reg td{ border-bottom:1px solid var(--linea); padding:4px; vertical-align:top; }
   table.reg tr:nth-child(even) td{ background:rgba(239,138,34,0.05); }
   table.reg th:first-child, table.reg td:first-child{ border-radius:0; }
+  table.reg .fill-cell{
+    width:100%; height:28px; border:none; background:transparent;
+    font-family:'Nunito',sans-serif; font-size:11px; color:var(--carbon); padding:4px;
+  }
+  table.reg .fill-cell:focus{ outline:none; background:rgba(239,138,34,0.12); border-radius:4px; }
 
   .note-box{
     margin-top:16px; padding:12px 14px; background:var(--naranja-suave);
@@ -137,8 +155,9 @@
 <body>
 
 <div class="toolbar">
-  <span><i class="ti ti-notebook"></i> Libreta Sanitaria — lista para imprimir en A5 (formato libreto)</span>
-  <button onclick="window.print()"><i class="ti ti-printer"></i> Imprimir / Guardar PDF</button>
+  <span><i class="ti ti-notebook"></i> Completá los datos de tu mascota y guardá tu libreta en PDF</span>
+  <button onclick="window.print()"><i class="ti ti-printer"></i> Guardar como PDF</button>
+  <button onclick="limpiarLibreta()" style="background:transparent;border:1.5px solid #6a655c;"><i class="ti ti-eraser"></i> Borrar datos</button>
 </div>
 
 <!-- Símbolos reutilizables -->
@@ -187,7 +206,7 @@
   <div class="addr">Av. Pres. Perón 2492, Victoria, San Fernando</div>
   <div class="field-line">
     Esta libreta pertenece a
-    <b>____________________________</b>
+    <input type="text" data-key="cover-nombre" placeholder="Nombre de tu mascota" />
   </div>
 </div>
 
@@ -202,22 +221,22 @@
   <div class="section-title"><i class="ti ti-paw-filled"></i> Mi mascota</div>
   <div class="data-grid">
     <div class="photo-box"><i class="ti ti-camera"></i> Foto de tu mascota (opcional)</div>
-    <div class="field"><label>Nombre</label><div class="line"></div></div>
-    <div class="field"><label>Especie</label><div class="line"></div></div>
-    <div class="field"><label>Raza</label><div class="line"></div></div>
-    <div class="field"><label>Sexo</label><div class="line"></div></div>
-    <div class="field"><label>Fecha de nacimiento</label><div class="line"></div></div>
-    <div class="field"><label>Color / Señas particulares</label><div class="line"></div></div>
-    <div class="field"><label>Esterilizado/a</label><div class="line"></div></div>
-    <div class="field"><label>Microchip / N° identificación</label><div class="line"></div></div>
+    <div class="field"><label>Nombre</label><input class="fill" type="text" data-key="mascota-nombre" /></div>
+    <div class="field"><label>Especie</label><input class="fill" type="text" data-key="mascota-especie" /></div>
+    <div class="field"><label>Raza</label><input class="fill" type="text" data-key="mascota-raza" /></div>
+    <div class="field"><label>Sexo</label><input class="fill" type="text" data-key="mascota-sexo" /></div>
+    <div class="field"><label>Fecha de nacimiento</label><input class="fill" type="text" data-key="mascota-nacimiento" /></div>
+    <div class="field"><label>Color / Señas particulares</label><input class="fill" type="text" data-key="mascota-color" /></div>
+    <div class="field"><label>Esterilizado/a</label><input class="fill" type="text" data-key="mascota-esterilizado" /></div>
+    <div class="field"><label>Microchip / N° identificación</label><input class="fill" type="text" data-key="mascota-chip" /></div>
   </div>
 
   <div class="section-title"><i class="ti ti-user"></i> Tutor responsable</div>
   <div class="data-grid">
-    <div class="field full"><label>Nombre y apellido</label><div class="line"></div></div>
-    <div class="field"><label>Celular</label><div class="line"></div></div>
-    <div class="field"><label>Email</label><div class="line"></div></div>
-    <div class="field full"><label>Dirección</label><div class="line"></div></div>
+    <div class="field full"><label>Nombre y apellido</label><input class="fill" type="text" data-key="tutor-nombre" /></div>
+    <div class="field"><label>Celular</label><input class="fill" type="text" data-key="tutor-celular" /></div>
+    <div class="field"><label>Email</label><input class="fill" type="text" data-key="tutor-email" /></div>
+    <div class="field full"><label>Dirección</label><input class="fill" type="text" data-key="tutor-direccion" /></div>
   </div>
 
   <div class="note-box">
@@ -237,15 +256,7 @@
     <thead>
       <tr><th>Vacuna</th><th>Fecha</th><th>Próxima dosis</th><th>Veterinario / Sello</th></tr>
     </thead>
-    <tbody>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-    </tbody>
+    <tbody id="tbl-vacunas"></tbody>
   </table>
   <div class="note-box">
     <b>Vacunas frecuentes:</b> Quíntuple/Séxtuple y Antirrábica (perros) ·
@@ -266,23 +277,13 @@
   <div class="section-title"><i class="ti ti-pill"></i> Desparasitación interna</div>
   <table class="reg">
     <thead><tr><th>Producto</th><th>Fecha</th><th>Próxima dosis</th><th>Veterinario / Sello</th></tr></thead>
-    <tbody>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-    </tbody>
+    <tbody id="tbl-desp-interna"></tbody>
   </table>
 
   <div class="section-title" style="margin-top:24px"><i class="ti ti-bug"></i> Desparasitación externa (pulgas y garrapatas)</div>
   <table class="reg">
     <thead><tr><th>Producto</th><th>Fecha</th><th>Próxima dosis</th><th>Veterinario / Sello</th></tr></thead>
-    <tbody>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-    </tbody>
+    <tbody id="tbl-desp-externa"></tbody>
   </table>
 
   <div class="note-box">
@@ -302,18 +303,7 @@
     <thead>
       <tr><th style="width:16%">Fecha</th><th style="width:12%">Peso</th><th>Motivo / Observaciones</th><th style="width:18%">Veterinario</th></tr>
     </thead>
-    <tbody>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-      <tr><td></td><td></td><td></td><td></td></tr>
-    </tbody>
+    <tbody id="tbl-controles"></tbody>
   </table>
 </div>
 
@@ -356,6 +346,60 @@
     </div>
   </div>
 </div>
+
+<script>
+  const STORAGE_KEY = "libreta-las-marinas";
+
+  function buildRows(tbodyId, cols, prefix, count) {
+    const tbody = document.getElementById(tbodyId);
+    let html = "";
+    for (let r = 0; r < count; r++) {
+      html += "<tr>";
+      for (let c = 0; c < cols; c++) {
+        html += '<td><input class="fill-cell" type="text" data-key="' + prefix + '-' + r + '-' + c + '" /></td>';
+      }
+      html += "</tr>";
+    }
+    tbody.innerHTML = html;
+  }
+
+  buildRows("tbl-vacunas", 4, "vacuna", 7);
+  buildRows("tbl-desp-interna", 4, "desp-int", 4);
+  buildRows("tbl-desp-externa", 4, "desp-ext", 4);
+  buildRows("tbl-controles", 4, "control", 10);
+
+  function getData() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+
+  function saveField(key, value) {
+    const data = getData();
+    data[key] = value;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  }
+
+  function loadFields() {
+    const data = getData();
+    document.querySelectorAll("[data-key]").forEach(function (el) {
+      if (data[el.dataset.key] !== undefined) el.value = data[el.dataset.key];
+    });
+  }
+
+  document.addEventListener("input", function (e) {
+    if (e.target.dataset && e.target.dataset.key) {
+      saveField(e.target.dataset.key, e.target.value);
+    }
+  });
+
+  function limpiarLibreta() {
+    if (!confirm("¿Borrar todos los datos completados de la libreta?")) return;
+    localStorage.removeItem(STORAGE_KEY);
+    document.querySelectorAll("[data-key]").forEach(function (el) { el.value = ""; });
+  }
+
+  loadFields();
+</script>
 
 </body>
 </html>

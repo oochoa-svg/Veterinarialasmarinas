@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cartel QR · Veterinaria Las Marinas</title>
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+<style>
+  :root{
+    --naranja:#EF8A22;
+    --naranja-oscuro:#C76A12;
+    --carbon:#2B2B2B;
+    --crema:#FBF6EE;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Nunito',sans-serif; color:var(--carbon); background:#ddd7cc; }
+  .toolbar{
+    position:sticky; top:0; z-index:10; background:var(--carbon); color:#fff;
+    padding:12px 18px; display:flex; align-items:center; justify-content:center; gap:12px; font-size:14px;
+  }
+  .toolbar button{
+    background:var(--naranja); color:#fff; border:none; padding:10px 22px; border-radius:24px;
+    font-weight:700; font-size:14px; cursor:pointer; font-family:'Nunito',sans-serif;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .poster{
+    width:148mm; min-height:210mm; margin:18px auto; background:var(--crema);
+    box-shadow:0 6px 24px rgba(0,0,0,0.18); padding:18mm 14mm;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; position:relative; overflow:hidden;
+  }
+  .paw-bg{ position:absolute; opacity:0.06; fill:var(--naranja); }
+  .medallion{ width:120px; height:120px; margin-bottom:18px; }
+  .poster h1{ font-family:'Baloo 2',cursive; font-size:30px; color:var(--naranja); margin:0 0 6px; font-weight:700; }
+  .poster .sub{ font-size:15px; color:#4A4A4A; margin-bottom:28px; max-width:90mm; line-height:1.5; }
+  .qr-box{ background:#fff; border-radius:18px; padding:18px; box-shadow:0 8px 24px rgba(0,0,0,0.10); margin-bottom:22px; }
+  .qr-box img{ width:65mm; height:65mm; display:block; }
+  .poster .url{ font-family:'Baloo 2',cursive; font-size:19px; font-weight:700; color:var(--carbon); margin-bottom:24px; }
+  .poster .tagline{ font-size:13px; color:#8a8478; max-width:90mm; line-height:1.6; }
+  .poster .clinic{ margin-top:28px; font-size:13px; color:#8a8478; }
+  .poster .clinic b{ color:var(--carbon); font-family:'Baloo 2',cursive; font-size:15px; }
+
+  @page{ size:A5; margin:0; }
+  @media print{
+    body{ background:#fff; }
+    .toolbar{ display:none; }
+    .poster{ margin:0; box-shadow:none; }
+  }
+  @media (max-width:480px){
+    .poster{ width:100%; min-height:auto; padding:10mm; }
+    .qr-box img{ width:55mm; height:55mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button onclick="window.print()"><i class="ti ti-printer"></i> Imprimir cartel (A5)</button>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="caduceo" viewBox="0 0 100 100">
+    <g fill="none" stroke="#2B2B2B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="50" y1="15" x2="50" y2="86"/>
+      <path d="M50 37 C 35 45, 65 53, 50 61 C 35 69, 65 77, 50 85"/>
+      <path d="M50 37 C 65 45, 35 53, 50 61 C 65 69, 35 77, 50 85"/>
+    </g>
+    <circle cx="50" cy="13" r="4.5" fill="#2B2B2B"/>
+    <path d="M50 27 C 39 20, 26 21, 19 30 C 29 28, 40 31, 50 37 Z" fill="#2B2B2B"/>
+    <path d="M50 27 C 61 20, 74 21, 81 30 C 71 28, 60 31, 50 37 Z" fill="#2B2B2B"/>
+  </symbol>
+  <symbol id="rope-ring" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="80" fill="#fff"/>
+    <circle cx="100" cy="100" r="96" fill="none" stroke="#EF8A22" stroke-width="2"/>
+    <circle cx="100" cy="100" r="89" fill="none" stroke="#EF8A22" stroke-width="13"/>
+    <circle cx="100" cy="100" r="89" fill="none" stroke="#F6B25E" stroke-width="13" stroke-dasharray="7 11" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="81" fill="none" stroke="#EF8A22" stroke-width="2"/>
+  </symbol>
+  <symbol id="logo-full" viewBox="0 0 200 200">
+    <use href="#rope-ring"/>
+    <use href="#caduceo" x="64" y="28" width="72" height="72"/>
+    <text x="100" y="126" text-anchor="middle" fill="#EF8A22" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700">M</text>
+    <text x="100" y="150" text-anchor="middle" fill="#2B2B2B" font-family="'Baloo 2', cursive" font-size="18" font-weight="700">Las Marinas</text>
+    <text x="100" y="164" text-anchor="middle" fill="#2B2B2B" font-family="'Nunito', sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.5">VETERINARIA</text>
+  </symbol>
+  <symbol id="paw" viewBox="0 0 100 100">
+    <ellipse cx="50" cy="64" rx="23" ry="19"/>
+    <ellipse cx="24" cy="40" rx="8.5" ry="11.5"/>
+    <ellipse cx="42" cy="27" rx="8.5" ry="12.5"/>
+    <ellipse cx="58" cy="27" rx="8.5" ry="12.5"/>
+    <ellipse cx="76" cy="40" rx="8.5" ry="11.5"/>
+  </symbol>
+</svg>
+
+<div class="poster">
+  <svg class="paw-bg" style="top:-20px;left:-30px;width:140px;transform:rotate(-15deg)"><use href="#paw"/></svg>
+  <svg class="paw-bg" style="bottom:30px;right:-20px;width:110px;transform:rotate(20deg)"><use href="#paw"/></svg>
+
+  <svg class="medallion" viewBox="0 0 200 200"><use href="#logo-full"/></svg>
+  <h1>Visitá nuestro sitio</h1>
+  <div class="sub">Turnos, plan de vacunación, contacto directo por WhatsApp y mucho más</div>
+
+  <div class="qr-box">
+    <img src="img/qr-sitio.png" alt="Código QR de Veterinaria Las Marinas" />
+  </div>
+
+  <div class="url">veterinarialasmarinas.web.app</div>
+  <div class="tagline">
+    Escaneá el código con la cámara de tu celular para acceder. Guardalo en tu
+    pantalla de inicio para tener siempre a mano nuestro WhatsApp y horarios.
+  </div>
+
+  <div class="clinic">
+    <b>Veterinaria Las Marinas</b><br>
+    Av. Pres. Perón 2492, Victoria, San Fernando
+  </div>
+</div>
+
+</body>
+</html>

@@ -782,12 +782,15 @@
     }
     .team-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(43,43,43,0.10); }
     .team-avatar {
-      width: 64px; height: 64px;
+      width: 96px; height: 96px;
       background: var(--naranja-suave);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 14px;
+      overflow: hidden;
+      border: 3px solid var(--naranja-tinte);
     }
+    .team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .team-avatar .caduceo { width: 32px; height: 32px; }
     .team-name { font-family: 'Baloo 2', cursive; font-size: 17px; font-weight: 700; color: var(--carbon); margin-bottom: 4px; }
     .team-role { font-size: 13px; color: var(--naranja-oscuro); font-weight: 600; margin-bottom: 14px; }
@@ -806,6 +809,45 @@
     }
     .team-wa i { color: var(--wa); font-size: 16px; }
     .team-wa:hover { transform: translateY(-2px); background: var(--naranja-tinte); }
+
+    /* ── GALERÍA (carrusel horizontal) ── */
+    .galeria-section { background: var(--crema); overflow: hidden; }
+    .galeria-section .section-inner { max-width: 1100px; }
+    .galeria-viewport {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      -webkit-mask: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+              mask: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    }
+    .galeria-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: galeria-scroll 45s linear infinite;
+    }
+    .galeria-viewport:hover .galeria-track { animation-play-state: paused; }
+    .galeria-item {
+      flex: 0 0 auto;
+      width: 300px;
+      height: 230px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(43,43,43,0.12);
+      background: var(--blanco);
+    }
+    .galeria-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @keyframes galeria-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(calc(-50% - 8px)); }
+    }
+    @media (max-width: 480px) {
+      .galeria-item { width: 240px; height: 185px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .galeria-track { animation: none; }
+      .galeria-viewport { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    }
     .footer-logo b { font-family: 'Baloo 2', cursive; color: var(--crema); font-size: 16px; }
     footer p { font-size: 13px; color: #9a958c; }
     footer a { color: var(--naranja); text-decoration: none; }
@@ -1123,7 +1165,7 @@
       <div class="divider"></div>
       <div class="team-grid">
         <div class="team-card">
-          <div class="team-avatar"><svg class="caduceo"><use href="#caduceo"/></svg></div>
+          <div class="team-avatar"><img src="img/team-abel.jpg" width="96" height="96" loading="lazy" alt="Dr. Abel Fernández, veterinario clínico de Las Marinas" /></div>
           <div class="team-name">Dr. Abel Fernández</div>
           <div class="team-role">Veterinario Clínico</div>
           <a class="team-wa" href="https://wa.me/5491151827408?text=Hola%20Abel!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
@@ -1131,13 +1173,41 @@
           </a>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><svg class="caduceo"><use href="#caduceo"/></svg></div>
+          <div class="team-avatar"><img src="img/team-octavio.jpg" width="96" height="96" loading="lazy" alt="Octavio Ochoa, veterinario clínico de Las Marinas" /></div>
           <div class="team-name">Octavio Ochoa</div>
           <div class="team-role">Veterinario Clínico</div>
           <a class="team-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
             <i class="ti ti-brand-whatsapp"></i> Escribirle
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="galeria-section">
+    <div class="section-inner">
+      <h2 class="section-title">Nuestro día a día</h2>
+      <p class="section-sub">Mascotas felices y atención de cerca en Las Marinas</p>
+      <div class="divider"></div>
+    </div>
+    <div class="galeria-viewport">
+      <div class="galeria-track">
+        <div class="galeria-item"><img src="img/gal-bulldog.jpg" loading="lazy" alt="Cachorro bulldog francés en brazos en la veterinaria" /></div>
+        <div class="galeria-item"><img src="img/gal-atencion-cachorros.jpg" loading="lazy" alt="Veterinario atendiendo cachorros en la camilla" /></div>
+        <div class="galeria-item"><img src="img/gal-consultorio.jpg" loading="lazy" alt="Perros esperando en el consultorio" /></div>
+        <div class="galeria-item"><img src="img/gal-galgos.jpg" loading="lazy" alt="Equipo de Las Marinas con un galgo" /></div>
+        <div class="galeria-item"><img src="img/gal-boxer.jpg" loading="lazy" alt="Atención de un boxer en la veterinaria" /></div>
+        <div class="galeria-item"><img src="img/gal-perros-local.jpg" loading="lazy" alt="Perros en el local de la veterinaria" /></div>
+        <div class="galeria-item"><img src="img/gal-octavio.jpg" loading="lazy" alt="Veterinario revisando un cachorro con estetoscopio" /></div>
+        <!-- Duplicado para loop continuo -->
+        <div class="galeria-item"><img src="img/gal-bulldog.jpg" loading="lazy" alt="" aria-hidden="true" /></div>
+        <div class="galeria-item"><img src="img/gal-atencion-cachorros.jpg" loading="lazy" alt="" aria-hidden="true" /></div>
+        <div class="galeria-item"><img src="img/gal-consultorio.jpg" loading="lazy" alt="" aria-hidden="true" /></div>
+        <div class="galeria-item"><img src="img/gal-galgos.jpg" loading="lazy" alt="" aria-hidden="true" /></div>
+        <div class="galeria-item"><img src="img/gal-boxer.jpg" loading="lazy" alt="" aria-hidden="true" /></div>
+        <div class="galeria-item"><img src="img/gal-perros-local.jpg" loading="lazy" alt="" aria-hidden="true" /></div>
+        <div class="galeria-item"><img src="img/gal-octavio.jpg" loading="lazy" alt="" aria-hidden="true" /></div>
       </div>
     </div>
   </section>

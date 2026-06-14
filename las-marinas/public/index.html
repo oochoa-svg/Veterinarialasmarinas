@@ -706,6 +706,19 @@
       padding: 8px;
     }
     .qr-share span { font-size: 13px; color: rgba(255,255,255,0.92); }
+    .qr-cartel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      opacity: 0.92;
+      transition: opacity 0.15s;
+    }
+    .qr-cartel-link:hover { opacity: 1; }
     .wa-btn {
       display: inline-flex;
       align-items: center;
@@ -1426,6 +1439,9 @@
         <div class="qr-share">
           <img src="img/qr-sitio.png" width="120" height="120" loading="lazy" alt="Código QR para acceder a veterinarialasmarinas.web.app" />
           <span><i class="ti ti-qrcode"></i> Escaneá para guardar este sitio o compartirlo</span>
+          <a href="cartel-turnos.html" target="_blank" rel="noopener" class="qr-cartel-link">
+            <i class="ti ti-printer"></i> Imprimir cartel de turnos
+          </a>
         </div>
       </div>
     </div>

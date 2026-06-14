@@ -1,0 +1,14 @@
+{
+  "name": "Veterinaria Las Marinas",
+  "short_name": "Las Marinas",
+  "description": "Veterinaria Las Marinas en Victoria, San Fernando. Turnos, vacunación, cirugías y pet shop.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF6EE",
+  "theme_color": "#EF8A22",
+  "icons": [
+    { "src": "img/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}

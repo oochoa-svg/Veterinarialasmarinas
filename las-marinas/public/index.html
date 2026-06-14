@@ -970,6 +970,24 @@
       color: var(--carbon-suave);
       margin-top: 18px;
     }
+    .edu-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+      color: #fff;
+      padding: 13px 26px;
+      border-radius: 28px;
+      font-size: 14.5px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      margin-top: 20px;
+      box-shadow: 0 8px 20px -8px rgba(239,138,34,0.6);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .edu-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -8px rgba(239,138,34,0.7); }
+    .edu-cards-stack { display: flex; flex-direction: column; gap: 22px; }
 
     /* ── FAQ ── */
     .faq-section { background: var(--crema); }
@@ -1218,6 +1236,7 @@
       <h2 class="section-title">Cuidados de tu mascota</h2>
       <p class="section-sub">Consejos del equipo de Las Marinas</p>
       <div class="divider"></div>
+      <div class="edu-cards-stack">
       <article class="edu-card">
         <span class="edu-tag"><i class="ti ti-bug"></i> Salud preventiva</span>
         <h3>Desparasitación: por qué es clave (y cada cuánto hacerla)</h3>
@@ -1246,7 +1265,50 @@
           💡 Cada mascota es distinta: el plan ideal depende de la edad, el peso y el estilo de
           vida. Escribinos y armamos el calendario de desparasitación y vacunación a medida.
         </div>
+
+        <a class="edu-cta" href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener">
+          <i class="ti ti-calendar-plus"></i> Pedir turno para desparasitar
+        </a>
       </article>
+
+      <article class="edu-card">
+        <span class="edu-tag"><i class="ti ti-vaccine"></i> Vacunación felina</span>
+        <h3>Vacunas para tu gato: lo que todo tutor debería saber</h3>
+        <p>
+          Las vacunas preparan el sistema inmunológico de tu gato para defenderse de virus y
+          bacterias peligrosas. Gracias a ellas, millones de gatos evitan enfermedades graves
+          cada año, y algunas —como la antirrábica— también protegen a las personas de la casa.
+        </p>
+        <p>
+          Incluso si tu gato <strong>vive siempre adentro</strong>, necesita su plan de vacunación:
+          puede estar expuesto a virus a través de otra mascota nueva, una visita a la veterinaria,
+          una temporada de pensión o hasta en tu ropa después de estar en contacto con otros animales.
+        </p>
+
+        <h4>¿Por qué los gatitos necesitan varias dosis?</h4>
+        <ul class="edu-list">
+          <li><i class="ti ti-paw"></i> <span>Al nacer, reciben anticuerpos de la madre a través de la leche, que los protegen los primeros meses.</span></li>
+          <li><i class="ti ti-paw"></i> <span>Esa protección va bajando de forma distinta en cada gatito, por eso se aplica una <strong>serie de vacunas</strong> y no una sola dosis.</span></li>
+          <li><i class="ti ti-paw"></i> <span>Lo recomendable es completar el esquema y reforzarlo a partir de las <strong>16 semanas</strong> de edad.</span></li>
+        </ul>
+
+        <h4>¿Es normal que mi gato esté "decaído" después de vacunarse?</h4>
+        <ul class="edu-list">
+          <li><i class="ti ti-info-circle"></i> <span>Es común una leve molestia de 1-2 días: menos apetito, sueño o algo de fiebre. Suele resolverse solo.</span></li>
+          <li><i class="ti ti-alert-triangle"></i> <span>Si aparecen vómitos, diarrea, hinchazón en la cara o dificultad para respirar (a minutos u horas de la vacuna), es <strong>urgencia</strong>: contactanos enseguida.</span></li>
+          <li><i class="ti ti-alert-triangle"></i> <span>Cualquier bulto que quede en la zona de la inyección y no desaparezca, consultanos.</span></li>
+        </ul>
+
+        <div class="edu-callout">
+          🐱 El plan de vacunas ideal depende de la edad, el estilo de vida y los riesgos de tu zona.
+          En la consulta armamos juntos el esquema de tu gato y te lo registramos en su carnet.
+        </div>
+
+        <a class="edu-cta" href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener">
+          <i class="ti ti-calendar-plus"></i> Pedir turno de vacunación
+        </a>
+      </article>
+      </div>
     </div>
   </section>
 

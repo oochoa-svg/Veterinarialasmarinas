@@ -95,7 +95,7 @@
       {
         "@type": "Question",
         "name": "¿Necesito turno o puedo ir directamente?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Podés acercarte en nuestro horario de atención. Para evitar esperas, te recomendamos escribirnos por WhatsApp y coordinar un horario." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Podés acercarte en nuestro horario de atención. Para evitar esperas, te recomendamos pedir turno online desde nuestro sistema de reservas o escribirnos por WhatsApp para coordinar un horario." }
       },
       {
         "@type": "Question",
@@ -215,6 +215,17 @@
       transition: background 0.2s, transform 0.15s;
     }
     .nav-cta:hover { background: var(--naranja-oscuro); transform: translateY(-1px); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-cta.turno {
+      background: var(--blanco);
+      color: var(--naranja-oscuro);
+      border: 1.5px solid var(--naranja);
+    }
+    .nav-cta.turno:hover { background: var(--naranja-suave); color: var(--naranja-oscuro); }
+    @media (max-width: 480px) {
+      .nav-cta.turno .nav-cta-label { display: none; }
+      .nav-cta.turno { padding: 9px 12px; }
+    }
 
     /* ── HERO ── */
     .hero {
@@ -318,6 +329,24 @@
       transition: border-color 0.2s, transform 0.15s;
     }
     .btn-ghost:hover { border-color: var(--naranja); color: var(--naranja-oscuro); transform: translateY(-2px); }
+    .btn-turno {
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 28px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'Nunito', sans-serif;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(239,138,34,0.30);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-turno:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(239,138,34,0.40); }
     .hero-badges {
       display: flex;
       gap: 12px;
@@ -960,9 +989,14 @@
         <span>Veterinaria</span>
       </span>
     </a>
-    <a class="nav-cta" href="https://wa.me/5491151827408?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
-      <i class="ti ti-brand-whatsapp"></i> Consultanos
-    </a>
+    <div class="nav-actions">
+      <a class="nav-cta turno" href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener">
+        <i class="ti ti-calendar-plus"></i> <span class="nav-cta-label">Pedir turno</span>
+      </a>
+      <a class="nav-cta" href="https://wa.me/5491151827408?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp"></i> Consultanos
+      </a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -976,6 +1010,9 @@
       <h1>Tu veterinaria de barrio, desde hace <em>más de 20 años</em></h1>
       <p class="hero-sub">Atención personalizada para perros y gatos. El Dr. Abel conoce a tu mascota por nombre.</p>
       <div class="hero-btns">
+        <a class="btn-turno" href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener">
+          <i class="ti ti-calendar-plus"></i> Pedir turno online
+        </a>
         <a class="btn-primary" href="https://wa.me/5491151827408?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Consultanos por WhatsApp
         </a>
@@ -1252,7 +1289,8 @@
           <summary>¿Necesito turno o puedo ir directamente? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
             Podés acercarte en nuestro horario de atención. Para evitar esperas, te recomendamos
-            escribirnos por WhatsApp y coordinar un horario.
+            <strong><a href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener" style="color:var(--naranja-oscuro);text-decoration:underline;">pedir turno online</a></strong>
+            o escribirnos por WhatsApp para coordinar un horario.
           </div>
         </details>
 
@@ -1346,7 +1384,10 @@
       <svg class="paw-bg light" style="bottom:-15px;left:-5px;width:80px;transform:rotate(-10deg);opacity:0.12"><use href="#paw"/></svg>
       <div class="hero-inner">
         <h2 class="cta-title">¿Tenés una consulta?</h2>
-        <p class="cta-sub">Escribinos por WhatsApp y te respondemos a la brevedad. Sin esperas, sin formularios.</p>
+        <p class="cta-sub">Reservá tu turno online o escribinos por WhatsApp. Te respondemos a la brevedad.</p>
+        <a class="wa-btn" href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener" style="margin-bottom:12px;">
+          <i class="ti ti-calendar-plus" style="color:var(--naranja);"></i> Pedir turno online
+        </a>
         <a class="wa-btn" href="https://wa.me/5491151827408?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Escribir por WhatsApp
         </a>

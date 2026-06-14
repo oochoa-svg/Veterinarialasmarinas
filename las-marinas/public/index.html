@@ -988,6 +988,61 @@
     }
     .edu-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -8px rgba(239,138,34,0.7); }
     .edu-cards-stack { display: flex; flex-direction: column; gap: 22px; }
+    /* ── Pestañas de categorías ── */
+    .edu-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .edu-tab {
+      background: var(--blanco);
+      border: 1.5px solid var(--linea);
+      color: var(--carbon-suave);
+      padding: 9px 20px;
+      border-radius: 22px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.15s;
+    }
+    .edu-tab:hover { border-color: var(--naranja); color: var(--naranja-oscuro); }
+    .edu-tab.active {
+      background: var(--naranja);
+      border-color: var(--naranja);
+      color: #fff;
+    }
+    .edu-card[hidden] { display: none; }
+    /* ── Flipbook / publicación embebida ── */
+    .edu-flip {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      margin: 6px auto 4px;
+      aspect-ratio: 300 / 194;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(43,43,43,0.14);
+      background: #f0ece4;
+    }
+    .edu-flip iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .edu-flip-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 2px auto 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--naranja-oscuro);
+      text-decoration: none;
+    }
+    .edu-flip-link:hover { text-decoration: underline; }
+    .edu-flip-wrap { text-align: center; }
 
     /* ── FAQ ── */
     .faq-section { background: var(--crema); }
@@ -1236,8 +1291,15 @@
       <h2 class="section-title">Cuidados de tu mascota</h2>
       <p class="section-sub">Consejos del equipo de Las Marinas</p>
       <div class="divider"></div>
+
+      <div class="edu-tabs" role="tablist">
+        <button class="edu-tab active" data-filter="todos"><i class="ti ti-paw-filled"></i> Todos</button>
+        <button class="edu-tab" data-filter="gatos"><i class="ti ti-cat"></i> Gatos</button>
+        <button class="edu-tab" data-filter="perros"><i class="ti ti-dog"></i> Perros</button>
+      </div>
+
       <div class="edu-cards-stack">
-      <article class="edu-card">
+      <article class="edu-card" data-cat="perros gatos">
         <span class="edu-tag"><i class="ti ti-bug"></i> Salud preventiva</span>
         <h3>Desparasitación: por qué es clave (y cada cuánto hacerla)</h3>
         <p>
@@ -1271,7 +1333,7 @@
         </a>
       </article>
 
-      <article class="edu-card">
+      <article class="edu-card" data-cat="gatos">
         <span class="edu-tag"><i class="ti ti-vaccine"></i> Vacunación felina</span>
         <h3>Vacunas para tu gato: lo que todo tutor debería saber</h3>
         <p>
@@ -1309,7 +1371,7 @@
         </a>
       </article>
 
-      <article class="edu-card">
+      <article class="edu-card" data-cat="gatos">
         <span class="edu-tag"><i class="ti ti-mood-sad"></i> Bienestar felino</span>
         <h3>¿Cómo sé si mi gato tiene dolor?</h3>
         <p>
@@ -1338,7 +1400,7 @@
         </a>
       </article>
 
-      <article class="edu-card">
+      <article class="edu-card" data-cat="gatos">
         <span class="edu-tag"><i class="ti ti-car"></i> Visita sin estrés</span>
         <h3>Llevar a tu gato al veterinario sin tanto estrés</h3>
         <p>
@@ -1368,6 +1430,34 @@
 
         <a class="edu-cta" href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener">
           <i class="ti ti-calendar-plus"></i> Pedir turno para mi gato
+        </a>
+      </article>
+
+      <article class="edu-card" data-cat="perros gatos">
+        <span class="edu-tag"><i class="ti ti-baby-carriage"></i> Cachorros y recién nacidos</span>
+        <h3>Neonatología y pediatría felina y canina</h3>
+        <p>
+          Las primeras semanas de vida de un cachorro o gatito son las más delicadas. Compartimos
+          esta guía completa sobre el cuidado de los recién nacidos: lactancia, temperatura,
+          control de peso, primeras desparasitaciones y señales de alerta para actuar a tiempo.
+        </p>
+
+        <div class="edu-flip-wrap">
+          <div class="edu-flip">
+            <iframe src="//v.calameo.com/?bkcode=0075440049a879aa2e22c&AuthID=SHzqY1vzVr9c" allowtransparency allowfullscreen scrolling="no" title="Neonatología y pediatría felina y canina"></iframe>
+          </div>
+          <a class="edu-flip-link" href="https://www.calameo.com/books/0075440049a879aa2e22c?authid=SHzqY1vzVr9c" target="_blank" rel="noopener">
+            <i class="ti ti-book-2"></i> Abrir la guía completa en pantalla grande
+          </a>
+        </div>
+
+        <div class="edu-callout">
+          🍼 ¿Tenés una camada en casa o encontraste un recién nacido? Cuanto antes lo controlemos,
+          mejor. Coordiná una consulta y te guiamos paso a paso.
+        </div>
+
+        <a class="edu-cta" href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener">
+          <i class="ti ti-calendar-plus"></i> Pedir turno para mi cachorro
         </a>
       </article>
       </div>
@@ -1740,6 +1830,25 @@
         success.classList.add("show");
         success.scrollIntoView({ behavior: "smooth", block: "center" });
       }
+    })();
+
+    // ── Filtro de categorías de "Cuidados de tu mascota" ──
+    (function () {
+      const tabs = document.querySelectorAll(".edu-tab");
+      const cards = document.querySelectorAll(".edu-card[data-cat]");
+      if (!tabs.length) return;
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          const filter = tab.getAttribute("data-filter");
+          tabs.forEach(function (t) { t.classList.remove("active"); });
+          tab.classList.add("active");
+          cards.forEach(function (card) {
+            const cats = card.getAttribute("data-cat").split(" ");
+            card.hidden = !(filter === "todos" || cats.indexOf(filter) !== -1);
+          });
+        });
+      });
     })();
   </script>
 

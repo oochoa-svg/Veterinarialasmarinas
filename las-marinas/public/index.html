@@ -920,8 +920,8 @@
       border: 1px solid var(--linea);
       border-radius: 22px;
       padding: 32px 30px;
-      max-width: 660px;
-      margin: 0 auto;
+      flex: 0 0 min(86vw, 440px);
+      scroll-snap-align: start;
     }
     .edu-tag {
       display: inline-flex;
@@ -987,7 +987,17 @@
       transition: transform 0.15s, box-shadow 0.2s;
     }
     .edu-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -8px rgba(239,138,34,0.7); }
-    .edu-cards-stack { display: flex; flex-direction: column; gap: 22px; }
+    .edu-cards-stack {
+      display: flex;
+      flex-direction: row;
+      gap: 22px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 4px 4px 18px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .edu-cards-stack::-webkit-scrollbar { height: 8px; }
+    .edu-cards-stack::-webkit-scrollbar-thumb { background: var(--naranja-suave); border-radius: 8px; }
     /* ── Pestañas de categorías ── */
     .edu-tabs {
       display: flex;

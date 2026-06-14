@@ -825,6 +825,34 @@
       .wa-float i { font-size: 28px; }
     }
 
+    /* ── TURNO FLOTANTE ── */
+    .turno-float {
+      position: fixed;
+      right: 20px;
+      bottom: 84px;
+      z-index: 200;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+      color: #fff;
+      padding: 14px 20px 14px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(239,138,34,0.45);
+      transition: transform 0.15s;
+    }
+    .turno-float:hover { transform: scale(1.05); }
+    .turno-float i { font-size: 24px; }
+    @media (max-width: 480px) {
+      .turno-float { right: 16px; bottom: 82px; padding: 14px; }
+      .turno-float .turno-label { display: none; }
+      .turno-float i { font-size: 28px; }
+    }
+
     /* ── CONTENIDO EDUCATIVO ── */
     .edu-section { background: var(--blanco); }
     .edu-card {
@@ -1411,6 +1439,11 @@
     </div>
     <p>© 2025 · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>
   </footer>
+
+  <!-- TURNO FLOTANTE (reserva online) -->
+  <a class="turno-float" href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener" aria-label="Pedir turno online">
+    <i class="ti ti-calendar-plus"></i><span class="turno-label">Pedir turno</span>
+  </a>
 
   <!-- WHATSAPP FLOTANTE (urgencias y consultas) -->
   <a class="wa-float" href="https://wa.me/5491151827408?text=Hola!%20Tengo%20una%20consulta%2Furgencia." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">

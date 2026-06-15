@@ -944,6 +944,34 @@
       .turno-float i { font-size: 28px; }
     }
 
+    /* ── REGISTRO FLOTANTE ── */
+    .registro-float {
+      position: fixed;
+      right: 20px;
+      bottom: 148px;
+      z-index: 200;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--carbon);
+      color: #fff;
+      padding: 14px 20px 14px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(43,43,43,0.35);
+      transition: transform 0.15s;
+    }
+    .registro-float:hover { transform: scale(1.05); }
+    .registro-float i { font-size: 24px; color: var(--naranja); }
+    @media (max-width: 480px) {
+      .registro-float { right: 16px; bottom: 148px; padding: 14px; }
+      .registro-float .registro-label { display: none; }
+      .registro-float i { font-size: 28px; }
+    }
+
     /* ── CONTENIDO EDUCATIVO ── */
     .edu-section { background: var(--blanco); }
     .edu-card {
@@ -1630,11 +1658,6 @@
     <div class="section-inner">
       <h2 class="section-title">Registrá a tu mascota</h2>
       <p class="section-sub">Sumá a tu mascota para agilizar tu próxima consulta y tu plan de vacunación</p>
-      <div style="text-align:center;margin:6px 0 4px;">
-        <a class="edu-cta" href="https://canalvet.web.app/registro.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener">
-          <i class="ti ti-paw-filled"></i> Registrá a tu mascota
-        </a>
-      </div>
       <p class="section-sub" style="margin-top:-6px">
         ¿Preferís papel? <a href="libreta-sanitaria.html" target="_blank" rel="noopener" style="color:var(--naranja-oscuro);font-weight:700;text-decoration:underline;">Descargá la Libreta Sanitaria</a> para imprimir y completar a mano.
       </p>
@@ -1818,6 +1841,11 @@
     </div>
     <p>© 2025 · Av. Pres. Perón 2492, Victoria, Buenos Aires</p>
   </footer>
+
+  <!-- REGISTRO FLOTANTE (registro del paciente) -->
+  <a class="registro-float" href="https://canalvet.web.app/registro.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener" aria-label="Registrá a tu mascota">
+    <i class="ti ti-paw-filled"></i><span class="registro-label">Registrá tu mascota</span>
+  </a>
 
   <!-- TURNO FLOTANTE (reserva online) -->
   <a class="turno-float" href="https://canalvet.web.app/reserva.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener" aria-label="Pedir turno online">

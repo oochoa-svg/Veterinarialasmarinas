@@ -735,6 +735,26 @@
       transition: opacity 0.15s;
     }
     .qr-cartel-link:hover { opacity: 1; }
+    .qr-cartel-link.dark { color: var(--naranja-oscuro); }
+    .qr-registro {
+      max-width: 580px;
+      margin: 22px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+    .qr-registro img {
+      width: 130px;
+      height: 130px;
+      border-radius: 12px;
+      background: #fff;
+      padding: 8px;
+      border: 1px solid var(--linea);
+    }
+    .qr-registro span { font-size: 13px; color: var(--carbon-suave); max-width: 280px; }
+    .qr-registro span i { color: var(--naranja); }
     .wa-btn {
       display: inline-flex;
       align-items: center;
@@ -1624,6 +1644,14 @@
           ¿No carga el formulario?
           <a href="https://canalvet.web.app/registro.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener" style="color:var(--naranja-oscuro);font-weight:700;text-decoration:underline;">Abrilo en una pestaña nueva</a>.
         </p>
+      </div>
+
+      <div class="qr-registro">
+        <img src="img/qr-registro.png" width="130" height="130" loading="lazy" alt="Código QR para registrarte como paciente" />
+        <span><i class="ti ti-device-mobile"></i> Escaneá con tu celular para registrarte desde el teléfono</span>
+        <a href="cartel-registro.html" target="_blank" rel="noopener" class="qr-cartel-link dark">
+          <i class="ti ti-printer"></i> Imprimir cartel de registro
+        </a>
       </div>
     </div>
   </section>

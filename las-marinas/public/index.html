@@ -483,6 +483,17 @@
       margin: 0 auto;
       box-shadow: 0 20px 50px -20px rgba(43,43,43,0.22);
     }
+    .registro-embed { padding: 16px; }
+    .registro-embed iframe {
+      width: 100%;
+      max-width: 520px;
+      height: 900px;
+      border: 0;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+    .registro-embed .form-note { text-align: center; margin-top: 12px; }
     .form-group { margin-bottom: 15px; }
     .form-row {
       display: grid;
@@ -1597,89 +1608,22 @@
   <!-- REGISTRO / PLAN DE VACUNACIÓN -->
   <section class="registro-section" id="registro">
     <div class="section-inner">
-      <h2 class="section-title">Plan de vacunación</h2>
-      <p class="section-sub">Registrá a tu mascota y te avisamos cuándo toca la próxima vacuna</p>
+      <h2 class="section-title">Registrate como paciente</h2>
+      <p class="section-sub">Registrá a tu mascota para agilizar tu próxima consulta y tu plan de vacunación</p>
       <p class="section-sub" style="margin-top:-6px">
         ¿Preferís papel? <a href="libreta-sanitaria.html" target="_blank" rel="noopener" style="color:var(--naranja-oscuro);font-weight:700;text-decoration:underline;">Descargá la Libreta Sanitaria</a> para imprimir y completar a mano.
       </p>
       <div class="divider"></div>
 
-      <div class="registro-card">
-        <form id="registro-form" novalidate>
-          <div class="form-legend"><i class="ti ti-user"></i> Tus datos</div>
-          <div class="form-group">
-            <label for="tutor">Nombre y apellido <span class="req">*</span></label>
-            <input type="text" id="tutor" name="tutor" required autocomplete="name" />
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email <span class="req">*</span></label>
-              <input type="email" id="email" name="email" required autocomplete="email" />
-            </div>
-            <div class="form-group">
-              <label for="celular">Celular <span class="req">*</span></label>
-              <input type="tel" id="celular" name="celular" required autocomplete="tel" placeholder="11 5555-5555" />
-            </div>
-          </div>
-
-          <div class="form-legend"><i class="ti ti-paw-filled"></i> Tu mascota</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="mascota">Nombre <span class="req">*</span></label>
-              <input type="text" id="mascota" name="mascota" required />
-            </div>
-            <div class="form-group">
-              <label for="especie">Especie <span class="req">*</span></label>
-              <select id="especie" name="especie" required>
-                <option value="" selected disabled>Elegí…</option>
-                <option>Perro</option>
-                <option>Gato</option>
-                <option>Otro</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="raza">Raza <span style="color:var(--muted);font-weight:500">(opcional)</span></label>
-            <input type="text" id="raza" name="raza" />
-          </div>
-
-          <div class="form-legend"><i class="ti ti-vaccine"></i> Última vacunación</div>
-          <div class="form-group">
-            <label>Vacunas aplicadas <span style="color:var(--muted);font-weight:500">(podés marcar más de una)</span></label>
-            <div class="vacuna-checks">
-              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Quíntuple / Séxtuple (perro)" /> Quíntuple / Séxtuple (perro)</label>
-              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Tos de las perreras (Bordetella)" /> Tos de las perreras (Bordetella)</label>
-              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Triple felina (gato)" /> Triple felina (gato)</label>
-              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="ViLeF — Leucemia felina (gato)" /> ViLeF — Leucemia felina (gato)</label>
-              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Antirrábica" /> Antirrábica</label>
-              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="Otra" /> Otra</label>
-              <label class="vacuna-check"><input type="checkbox" name="vacuna" value="No sé / a confirmar" /> No sé / a confirmar</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="fecha">Fecha de aplicación</label>
-            <input type="date" id="fecha" name="fecha" />
-          </div>
-
-          <div class="form-group">
-            <label for="comentarios">Comentarios <span style="color:var(--muted);font-weight:500">(opcional)</span></label>
-            <textarea id="comentarios" name="comentarios" placeholder="Algo más que quieras contarnos…"></textarea>
-          </div>
-
-          <button type="submit" class="form-submit" id="registro-submit">
-            <i class="ti ti-send"></i> Enviar registro
-          </button>
-          <p class="form-note">
-            Usamos tus datos únicamente para recordarte las vacunas de tu mascota.
-            Nunca los compartimos con terceros.
-          </p>
-        </form>
-
-        <div class="form-success" id="registro-success">
-          <div class="ok-icon"><i class="ti ti-check"></i></div>
-          <h3>¡Registro recibido!</h3>
-          <p>Gracias por registrar a tu mascota. Te vamos a avisar cuando se acerque la fecha de la próxima vacuna. 🐾</p>
-        </div>
+      <div class="registro-card registro-embed">
+        <iframe
+          src="https://canalvet.web.app/registro.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3"
+          title="Registro de pacientes — Veterinaria Las Marinas"
+          loading="lazy"></iframe>
+        <p class="form-note">
+          ¿No carga el formulario?
+          <a href="https://canalvet.web.app/registro.html?clinica=M075vpY9lAZqHY96725mcPzsB1H3" target="_blank" rel="noopener" style="color:var(--naranja-oscuro);font-weight:700;text-decoration:underline;">Abrilo en una pestaña nueva</a>.
+        </p>
       </div>
     </div>
   </section>
@@ -1854,81 +1798,6 @@
 
   <script>
     // ── Formulario de registro / plan de vacunación ──
-    // Pegá acá la URL de tu Google Apps Script (ver README) para que los datos
-    // caigan en tu Google Sheet. Mientras esté vacío, el formulario envía los
-    // datos por WhatsApp a la veterinaria como respaldo.
-    const SHEET_ENDPOINT = "https://script.google.com/a/macros/fvet.uba.ar/s/AKfycbxeLfS56S4uUnGWEpsUJrJgC0lHosEsWp6UwEE3k8CsJH93ni5LjRhqUvtF4IDkn4Zb/exec";
-    const WHATSAPP_NUMERO = "5491170623869";
-
-    (function () {
-      const form = document.getElementById("registro-form");
-      if (!form) return;
-      const btn = document.getElementById("registro-submit");
-      const success = document.getElementById("registro-success");
-
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        if (!form.checkValidity()) { form.reportValidity(); return; }
-
-        const vacunas = Array.from(form.querySelectorAll('input[name="vacuna"]:checked'))
-          .map(function (cb) { return cb.value; });
-
-        const data = {
-          tutor:       form.tutor.value.trim(),
-          email:       form.email.value.trim(),
-          celular:     form.celular.value.trim(),
-          mascota:     form.mascota.value.trim(),
-          especie:     form.especie.value,
-          raza:        form.raza.value.trim(),
-          vacuna:      vacunas.join(", "),
-          fecha:       form.fecha.value,
-          comentarios: form.comentarios.value.trim(),
-          origen:      "Sitio web"
-        };
-
-        btn.disabled = true;
-        const original = btn.innerHTML;
-        btn.innerHTML = '<i class="ti ti-loader-2"></i> Enviando…';
-
-        try {
-          if (SHEET_ENDPOINT) {
-            await fetch(SHEET_ENDPOINT, {
-              method: "POST",
-              mode: "no-cors",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: new URLSearchParams(data).toString()
-            });
-            showSuccess();
-          } else {
-            // Respaldo: abrir WhatsApp con los datos formateados
-            const msg =
-              "*Nuevo registro - Plan de vacunación*%0A%0A" +
-              "👤 Tutor: " + encodeURIComponent(data.tutor) + "%0A" +
-              "✉️ Email: " + encodeURIComponent(data.email) + "%0A" +
-              "📱 Celular: " + encodeURIComponent(data.celular) + "%0A%0A" +
-              "🐾 Mascota: " + encodeURIComponent(data.mascota) + "%0A" +
-              "Especie: " + encodeURIComponent(data.especie) + "%0A" +
-              (data.raza ? "Raza: " + encodeURIComponent(data.raza) + "%0A" : "") +
-              "%0A💉 Vacunas: " + encodeURIComponent(data.vacuna || "-") + "%0A" +
-              "Fecha: " + encodeURIComponent(data.fecha || "-") +
-              (data.comentarios ? "%0A%0A📝 Comentarios: " + encodeURIComponent(data.comentarios) : "");
-            window.open("https://wa.me/" + WHATSAPP_NUMERO + "?text=" + msg, "_blank");
-            showSuccess();
-          }
-        } catch (err) {
-          btn.disabled = false;
-          btn.innerHTML = original;
-          alert("Hubo un problema al enviar. Probá de nuevo o escribinos por WhatsApp.");
-        }
-      });
-
-      function showSuccess() {
-        form.style.display = "none";
-        success.classList.add("show");
-        success.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    })();
-
     // ── Filtro de categorías de "Cuidados de tu mascota" ──
     (function () {
       const tabs = document.querySelectorAll(".edu-tab");

@@ -1,0 +1,26 @@
+name: Deploy Mi Fiel Amigo to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'mi-fiel-amigo/**'
+      - '.github/workflows/firebase-deploy-mifielamigo.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_VETERINARIALASMARINAS }}
+          channelId: live
+          entryPoint: mi-fiel-amigo
+          projectId: veterinarialasmarinas

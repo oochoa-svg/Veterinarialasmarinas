@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "mifielamigo",
     "public": "public",
     "ignore": [
       "firebase.json",

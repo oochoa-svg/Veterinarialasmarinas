@@ -77,13 +77,18 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 Por pedido, esta versión **no** trae el sistema de turnos online, el registro
 de pacientes ni el formulario de vacunación. Se puede sumar más adelante.
 
-## Deploy (pendiente de configurar)
+## Deploy
 
-El deploy a Firebase todavía no está configurado para esta vete. Opciones:
+Configurado vía GitHub Actions, como **segundo sitio de Hosting dentro del mismo
+proyecto** `veterinarialasmarinas` (compartido con Las Marinas):
 
-1. Crear un **proyecto Firebase propio** para Mi Fiel Amigo y poner su ID en
-   `.firebaserc` (hoy figura `mifielamigo` como placeholder), o
-2. Usar un *hosting target* dentro de un proyecto existente.
+- Proyecto Firebase: `veterinarialasmarinas`.
+- Sitio de Hosting: **`mifielamigo`** → `https://mifielamigo.web.app`.
+- Workflow: `.github/workflows/firebase-deploy-mifielamigo.yml`. Se dispara con
+  cada push a `main` que toque `mi-fiel-amigo/**`. Reusa el secret
+  `FIREBASE_SERVICE_ACCOUNT_VETERINARIALASMARINAS` (no requiere uno nuevo).
+- El sitio destino se fija con `"site": "mifielamigo"` en `firebase.json`, para
+  que el deploy no pise el de Las Marinas.
 
-Una vez elegido, se agrega el workflow de GitHub Actions (como el de Las
-Marinas) apuntando a `mi-fiel-amigo/**` con el secret del service account.
+Para publicar: fusionar la rama a `main`, o correr el workflow a mano desde
+**Actions → "Deploy Mi Fiel Amigo to Firebase Hosting" → Run workflow**.

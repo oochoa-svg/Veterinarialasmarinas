@@ -28,20 +28,42 @@ mi-fiel-amigo/
 Los colores están centralizados en variables CSS al inicio de `index.html`
 (`:root`), así que cambiarlos es modificar 4–5 líneas.
 
-## ⚠️ Pendiente de completar (placeholders)
+## Modelo de atención
 
-Hay datos provisorios marcados que conviene confirmar antes de publicar:
+- **M.V. María José González** — dueña, está todos los días. Atiende **por orden
+  de llegada** (sin turno). Contacto: **teléfono de línea / contestador**
+  `011 4504-7282` + **mail**. No usa WhatsApp.
+  Horario: **Lun–Vie 10:30–12:30 y 17:30–20 · Sáb 10–13**.
+- **Dr. Octavio Ochoa** — cubre los horarios en que María José no está, **con
+  turno**. Turnos por **WhatsApp** `11 7062-3869` (`wa.me/5491170623869`).
+  Horario (a confirmar): **Mié y Jue 12:30–17:30 · Vie 12:30–14:30**.
+- **Acción principal del sitio**: "Sacar turno". Hoy abre WhatsApp a Octavio con
+  un mensaje que pide **nombre + mascota + día/horario**, así queda el dato de la
+  persona. Más adelante se reemplaza por un formulario/sistema que guarde esos
+  datos automáticamente (ver "Para configurar después").
+- **Recordatorio de vacunas** → por **mail** (pendiente de armar).
 
-- [ ] **WhatsApp**: hoy apunta a `541145047282` (la línea fija). Reemplazar por
-      el **celular real con WhatsApp** (formato `54911...`). Aparece en los
-      botones de hero, equipo, CTA y el botón flotante.
-- [ ] **Horarios**: hay un horario de ejemplo (Lun–Vie 9–13 / 16–20, Sáb 9–13).
-      Confirmar los reales (`<!-- TODO: confirmar horarios reales -->`).
-- [ ] **Servicios**: ajustar las 6 tarjetas a lo que realmente ofrece la vete.
-- [ ] **Reseñas**: los 3 comentarios son de ejemplo
-      (`<!-- TODO: reemplazá estos comentarios... -->`).
-- [ ] **Logo**: `logo.png` se generó a partir de la foto enviada (fondo
-      recortado). Si hay una versión vectorial/oficial, reemplazar el archivo.
+## ⚠️ Pendiente de completar
+
+- [ ] **Email de María José**: falta la dirección de mail para mostrarla en
+      contacto y usarla en el recordatorio de vacunas.
+- [ ] **Horarios de Octavio**: están como "a confirmar" (Mié/Jue 12:30–17:30,
+      Vie 12:30–14:30). Los de María José ya están cargados.
+- [ ] **Servicios**: confirmar/ajustar las 6 tarjetas.
+- [ ] **Reseñas**: muestra 4,9 en Google. Los 3 comentarios son de ejemplo,
+      reemplazar por reales.
+- [ ] **Fotos / galería**: falta. No se pueden bajar de Google Maps por la red
+      del entorno; sumar fotos del local/equipo/mascotas para armar el carrusel.
+- [ ] **Logo**: `logo.png` recortado de la foto enviada. Si hay versión
+      vectorial/oficial, reemplazar el archivo.
+
+## Para configurar después
+
+- **Captura de turnos / datos**: hoy "Sacar turno" abre WhatsApp a Octavio con
+  nombre + mascota + día/horario. El objetivo es que esos datos queden guardados
+  automáticamente (formulario → planilla / sistema de reservas, como el de Las
+  Marinas). Eso se configura aparte.
+- **Recordatorio de vacunas por mail**: pendiente de armar.
 
 ## Datos actuales
 

@@ -50,10 +50,10 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 - [ ] **Horarios de Octavio**: están como "a confirmar" (Mié/Jue 12:30–17:30,
       Vie 12:30–14:30). Los de María José ya están cargados.
 - [ ] **Servicios**: confirmar/ajustar las 6 tarjetas.
-- [ ] **Reseñas**: muestra 4,9 en Google. Los 3 comentarios son de ejemplo,
-      reemplazar por reales.
-- [ ] **Fotos / galería**: falta. No se pueden bajar de Google Maps por la red
-      del entorno; sumar fotos del local/equipo/mascotas para armar el carrusel.
+- [x] **Reseñas**: 4,9 en Google + 3 reseñas reales (Johanna Vargas, Mariano A.,
+      Jessica Balboa). Se pueden sumar más.
+- [x] **Galería**: 5 fotos de mascotas (recortadas de las reseñas de Google).
+      Se pueden reemplazar o sumar fotos del local y del equipo.
 - [ ] **Logo**: `logo.png` recortado de la foto enviada. Si hay versión
       vectorial/oficial, reemplazar el archivo.
 

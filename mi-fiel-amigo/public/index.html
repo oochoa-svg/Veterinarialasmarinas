@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veterinaria Mi Fiel Amigo · Villa del Parque, CABA</title>
+  <meta name="description" content="Veterinaria Mi Fiel Amigo en Villa del Parque, CABA. Consultas, vacunas, cirugías y más. Atención personalizada para perros y gatos. Consultanos por WhatsApp." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0060A8" />
+  <link rel="icon" href="img/logo.png" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Veterinaria Mi Fiel Amigo · Villa del Parque" />
+  <meta property="og:description" content="Tu veterinaria de confianza en Villa del Parque. Consultanos por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:url" content="https://mifielamigo.web.app" />
+  <meta property="og:image" content="https://mifielamigo.web.app/img/logo.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Veterinaria Mi Fiel Amigo - Villa del Parque, CABA" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Veterinaria Mi Fiel Amigo · Villa del Parque" />
+  <meta name="twitter:description" content="Tu veterinaria de confianza en Villa del Parque. Consultanos por WhatsApp." />
+  <meta name="twitter:image" content="https://mifielamigo.web.app/img/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Schema.org: datos del negocio (para resultados enriquecidos en Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VeterinaryCare",
+    "name": "Veterinaria Mi Fiel Amigo",
+    "url": "https://mifielamigo.web.app",
+    "telephone": "+541145047282",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cuenca 3526",
+      "addressLocality": "Villa del Parque",
+      "addressRegion": "Ciudad Autónoma de Buenos Aires",
+      "postalCode": "C1419AAB",
+      "addressCountry": "AR"
+    },
+    "areaServed": ["Villa del Parque", "Villa Devoto", "CABA"],
+    "priceRange": "$$"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Atienden urgencias?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos urgencias en horario comercial. Escribinos o llamanos por WhatsApp y te indicamos cómo proceder lo antes posible." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Necesito turno o puedo ir directamente?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Podés acercarte en nuestro horario de atención. Para evitar esperas, te recomendamos escribirnos por WhatsApp para coordinar un horario." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hacen castraciones y cirugías?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, realizamos castraciones y procedimientos quirúrgicos con la evaluación previa correspondiente." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cada cuánto tengo que vacunar y desparasitar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La vacunación es anual y la desparasitación interna, en general, cada 3 meses. El plan exacto depende de la edad y el estilo de vida de la mascota." }
+      }
+    ]
+  }  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --naranja:        #0060A8;
+      --naranja-oscuro: #004f86;
+      --naranja-suave:  #E4EFF8;
+      --naranja-tinte:  #C7DEF1;
+      --verde:          #78C018;
+      --verde-oscuro:   #5f9c12;
+      --carbon:         #2B2B2B;
+      --carbon-suave:   #3a3a38;
+      --crema:          #FBF6EE;
+      --blanco:         #FFFFFF;
+      --texto:          #2b2b2b;
+      --muted:          #7a756c;
+      --wa:             #25D366;
+      --linea:          rgba(43,43,43,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--crema);
+      color: var(--texto);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── HUELLITAS DE FONDO ── */
+    .paw-bg {
+      position: absolute;
+      color: var(--naranja);
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .paw-bg.light { color: #ffffff; opacity: 0.05; }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: var(--blanco);
+      border-bottom: 1px solid var(--linea);
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-emblem {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-emblem svg { width: 100%; height: 100%; display: block; }
+    .nav-logo:hover .nav-emblem { animation: wiggle 0.5s ease; }
+    .nav-logo-text {
+      font-family: 'Baloo 2', cursive;
+      line-height: 1;
+    }
+    .nav-logo-text b {
+      display: block;
+      color: var(--carbon);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .nav-logo-text span {
+      display: block;
+      color: var(--naranja);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .nav-cta {
+      background: var(--naranja);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--naranja-oscuro); transform: translateY(-1px); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-cta.turno {
+      background: var(--blanco);
+      color: var(--naranja-oscuro);
+      border: 1.5px solid var(--naranja);
+    }
+    .nav-cta.turno:hover { background: var(--naranja-suave); color: var(--naranja-oscuro); }
+    @media (max-width: 480px) {
+      .nav-cta.turno .nav-cta-label { display: none; }
+      .nav-cta.turno { padding: 9px 12px; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      background:
+        radial-gradient(circle at 80% 10%, var(--naranja-suave), transparent 45%),
+        var(--crema);
+      padding: 70px 24px 60px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-inner { position: relative; z-index: 2; }
+    .hero-emblem {
+      width: 150px;
+      margin: 0 auto 22px;
+      animation: pulse-glow 3.5s ease-in-out infinite;
+    }
+    .hero-emblem svg {
+      width: 100%; height: auto; display: block;
+      filter: drop-shadow(0 10px 24px rgba(0,96,168,0.30));
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.05); }
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25%      { transform: rotate(-12deg); }
+      75%      { transform: rotate(12deg); }
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--naranja-oscuro);
+      background: var(--naranja-suave);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(30px, 5.5vw, 46px);
+      font-weight: 700;
+      color: var(--carbon);
+      line-height: 1.12;
+      max-width: 600px;
+      margin: 0 auto 16px;
+    }
+    .hero h1 em { color: var(--naranja); font-style: normal; }
+    .hero-sub {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 440px;
+      margin: 0 auto 32px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+    .btn-primary {
+      background: var(--wa);
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 28px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'Nunito', sans-serif;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(37,211,102,0.28);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(37,211,102,0.36); }
+    .btn-ghost {
+      background: var(--blanco);
+      color: var(--carbon);
+      border: 1.5px solid var(--linea);
+      padding: 14px 26px;
+      border-radius: 28px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Nunito', sans-serif;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .btn-ghost:hover { border-color: var(--naranja); color: var(--naranja-oscuro); transform: translateY(-2px); }
+    .btn-turno {
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 28px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'Nunito', sans-serif;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,96,168,0.30);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-turno:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,96,168,0.40); }
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      padding: 8px 16px;
+      border-radius: 20px;
+      color: var(--carbon-suave);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .badge i { color: var(--naranja); font-size: 16px; }
+
+    /* ── SECTIONS ── */
+    section { position: relative; padding: 60px 24px; }
+    .section-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 2; }
+    .section-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(24px, 3.4vw, 32px);
+      font-weight: 700;
+      color: var(--carbon);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+    .divider {
+      width: 56px;
+      height: 4px;
+      background: var(--verde);
+      border-radius: 2px;
+      margin: 14px auto 38px;
+    }
+
+    /* ── SERVICIOS ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 16px;
+    }
+    .service-card {
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      border-radius: 18px;
+      padding: 24px 18px 20px;
+      text-align: center;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(43,43,43,0.10); border-color: var(--naranja-tinte); }
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      background: var(--naranja-suave);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .service-icon i { color: var(--naranja-oscuro); font-size: 26px; }
+    .service-name { font-size: 15px; font-weight: 700; color: var(--carbon); margin-bottom: 5px; }
+    .service-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* ── CONFIANZA / RESEÑAS (sección oscura de contraste) ── */
+    .trust-section { background: var(--carbon); overflow: hidden; }
+    .trust-section .section-title { color: var(--crema); }
+    .stars { color: #f5b942; font-size: 24px; letter-spacing: 4px; margin-bottom: 10px; text-align: center; }
+    .rating-big {
+      font-family: 'Baloo 2', cursive;
+      font-size: 66px;
+      font-weight: 700;
+      color: var(--naranja);
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .rating-label { font-size: 14px; color: #b6b1a8; text-align: center; margin-bottom: 42px; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 16px;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .review-stars { color: #f5b942; font-size: 13px; margin-bottom: 10px; letter-spacing: 2px; }
+    .review-text { font-size: 14px; color: #e4ddd2; line-height: 1.65; margin-bottom: 14px; }
+    .review-author { font-size: 13px; color: var(--naranja); font-weight: 700; }
+    .review-cta { text-align: center; margin-top: 32px; }
+    .review-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--naranja);
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 32px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .review-btn:hover { transform: translateY(-2px); background: var(--naranja-oscuro); }
+    .review-btn i { font-size: 18px; }
+
+    /* ── REGISTRO / VACUNACIÓN ── */
+    .registro-section { background: var(--crema); }
+    .registro-card {
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      border-radius: 24px;
+      padding: 38px 32px;
+      max-width: 580px;
+      margin: 0 auto;
+      box-shadow: 0 20px 50px -20px rgba(43,43,43,0.22);
+    }
+    .registro-embed { padding: 16px; }
+    .registro-embed iframe {
+      width: 100%;
+      max-width: 520px;
+      height: 900px;
+      border: 0;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+    .registro-embed .form-note { text-align: center; margin-top: 12px; }
+    .form-group { margin-bottom: 15px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-legend {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--naranja-oscuro);
+      margin: 26px 0 14px;
+    }
+    .form-legend:first-child { margin-top: 0; }
+    .form-legend::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--linea);
+    }
+    .form-legend i {
+      color: var(--naranja-oscuro);
+      font-size: 18px;
+      background: var(--naranja-suave);
+      width: 30px; height: 30px;
+      border-radius: 9px;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--carbon-suave);
+      margin-bottom: 6px;
+    }
+    .form-group label .req { color: var(--naranja-oscuro); }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1.5px solid transparent;
+      border-radius: 13px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      color: var(--texto);
+      background: #F4F1EA;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1.5px solid transparent;
+      border-radius: 13px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      color: var(--texto);
+      background: #F4F1EA;
+      resize: vertical;
+      min-height: 90px;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #b3ab9d; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      background: var(--blanco);
+      border-color: var(--naranja);
+      box-shadow: 0 0 0 4px var(--naranja-suave);
+    }
+    .vacuna-checks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .vacuna-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1.5px solid transparent;
+      border-radius: 13px;
+      background: #F4F1EA;
+      font-size: 14px;
+      color: var(--texto);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .vacuna-check:hover { background: var(--naranja-suave); }
+    .vacuna-check input { width: 18px; height: 18px; accent-color: var(--naranja); flex-shrink: 0; }
+    .form-submit {
+      width: 100%;
+      margin-top: 26px;
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+      color: #fff;
+      border: none;
+      padding: 16px;
+      border-radius: 16px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      box-shadow: 0 10px 22px -8px rgba(0,96,168,0.6);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -8px rgba(0,96,168,0.7); }
+    .form-submit:disabled { opacity: 0.6; cursor: progress; transform: none; }
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 16px;
+    }
+    .form-success.show { display: block; }
+    .form-success .ok-icon {
+      width: 64px; height: 64px;
+      background: var(--naranja-suave);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .form-success .ok-icon i { color: var(--naranja-oscuro); font-size: 34px; }
+    .form-success h3 {
+      font-family: 'Baloo 2', cursive;
+      color: var(--naranja-oscuro);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .form-success p { color: var(--muted); font-size: 14px; }
+    @media (max-width: 480px) {
+      .form-row { grid-template-columns: 1fr; }
+      .registro-card { padding: 28px 20px; }
+    }
+
+    /* ── INFO ── */
+    .info-section { background: var(--blanco); }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 26px;
+    }
+    .info-block { display: flex; gap: 14px; align-items: flex-start; }
+    .info-icon-wrap {
+      width: 46px; height: 46px;
+      background: var(--naranja-suave);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .info-icon-wrap i { color: var(--naranja-oscuro); font-size: 22px; }
+    .info-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--naranja-oscuro); margin-bottom: 4px; }
+    .info-val { font-size: 15px; font-weight: 700; color: var(--carbon); line-height: 1.5; }
+    .info-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .map-wrap { margin-top: 38px; }
+    .map-wrap iframe {
+      width: 100%;
+      height: 320px;
+      border: 0;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(43,43,43,0.12);
+      display: block;
+    }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--naranja-oscuro);
+      text-decoration: none;
+    }
+    .map-link:hover { text-decoration: underline; }
+
+    /* ── CTA FINAL ── */
+    .cta-section { background: var(--crema); }
+    .cta-box {
+      position: relative;
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+      border-radius: 26px;
+      padding: 48px 32px;
+      text-align: center;
+      max-width: 540px;
+      margin: 0 auto;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,96,168,0.30);
+    }
+    .cta-box .hero-inner { z-index: 2; }
+    .cta-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 30px;
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .cta-sub { font-size: 15px; color: rgba(255,255,255,0.92); margin-bottom: 28px; line-height: 1.65; }
+    .qr-share {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .qr-share img {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      background: var(--crema);
+      padding: 8px;
+    }
+    .qr-share span { font-size: 13px; color: rgba(255,255,255,0.92); }
+    .qr-cartel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      opacity: 0.92;
+      transition: opacity 0.15s;
+    }
+    .qr-cartel-link:hover { opacity: 1; }
+    .qr-cartel-link.dark { color: var(--naranja-oscuro); }
+    .qr-registro {
+      max-width: 580px;
+      margin: 22px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+    .qr-registro img {
+      width: 130px;
+      height: 130px;
+      border-radius: 12px;
+      background: #fff;
+      padding: 8px;
+      border: 1px solid var(--linea);
+    }
+    .qr-registro span { font-size: 13px; color: var(--carbon-suave); max-width: 280px; }
+    .qr-registro span i { color: var(--naranja); }
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: var(--carbon);
+      padding: 15px 34px;
+      border-radius: 32px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transition: transform 0.15s;
+    }
+    .wa-btn i { color: var(--wa); font-size: 20px; }
+    .wa-btn:hover { transform: translateY(-2px); }
+    .tel-link {
+      display: block;
+      color: rgba(255,255,255,0.92);
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 16px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .tel-link:hover { color: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--carbon);
+      padding: 26px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .footer-logo .footer-mark { width: 32px; height: 32px; display: block; }
+
+    /* ── EQUIPO ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .team-card {
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      border-radius: 18px;
+      padding: 26px 18px;
+      text-align: center;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .team-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(43,43,43,0.10); }
+    .team-avatar {
+      width: 96px; height: 96px;
+      background: var(--naranja-suave);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+      overflow: hidden;
+      border: 3px solid var(--naranja-tinte);
+    }
+    .team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .team-avatar .caduceo { width: 32px; height: 32px; }
+    .team-name { font-family: 'Baloo 2', cursive; font-size: 17px; font-weight: 700; color: var(--carbon); margin-bottom: 4px; }
+    .team-role { font-size: 13px; color: var(--naranja-oscuro); font-weight: 600; margin-bottom: 14px; }
+    .team-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--naranja-suave);
+      color: var(--naranja-oscuro);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .team-wa i { color: var(--wa); font-size: 16px; }
+    .team-wa:hover { transform: translateY(-2px); background: var(--naranja-tinte); }
+
+    /* ── GALERÍA (carrusel horizontal) ── */
+    .galeria-section { background: var(--crema); overflow: hidden; }
+    .galeria-section .section-inner { max-width: 1100px; }
+    .galeria-viewport {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      -webkit-mask: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+              mask: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    }
+    .galeria-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: galeria-scroll 45s linear infinite;
+    }
+    .galeria-viewport:hover .galeria-track { animation-play-state: paused; }
+    .galeria-item {
+      flex: 0 0 auto;
+      width: 300px;
+      height: 230px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(43,43,43,0.12);
+      background: var(--blanco);
+    }
+    .galeria-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @keyframes galeria-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(calc(-50% - 8px)); }
+    }
+    @media (max-width: 480px) {
+      .galeria-item { width: 240px; height: 185px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .galeria-track { animation: none; }
+      .galeria-viewport { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    }
+    .footer-logo b { font-family: 'Baloo 2', cursive; color: var(--crema); font-size: 16px; }
+    footer p { font-size: 13px; color: #9a958c; }
+    footer a { color: var(--naranja); text-decoration: none; }
+
+    /* ── WHATSAPP FLOTANTE ── */
+    .wa-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 200;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--wa);
+      color: #fff;
+      padding: 14px 20px 14px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.45);
+      animation: wa-pulse 2.6s ease-in-out infinite;
+      transition: transform 0.15s;
+    }
+    .wa-float:hover { transform: scale(1.05); }
+    .wa-float i { font-size: 26px; }
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
+      50%      { box-shadow: 0 8px 30px rgba(37,211,102,0.75); }
+    }
+    @media (max-width: 480px) {
+      .wa-float { right: 16px; bottom: 16px; padding: 14px; }
+      .wa-float .wa-label { display: none; }
+      .wa-float i { font-size: 28px; }
+    }
+
+    /* ── TURNO FLOTANTE ── */
+    .turno-float {
+      position: fixed;
+      right: 20px;
+      bottom: 84px;
+      z-index: 200;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+      color: #fff;
+      padding: 14px 20px 14px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0,96,168,0.45);
+      transition: transform 0.15s;
+    }
+    .turno-float:hover { transform: scale(1.05); }
+    .turno-float i { font-size: 24px; }
+    @media (max-width: 480px) {
+      .turno-float { right: 16px; bottom: 82px; padding: 14px; }
+      .turno-float .turno-label { display: none; }
+      .turno-float i { font-size: 28px; }
+    }
+
+    /* ── REGISTRO FLOTANTE ── */
+    .registro-float {
+      position: fixed;
+      right: 20px;
+      bottom: 148px;
+      z-index: 200;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--carbon);
+      color: #fff;
+      padding: 14px 20px 14px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(43,43,43,0.35);
+      transition: transform 0.15s;
+    }
+    .registro-float:hover { transform: scale(1.05); }
+    .registro-float i { font-size: 24px; color: var(--naranja); }
+    @media (max-width: 480px) {
+      .registro-float { right: 16px; bottom: 148px; padding: 14px; }
+      .registro-float .registro-label { display: none; }
+      .registro-float i { font-size: 28px; }
+    }
+
+    /* ── CONTENIDO EDUCATIVO ── */
+    .edu-section { background: var(--blanco); }
+    .edu-card {
+      background: var(--crema);
+      border: 1px solid var(--linea);
+      border-radius: 22px;
+      padding: 32px 30px;
+      flex: 0 0 min(86vw, 440px);
+      scroll-snap-align: start;
+    }
+    .edu-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--naranja-suave);
+      color: var(--naranja-oscuro);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .edu-card h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 24px;
+      color: var(--carbon);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+    .edu-card p { font-size: 15px; color: var(--carbon-suave); margin-bottom: 14px; }
+    .edu-card h4 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 17px;
+      color: var(--naranja-oscuro);
+      margin: 22px 0 10px;
+    }
+    .edu-list { list-style: none; margin-bottom: 8px; }
+    .edu-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14.5px;
+      color: var(--carbon-suave);
+      margin-bottom: 9px;
+    }
+    .edu-list li i { color: var(--naranja); font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+    .edu-callout {
+      background: var(--blanco);
+      border-left: 4px solid var(--naranja);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--carbon-suave);
+      margin-top: 18px;
+    }
+    .edu-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+      color: #fff;
+      padding: 13px 26px;
+      border-radius: 28px;
+      font-size: 14.5px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      margin-top: 20px;
+      box-shadow: 0 8px 20px -8px rgba(0,96,168,0.6);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .edu-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -8px rgba(0,96,168,0.7); }
+    .edu-cards-stack {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 22px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 4px 4px 18px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .edu-cards-stack::-webkit-scrollbar { height: 8px; }
+    .edu-cards-stack::-webkit-scrollbar-thumb { background: var(--naranja-suave); border-radius: 8px; }
+    /* ── Pestañas de categorías ── */
+    .edu-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .edu-tab {
+      background: var(--blanco);
+      border: 1.5px solid var(--linea);
+      color: var(--carbon-suave);
+      padding: 9px 20px;
+      border-radius: 22px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.15s;
+    }
+    .edu-tab:hover { border-color: var(--naranja); color: var(--naranja-oscuro); }
+    .edu-tab.active {
+      background: var(--naranja);
+      border-color: var(--naranja);
+      color: #fff;
+    }
+    .edu-card[hidden] { display: none; }
+    /* ── Flipbook / publicación embebida ── */
+    .edu-flip {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      margin: 6px auto 4px;
+      aspect-ratio: 300 / 194;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(43,43,43,0.14);
+      background: #f0ece4;
+    }
+    .edu-flip iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .edu-flip-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 2px auto 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--naranja-oscuro);
+      text-decoration: none;
+    }
+    .edu-flip-link:hover { text-decoration: underline; }
+    .edu-flip-wrap { text-align: center; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--crema); }
+    .faq-list { max-width: 660px; margin: 0 auto; }
+    .faq-item {
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--carbon);
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary .chev {
+      color: var(--naranja);
+      font-size: 20px;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary .chev { transform: rotate(180deg); }
+    .faq-answer { padding: 0 20px 18px; font-size: 14.5px; color: var(--carbon-suave); line-height: 1.65; }
+    .faq-answer strong { color: var(--carbon); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      nav { padding: 10px 16px; }
+      .nav-cta { padding: 9px 16px; font-size: 13px; }
+      .hero, section { padding-left: 16px; padding-right: 16px; }
+      .cta-box { padding: 36px 22px; }
+      .edu-card { padding: 26px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Símbolos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="paw" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="64" rx="23" ry="19"/>
+      <ellipse cx="24" cy="40" rx="8.5" ry="11.5"/>
+      <ellipse cx="42" cy="27" rx="8.5" ry="12.5"/>
+      <ellipse cx="58" cy="27" rx="8.5" ry="12.5"/>
+      <ellipse cx="76" cy="40" rx="8.5" ry="11.5"/>
+    </symbol>
+    <!-- Caduceo veterinario (símbolo limpio) -->
+    <symbol id="caduceo" viewBox="0 0 100 100">
+      <g fill="none" stroke="#2B2B2B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="50" y1="15" x2="50" y2="86"/>
+        <path d="M50 37 C 35 45, 65 53, 50 61 C 35 69, 65 77, 50 85"/>
+        <path d="M50 37 C 65 45, 35 53, 50 61 C 65 69, 35 77, 50 85"/>
+      </g>
+      <circle cx="50" cy="13" r="4.5" fill="#2B2B2B"/>
+      <path d="M50 27 C 39 20, 26 21, 19 30 C 29 28, 40 31, 50 37 Z" fill="#2B2B2B"/>
+      <path d="M50 27 C 61 20, 74 21, 81 30 C 71 28, 60 31, 50 37 Z" fill="#2B2B2B"/>
+    </symbol>
+
+    <!-- Aro tipo cordón reutilizable -->
+    <symbol id="rope-ring" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="80" fill="#fff"/>
+      <circle cx="100" cy="100" r="96" fill="none" stroke="#0060A8" stroke-width="2"/>
+      <circle cx="100" cy="100" r="89" fill="none" stroke="#0060A8" stroke-width="13"/>
+      <circle cx="100" cy="100" r="89" fill="none" stroke="#F6B25E" stroke-width="13"
+              stroke-dasharray="7 11" stroke-linecap="round"/>
+      <circle cx="100" cy="100" r="81" fill="none" stroke="#0060A8" stroke-width="2"/>
+    </symbol>
+
+    <!-- Logo completo: medallón con texto (para el hero) -->
+    <symbol id="logo-full" viewBox="0 0 200 200">
+      <use href="#rope-ring"/>
+      <use href="#caduceo" x="64" y="28" width="72" height="72"/>
+      <text x="100" y="126" text-anchor="middle" fill="#0060A8"
+            font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700">M</text>
+      <text x="100" y="150" text-anchor="middle" fill="#2B2B2B"
+            font-family="'Baloo 2', cursive" font-size="13" font-weight="700">Mi Fiel Amigo</text>
+      <text x="100" y="164" text-anchor="middle" fill="#2B2B2B"
+            font-family="'Nunito', sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.5">VETERINARIA</text>
+    </symbol>
+
+    <!-- Logo compacto: medallón sin texto (para nav y footer) -->
+    <symbol id="logo-mark" viewBox="0 0 200 200">
+      <use href="#rope-ring"/>
+      <use href="#caduceo" x="58" y="26" width="84" height="84"/>
+      <text x="100" y="150" text-anchor="middle" fill="#0060A8"
+            font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700">M</text>
+    </symbol>
+  </svg>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <span class="nav-emblem"><img src="img/logo.png" alt="Logo Mi Fiel Amigo" width="44" height="44" style="object-fit:contain;" /></span>
+      <span class="nav-logo-text">
+        <b>Mi Fiel Amigo</b>
+        <span>Veterinaria</span>
+      </span>
+    </a>
+    <div class="nav-actions">
+      <a class="nav-cta" href="https://wa.me/541145047282?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp"></i> Consultanos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <svg class="paw-bg" style="top:40px;left:-10px;width:90px;transform:rotate(-20deg)"><use href="#paw"/></svg>
+    <svg class="paw-bg" style="top:140px;right:30px;width:60px;transform:rotate(25deg)"><use href="#paw"/></svg>
+    <svg class="paw-bg" style="bottom:30px;left:40px;width:50px;transform:rotate(10deg)"><use href="#paw"/></svg>
+    <div class="hero-inner">
+      <div class="hero-emblem"><img src="img/logo.png" alt="Logo Mi Fiel Amigo Veterinaria" width="150" height="150" style="width:100%;height:auto;object-fit:contain;" /></div>
+      <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Villa del Parque · CABA</p>
+      <h1>Tu veterinaria de confianza en <em>Villa del Parque</em></h1>
+      <p class="hero-sub">Atención personalizada para perros y gatos, con el cuidado y la cercanía de siempre.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="https://wa.me/541145047282?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Consultanos por WhatsApp
+        </a>
+        <a class="btn-ghost" href="tel:+541145047282">
+          <i class="ti ti-phone"></i> Llamar a la veterinaria
+        </a>
+      </div>
+      <div class="hero-badges">
+        <div class="badge"><i class="ti ti-paw"></i> Perros y gatos</div>
+        <div class="badge"><i class="ti ti-heart-handshake"></i> Atención personalizada</div>
+        <div class="badge"><i class="ti ti-map-pin"></i> Villa del Parque</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICIOS -->
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title">¿Qué hacemos?</h2>
+      <p class="section-sub">Atención clínica completa para tu mascota</p>
+      <div class="divider"></div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-stethoscope"></i></div>
+          <div class="service-name">Consulta general</div>
+          <div class="service-desc">Revisación completa, diagnóstico y tratamiento</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-vaccine"></i></div>
+          <div class="service-name">Vacunación</div>
+          <div class="service-desc">Plan anual con carnet y recordatorio personalizado</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-medical-cross"></i></div>
+          <div class="service-name">Cirugías</div>
+          <div class="service-desc">Castraciones y procedimientos quirúrgicos</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-first-aid-kit"></i></div>
+          <div class="service-name">Urgencias</div>
+          <div class="service-desc">Atención de emergencias en horario comercial</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-bug"></i></div>
+          <div class="service-name">Desparasitación</div>
+          <div class="service-desc">Control de parásitos internos y externos</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ti ti-heart-rate-monitor"></i></div>
+          <div class="service-name">Seguimiento</div>
+          <div class="service-desc">Control postoperatorio y enfermedades crónicas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="info-section">
+    <div class="section-inner">
+      <h2 class="section-title">Nuestro equipo</h2>
+      <p class="section-sub">Profesionales que conocen a tu mascota por nombre</p>
+      <div class="divider"></div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar"><svg class="caduceo" viewBox="0 0 100 100" role="img" aria-label="Médica veterinaria"><use href="#caduceo"/></svg></div>
+          <div class="team-name">M.V. María José González</div>
+          <div class="team-role">Médica Veterinaria</div>
+          <a class="team-wa" href="https://wa.me/541145047282?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+            <i class="ti ti-brand-whatsapp"></i> Escribir
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANZA / RESEÑAS -->
+  <section class="trust-section">
+    <svg class="paw-bg light" style="top:30px;right:-10px;width:110px;transform:rotate(20deg)"><use href="#paw"/></svg>
+    <svg class="paw-bg light" style="bottom:40px;left:20px;width:70px;transform:rotate(-15deg)"><use href="#paw"/></svg>
+    <div class="section-inner">
+      <div class="stars">★★★★★</div>
+      <div class="rating-label" style="margin-top:8px">Gracias por la confianza de nuestros clientes del barrio</div>
+      <!-- TODO: reemplazá estos comentarios de ejemplo por reseñas reales de tus clientes -->
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Atención cálida y profesional. Nos trataron a nosotros y a nuestra mascota con mucho cariño."</p>
+          <div class="review-author">— Cliente de Villa del Parque</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Siempre nos resuelven las dudas y nos explican todo con paciencia. Muy recomendables."</p>
+          <div class="review-author">— Cliente del barrio</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Confío en ellos hace años para el cuidado de mis perros. Gente de confianza."</p>
+          <div class="review-author">— Cliente recurrente</div>
+        </div>
+      </div>
+      <div class="review-cta">
+        <!-- TODO: reemplazar por el link de "Obtener más reseñas" de tu Google Business Profile
+             (Perfil de la empresa → Inicio → "Obtener más reseñas" → copiar enlace corto)
+             para que sea de un solo clic. Mientras tanto, este link lleva a la búsqueda en Maps. -->
+        <a class="review-btn" href="https://www.google.com/maps/search/?api=1&query=Veterinaria+Mi+Fiel+Amigo+Cuenca+3526+Villa+del+Parque" target="_blank" rel="noopener">
+          <i class="ti ti-star"></i> Dejanos tu reseña en Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-inner">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <p class="section-sub">Lo que más nos consultan</p>
+      <div class="divider"></div>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>¿Qué formas de pago aceptan? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Aceptamos <strong>efectivo, tarjeta de débito, tarjeta de crédito (con opción de cuotas),
+            y transferencia / Mercado Pago</strong>. Consultanos por las promociones vigentes.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Atienden urgencias? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Sí. Atendemos <strong>urgencias en horario comercial</strong>. Si tu mascota necesita
+            atención inmediata, escribinos o llamanos por <strong>WhatsApp</strong>
+            (botón verde abajo a la derecha) y te indicamos cómo proceder lo antes posible.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Necesito turno o puedo ir directamente? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Podés acercarte en nuestro horario de atención. Para evitar esperas, te recomendamos
+            <strong>escribirnos por WhatsApp</strong> para coordinar un horario.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Hacen castraciones y cirugías? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Sí, realizamos <strong>castraciones y procedimientos quirúrgicos</strong> con la
+            evaluación previa correspondiente. Escribinos para coordinar día y los cuidados previos.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Cada cuánto tengo que vacunar y desparasitar? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            La vacunación es anual y la desparasitación interna, en general, cada 3 meses. El plan
+            exacto depende de la edad y el estilo de vida de tu mascota. Escribinos y armamos el
+            calendario a medida.
+          </div>
+        </details>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HORARIOS Y CONTACTO -->
+  <section class="info-section">
+    <div class="section-inner">
+      <h2 class="section-title">Dónde estamos y cuándo</h2>
+      <div class="divider"></div>
+      <div class="info-grid">
+        <div class="info-block">
+          <div class="info-icon-wrap"><i class="ti ti-map-pin"></i></div>
+          <div>
+            <div class="info-label">Dirección</div>
+            <div class="info-val">Cuenca 3526</div>
+            <div class="info-sub">Villa del Parque, CABA</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon-wrap"><i class="ti ti-clock"></i></div>
+          <div>
+            <div class="info-label">Horarios</div>
+            <!-- TODO: confirmar horarios reales -->
+            <div class="info-val">Lun–Vie: 9–13 / 16–20</div>
+            <div class="info-sub">Sábados: 9–13 · Dom: cerrado</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-icon-wrap"><i class="ti ti-phone"></i></div>
+          <div>
+            <div class="info-label">Teléfono</div>
+            <div class="info-val"><a href="tel:+541145047282" style="color:var(--carbon);text-decoration:none;">011 4504-7282</a></div>
+            <div class="info-sub">También por WhatsApp</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps?q=Veterinaria+Mi+Fiel+Amigo,+Cuenca+3526,+Villa+del+Parque,+CABA&output=embed&hl=es"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa: Veterinaria Mi Fiel Amigo en Google Maps">
+        </iframe>
+        <a class="map-link" href="https://maps.app.goo.gl/Q4i8B3WC7TpmkzVq9" target="_blank" rel="noopener">
+          <i class="ti ti-external-link"></i> Ver en Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <div class="cta-box">
+      <svg class="paw-bg light" style="top:-10px;right:-10px;width:120px;transform:rotate(25deg);opacity:0.12"><use href="#paw"/></svg>
+      <svg class="paw-bg light" style="bottom:-15px;left:-5px;width:80px;transform:rotate(-10deg);opacity:0.12"><use href="#paw"/></svg>
+      <div class="hero-inner">
+        <h2 class="cta-title">¿Tenés una consulta?</h2>
+        <p class="cta-sub">Escribinos por WhatsApp o llamanos. Te respondemos a la brevedad.</p>
+        <a class="wa-btn" href="https://wa.me/541145047282?text=Hola!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Escribir por WhatsApp
+        </a>
+        <a class="tel-link" href="tel:+541145047282">
+          <i class="ti ti-phone" style="font-size:13px;vertical-align:-1px;margin-right:4px;"></i> O llamanos al 011 4504-7282
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <img class="footer-mark" src="img/logo.png" alt="Logo Mi Fiel Amigo" width="32" height="32" style="object-fit:contain;" />
+      <b>Veterinaria Mi Fiel Amigo</b>
+    </div>
+    <p>© 2026 · Cuenca 3526, Villa del Parque, CABA</p>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE (urgencias y consultas) -->
+  <a class="wa-float" href="https://wa.me/541145047282?text=Hola!%20Tengo%20una%20consulta%2Furgencia." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <i class="ti ti-brand-whatsapp"></i><span class="wa-label">Escribinos</span>
+  </a>
+
+
+
+</body>
+</html>

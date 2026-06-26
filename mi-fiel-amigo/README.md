@@ -73,14 +73,6 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 - **Responsable**: M.V. María José González
 - **Google Maps**: https://maps.app.goo.gl/Q4i8B3WC7TpmkzVq9
 
-## Qué NO incluye (a diferencia de Las Marinas)
-
-Por pedido, esta versión **no** trae el sistema de turnos online, el registro
-de pacientes ni el formulario de vacunación. Se puede sumar más adelante.
-
-Tampoco se muestra **modalidad de pagos** ni se hace mención a **venta de
-medicamentos** — decisión explícita, no incluir en futuras ediciones.
-
 ## Deploy
 
 Configurado vía GitHub Actions, como **segundo sitio de Hosting dentro del mismo

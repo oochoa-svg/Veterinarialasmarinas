@@ -30,7 +30,7 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 
 ## Modelo de atención
 
-- **M.V. María José González** — dueña, está todos los días. Atiende **por orden
+- **M.V. María José González** — dirección técnica, está todos los días. Atiende **por orden
   de llegada** (sin turno). Contacto: **teléfono de línea / contestador**
   `011 4504-7282` + **mail**. No usa WhatsApp.
   Horario: **Lun–Vie 10:30–12:30 y 17:30–20 · Sáb 10–13**.
@@ -49,7 +49,8 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
       contacto y usarla en el recordatorio de vacunas.
 - [ ] **Horarios de Octavio**: están como "a confirmar" (Mié/Jue 12:30–17:30,
       Vie 12:30–14:30). Los de María José ya están cargados.
-- [ ] **Servicios**: confirmar/ajustar las 6 tarjetas.
+- [x] **Servicios**: 3 tarjetas finales — Consultorio/Clínica, Emergencias en
+      horario de consulta, Laboratorio clínico.
 - [x] **Reseñas**: 4,9 en Google + 3 reseñas reales (Johanna Vargas, Mariano A.,
       Jessica Balboa). Se pueden sumar más.
 - [x] **Galería**: 5 fotos de mascotas (recortadas de las reseñas de Google).
@@ -71,11 +72,6 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 - **Teléfono**: 011 4504-7282
 - **Responsable**: M.V. María José González
 - **Google Maps**: https://maps.app.goo.gl/Q4i8B3WC7TpmkzVq9
-
-## Qué NO incluye (a diferencia de Las Marinas)
-
-Por pedido, esta versión **no** trae el sistema de turnos online, el registro
-de pacientes ni el formulario de vacunación. Se puede sumar más adelante.
 
 ## Deploy
 

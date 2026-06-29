@@ -11,7 +11,9 @@ mi-fiel-amigo/
 ├── public/
 │   ├── index.html       ← la landing completa (un solo archivo)
 │   └── img/
-│       └── logo.png     ← logo (fondo transparente)
+│       ├── logo.png         ← logo (fondo transparente)
+│       ├── qr-turnos.png     ← QR a la agenda online de turnos (Turnito)
+│       └── qr-turnos.svg     ← mismo QR en vectorial
 ├── firebase.json        ← configuración de hosting
 ├── .firebaserc          ← ID del proyecto Firebase (placeholder)
 └── README.md
@@ -31,16 +33,19 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 ## Modelo de atención
 
 - **M.V. María José González** — dirección técnica, está todos los días. Atiende **por orden
-  de llegada** (sin turno). Contacto: **teléfono de línea / contestador**
-  `011 4504-7282` + **mail**. No usa WhatsApp.
+  de llegada** (sin turno), exclusivamente. Contacto: **teléfono de línea /
+  contestador** `011 4504-7282` + **mail**. No usa WhatsApp.
   Horario: **Lun–Vie 10:30–12:30 y 17:30–20 · Sáb 10–13**.
 - **Dr. Octavio Ochoa** — cubre los horarios en que María José no está, **con
-  turno**. Turnos por **WhatsApp** `11 7062-3869` (`wa.me/5491170623869`).
+  turno**, exclusivamente. Los turnos se reservan desde la **agenda online de
+  Turnito**: https://turnito.app/c/b3Xgi6UEnvdeR3. El sitio muestra un código QR
+  que apunta a ese link (no hay botón de WhatsApp en la página).
   Horario (a confirmar): **Mié y Jue 12:30–17:30 · Vie 12:30–14:30**.
-- **Acción principal del sitio**: "Sacar turno". Hoy abre WhatsApp a Octavio con
-  un mensaje que pide **nombre + mascota + día/horario**, así queda el dato de la
-  persona. Más adelante se reemplaza por un formulario/sistema que guarde esos
-  datos automáticamente (ver "Para configurar después").
+- **Acción principal del sitio**: ya no hay botones de CTA — la página explica
+  el modelo de atención (turno = Octavio vía Turnito, orden de llegada = María
+  José vía teléfono) y muestra el QR de la agenda de Turnito para reservar.
+  Turnito guarda los datos de la reserva automáticamente, así que el punto de
+  "Captura de turnos / datos" de abajo ya está resuelto.
 - **Recordatorio de vacunas** → por **mail** (pendiente de armar).
 
 ## ⚠️ Pendiente de completar
@@ -60,10 +65,10 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 
 ## Para configurar después
 
-- **Captura de turnos / datos**: hoy "Sacar turno" abre WhatsApp a Octavio con
-  nombre + mascota + día/horario. El objetivo es que esos datos queden guardados
-  automáticamente (formulario → planilla / sistema de reservas, como el de Las
-  Marinas). Eso se configura aparte.
+- [x] **Captura de turnos / datos**: resuelto con **Turnito**
+      (https://turnito.app/c/b3Xgi6UEnvdeR3), la agenda online de Octavio. El
+      sitio muestra un QR que lleva directo a esa agenda; Turnito guarda los
+      datos de la reserva.
 - **Recordatorio de vacunas por mail**: pendiente de armar.
 
 ## Datos actuales

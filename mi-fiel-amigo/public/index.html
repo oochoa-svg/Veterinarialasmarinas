@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veterinaria Mi Fiel Amigo · Villa del Parque, CABA</title>
-  <meta name="description" content="Veterinaria Mi Fiel Amigo en Villa del Parque, CABA. Consultas, vacunas, cirugías y más. Atención personalizada para perros y gatos. Consultanos por WhatsApp." />
+  <meta name="description" content="Veterinaria Mi Fiel Amigo en Villa del Parque, CABA. Atención por orden de llegada con la M.V. María José González y turnos con el Dr. Octavio Ochoa." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0060A8" />
   <link rel="icon" href="img/logo.png" />
@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Veterinaria Mi Fiel Amigo · Villa del Parque" />
-  <meta property="og:description" content="Tu veterinaria de confianza en Villa del Parque. Consultanos por WhatsApp." />
+  <meta property="og:description" content="Tu veterinaria de confianza en Villa del Parque. Turnos con el Dr. Octavio Ochoa, atención por orden de llegada con la M.V. María José González." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:url" content="https://mifielamigo.web.app" />
@@ -24,7 +24,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Veterinaria Mi Fiel Amigo · Villa del Parque" />
-  <meta name="twitter:description" content="Tu veterinaria de confianza en Villa del Parque. Consultanos por WhatsApp." />
+  <meta name="twitter:description" content="Tu veterinaria de confianza en Villa del Parque. Turnos con el Dr. Octavio Ochoa, atención por orden de llegada con la M.V. María José González." />
   <meta name="twitter:image" content="https://mifielamigo.web.app/img/logo.png" />
 
   <!-- Google Fonts -->
@@ -63,12 +63,12 @@
       {
         "@type": "Question",
         "name": "¿Atienden urgencias?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos urgencias en horario comercial. Escribinos o llamanos por WhatsApp y te indicamos cómo proceder lo antes posible." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos urgencias en nuestro horario de consulta. Llamanos al 011 4504-7282 y te indicamos cómo proceder lo antes posible." }
       },
       {
         "@type": "Question",
         "name": "¿Necesito turno o puedo ir directamente?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Con la M.V. María José (dirección técnica) la atención es por orden de llegada en su horario. Con el Dr. Octavio es con turno, que se coordina por WhatsApp." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Con la M.V. María José González (dirección técnica) la atención es únicamente por orden de llegada, sin turno. Con el Dr. Octavio Ochoa la atención es únicamente con turno, que se reserva desde la agenda online." }
       },
       {
         "@type": "Question",
@@ -167,35 +167,6 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }
-    .nav-cta {
-      background: var(--naranja);
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 24px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .nav-cta:hover { background: var(--naranja-oscuro); transform: translateY(-1px); }
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
-    .nav-cta.turno {
-      background: var(--blanco);
-      color: var(--naranja-oscuro);
-      border: 1.5px solid var(--naranja);
-    }
-    .nav-cta.turno:hover { background: var(--naranja-suave); color: var(--naranja-oscuro); }
-    @media (max-width: 480px) {
-      .nav-cta.turno .nav-cta-label { display: none; }
-      .nav-cta.turno { padding: 9px 12px; }
-    }
-
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -256,48 +227,6 @@
       max-width: 440px;
       margin: 0 auto 32px;
     }
-    .hero-btns {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 34px;
-    }
-    .btn-primary {
-      background: var(--wa);
-      color: #fff;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 28px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      font-family: 'Nunito', sans-serif;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(37,211,102,0.28);
-      transition: transform 0.15s, box-shadow 0.2s;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(37,211,102,0.36); }
-    .btn-ghost {
-      background: var(--blanco);
-      color: var(--carbon);
-      border: 1.5px solid var(--linea);
-      padding: 14px 26px;
-      border-radius: 28px;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Nunito', sans-serif;
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.15s;
-    }
-    .btn-ghost:hover { border-color: var(--naranja); color: var(--naranja-oscuro); transform: translateY(-2px); }
     .btn-turno {
       background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
       color: #fff;
@@ -419,22 +348,6 @@
     .review-text { font-size: 14px; color: #e4ddd2; line-height: 1.65; margin-bottom: 14px; }
     .review-author { font-size: 13px; color: var(--naranja); font-weight: 700; }
     .review-cta { text-align: center; margin-top: 32px; }
-    .review-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--naranja);
-      color: #fff;
-      padding: 14px 30px;
-      border-radius: 32px;
-      font-size: 15px;
-      font-weight: 700;
-      text-decoration: none;
-      font-family: 'Nunito', sans-serif;
-      transition: transform 0.15s, background 0.15s;
-    }
-    .review-btn:hover { transform: translateY(-2px); background: var(--naranja-oscuro); }
-    .review-btn i { font-size: 18px; }
 
     /* ── REGISTRO / VACUNACIÓN ── */
     .registro-section { background: var(--crema); }
@@ -719,23 +632,6 @@
     }
     .qr-registro span { font-size: 13px; color: var(--carbon-suave); max-width: 280px; }
     .qr-registro span i { color: var(--naranja); }
-    .wa-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #fff;
-      color: var(--carbon);
-      padding: 15px 34px;
-      border-radius: 32px;
-      font-size: 15px;
-      font-weight: 700;
-      text-decoration: none;
-      font-family: 'Nunito', sans-serif;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-      transition: transform 0.15s;
-    }
-    .wa-btn i { color: var(--wa); font-size: 20px; }
-    .wa-btn:hover { transform: translateY(-2px); }
     .tel-link {
       display: block;
       color: rgba(255,255,255,0.92);
@@ -788,22 +684,8 @@
     .team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .team-avatar .caduceo { width: 32px; height: 32px; }
     .team-name { font-family: 'Baloo 2', cursive; font-size: 17px; font-weight: 700; color: var(--carbon); margin-bottom: 4px; }
-    .team-role { font-size: 13px; color: var(--naranja-oscuro); font-weight: 600; margin-bottom: 14px; }
-    .team-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--naranja-suave);
-      color: var(--naranja-oscuro);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.15s, background 0.15s;
-    }
-    .team-wa i { color: var(--wa); font-size: 16px; }
-    .team-wa:hover { transform: translateY(-2px); background: var(--naranja-tinte); }
+    .team-role { font-size: 13px; color: var(--naranja-oscuro); font-weight: 600; margin-bottom: 10px; }
+    .team-note { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
     /* ── GALERÍA (carrusel horizontal) ── */
     .galeria-section { background: var(--crema); overflow: hidden; }
@@ -846,39 +728,6 @@
     .footer-logo b { font-family: 'Baloo 2', cursive; color: var(--crema); font-size: 16px; }
     footer p { font-size: 13px; color: #9a958c; }
     footer a { color: var(--naranja); text-decoration: none; }
-
-    /* ── WHATSAPP FLOTANTE ── */
-    .wa-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 200;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--wa);
-      color: #fff;
-      padding: 14px 20px 14px 16px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-family: 'Nunito', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      box-shadow: 0 8px 24px rgba(37,211,102,0.45);
-      animation: wa-pulse 2.6s ease-in-out infinite;
-      transition: transform 0.15s;
-    }
-    .wa-float:hover { transform: scale(1.05); }
-    .wa-float i { font-size: 26px; }
-    @keyframes wa-pulse {
-      0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
-      50%      { box-shadow: 0 8px 30px rgba(37,211,102,0.75); }
-    }
-    @media (max-width: 480px) {
-      .wa-float { right: 16px; bottom: 16px; padding: 14px; }
-      .wa-float .wa-label { display: none; }
-      .wa-float i { font-size: 28px; }
-    }
 
     /* ── TURNO FLOTANTE ── */
     .turno-float {
@@ -1114,7 +963,6 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 480px) {
       nav { padding: 10px 16px; }
-      .nav-cta { padding: 9px 16px; font-size: 13px; }
       .hero, section { padding-left: 16px; padding-right: 16px; }
       .cta-box { padding: 36px 22px; }
       .edu-card { padding: 26px 20px; }
@@ -1184,11 +1032,6 @@
         <span>Veterinaria</span>
       </span>
     </a>
-    <div class="nav-actions">
-      <a class="nav-cta" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quiero%20sacar%20un%20turno.%0ANombre%3A%20%0AMascota%3A%20%0AD%C3%ADa%20y%20horario%20que%20prefiero%3A%20" target="_blank" rel="noopener">
-        <i class="ti ti-calendar-plus"></i> Sacar turno
-      </a>
-    </div>
   </nav>
 
   <!-- HERO -->
@@ -1200,19 +1043,10 @@
       <div class="hero-emblem"><img src="img/logo.png" alt="Logo Mi Fiel Amigo Veterinaria" width="150" height="150" style="width:100%;height:auto;object-fit:contain;" /></div>
       <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Villa del Parque · CABA</p>
       <h1>Tu veterinaria de confianza en <em>Villa del Parque</em></h1>
-      <p class="hero-sub">Atención personalizada para perros y gatos. Vení por orden de llegada con María José, o sacá turno con el Dr. Octavio.</p>
-      <div class="hero-btns">
-        <a class="btn-primary" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quiero%20sacar%20un%20turno.%0ANombre%3A%20%0AMascota%3A%20%0AD%C3%ADa%20y%20horario%20que%20prefiero%3A%20" target="_blank" rel="noopener">
-          <i class="ti ti-brand-whatsapp"></i> Sacar turno por WhatsApp
-        </a>
-        <a class="btn-ghost" href="tel:+541145047282">
-          <i class="ti ti-phone"></i> Llamar a la veterinaria
-        </a>
-      </div>
+      <p class="hero-sub">La atención habitual, por orden de llegada, es únicamente con la M.V. María José González. Los turnos son únicamente con el Dr. Octavio Ochoa.</p>
       <div class="hero-badges">
-        <div class="badge"><i class="ti ti-paw"></i> Perros y gatos</div>
-        <div class="badge"><i class="ti ti-walk"></i> Por orden de llegada</div>
-        <div class="badge"><i class="ti ti-calendar-event"></i> Turnos con el Dr. Octavio</div>
+        <div class="badge"><i class="ti ti-walk"></i> Sin turno · M.V. María José</div>
+        <div class="badge"><i class="ti ti-calendar-event"></i> Con turno · Dr. Octavio</div>
       </div>
     </div>
   </header>
@@ -1253,18 +1087,14 @@
         <div class="team-card">
           <div class="team-avatar"><svg class="caduceo" viewBox="0 0 100 100" role="img" aria-label="Médica veterinaria"><use href="#caduceo"/></svg></div>
           <div class="team-name">M.V. María José González</div>
-          <div class="team-role">Dirección técnica · por orden de llegada</div>
-          <a class="team-wa" href="tel:+541145047282">
-            <i class="ti ti-phone"></i> Llamar / dejar mensaje
-          </a>
+          <div class="team-role">Dirección técnica</div>
+          <p class="team-note">Atención habitual, únicamente por orden de llegada — sin turno</p>
         </div>
         <div class="team-card">
           <div class="team-avatar"><svg class="caduceo" viewBox="0 0 100 100" role="img" aria-label="Médico veterinario"><use href="#caduceo"/></svg></div>
           <div class="team-name">Octavio Ochoa</div>
-          <div class="team-role">Médico Veterinario · con turno</div>
-          <a class="team-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quiero%20sacar%20un%20turno.%0ANombre%3A%20%0AMascota%3A%20%0AD%C3%ADa%20y%20horario%20que%20prefiero%3A%20" target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp"></i> Sacar turno
-          </a>
+          <div class="team-role">Médico Veterinario</div>
+          <p class="team-note">Atiende únicamente con turno reservado</p>
         </div>
       </div>
     </div>
@@ -1323,7 +1153,7 @@
         <!-- TODO: reemplazar por el link de "Obtener más reseñas" de tu Google Business Profile
              (Perfil de la empresa → Inicio → "Obtener más reseñas" → copiar enlace corto)
              para que sea de un solo clic. Mientras tanto, este link lleva a la búsqueda en Maps. -->
-        <a class="review-btn" href="https://maps.app.goo.gl/Q4i8B3WC7TpmkzVq9" target="_blank" rel="noopener">
+        <a class="map-link" href="https://maps.app.goo.gl/Q4i8B3WC7TpmkzVq9" target="_blank" rel="noopener" style="color:var(--naranja);justify-content:center;">
           <i class="ti ti-star"></i> Dejanos tu reseña en Google
         </a>
       </div>
@@ -1341,18 +1171,19 @@
         <details class="faq-item">
           <summary>¿Atienden urgencias? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
-            Sí. Atendemos <strong>urgencias en horario comercial</strong>. Si tu mascota necesita
-            atención inmediata, escribinos o llamanos por <strong>WhatsApp</strong>
-            (botón verde abajo a la derecha) y te indicamos cómo proceder lo antes posible.
+            Sí. Atendemos <strong>urgencias en horario de consulta</strong>. Si tu mascota necesita
+            atención inmediata, llamanos al <strong>011 4504-7282</strong> y te indicamos cómo
+            proceder lo antes posible.
           </div>
         </details>
 
         <details class="faq-item">
           <summary>¿Necesito turno o puedo ir directamente? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
-            Depende del profesional: con la <strong>M.V. María José</strong> (dirección técnica) la atención
-            es <strong>por orden de llegada</strong> en su horario. Con el <strong>Dr. Octavio</strong>
-            es <strong>con turno</strong>: sacá tu turno por WhatsApp y coordinamos día y hora.
+            Depende del profesional: con la <strong>M.V. María José González</strong> (dirección técnica)
+            la atención es <strong>únicamente por orden de llegada</strong>, sin turno. Con el
+            <strong>Dr. Octavio Ochoa</strong> la atención es <strong>únicamente con turno</strong>, que se
+            reserva desde la agenda online escaneando el código QR más abajo.
           </div>
         </details>
 
@@ -1406,7 +1237,7 @@
             <div class="info-label">Con turno · Dr. Octavio</div>
             <!-- TODO: confirmar horarios definitivos de Octavio -->
             <div class="info-val">Mié y Jue: 12:30–17:30</div>
-            <div class="info-sub">Vie: 12:30–14:30 · sacá turno por WhatsApp</div>
+            <div class="info-sub">Vie: 12:30–14:30 · turno por agenda online</div>
           </div>
         </div>
         <div class="info-block">
@@ -1415,14 +1246,6 @@
             <div class="info-label">Teléfono / contestador</div>
             <div class="info-val"><a href="tel:+541145047282" style="color:var(--carbon);text-decoration:none;">011 4504-7282</a></div>
             <div class="info-sub">Dejá tu mensaje o consultá por mail</div>
-          </div>
-        </div>
-        <div class="info-block">
-          <div class="info-icon-wrap"><i class="ti ti-brand-whatsapp"></i></div>
-          <div>
-            <div class="info-label">WhatsApp · turnos</div>
-            <div class="info-val"><a href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quiero%20sacar%20un%20turno.%0ANombre%3A%20%0AMascota%3A%20%0AD%C3%ADa%20y%20horario%20que%20prefiero%3A%20" target="_blank" rel="noopener" style="color:var(--carbon);text-decoration:none;">11 7062-3869</a></div>
-            <div class="info-sub">Dr. Octavio Ochoa</div>
           </div>
         </div>
       </div>
@@ -1448,13 +1271,17 @@
       <svg class="paw-bg light" style="top:-10px;right:-10px;width:120px;transform:rotate(25deg);opacity:0.12"><use href="#paw"/></svg>
       <svg class="paw-bg light" style="bottom:-15px;left:-5px;width:80px;transform:rotate(-10deg);opacity:0.12"><use href="#paw"/></svg>
       <div class="hero-inner">
-        <h2 class="cta-title">¿Tenés una consulta?</h2>
-        <p class="cta-sub">Sacá tu turno con el Dr. Octavio por WhatsApp, o comunicate con María José. Te respondemos a la brevedad.</p>
-        <a class="wa-btn" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quiero%20sacar%20un%20turno.%0ANombre%3A%20%0AMascota%3A%20%0AD%C3%ADa%20y%20horario%20que%20prefiero%3A%20" target="_blank" rel="noopener">
-          <i class="ti ti-brand-whatsapp"></i> Sacar turno por WhatsApp
-        </a>
+        <h2 class="cta-title">¿Cómo te atendemos?</h2>
+        <p class="cta-sub">Los turnos son únicamente con el <strong>Dr. Octavio Ochoa</strong>, reservando desde la agenda online. La atención habitual, por orden de llegada, es únicamente con la <strong>M.V. María José González</strong>, sin turno.</p>
+        <div class="qr-share">
+          <img src="img/qr-turnos.png" width="120" height="120" loading="lazy" alt="Código QR para reservar turno con el Dr. Octavio Ochoa" />
+          <span><i class="ti ti-qrcode"></i> Escaneá para sacar turno con el Dr. Octavio</span>
+          <a class="qr-cartel-link" href="https://turnito.app/c/b3Xgi6UEnvdeR3" target="_blank" rel="noopener">
+            <i class="ti ti-external-link"></i> Abrir agenda online
+          </a>
+        </div>
         <a class="tel-link" href="tel:+541145047282">
-          <i class="ti ti-phone" style="font-size:13px;vertical-align:-1px;margin-right:4px;"></i> O llamanos al 011 4504-7282
+          <i class="ti ti-phone" style="font-size:13px;vertical-align:-1px;margin-right:4px;"></i> Por orden de llegada, llamá al 011 4504-7282
         </a>
       </div>
     </div>
@@ -1468,13 +1295,6 @@
     </div>
     <p>© 2026 · Cuenca 3526, Villa del Parque, CABA</p>
   </footer>
-
-  <!-- WHATSAPP FLOTANTE (urgencias y consultas) -->
-  <a class="wa-float" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quiero%20sacar%20un%20turno.%0ANombre%3A%20%0AMascota%3A%20%0AD%C3%ADa%20y%20horario%20que%20prefiero%3A%20" target="_blank" rel="noopener" aria-label="Sacar turno por WhatsApp">
-    <i class="ti ti-brand-whatsapp"></i><span class="wa-label">Sacar turno</span>
-  </a>
-
-
 
 </body>
 </html>

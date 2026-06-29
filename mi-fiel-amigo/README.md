@@ -42,7 +42,7 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 - **Vet. Octavio Ochoa** — cubre los horarios en que María José no está, **con
   turno**, exclusivamente. Los turnos se reservan desde la **agenda online de
   Turnito**: https://turnito.app/c/b3Xgi6UEnvdeR3.
-  Horario (a confirmar): **Mié y Jue 12:30–17:30 · Vie 12:30–14:30**.
+  Horario: **Mié y Jue 12:30–17:30** (viernes por ahora no).
 - **Acción principal del sitio**: sacar turno con el Vet. Octavio. Es lo primero
   que se ve (hero con botón "Pedir turno online"), hay un **botón flotante**
   "Pedir turno" siempre visible, y el QR de la agenda de Turnito en la sección
@@ -56,8 +56,8 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 
 - [ ] **Email de María José**: falta la dirección de mail para mostrarla en
       contacto y usarla en el recordatorio de vacunas.
-- [ ] **Horarios de Octavio**: están como "a confirmar" (Mié/Jue 12:30–17:30,
-      Vie 12:30–14:30). Los de María José ya están cargados.
+- [x] **Horarios de Octavio**: Mié y Jue 12:30–17:30 (el viernes, por ahora,
+      no). Los de María José ya estaban cargados.
 - [x] **Servicios**: 3 tarjetas finales — Consultorio/Clínica, Emergencias en
       horario de consulta, Laboratorio clínico.
 - [x] **Reseñas**: 4,9 en Google + 3 reseñas reales (Johanna Vargas, Mariano A.,

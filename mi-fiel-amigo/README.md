@@ -9,7 +9,9 @@ y paleta azul (principal) + verde (acento).
 ```
 mi-fiel-amigo/
 ├── public/
-│   ├── index.html       ← la landing completa (un solo archivo)
+│   ├── index.html         ← la landing completa (un solo archivo)
+│   ├── farmacia.html      ← catálogo de farmacia online (busca + WhatsApp)
+│   ├── farmacia-data.js   ← datos de productos (generados desde la lista de Arandu)
 │   └── img/
 │       ├── logo.png         ← logo (fondo transparente)
 │       ├── qr-turnos.png     ← QR a la agenda online de turnos (Turnito)
@@ -51,6 +53,34 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
   Turnito guarda los datos de la reserva automáticamente, así que el punto de
   "Captura de turnos / datos" de abajo ya está resuelto.
 - **Recordatorio de vacunas** → por **mail** (pendiente de armar).
+
+## Farmacia online (`farmacia.html`)
+
+Catálogo de productos con buscador y filtros por categoría, pensado para que
+el visitante encuentre el producto y consulte disponibilidad y precio por
+WhatsApp — **no es un e-commerce con carrito ni pago online**, todo se
+confirma con el Vet. Octavio por WhatsApp (mismo criterio que la regulación
+de SENASA sobre venta online de productos veterinarios, que exige estar
+registrado como distribuidor salvo venta libre).
+
+- **Origen de los datos**: lista de precios de **Distribuidora Arandu**
+  (PDF que envía Octavio). Se curó a mano con un script (`build_catalog.py`,
+  no versionado, quedó en el historial de la conversación) que:
+  - Excluye lo que es de uso clínico exclusivo (anestésicos, eutanásicos,
+    vacunas, insulina, tests diagnósticos) — no tiene sentido que un dueño
+    de mascota los pida por su cuenta.
+  - Clasifica el resto en 15 categorías (antiparasitarios, antiinflamatorios,
+    dermatológicos, cardiológicos, etc.) por palabras clave del nombre.
+  - Calcula el **precio de venta = precio con IVA de la lista × 1,8**,
+    redondeado a la centena.
+- **Botón "Consultar"**: arma un link `wa.me/<número>?text=...` con el
+  nombre del producto y el precio ya calculado — el cliente lo ve y lo manda
+  tal cual (no hay forma de ocultarlo con un link gratuito de WhatsApp).
+  Número usado: el de la cuenta de WhatsApp de Octavio (mismo que el QR de
+  los carteles).
+- **Actualizar precios**: cuando cambie la lista de Arandu, Octavio manda el
+  PDF nuevo y se regenera `farmacia-data.js`.
+- Accesible desde el nav de `index.html` ("Farmacia online").
 
 ## ⚠️ Pendiente de completar
 

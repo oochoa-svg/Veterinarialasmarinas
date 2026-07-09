@@ -304,7 +304,8 @@
     }
 
     function waLink(item) {
-      const msg = `Hola! Quiero consultar por *${item.n}* (${item.l}).\nPrecio: ${money(item.p)}\n¿Tenés disponible?\n\n(Te mando la foto de la indicación si la tengo)`;
+      const cashPrice = Math.round(item.p * 0.9 / 100) * 100;
+      const msg = `Hola! Quiero consultar por *${item.n}* (${item.l}).\nPrecio: ${money(item.p)}\nPrecio en efectivo (10% off): *${money(cashPrice)}*\n¿Tenés disponible?\n\n(Te mando la foto de la indicación si la tengo)`;
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
 

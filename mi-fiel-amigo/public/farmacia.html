@@ -96,6 +96,17 @@
       padding: 9px 16px;
       border-radius: 999px;
     }
+    .page-head .photo-tip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .page-head .photo-tip i { font-size: 15px; }
 
     .toolbar {
       max-width: 1100px;
@@ -256,6 +267,7 @@
     <h1>Farmacia online</h1>
     <p>Buscá el producto que necesita tu mascota. Elegilo y te llevamos directo a WhatsApp con el mensaje listo para consultar disponibilidad y precio.</p>
     <div class="wa-note"><i class="ti ti-brand-whatsapp"></i> Sin compra online: todo se confirma por WhatsApp con el Vet. Octavio</div>
+    <p class="photo-tip"><i class="ti ti-camera"></i> Si tenés la indicación del veterinario, podés mandar la foto en el mismo chat.</p>
   </div>
 
   <div class="toolbar">
@@ -292,7 +304,7 @@
     }
 
     function waLink(item) {
-      const msg = `Hola! Quiero consultar por *${item.n}* (${item.l}).\nPrecio: ${money(item.p)}\n¿Tenés disponible?`;
+      const msg = `Hola! Quiero consultar por *${item.n}* (${item.l}).\nPrecio: ${money(item.p)}\n¿Tenés disponible?\n\n(Te mando la foto de la indicación si la tengo)`;
       return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
 

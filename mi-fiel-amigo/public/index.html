@@ -256,6 +256,31 @@
       transition: transform 0.15s, box-shadow 0.2s;
     }
     .btn-turno:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,96,168,0.40); }
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .btn-farmacia {
+      background: linear-gradient(135deg, var(--verde), var(--verde-oscuro));
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 28px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'Nunito', sans-serif;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(95,156,18,0.30);
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-farmacia:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(95,156,18,0.40); }
     .hero-badges {
       display: flex;
       gap: 12px;
@@ -1054,11 +1079,16 @@
     <div class="hero-inner">
       <div class="hero-emblem"><img src="img/logo.png" alt="Logo Mi Fiel Amigo Veterinaria" width="150" height="150" style="width:100%;height:auto;object-fit:contain;" /></div>
       <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Villa del Parque · CABA</p>
-      <h1>Sacá tu turno con el <em>Vet. Octavio Ochoa</em></h1>
-      <p class="hero-sub">Reservá online en segundos desde la agenda. La atención habitual por orden de llegada, sin turno, es con la Vet. María José González.</p>
-      <a class="btn-turno" href="https://turnito.app/c/b3Xgi6UEnvdeR3" target="_blank" rel="noopener" style="margin-bottom:28px;">
-        <i class="ti ti-calendar-plus"></i> Pedir turno online
-      </a>
+      <h1>Cuidando la salud de <em>tu mejor amigo</em></h1>
+      <p class="hero-sub">Pedí tu turno con el Vet. Octavio Ochoa, en sus horarios de atención. Sin turno, por orden de llegada, con la Vet. María José González.</p>
+      <div class="hero-buttons">
+        <a class="btn-turno" href="https://turnito.app/c/b3Xgi6UEnvdeR3" target="_blank" rel="noopener">
+          <i class="ti ti-calendar-plus"></i> Pedir turno online
+        </a>
+        <a class="btn-farmacia" href="farmacia.html">
+          <i class="ti ti-pill"></i> Encargos de farmacia
+        </a>
+      </div>
       <div class="hero-badges">
         <div class="badge"><i class="ti ti-calendar-event"></i> Con turno · Vet. Octavio</div>
         <div class="badge"><i class="ti ti-walk"></i> Sin turno · Vet. María José</div>
@@ -1242,7 +1272,7 @@
           <div class="info-icon-wrap"><i class="ti ti-clock"></i></div>
           <div>
             <div class="info-label">Por orden de llegada · Vet. María José</div>
-            <div class="info-val">Lun a Vie: 10:30–12:30 y 17:30–20</div>
+            <div class="info-val">Lun a Vie: 10–12:30 y 17:30–20</div>
             <div class="info-sub">Sábados: 10–13</div>
           </div>
         </div>

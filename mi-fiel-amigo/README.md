@@ -40,16 +40,18 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 - **Vet. María José González** — está todos los días. Atiende **por orden
   de llegada** (sin turno), exclusivamente. Contacto: **teléfono de línea /
   contestador** `011 4504-7282` + **mail**. No usa WhatsApp.
-  Horario: **Lun–Vie 10:30–12:30 y 17:30–20 · Sáb 10–13**.
+  Horario: **Lun–Vie 10–12:30 y 17:30–20 · Sáb 10–13**.
 - **Vet. Octavio Ochoa** — cubre los horarios en que María José no está, **con
   turno**, exclusivamente. Los turnos se reservan desde la **agenda online de
   Turnito**: https://turnito.app/c/b3Xgi6UEnvdeR3.
   Horario: **Mié y Jue 12:30–17:30** (viernes por ahora no).
-- **Acción principal del sitio**: sacar turno con el Vet. Octavio. Es lo primero
-  que se ve (hero con botón "Pedir turno online"), hay un **botón flotante**
-  "Pedir turno" siempre visible, y el QR de la agenda de Turnito en la sección
-  final. Todos apuntan al mismo link de Turnito. La atención por orden de
-  llegada con María José (teléfono) se explica como vía secundaria.
+- **Acción principal del sitio**: sacar turno con el Vet. Octavio. El hero
+  ahora abre con un título institucional ("Cuidando la salud de tu mejor
+  amigo") y dos botones lado a lado — **"Pedir turno online"** (Turnito) y
+  **"Encargos de farmacia"** (lleva a `farmacia.html`). También hay un
+  **botón flotante** "Pedir turno" siempre visible, y el QR de la agenda de
+  Turnito en la sección final. La atención por orden de llegada con María
+  José (teléfono) se explica como vía secundaria.
   Turnito guarda los datos de la reserva automáticamente, así que el punto de
   "Captura de turnos / datos" de abajo ya está resuelto.
 - **Recordatorio de vacunas** → por **mail** (pendiente de armar).

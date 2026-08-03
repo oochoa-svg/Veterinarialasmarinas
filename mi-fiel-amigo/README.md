@@ -14,7 +14,7 @@ mi-fiel-amigo/
 │   ├── farmacia-data.js   ← datos de productos (generados desde la lista de Arandu)
 │   └── img/
 │       ├── logo.png         ← logo (fondo transparente)
-│       ├── qr-turnos.png     ← QR a la agenda online de turnos (Turnito)
+│       ├── qr-turnos.png     ← QR a la agenda online de turnos (CanalVet)
 │       └── qr-turnos.svg     ← mismo QR en vectorial
 ├── firebase.json        ← configuración de hosting
 ├── .firebaserc          ← ID del proyecto Firebase (placeholder)
@@ -43,16 +43,16 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
   Horario: **Lun–Vie 10–12:30 y 17:30–20 · Sáb 10–13**.
 - **Vet. Octavio Ochoa** — cubre los horarios en que María José no está, **con
   turno**, exclusivamente. Los turnos se reservan desde la **agenda online de
-  Turnito**: https://turnito.app/c/b3Xgi6UEnvdeR3.
+  CanalVet**: https://canalvet.web.app/v/mifielamigo.html.
   Horario: **Mié y Jue 12:30–17:30** (viernes por ahora no).
 - **Acción principal del sitio**: sacar turno con el Vet. Octavio. El hero
   ahora abre con un título institucional ("Cuidando la salud de tu mejor
-  amigo") y dos botones lado a lado — **"Pedir turno online"** (Turnito) y
+  amigo") y dos botones lado a lado — **"Pedir turno online"** (CanalVet) y
   **"Encargos de farmacia"** (lleva a `farmacia.html`). También hay un
   **botón flotante** "Pedir turno" siempre visible, y el QR de la agenda de
-  Turnito en la sección final. La atención por orden de llegada con María
+  CanalVet en la sección final. La atención por orden de llegada con María
   José (teléfono) se explica como vía secundaria.
-  Turnito guarda los datos de la reserva automáticamente, así que el punto de
+  CanalVet guarda los datos de la reserva automáticamente, así que el punto de
   "Captura de turnos / datos" de abajo ya está resuelto.
 - **Recordatorio de vacunas** → por **mail** (pendiente de armar).
 
@@ -101,9 +101,9 @@ registrado como distribuidor salvo venta libre).
 
 ## Para configurar después
 
-- [x] **Captura de turnos / datos**: resuelto con **Turnito**
-      (https://turnito.app/c/b3Xgi6UEnvdeR3), la agenda online de Octavio. El
-      sitio muestra un QR que lleva directo a esa agenda; Turnito guarda los
+- [x] **Captura de turnos / datos**: resuelto con **CanalVet**
+      (https://canalvet.web.app/v/mifielamigo.html), la agenda online de Octavio. El
+      sitio muestra un QR que lleva directo a esa agenda; CanalVet guarda los
       datos de la reserva.
 - **Recordatorio de vacunas por mail**: pendiente de armar.
 

@@ -41,19 +41,21 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
   de llegada** (sin turno), exclusivamente. Contacto: **teléfono de línea /
   contestador** `011 4504-7282` + **mail**. No usa WhatsApp.
   Horario: **Lun–Vie 10–12:30 y 17:30–20 · Sáb 10–13**.
-- **Vet. Octavio Ochoa** — cubre los horarios en que María José no está, **con
-  turno**, exclusivamente. Los turnos se reservan desde la **agenda online de
-  CanalVet**: https://canalvet.web.app/v/mifielamigo.html.
-  Horario: **Mié y Jue 12:30–17:30** (viernes por ahora no).
-- **Acción principal del sitio**: sacar turno con el Vet. Octavio. El hero
-  ahora abre con un título institucional ("Cuidando la salud de tu mejor
-  amigo") y dos botones lado a lado — **"Pedir turno online"** (CanalVet) y
-  **"Encargos de farmacia"** (lleva a `farmacia.html`). También hay un
-  **botón flotante** "Pedir turno" siempre visible, y el QR de la agenda de
-  CanalVet en la sección final. La atención por orden de llegada con María
-  José (teléfono) se explica como vía secundaria.
-  CanalVet guarda los datos de la reserva automáticamente, así que el punto de
-  "Captura de turnos / datos" de abajo ya está resuelto.
+- **Vet. Octavio Ochoa** — cubre los horarios en que María José no está.
+  Atiende a consulta, coordinando directamente **por WhatsApp** (sin agenda
+  online ni reserva telefónica). Número: el mismo de WhatsApp que usa la
+  farmacia online, `5491170623869`.
+  Horario: **Miércoles desde las 16:20 · Jueves 12:30–17:30** (viernes por
+  ahora no).
+- **Acción principal del sitio**: coordinar la consulta con el Vet. Octavio
+  por WhatsApp. El hero abre con un título institucional ("Cuidando la salud
+  de tu mejor amigo") y dos botones lado a lado — **"Consultar por
+  WhatsApp"** y **"Encargos de farmacia"** (lleva a `farmacia.html`). La
+  atención por orden de llegada con María José (teléfono) se explica como
+  vía secundaria.
+  La agenda online de CanalVet y el botón/QR de "Pedir turno" quedaron
+  desactivados (bloques comentados en `index.html`); no hay captura
+  automática de datos de la consulta, se coordina todo a mano por WhatsApp.
 - **Recordatorio de vacunas** → por **mail** (pendiente de armar).
 
 ## Farmacia online (`farmacia.html`)
@@ -88,8 +90,8 @@ registrado como distribuidor salvo venta libre).
 
 - [ ] **Email de María José**: falta la dirección de mail para mostrarla en
       contacto y usarla en el recordatorio de vacunas.
-- [x] **Horarios de Octavio**: Mié y Jue 12:30–17:30 (el viernes, por ahora,
-      no). Los de María José ya estaban cargados.
+- [x] **Horarios de Octavio**: Miércoles desde las 16:20 · Jueves 12:30–17:30
+      (el viernes, por ahora, no). Los de María José ya estaban cargados.
 - [x] **Servicios**: 3 tarjetas finales — Consultorio/Clínica, Emergencias en
       horario de consulta, Laboratorio clínico.
 - [x] **Reseñas**: 4,9 en Google + 3 reseñas reales (Johanna Vargas, Mariano A.,
@@ -101,10 +103,10 @@ registrado como distribuidor salvo venta libre).
 
 ## Para configurar después
 
-- [x] **Captura de turnos / datos**: resuelto con **CanalVet**
-      (https://canalvet.web.app/v/mifielamigo.html), la agenda online de Octavio. El
-      sitio muestra un QR que lleva directo a esa agenda; CanalVet guarda los
-      datos de la reserva.
+- [ ] **Captura de turnos / datos**: por ahora no hay agenda online (CanalVet
+      quedó desactivado); todo se coordina a mano por WhatsApp con Octavio.
+      Si vuelve a activarse una agenda online, reactivar los bloques
+      comentados en `index.html` y actualizar este README.
 - **Recordatorio de vacunas por mail**: pendiente de armar.
 
 ## Datos actuales

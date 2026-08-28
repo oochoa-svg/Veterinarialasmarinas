@@ -34,7 +34,8 @@ cada mensaje sin necesidad de tracking.
 Paleta propia, distinta de las dos clínicas (naranja en Las Marinas, azul/verde en
 Mi Fiel Amigo), para que se lea como una marca aparte:
 
-- Petróleo (principal): `#14606B` · Petróleo oscuro: `#0E4854`
+- Violeta (principal): `#4A2470` · Violeta oscuro: `#32174A` — **tomado del logo**,
+  muestreado del archivo original para que web y logo sean la misma marca
 - Ámbar (acento): `#E8A33D`
 - Carbón: `#2B2B2B` · Crema: `#FBF6EE`
 - Tipografías: Baloo 2 (títulos) + Nunito (texto), igual que el resto del ecosistema
@@ -86,12 +87,17 @@ Estos puntos todavía no están resueltos y hoy la página no los afirma:
 
 ## Pendientes de contenido
 
-- [ ] **Foto de perfil** → `img/octavio.jpg` (hoy hay un placeholder con ícono).
+- [x] ~~Foto de perfil~~ → `img/octavio.jpg`, recortada de la foto con la perra negra.
+      Se descartó la del gato blanco: tiene vía y vendaje, se lee como paciente
+      internado y choca con el mensaje de "sin estrés".
+- [x] ~~Logo~~ → `img/logo.png`, extraído del retrato con fondo hecho transparente.
 - [ ] **Videos propios dirigidos a dueños** en la sección "Para que decidas informado"
       (hoy hay 3 tarjetas de ejemplo). **No reutilizar material de Canal Veterinario
       Live**: esa plataforma le habla a colegas veterinarios, no a dueños de mascotas.
       Son dos audiencias distintas.
-- [ ] **Imagen Open Graph** para cuando se comparta el link por WhatsApp o redes.
+- [x] ~~Imagen Open Graph~~ → `img/og-image.jpg` (1200×630).
+- [ ] **Logo en origen**: el actual se extrajo de un JPG, así que tiene bordes con
+      algo de ruido. Si aparece el archivo vectorial (SVG/PDF), conviene reemplazarlo.
 
 ## Dos audiencias que no hay que mezclar
 

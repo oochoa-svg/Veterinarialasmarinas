@@ -11,11 +11,16 @@
   <meta property="og:title" content="Vet. Octavio Ochoa · Veterinario de cabecera a domicilio" />
   <meta property="og:description" content="Atención veterinaria a domicilio en Zona Norte y CABA. Un veterinario que conoce a tu mascota y te acompaña en el tiempo." />
   <meta property="og:locale" content="es_AR" />
+  <meta property="og:url" content="https://vetoctavio8a.web.app/" />
+  <meta property="og:image" content="https://vetoctavio8a.web.app/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Vet. Octavio Ochoa · Veterinario de cabecera a domicilio" />
   <meta name="twitter:description" content="Atención veterinaria a domicilio en Zona Norte y CABA." />
+  <meta name="twitter:image" content="https://vetoctavio8a.web.app/img/og-image.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,12 +60,13 @@
 
   <style>
     :root {
-      --petroleo:        #14606B;
-      --petroleo-oscuro: #0E4854;
-      --petroleo-suave:  #E3F0F1;
-      --petroleo-tinte:  #C2DEE1;
+      /* violeta tomado del logo (#32174A) */
+      --petroleo:        #4A2470;
+      --petroleo-oscuro: #32174A;
+      --petroleo-suave:  #F0EAF6;
+      --petroleo-tinte:  #D8C9E6;
       --ambar:           #E8A33D;
-      --ambar-oscuro:    #c9852a;
+      --ambar-oscuro:    #b8791f;
       --carbon:          #2B2B2B;
       --carbon-suave:    #3a3a38;
       --crema:           #FBF6EE;
@@ -96,15 +102,15 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 11px 22px;
     }
-    .nav-brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-    .nav-mark {
-      width: 40px; height: 40px; border-radius: 11px; flex-shrink: 0;
-      background: linear-gradient(135deg, var(--petroleo), var(--petroleo-oscuro));
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 19px;
+    .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; min-width: 0; }
+    .nav-logo { height: 44px; width: auto; flex-shrink: 0; }
+    .brand-tag-nav {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+      color: var(--ambar-oscuro); padding-left: 14px; border-left: 1px solid var(--gris-claro);
+      white-space: nowrap;
     }
-    .brand-name { font-size: 19px; font-weight: 800; color: var(--petroleo-oscuro); }
-    .brand-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ambar-oscuro); margin-top: -2px; }
+    @media (max-width: 720px) { .brand-tag-nav { display: none; } }
+    @media (max-width: 420px) { .nav-logo { height: 34px; } }
     .nav-cta {
       display: inline-flex; align-items: center; gap: 7px;
       background: var(--petroleo); color: #fff; text-decoration: none;
@@ -383,11 +389,9 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <a class="nav-brand" href="#">
-      <div class="nav-mark">OO</div>
-      <div>
-        <div class="brand-name">Vet. Octavio Ochoa</div>
-        <div class="brand-tag">Veterinario de cabecera</div>
-      </div>
+      <img class="nav-logo" src="img/logo.png" width="900" height="191"
+           alt="Vet. Octavio Ochoa — MP 16465 · MN 11170" />
+      <span class="brand-tag-nav">Veterinario de cabecera</span>
     </a>
     <a class="nav-cta" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
       <i class="ti ti-brand-whatsapp"></i> <span class="nav-cta-label">Escribime</span>
@@ -628,8 +632,10 @@
       <div class="divider"></div>
       <div class="sobre-grid">
         <div>
-          <!-- TODO: reemplazar por foto real (img/octavio.jpg) -->
-          <div class="sobre-foto"><i class="ti ti-user"></i></div>
+          <div class="sobre-foto">
+            <img src="img/octavio.jpg" width="760" height="760" loading="lazy"
+                 alt="Octavio Ochoa, médico veterinario, junto a una perra en consulta" />
+          </div>
         </div>
         <div class="sobre-text">
           <p>

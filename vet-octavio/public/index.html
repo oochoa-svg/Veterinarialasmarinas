@@ -276,6 +276,18 @@
     .cred-list { list-style: none; display: grid; gap: 10px; margin: 18px 0 6px; }
     .cred-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
     .cred-list i { color: var(--ambar-oscuro); font-size: 19px; flex-shrink: 0; margin-top: 2px; }
+    .form-cont { margin: 20px 0 4px; }
+    .form-cont-title {
+      font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 15px;
+      color: var(--petroleo-oscuro); display: flex; align-items: center; gap: 7px; margin-bottom: 9px;
+    }
+    .form-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .form-tag {
+      background: var(--blanco); border: 1px solid var(--gris-claro);
+      color: var(--carbon-suave); font-size: 12.5px; font-weight: 600;
+      padding: 5px 11px; border-radius: 999px;
+    }
+    .alt-section .form-tag { background: var(--blanco); }
 
     /* ── CONTENIDO ── */
     .cont-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
@@ -625,16 +637,36 @@
             <b>Universidad de Buenos Aires</b>, con intensificación en pequeños animales.
           </p>
           <p>
-            Desde 2017 soy <b>docente en la Cátedra de Anatomía</b> de la Facultad de Ciencias
-            Veterinarias de la UBA. Mi práctica clínica está orientada a perros y gatos, con
-            experiencia en urgencias, hospitalización y diagnóstico por imágenes.
+            Trabajo en clínica de perros y gatos <b>desde 2021</b>: me formé en hospital
+            veterinario y consultorios de Zona Norte, y hoy estoy a cargo de la dirección
+            clínica de un consultorio.
+          </p>
+          <p>
+            En paralelo, <b>desde 2017 soy docente en la Cátedra de Anatomía Veterinaria</b>
+            de la Facultad de Ciencias Veterinarias de la UBA, y dirijo
+            <b>Canal Veterinario Live</b>, una plataforma de formación continua para
+            médicos veterinarios.
           </p>
           <ul class="cred-list">
             <li><i class="ti ti-school"></i><div>Médico Veterinario — Universidad de Buenos Aires</div></li>
             <li><i class="ti ti-paw"></i><div>Intensificación en Pequeños Animales</div></li>
-            <li><i class="ti ti-presentation"></i><div>Docente de Anatomía, FCV-UBA (desde 2017)</div></li>
-            <li><i class="ti ti-device-tv"></i><div>Fundador de Canal Veterinario, plataforma de educación online</div></li>
+            <li><i class="ti ti-presentation"></i><div>Docente de Anatomía Veterinaria, FCV-UBA (desde 2017)</div></li>
+            <li><i class="ti ti-building-hospital"></i><div>Experiencia en hospital veterinario y clínica de pequeños animales</div></li>
+            <li><i class="ti ti-device-tv"></i><div>Fundador de Canal Veterinario Live, formación para veterinarios</div></li>
           </ul>
+
+          <div class="form-cont">
+            <div class="form-cont-title"><i class="ti ti-book"></i> Formación continua</div>
+            <div class="form-tags">
+              <span class="form-tag">Medicina interna</span>
+              <span class="form-tag">Hepatopatías caninas</span>
+              <span class="form-tag">Epilepsia</span>
+              <span class="form-tag">Nutrición veterinaria</span>
+              <span class="form-tag">Ehrlichiosis</span>
+              <span class="form-tag">Cirugía de pequeños animales</span>
+            </div>
+          </div>
+
           <div class="matriculas">
             <span class="matricula">MP 16465</span>
             <span class="matricula">MN 11170</span>
@@ -651,7 +683,9 @@
       <p class="section-sub">Videos y material sobre el cuidado de tu mascota</p>
       <div class="divider"></div>
       <div class="cont-grid">
-        <!-- TODO: reemplazar por videos reales de Canal Veterinario -->
+        <!-- TODO: reemplazar por videos propios dirigidos a DUEÑOS de mascotas.
+             OJO: no reutilizar material de Canal Veterinario Live, que es formación
+             para colegas veterinarios y le habla a otra audiencia. -->
         <div class="cont-card">
           <div class="cont-thumb"><i class="ti ti-player-play"></i></div>
           <div class="cont-body">

@@ -44,9 +44,13 @@ Mi Fiel Amigo), para que se lea como una marca aparte:
 - WhatsApp (laboral): **11 7062-3869** → `wa.me/5491170623869`
 - Instagram: **@vetoctavio8a**
 - Matrículas: **MP 16465 · MN 11170**
-- Formación: Médico Veterinario (UBA), Intensificación en Pequeños Animales
-- Docente de Anatomía, FCV-UBA, desde 2017
-- Fundador de Canal Veterinario (educación online)
+- Formación: Médico Veterinario (UBA, 2024), Intensificación en Pequeños Animales
+- Docente (Ayudante de Segunda rentado), Cátedra de Anatomía Veterinaria FCV-UBA, desde 2017
+- Clínica de pequeños animales desde 2021 (Hospital Veterinario Virreyes, Veterinaria
+  Santa Rita, Veterinaria Pacheco) y dirección clínica de consultorio desde 2025
+- Fundador de Canal Veterinario Live (formación continua **para veterinarios**)
+- Investigación: Beca Estímulo UBACyT (2022–2024), plastinación y conservación anatómica;
+  presentaciones en congresos de anatomía
 
 ## Zonas de cobertura
 
@@ -83,9 +87,18 @@ Estos puntos todavía no están resueltos y hoy la página no los afirma:
 ## Pendientes de contenido
 
 - [ ] **Foto de perfil** → `img/octavio.jpg` (hoy hay un placeholder con ícono).
-- [ ] **Videos reales** de Canal Veterinario en la sección "Para que decidas informado"
-      (hoy hay 3 tarjetas de ejemplo).
+- [ ] **Videos propios dirigidos a dueños** en la sección "Para que decidas informado"
+      (hoy hay 3 tarjetas de ejemplo). **No reutilizar material de Canal Veterinario
+      Live**: esa plataforma le habla a colegas veterinarios, no a dueños de mascotas.
+      Son dos audiencias distintas.
 - [ ] **Imagen Open Graph** para cuando se comparta el link por WhatsApp o redes.
+
+## Dos audiencias que no hay que mezclar
+
+Octavio produce contenido para **veterinarios** (Canal Veterinario Live) y esta landing
+le habla a **dueños de mascotas**. Canal Veterinario funciona acá como credencial —
+enseña a colegas, lo cual suma autoridad— pero su material no sirve como contenido de
+la landing. Los videos para dueños hay que producirlos aparte.
 
 ## Sincronía con Meta Business IA
 

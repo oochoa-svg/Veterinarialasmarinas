@@ -1,0 +1,26 @@
+name: Deploy Vet Octavio to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'vet-octavio/**'
+      - '.github/workflows/firebase-deploy-vetoctavio.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_VETERINARIALASMARINAS }}
+          channelId: live
+          entryPoint: vet-octavio
+          projectId: veterinarialasmarinas

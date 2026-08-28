@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vet. Octavio Ochoa · Veterinario de cabecera a domicilio · Zona Norte y CABA</title>
+  <meta name="description" content="Veterinario de cabecera a domicilio en Zona Norte y CABA. Consultas, vacunación y seguimiento para perros y gatos, en tu casa. Vet. Octavio Ochoa, UBA. MP 16465 · MN 11170." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vet. Octavio Ochoa · Veterinario de cabecera a domicilio" />
+  <meta property="og:description" content="Atención veterinaria a domicilio en Zona Norte y CABA. Un veterinario que conoce a tu mascota y te acompaña en el tiempo." />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vet. Octavio Ochoa · Veterinario de cabecera a domicilio" />
+  <meta name="twitter:description" content="Atención veterinaria a domicilio en Zona Norte y CABA." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Octavio Ochoa",
+    "jobTitle": "Médico Veterinario",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Facultad de Ciencias Veterinarias, Universidad de Buenos Aires"
+    },
+    "knowsAbout": ["Medicina veterinaria de pequeños animales", "Urgencias veterinarias", "Diagnóstico por imágenes"],
+    "telephone": "+54 9 11 7062-3869",
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Zona Norte, Gran Buenos Aires" },
+      { "@type": "AdministrativeArea", "name": "Ciudad Autónoma de Buenos Aires" }
+    ],
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Atención veterinaria a domicilio",
+        "serviceType": "Veterinario de cabecera a domicilio"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --petroleo:        #14606B;
+      --petroleo-oscuro: #0E4854;
+      --petroleo-suave:  #E3F0F1;
+      --petroleo-tinte:  #C2DEE1;
+      --ambar:           #E8A33D;
+      --ambar-oscuro:    #c9852a;
+      --carbon:          #2B2B2B;
+      --carbon-suave:    #3a3a38;
+      --crema:           #FBF6EE;
+      --blanco:          #FFFFFF;
+      --gris:            #6b6b6b;
+      --gris-claro:      #ececec;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--carbon);
+      background: var(--crema);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .brand-name { font-family: 'Baloo 2', cursive; line-height: 1.15; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .section-inner { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+    .section-title { font-size: 34px; font-weight: 800; text-align: center; color: var(--carbon); }
+    .section-sub { text-align: center; color: var(--gris); font-size: 16px; margin-top: 6px; }
+    .divider { width: 62px; height: 4px; background: var(--ambar); border-radius: 3px; margin: 16px auto 34px; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: sticky; top: 0; z-index: 60;
+      background: rgba(251,246,238,0.94);
+      backdrop-filter: blur(9px);
+      border-bottom: 1px solid rgba(43,43,43,0.08);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 11px 22px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .nav-mark {
+      width: 40px; height: 40px; border-radius: 11px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--petroleo), var(--petroleo-oscuro));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 19px;
+    }
+    .brand-name { font-size: 19px; font-weight: 800; color: var(--petroleo-oscuro); }
+    .brand-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ambar-oscuro); margin-top: -2px; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--petroleo); color: #fff; text-decoration: none;
+      font-weight: 700; font-size: 14px; padding: 9px 16px; border-radius: 999px;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--petroleo-oscuro); }
+    @media (max-width: 560px) {
+      .nav-cta-label { display: none; }
+      .nav-cta { padding: 9px 12px; }
+      .brand-name { font-size: 17px; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; overflow: hidden;
+      background: linear-gradient(160deg, var(--petroleo-suave) 0%, var(--crema) 62%);
+      padding: 60px 22px 62px;
+      text-align: center;
+    }
+    .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 2; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--blanco); border: 1px solid var(--petroleo-tinte);
+      color: var(--petroleo-oscuro); font-size: 13px; font-weight: 700;
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .hero h1 { font-size: 46px; font-weight: 800; color: var(--carbon); }
+    .hero h1 em { font-style: normal; color: var(--petroleo); }
+    .hero-sub { font-size: 18px; color: var(--carbon-suave); margin-top: 16px; }
+    .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: linear-gradient(135deg, #25D366, #1da851); color: #fff;
+      text-decoration: none; font-weight: 800; font-size: 17px;
+      padding: 15px 30px; border-radius: 999px;
+      box-shadow: 0 9px 22px rgba(37,211,102,0.34);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 13px 27px rgba(37,211,102,0.42); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--petroleo-oscuro);
+      border: 2px solid var(--petroleo-tinte);
+      text-decoration: none; font-weight: 700; font-size: 15px;
+      padding: 13px 24px; border-radius: 999px; transition: background .2s;
+    }
+    .btn-ghost:hover { background: var(--petroleo-suave); }
+    .hero-badges { display: flex; gap: 9px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
+    .badge {
+      background: var(--blanco); border: 1px solid var(--gris-claro);
+      font-size: 13px; font-weight: 700; color: var(--carbon-suave);
+      padding: 7px 14px; border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .badge i { color: var(--petroleo); font-size: 15px; }
+    .paw-bg { position: absolute; color: var(--petroleo); opacity: 0.05; pointer-events: none; }
+    @media (max-width: 620px) { .hero h1 { font-size: 34px; } .hero-sub { font-size: 16px; } }
+
+    /* ── SECCIONES ── */
+    section { padding: 62px 0; }
+    .alt-section { background: var(--blanco); }
+
+    /* ── CABECERA (concepto) ── */
+    .cab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 8px; }
+    .cab-card {
+      background: var(--crema); border: 1px solid var(--gris-claro);
+      border-radius: 18px; padding: 26px 22px;
+    }
+    .alt-section .cab-card { background: var(--crema); }
+    .cab-icon {
+      width: 48px; height: 48px; border-radius: 13px;
+      background: var(--petroleo-suave); color: var(--petroleo);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 14px;
+    }
+    .cab-title { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+    .cab-text { font-size: 14.5px; color: var(--gris); }
+
+    /* ── SERVICIOS ── */
+    .serv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 16px; }
+    .serv-card {
+      background: var(--blanco); border: 1px solid var(--gris-claro);
+      border-radius: 16px; padding: 22px 20px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .alt-section .serv-card { background: var(--crema); }
+    .serv-card i { color: var(--petroleo); font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+    .serv-name { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 16.5px; }
+    .serv-desc { font-size: 13.5px; color: var(--gris); }
+
+    .nota-consultorio {
+      max-width: 720px; margin: 30px auto 0;
+      background: var(--petroleo-suave); border-left: 4px solid var(--petroleo);
+      border-radius: 12px; padding: 18px 22px;
+      font-size: 14.5px; color: var(--carbon-suave);
+    }
+    .nota-consultorio b { color: var(--petroleo-oscuro); }
+
+    /* ── PLAN ── */
+    .plan-section { background: linear-gradient(160deg, var(--petroleo-oscuro), var(--petroleo)); color: #fff; }
+    .plan-section .section-title { color: #fff; }
+    .plan-section .section-sub { color: rgba(255,255,255,0.82); }
+    .plan-section .divider { background: var(--ambar); }
+    .plan-box {
+      max-width: 720px; margin: 0 auto;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 24px; padding: 34px 30px;
+      backdrop-filter: blur(4px);
+    }
+    .plan-price { text-align: center; margin-bottom: 26px; }
+    .plan-amount { font-family: 'Baloo 2', cursive; font-size: 52px; font-weight: 800; line-height: 1; color: #fff; }
+    .plan-per { font-size: 15px; color: rgba(255,255,255,0.85); margin-top: 6px; }
+    .plan-permes { display: inline-block; margin-top: 10px; background: var(--ambar); color: #3a2a08; font-weight: 800; font-size: 14px; padding: 6px 16px; border-radius: 999px; }
+    .plan-first {
+      background: rgba(232,163,61,0.16); border: 1px solid rgba(232,163,61,0.45);
+      border-radius: 14px; padding: 16px 18px; margin-bottom: 22px;
+      font-size: 15px; display: flex; gap: 12px; align-items: flex-start;
+    }
+    .plan-first i { color: var(--ambar); font-size: 22px; flex-shrink: 0; }
+    .plan-list { list-style: none; display: grid; gap: 12px; }
+    .plan-list li { display: flex; gap: 11px; align-items: flex-start; font-size: 15px; }
+    .plan-list i { color: var(--ambar); font-size: 19px; flex-shrink: 0; margin-top: 2px; }
+    .plan-destacado { background: rgba(255,255,255,0.10); border-radius: 12px; padding: 12px 14px; margin: 0 -4px; }
+    .plan-fine {
+      margin-top: 24px; padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.16);
+      font-size: 13px; color: rgba(255,255,255,0.75);
+      display: grid; gap: 7px;
+    }
+    .plan-fine div { display: flex; gap: 8px; align-items: flex-start; }
+    .plan-cta { text-align: center; margin-top: 28px; }
+
+    /* ── ZONAS ── */
+    .zona-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
+    .zona-card {
+      background: var(--blanco); border: 1px solid var(--gris-claro);
+      border-radius: 18px; padding: 26px 24px;
+    }
+    .zona-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .zona-head i { color: var(--petroleo); font-size: 22px; }
+    .zona-head h3 { font-size: 19px; font-weight: 800; }
+    .zona-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .zona-tag {
+      background: var(--petroleo-suave); color: var(--petroleo-oscuro);
+      font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px;
+    }
+    .zona-nota { text-align: center; font-size: 14.5px; color: var(--gris); margin-top: 26px; }
+
+    /* ── SOBRE MÍ ── */
+    .sobre-grid { display: grid; grid-template-columns: 260px 1fr; gap: 38px; align-items: start; }
+    @media (max-width: 760px) { .sobre-grid { grid-template-columns: 1fr; gap: 26px; } }
+    .sobre-foto {
+      width: 100%; aspect-ratio: 1; border-radius: 22px; overflow: hidden;
+      background: var(--petroleo-suave);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--petroleo); font-size: 60px;
+      border: 1px solid var(--petroleo-tinte);
+    }
+    .sobre-foto img { width: 100%; height: 100%; object-fit: cover; }
+    .sobre-text p { font-size: 16px; color: var(--carbon-suave); margin-bottom: 14px; }
+    .matriculas {
+      display: inline-flex; gap: 14px; flex-wrap: wrap;
+      background: var(--petroleo-suave); border: 1px solid var(--petroleo-tinte);
+      border-radius: 12px; padding: 12px 18px; margin-top: 6px;
+    }
+    .matricula { font-size: 14px; font-weight: 800; color: var(--petroleo-oscuro); }
+    .cred-list { list-style: none; display: grid; gap: 10px; margin: 18px 0 6px; }
+    .cred-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+    .cred-list i { color: var(--ambar-oscuro); font-size: 19px; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── CONTENIDO ── */
+    .cont-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .cont-card {
+      background: var(--blanco); border: 1px solid var(--gris-claro);
+      border-radius: 16px; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .cont-thumb {
+      aspect-ratio: 16/9; background: var(--petroleo-suave);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--petroleo); font-size: 34px;
+    }
+    .cont-body { padding: 16px 18px; }
+    .cont-title { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 16px; }
+    .cont-desc { font-size: 13.5px; color: var(--gris); margin-top: 3px; }
+    .cont-cta { text-align: center; margin-top: 30px; }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+    .faq-item {
+      background: var(--blanco); border: 1px solid var(--gris-claro);
+      border-radius: 14px; padding: 4px 20px;
+    }
+    .faq-item summary {
+      cursor: pointer; list-style: none; padding: 16px 0;
+      font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 16.5px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .chev { transition: transform .25s; color: var(--petroleo); flex-shrink: 0; }
+    .faq-item[open] .chev { transform: rotate(180deg); }
+    .faq-answer { padding: 0 0 18px; font-size: 15px; color: var(--carbon-suave); }
+
+    /* ── CTA FINAL ── */
+    .cta-section { padding: 62px 22px; }
+    .cta-box {
+      position: relative; overflow: hidden;
+      max-width: 620px; margin: 0 auto;
+      background: linear-gradient(135deg, var(--petroleo), var(--petroleo-oscuro));
+      border-radius: 26px; padding: 46px 30px; text-align: center; color: #fff;
+    }
+    .cta-title { font-size: 28px; font-weight: 800; }
+    .cta-sub { font-size: 15.5px; color: rgba(255,255,255,0.88); margin: 12px 0 26px; }
+    .cta-ig {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 18px; color: rgba(255,255,255,0.9);
+      text-decoration: none; font-size: 14.5px; font-weight: 700;
+    }
+    .cta-ig:hover { color: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--carbon); color: rgba(251,246,238,0.85);
+      padding: 34px 22px; text-align: center; font-size: 14px;
+    }
+    .footer-name { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 18px; color: #fff; }
+    .footer-mat { font-size: 13px; color: rgba(251,246,238,0.6); margin-top: 4px; }
+    .footer-links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin: 16px 0 12px; }
+    .footer-links a { color: rgba(251,246,238,0.85); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .footer-links a:hover { color: #fff; }
+    .footer-legal { font-size: 12px; color: rgba(251,246,238,0.5); margin-top: 10px; }
+
+    /* ── WHATSAPP FLOTANTE ── */
+    .wa-float {
+      position: fixed; right: 22px; bottom: 22px; z-index: 70;
+      display: inline-flex; align-items: center; gap: 9px;
+      background: #25D366; color: #fff; text-decoration: none;
+      font-weight: 800; font-size: 15px; padding: 14px 20px; border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(37,211,102,0.42);
+      transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.05); }
+    .wa-float i { font-size: 22px; }
+    @media (max-width: 560px) {
+      .wa-float { right: 16px; bottom: 18px; padding: 14px; }
+      .wa-float .wa-label { display: none; }
+      .wa-float i { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Símbolo reutilizable: patita -->
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="paw" viewBox="0 0 512 512">
+      <path d="M256 224c-58 0-144 65-144 144 0 40 30 64 66 64 30 0 45-16 78-16s48 16 78 16c36 0 66-24 66-64 0-79-86-144-144-144z"/>
+      <circle cx="140" cy="140" r="40"/><circle cx="230" cy="90" r="40"/>
+      <circle cx="330" cy="90" r="40"/><circle cx="400" cy="150" r="40"/>
+    </symbol>
+  </svg>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="nav-brand" href="#">
+      <div class="nav-mark">OO</div>
+      <div>
+        <div class="brand-name">Vet. Octavio Ochoa</div>
+        <div class="brand-tag">Veterinario de cabecera</div>
+      </div>
+    </a>
+    <a class="nav-cta" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+      <i class="ti ti-brand-whatsapp"></i> <span class="nav-cta-label">Escribime</span>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <svg class="paw-bg" style="top:40px;left:-30px;width:150px;transform:rotate(-18deg)"><use href="#paw"/></svg>
+    <svg class="paw-bg" style="bottom:20px;right:-20px;width:170px;transform:rotate(22deg)"><use href="#paw"/></svg>
+    <div class="hero-inner">
+      <p class="hero-eyebrow"><i class="ti ti-map-pin"></i> Zona Norte y CABA</p>
+      <h1>Tu veterinario de <em>cabecera</em>, en tu casa</h1>
+      <p class="hero-sub">
+        Un veterinario que conoce a tu mascota, su historia y su rutina — y que te acompaña
+        en el tiempo. Atiendo a domicilio, donde tu perro o tu gato están tranquilos.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20coordinar%20una%20consulta%20a%20domicilio." target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Coordinar una consulta
+        </a>
+        <a class="btn-ghost" href="#plan">
+          <i class="ti ti-shield-heart"></i> Conocer el Plan Cabecera
+        </a>
+      </div>
+      <div class="hero-badges">
+        <div class="badge"><i class="ti ti-home"></i> Atención a domicilio</div>
+        <div class="badge"><i class="ti ti-cat"></i> Perros y gatos</div>
+        <div class="badge"><i class="ti ti-certificate"></i> MP 16465 · MN 11170</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUÉ ES UN VETERINARIO DE CABECERA -->
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title">¿Qué es un veterinario de cabecera?</h2>
+      <p class="section-sub">Lo mismo que un médico de cabecera, pero para tu mascota</p>
+      <div class="divider"></div>
+      <div class="cab-grid">
+        <div class="cab-card">
+          <div class="cab-icon"><i class="ti ti-history"></i></div>
+          <div class="cab-title">Conoce la historia</div>
+          <p class="cab-text">
+            No empezás de cero en cada consulta. Sé qué vacunas tiene, qué le pasó el año pasado
+            y cómo reaccionó al último tratamiento.
+          </p>
+        </div>
+        <div class="cab-card">
+          <div class="cab-icon"><i class="ti ti-mood-heart"></i></div>
+          <div class="cab-title">Sin estrés del traslado</div>
+          <p class="cab-text">
+            En su casa tu mascota está tranquila. Se nota especialmente en gatos, en animales
+            grandes y en pacientes mayores.
+          </p>
+        </div>
+        <div class="cab-card">
+          <div class="cab-icon"><i class="ti ti-message-circle"></i></div>
+          <div class="cab-title">Siempre el mismo</div>
+          <p class="cab-text">
+            Me escribís a mí, te contesto yo. Sin pasar por una recepción ni explicar
+            todo de nuevo a un profesional distinto.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="alt-section">
+    <div class="section-inner">
+      <h2 class="section-title">Qué resuelvo en tu casa</h2>
+      <p class="section-sub">Atención clínica completa para perros y gatos</p>
+      <div class="divider"></div>
+      <div class="serv-grid">
+        <div class="serv-card">
+          <i class="ti ti-stethoscope"></i>
+          <div>
+            <div class="serv-name">Consulta clínica</div>
+            <div class="serv-desc">Revisación general, diagnóstico y tratamiento</div>
+          </div>
+        </div>
+        <div class="serv-card">
+          <i class="ti ti-vaccine"></i>
+          <div>
+            <div class="serv-name">Vacunación</div>
+            <div class="serv-desc">Plan sanitario completo, séxtuple, triple felina y rabia</div>
+          </div>
+        </div>
+        <div class="serv-card">
+          <i class="ti ti-bug"></i>
+          <div>
+            <div class="serv-name">Desparasitación</div>
+            <div class="serv-desc">Interna y externa, según edad y ambiente</div>
+          </div>
+        </div>
+        <div class="serv-card">
+          <i class="ti ti-heart-rate-monitor"></i>
+          <div>
+            <div class="serv-name">Pacientes crónicos</div>
+            <div class="serv-desc">Seguimiento de tratamientos prolongados</div>
+          </div>
+        </div>
+        <div class="serv-card">
+          <i class="ti ti-dog"></i>
+          <div>
+            <div class="serv-name">Geriátricos y cachorros</div>
+            <div class="serv-desc">Las dos etapas que más control necesitan</div>
+          </div>
+        </div>
+        <div class="serv-card">
+          <i class="ti ti-test-pipe"></i>
+          <div>
+            <div class="serv-name">Extracción de muestras</div>
+            <div class="serv-desc">Sangre y materia fecal para análisis de laboratorio</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nota-consultorio">
+        <b>Lo que necesita consultorio.</b> Cirugías, radiografías, internación y algunos estudios
+        requieren equipamiento que no se traslada. En esos casos te lo digo desde el principio
+        y coordino la derivación a un centro que pueda resolverlo, sin que pierdas tiempo.
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN CABECERA -->
+  <section class="plan-section" id="plan">
+    <div class="section-inner">
+      <h2 class="section-title">Plan Cabecera</h2>
+      <p class="section-sub">Seguimiento continuo por 3 meses, no una consulta suelta</p>
+      <div class="divider"></div>
+
+      <div class="plan-box">
+        <div class="plan-price">
+          <div class="plan-amount">$65.000</div>
+          <div class="plan-per">por 3 meses, en un solo pago</div>
+          <div class="plan-permes">Equivale a $21.600 por mes</div>
+        </div>
+
+        <div class="plan-first">
+          <i class="ti ti-star-filled"></i>
+          <div>
+            <b>Arranca con una consulta a domicilio</b> con vacunación completa incluida
+            — séxtuple o triple felina, más antirrábica.
+          </div>
+        </div>
+
+        <ul class="plan-list">
+          <li class="plan-destacado">
+            <i class="ti ti-receipt-refund"></i>
+            <div>
+              <b>Reintegro de hasta $25.000</b> por una consulta presencial en cualquier
+              veterinaria, cada 3 meses, presentando el comprobante.
+            </div>
+          </li>
+          <li><i class="ti ti-device-laptop"></i><div>Una <b>consulta virtual por mes</b>, conmigo directamente.</div></li>
+          <li><i class="ti ti-pill"></i><div>Un <b>antiparasitario cada 3 meses</b>, con la entrega coordinada.</div></li>
+          <li><i class="ti ti-discount-2"></i><div><b>25% off</b> en análisis de laboratorio.</div></li>
+          <li><i class="ti ti-discount-2"></i><div><b>20% off</b> en análisis coproparasitológico.</div></li>
+          <li><i class="ti ti-discount-2"></i><div><b>20% off</b> en tratamientos crónicos.</div></li>
+          <li><i class="ti ti-file-certificate"></i><div><b>Certificados de salud</b> sin costo.</div></li>
+          <li><i class="ti ti-home-plus"></i><div>Si hace falta, la consulta puede ser <b>presencial o a domicilio</b> con un copago adicional.</div></li>
+        </ul>
+
+        <div class="plan-fine">
+          <div><i class="ti ti-point"></i> La coordinación de consultas y entregas se hace directamente conmigo.</div>
+          <div><i class="ti ti-point"></i> Los beneficios son válidos dentro de los 3 meses del plan y no son acumulables.</div>
+        </div>
+
+        <div class="plan-cta">
+          <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Me%20interesa%20el%20Plan%20Cabecera." target="_blank" rel="noopener">
+            <i class="ti ti-brand-whatsapp"></i> Quiero el Plan Cabecera
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONAS -->
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title">Dónde atiendo</h2>
+      <p class="section-sub">Zona Norte y barrios de CABA</p>
+      <div class="divider"></div>
+      <div class="zona-wrap">
+        <div class="zona-card">
+          <div class="zona-head"><i class="ti ti-map-2"></i><h3>Zona Norte</h3></div>
+          <div class="zona-tags">
+            <span class="zona-tag">Vicente López</span>
+            <span class="zona-tag">Olivos</span>
+            <span class="zona-tag">La Lucila</span>
+            <span class="zona-tag">Martínez</span>
+            <span class="zona-tag">Acassuso</span>
+            <span class="zona-tag">San Isidro</span>
+            <span class="zona-tag">Beccar</span>
+            <span class="zona-tag">Boulogne</span>
+            <span class="zona-tag">Victoria</span>
+            <span class="zona-tag">San Fernando</span>
+            <span class="zona-tag">Virreyes</span>
+            <span class="zona-tag">Tigre</span>
+            <span class="zona-tag">Rincón de Milberg</span>
+            <span class="zona-tag">Don Torcuato</span>
+            <span class="zona-tag">General Pacheco</span>
+            <span class="zona-tag">Nordelta</span>
+            <span class="zona-tag">Benavídez</span>
+          </div>
+        </div>
+        <div class="zona-card">
+          <div class="zona-head"><i class="ti ti-building-community"></i><h3>CABA</h3></div>
+          <div class="zona-tags">
+            <span class="zona-tag">Villa del Parque</span>
+            <span class="zona-tag">Villa Devoto</span>
+            <span class="zona-tag">Villa Pueyrredón</span>
+            <span class="zona-tag">Agronomía</span>
+            <span class="zona-tag">La Paternal</span>
+            <span class="zona-tag">Villa Santa Rita</span>
+            <span class="zona-tag">Monte Castro</span>
+            <span class="zona-tag">Villa Real</span>
+            <span class="zona-tag">Versalles</span>
+            <span class="zona-tag">Floresta</span>
+            <span class="zona-tag">Villa Urquiza</span>
+            <span class="zona-tag">Parque Chas</span>
+          </div>
+        </div>
+      </div>
+      <p class="zona-nota">
+        ¿No ves tu barrio? Escribime igual — según el día y la zona puedo acercarme.
+      </p>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section class="alt-section">
+    <div class="section-inner">
+      <h2 class="section-title">Quién te va a atender</h2>
+      <div class="divider"></div>
+      <div class="sobre-grid">
+        <div>
+          <!-- TODO: reemplazar por foto real (img/octavio.jpg) -->
+          <div class="sobre-foto"><i class="ti ti-user"></i></div>
+        </div>
+        <div class="sobre-text">
+          <p>
+            Soy <b>Octavio Ochoa</b>, médico veterinario egresado de la
+            <b>Universidad de Buenos Aires</b>, con intensificación en pequeños animales.
+          </p>
+          <p>
+            Desde 2017 soy <b>docente en la Cátedra de Anatomía</b> de la Facultad de Ciencias
+            Veterinarias de la UBA. Mi práctica clínica está orientada a perros y gatos, con
+            experiencia en urgencias, hospitalización y diagnóstico por imágenes.
+          </p>
+          <ul class="cred-list">
+            <li><i class="ti ti-school"></i><div>Médico Veterinario — Universidad de Buenos Aires</div></li>
+            <li><i class="ti ti-paw"></i><div>Intensificación en Pequeños Animales</div></li>
+            <li><i class="ti ti-presentation"></i><div>Docente de Anatomía, FCV-UBA (desde 2017)</div></li>
+            <li><i class="ti ti-device-tv"></i><div>Fundador de Canal Veterinario, plataforma de educación online</div></li>
+          </ul>
+          <div class="matriculas">
+            <span class="matricula">MP 16465</span>
+            <span class="matricula">MN 11170</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <section>
+    <div class="section-inner">
+      <h2 class="section-title">Para que decidas informado</h2>
+      <p class="section-sub">Videos y material sobre el cuidado de tu mascota</p>
+      <div class="divider"></div>
+      <div class="cont-grid">
+        <!-- TODO: reemplazar por videos reales de Canal Veterinario -->
+        <div class="cont-card">
+          <div class="cont-thumb"><i class="ti ti-player-play"></i></div>
+          <div class="cont-body">
+            <div class="cont-title">Plan de vacunación</div>
+            <div class="cont-desc">Qué vacunas necesita y cuándo</div>
+          </div>
+        </div>
+        <div class="cont-card">
+          <div class="cont-thumb"><i class="ti ti-player-play"></i></div>
+          <div class="cont-body">
+            <div class="cont-title">Señales de alarma</div>
+            <div class="cont-desc">Cuándo una consulta no puede esperar</div>
+          </div>
+        </div>
+        <div class="cont-card">
+          <div class="cont-thumb"><i class="ti ti-player-play"></i></div>
+          <div class="cont-body">
+            <div class="cont-title">Gatos sin estrés</div>
+            <div class="cont-desc">Por qué la consulta en casa cambia todo</div>
+          </div>
+        </div>
+      </div>
+      <div class="cont-cta">
+        <a class="btn-ghost" href="https://www.instagram.com/vetoctavio8a/" target="_blank" rel="noopener">
+          <i class="ti ti-brand-instagram"></i> Seguime en Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt-section">
+    <div class="section-inner">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Cómo saco un turno? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Escribime por WhatsApp y coordinamos día, horario y zona. La coordinación
+            la hago yo directamente, no pasás por una recepción.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto sale la consulta a domicilio? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            El valor depende de la zona y de lo que necesite tu mascota. Escribime
+            contándome dónde estás y qué le pasa, y te paso el valor exacto.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Atendés urgencias? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Escribime y te oriento lo antes posible. Si es algo que requiere internación
+            o cirugía, te indico a dónde ir sin que pierdas tiempo.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué pasa si mi mascota necesita algo que no se puede hacer en casa? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Te lo digo desde el principio y coordino la derivación a un centro con el
+            equipamiento necesario. El Plan Cabecera además incluye un reintegro de hasta
+            $25.000 por una consulta presencial cada 3 meses.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>¿El Plan Cabecera sirve para perros y gatos? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Sí. La vacunación inicial incluye séxtuple para perros o triple felina para gatos,
+            en ambos casos con antirrábica.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <div class="cta-box">
+      <svg class="paw-bg" style="top:-10px;right:-10px;width:120px;transform:rotate(25deg);opacity:0.12;color:#fff"><use href="#paw"/></svg>
+      <svg class="paw-bg" style="bottom:-15px;left:-5px;width:80px;transform:rotate(-10deg);opacity:0.12;color:#fff"><use href="#paw"/></svg>
+      <h2 class="cta-title">Empecemos por una consulta</h2>
+      <p class="cta-sub">
+        Contame qué le pasa a tu mascota y dónde estás. Te respondo yo, directamente.
+      </p>
+      <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp"></i> Escribime por WhatsApp
+      </a>
+      <div>
+        <a class="cta-ig" href="https://www.instagram.com/vetoctavio8a/" target="_blank" rel="noopener">
+          <i class="ti ti-brand-instagram"></i> @vetoctavio8a
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Vet. Octavio Ochoa</div>
+    <div class="footer-mat">MP 16465 · MN 11170</div>
+    <div class="footer-links">
+      <a href="https://wa.me/5491170623869" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> 11 7062-3869</a>
+      <a href="https://www.instagram.com/vetoctavio8a/" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i> @vetoctavio8a</a>
+    </div>
+    <div class="footer-legal">Atención veterinaria a domicilio · Zona Norte y CABA</div>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a class="wa-float" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Octavio Ochoa">
+    <i class="ti ti-brand-whatsapp"></i>
+    <span class="wa-label">Escribime</span>
+  </a>
+
+</body>
+</html>

@@ -20,13 +20,13 @@ La coordinación de turnos y las consultas **no** se resuelven acá: eso lo mane
 Octavio por WhatsApp, apoyado en Meta Business IA. La landing cumple otras funciones:
 
 - **Que lo conozcan**: trayectoria, formación y matrículas.
-- **Explicar el Plan Integral**, que es demasiado extenso para un chat o un posteo.
+- **Explicar el Plan Basico**, que es demasiado extenso para un chat o un posteo.
 - **SEO**: es el único canal que capta a quien busca "veterinario a domicilio
   <barrio>" en Google y todavía no lo conoce. Por eso las zonas se nombran una por una.
 - **Contenido**: videos y material de Canal Veterinario.
 
 Todos los CTA van a WhatsApp con un **mensaje prearmado distinto según la sección**
-(consulta a domicilio, Plan Integral, consulta general), para saber de dónde viene
+(consulta a domicilio, Plan Basico, consulta general), para saber de dónde viene
 cada mensaje sin necesidad de tracking.
 
 ## Identidad de marca
@@ -64,7 +64,7 @@ Mi Fiel Amigo), para que se lea como una marca aparte:
 
 Se mencionan por nombre a propósito: es lo que permite aparecer en búsquedas por barrio.
 
-## Plan Integral (3 meses) — $65.000
+## Plan Basico (3 meses) — desde $65.000
 
 **Plan 100% a distancia.** Se rediseñó por completo: la primera version incluia una
 consulta a domicilio con vacunacion, que suelta se cobra $120.000. Es decir, entregaba
@@ -107,11 +107,18 @@ telemedicina generica: no es lo mismo que se vende.
 - [ ] **¿Por mascota o por hogar?** Al ser 100% remoto no hay insumos y el costo no
       escala por animal: responder el WhatsApp de un hogar con tres gatos no cuesta el
       triple. Conviene **por hogar**; hoy la pagina no lo afirma.
-- [ ] **¿Que pasa al vencer los 3 meses?** ¿Renovacion automatica, mismo precio?
-- [ ] **¿Existe opcion de pago mensual?**
-- [ ] **Nombre**: "Integral" puede leerse como "cubre todo" y el plan no cubre
-      prestaciones. El subtitulo y la letra chica lo aclaran, pero conviene vigilar que
-      no genere reclamos.
+- [x] ~~Que pasa al vencer los 3 meses~~ → se renueva automaticamente por **debito
+      automatico**, con baja avisando.
+- [x] ~~Nombre~~ → **Plan Basico**. Se descarto "Integral" (sugiere que cubre todo) y
+      tambien "Cobertura Basica": "cobertura" es lenguaje de seguros y refuerza justo
+      la confusion con una obra social que la pagina trata de evitar. "Basico" ademas
+      deja lugar natural al upsell.
+- [x] ~~Precio unico~~ → **"desde $65.000"**, con un bloque que invita a ajustar el plan
+      por WhatsApp. La landing informa, el upsell se conversa en el chat.
+- [ ] **Boton de arrepentimiento**: en Argentina, la venta online con debito recurrente
+      exige mostrar como cancelar de forma visible y sencilla (Ley 24.240 y Res.
+      424/2020). Hoy la letra chica dice que se da de baja avisando; si el cobro pasa a
+      hacerse desde la web conviene revisarlo con mas detalle.
 - [ ] **No prometer 24/7**: hoy dice "todos los dias", sostenible para una persona sola.
       Veinte planes son veinte personas que pueden escribir de madrugada.
 

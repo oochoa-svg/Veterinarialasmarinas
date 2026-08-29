@@ -223,7 +223,19 @@
       backdrop-filter: blur(4px);
     }
     .plan-price { text-align: center; margin-bottom: 26px; }
+    .plan-desde {
+      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 14px;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.7); margin-bottom: 2px;
+    }
     .plan-amount { font-family: 'Baloo 2', cursive; font-size: 52px; font-weight: 800; line-height: 1; color: #fff; }
+    .plan-mas {
+      margin-top: 22px; padding: 16px 18px;
+      background: rgba(232,163,61,0.14); border: 1px dashed rgba(232,163,61,0.55);
+      border-radius: 14px; font-size: 15px;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .plan-mas i { color: var(--ambar); font-size: 21px; flex-shrink: 0; margin-top: 2px; }
     .plan-per { font-size: 15px; color: rgba(255,255,255,0.85); margin-top: 6px; }
     .plan-permes { display: inline-block; margin-top: 10px; background: var(--ambar); color: #3a2a08; font-weight: 800; font-size: 14px; padding: 6px 16px; border-radius: 999px; }
     .plan-first {
@@ -415,7 +427,7 @@
           <i class="ti ti-brand-whatsapp"></i> Coordinar una consulta
         </a>
         <a class="btn-ghost" href="#plan">
-          <i class="ti ti-shield-heart"></i> Conocer el Plan Integral
+          <i class="ti ti-shield-heart"></i> Conocer el Plan Básico
         </a>
       </div>
       <div class="hero-badges">
@@ -523,14 +535,15 @@
   <!-- PLAN CABECERA -->
   <section class="plan-section" id="plan">
     <div class="section-inner">
-      <h2 class="section-title">Plan Integral</h2>
+      <h2 class="section-title">Plan Básico</h2>
       <p class="section-sub">Tres meses con tu veterinario disponible, a distancia</p>
       <div class="divider"></div>
 
       <div class="plan-box">
         <div class="plan-price">
+          <div class="plan-desde">desde</div>
           <div class="plan-amount">$65.000</div>
-          <div class="plan-per">por 3 meses, en un solo pago</div>
+          <div class="plan-per">por 3 meses · débito automático</div>
           <div class="plan-permes">Equivale a $21.600 por mes</div>
         </div>
 
@@ -558,15 +571,24 @@
           <li><i class="ti ti-file-certificate"></i><div><b>Certificados de salud</b> sin costo.</div></li>
         </ul>
 
+        <div class="plan-mas">
+          <i class="ti ti-plus"></i>
+          <div>
+            <b>¿Tu mascota necesita más?</b> El plan se ajusta a lo que haga falta —
+            más seguimiento, visitas, vacunación. Escribime y lo armamos a medida.
+          </div>
+        </div>
+
         <div class="plan-fine">
+          <div><i class="ti ti-point"></i><span>Se renueva automáticamente cada 3 meses por <b>débito automático</b>. Podés darlo de baja cuando quieras, avisándome.</span></div>
           <div><i class="ti ti-point"></i><span>Es un plan de <b>acompañamiento profesional a distancia</b>: no es una obra social ni cubre el costo de las prestaciones.</span></div>
           <div><i class="ti ti-point"></i><span>Si hace falta atención presencial, se realiza en veterinarias de Zona Norte y CABA, y se abona en el lugar según la veterinaria.</span></div>
           <div><i class="ti ti-point"></i><span>Las visitas a domicilio y la vacunación se cotizan aparte, con precio preferencial para quienes tienen el plan.</span></div>
         </div>
 
         <div class="plan-cta">
-          <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Me%20interesa%20el%20Plan%20Integral." target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp"></i> Quiero el Plan Integral
+          <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Me%20interesa%20el%20Plan%20B%C3%A1sico." target="_blank" rel="noopener">
+            <i class="ti ti-brand-whatsapp"></i> Quiero el Plan Básico
           </a>
         </div>
       </div>
@@ -760,10 +782,10 @@
           </div>
         </details>
         <details class="faq-item">
-          <summary>¿El Plan Integral reemplaza a una obra social? <i class="ti ti-chevron-down chev"></i></summary>
+          <summary>¿El Plan Básico reemplaza a una obra social? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
             No, son cosas distintas y se complementan. Una obra social cubre el costo de las
-            prestaciones. El Plan Integral es acompañamiento profesional: te digo qué le pasa
+            prestaciones. El Plan Básico es acompañamiento profesional: te digo qué le pasa
             a tu mascota, si necesita una consulta presencial y a dónde conviene ir.
           </div>
         </details>

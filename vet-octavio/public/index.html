@@ -243,6 +243,7 @@
       display: grid; gap: 7px;
     }
     .plan-fine div { display: flex; gap: 8px; align-items: flex-start; }
+    .plan-fine i { flex-shrink: 0; margin-top: 3px; }
     .plan-cta { text-align: center; margin-top: 28px; }
 
     /* ── ZONAS ── */
@@ -414,7 +415,7 @@
           <i class="ti ti-brand-whatsapp"></i> Coordinar una consulta
         </a>
         <a class="btn-ghost" href="#plan">
-          <i class="ti ti-shield-heart"></i> Conocer el Plan Cabecera
+          <i class="ti ti-shield-heart"></i> Conocer el Plan Integral
         </a>
       </div>
       <div class="hero-badges">
@@ -522,8 +523,8 @@
   <!-- PLAN CABECERA -->
   <section class="plan-section" id="plan">
     <div class="section-inner">
-      <h2 class="section-title">Plan Cabecera</h2>
-      <p class="section-sub">Seguimiento continuo por 3 meses, no una consulta suelta</p>
+      <h2 class="section-title">Plan Integral</h2>
+      <p class="section-sub">Tres meses con tu veterinario disponible, a distancia</p>
       <div class="divider"></div>
 
       <div class="plan-box">
@@ -534,38 +535,38 @@
         </div>
 
         <div class="plan-first">
-          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-user-heart"></i>
           <div>
-            <b>Arranca con una consulta a domicilio</b> con vacunación completa incluida
-            — séxtuple o triple felina, más antirrábica.
+            <b>No es una guardia con veterinarios rotativos.</b> Me escribís a mí,
+            te contesto yo, y conozco la historia de tu mascota de una consulta a la otra.
           </div>
         </div>
 
         <ul class="plan-list">
           <li class="plan-destacado">
-            <i class="ti ti-receipt-refund"></i>
+            <i class="ti ti-brand-whatsapp"></i>
             <div>
-              <b>Reintegro de hasta $25.000</b> por una consulta presencial en cualquier
-              veterinaria, cada 3 meses, presentando el comprobante.
+              <b>Consultas por WhatsApp todos los días.</b> Sin límite de mensajes
+              y sin sacar turno para preguntar.
             </div>
           </li>
-          <li><i class="ti ti-device-laptop"></i><div>Una <b>consulta virtual por mes</b>, conmigo directamente.</div></li>
-          <li><i class="ti ti-pill"></i><div>Un <b>antiparasitario cada 3 meses</b>, con la entrega coordinada.</div></li>
-          <li><i class="ti ti-discount-2"></i><div><b>25% off</b> en análisis de laboratorio.</div></li>
-          <li><i class="ti ti-discount-2"></i><div><b>20% off</b> en análisis coproparasitológico.</div></li>
-          <li><i class="ti ti-discount-2"></i><div><b>20% off</b> en tratamientos crónicos.</div></li>
+          <li><i class="ti ti-device-laptop"></i><div><b>Teleconsultas</b> por videollamada cuando haga falta ver a tu mascota.</div></li>
+          <li><i class="ti ti-stethoscope"></i><div><b>Te digo si necesita atención presencial</b> o si se resuelve a distancia, sin que gastes de más.</div></li>
+          <li><i class="ti ti-chart-line"></i><div><b>Seguimiento</b> de tratamientos, pacientes crónicos y planes nutricionales.</div></li>
+          <li><i class="ti ti-file-text"></i><div><b>Órdenes de estudios y recetas</b> cuando corresponda.</div></li>
+          <li><i class="ti ti-map-pin-share"></i><div><b>Derivaciones coordinadas.</b> Si necesita cirugía, radiografía o ecografía, te digo a dónde ir y lo arreglo yo.</div></li>
           <li><i class="ti ti-file-certificate"></i><div><b>Certificados de salud</b> sin costo.</div></li>
-          <li><i class="ti ti-home-plus"></i><div>Si hace falta, la consulta puede ser <b>presencial o a domicilio</b> con un copago adicional.</div></li>
         </ul>
 
         <div class="plan-fine">
-          <div><i class="ti ti-point"></i> La coordinación de consultas y entregas se hace directamente conmigo.</div>
-          <div><i class="ti ti-point"></i> Los beneficios son válidos dentro de los 3 meses del plan y no son acumulables.</div>
+          <div><i class="ti ti-point"></i><span>Es un plan de <b>acompañamiento profesional a distancia</b>: no es una obra social ni cubre el costo de las prestaciones.</span></div>
+          <div><i class="ti ti-point"></i><span>Si hace falta atención presencial, se realiza en veterinarias de Zona Norte y CABA, y se abona en el lugar según la veterinaria.</span></div>
+          <div><i class="ti ti-point"></i><span>Las visitas a domicilio y la vacunación se cotizan aparte, con precio preferencial para quienes tienen el plan.</span></div>
         </div>
 
         <div class="plan-cta">
-          <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Me%20interesa%20el%20Plan%20Cabecera." target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp"></i> Quiero el Plan Cabecera
+          <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Me%20interesa%20el%20Plan%20Integral." target="_blank" rel="noopener">
+            <i class="ti ti-brand-whatsapp"></i> Quiero el Plan Integral
           </a>
         </div>
       </div>
@@ -754,15 +755,16 @@
           <summary>¿Qué pasa si mi mascota necesita algo que no se puede hacer en casa? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
             Te lo digo desde el principio y coordino la derivación a un centro con el
-            equipamiento necesario. El Plan Cabecera además incluye un reintegro de hasta
-            $25.000 por una consulta presencial cada 3 meses.
+            equipamiento necesario, en Zona Norte o CABA. La atención presencial se abona
+            en la veterinaria donde se realice.
           </div>
         </details>
         <details class="faq-item">
-          <summary>¿El Plan Cabecera sirve para perros y gatos? <i class="ti ti-chevron-down chev"></i></summary>
+          <summary>¿El Plan Integral reemplaza a una obra social? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
-            Sí. La vacunación inicial incluye séxtuple para perros o triple felina para gatos,
-            en ambos casos con antirrábica.
+            No, son cosas distintas y se complementan. Una obra social cubre el costo de las
+            prestaciones. El Plan Integral es acompañamiento profesional: te digo qué le pasa
+            a tu mascota, si necesita una consulta presencial y a dónde conviene ir.
           </div>
         </details>
       </div>

@@ -20,13 +20,13 @@ La coordinación de turnos y las consultas **no** se resuelven acá: eso lo mane
 Octavio por WhatsApp, apoyado en Meta Business IA. La landing cumple otras funciones:
 
 - **Que lo conozcan**: trayectoria, formación y matrículas.
-- **Explicar el Plan Cabecera**, que es demasiado extenso para un chat o un posteo.
+- **Explicar el Plan Integral**, que es demasiado extenso para un chat o un posteo.
 - **SEO**: es el único canal que capta a quien busca "veterinario a domicilio
   <barrio>" en Google y todavía no lo conoce. Por eso las zonas se nombran una por una.
 - **Contenido**: videos y material de Canal Veterinario.
 
 Todos los CTA van a WhatsApp con un **mensaje prearmado distinto según la sección**
-(consulta a domicilio, Plan Cabecera, consulta general), para saber de dónde viene
+(consulta a domicilio, Plan Integral, consulta general), para saber de dónde viene
 cada mensaje sin necesidad de tracking.
 
 ## Identidad de marca
@@ -64,26 +64,56 @@ Mi Fiel Amigo), para que se lea como una marca aparte:
 
 Se mencionan por nombre a propósito: es lo que permite aparecer en búsquedas por barrio.
 
-## Plan Cabecera
+## Plan Integral (3 meses) — $65.000
 
-$65.000 por 3 meses en un solo pago (se muestra también como $21.600/mes para que
-el número comunique mejor).
+**Plan 100% a distancia.** Se rediseñó por completo: la primera version incluia una
+consulta a domicilio con vacunacion, que suelta se cobra $120.000. Es decir, entregaba
+$120.000 de servicio por $65.000, mas un reintegro de $25.000 — perdia plata en el
+escenario base, no en el peor.
 
-El **reintegro de hasta $25.000** se subió al primer lugar de los beneficios: en la
-versión original estaba al final entre las restricciones, siendo probablemente lo más
-valioso del plan.
+Los numeros reales del negocio:
+
+| Servicio | Precio suelto | Costo directo |
+|---|---|---|
+| Consulta a domicilio | $65.000 | traslado + tiempo |
+| Vacunacion completa a domicilio | $120.000 | $16.000 de insumos |
+
+Como Octavio no tiene veterinaria propia, el plan se acota a lo que si puede sostener
+solo: acompañamiento profesional a distancia, que ademas no tiene insumos y es su
+producto de mayor margen.
+
+**Incluye**: WhatsApp todos los dias, teleconsultas por videollamada, triage
+(si necesita presencial o no), seguimiento de cronicos y nutricional, ordenes de
+estudios y recetas, derivaciones coordinadas y certificados de salud.
+
+**No incluye** (y la pagina lo dice explicitamente): prestaciones presenciales, que se
+abonan en la veterinaria donde se realicen; visitas a domicilio y vacunacion, que se
+cotizan aparte con precio preferencial.
+
+Se sacaron el reintegro de $25.000 y el antiparasitario trimestral.
+
+### Posicionamiento frente a la competencia
+
+No compite con una obra social para mascotas (AVSIM, Ike, Puppis One), que cubre el
+**costo de las prestaciones** en una red anonima. Tampoco con las plataformas de
+telemedicina (HolaVet, VEL), donde atiende el veterinario de guardia que este.
+
+El diferencial es que **siempre es el mismo profesional**, con nombre y matricula, que
+conoce la historia del paciente. Por eso el precio ($21.600/mes) esta por encima de la
+telemedicina generica: no es lo mismo que se vende.
 
 ### Pendiente de definir
 
-Estos puntos todavía no están resueltos y hoy la página no los afirma:
-
-- [ ] **¿Por mascota o por hogar?** Es la primera pregunta que va a aparecer.
-- [ ] **¿Qué pasa al vencer los 3 meses?** ¿Renovación automática, mismo precio?
-- [ ] **¿Existe opción de pago mensual?** Hoy solo figura el pago único.
-- [ ] **Monto del copago adicional** para consultas presenciales/domicilio.
-- [ ] **Cuenta del peor escenario**: un cliente que usa todos los beneficios. El
-      reintegro solo representa el 38% del valor del plan; conviene verificar que el
-      margen cierre antes de promocionarlo fuerte.
+- [ ] **¿Por mascota o por hogar?** Al ser 100% remoto no hay insumos y el costo no
+      escala por animal: responder el WhatsApp de un hogar con tres gatos no cuesta el
+      triple. Conviene **por hogar**; hoy la pagina no lo afirma.
+- [ ] **¿Que pasa al vencer los 3 meses?** ¿Renovacion automatica, mismo precio?
+- [ ] **¿Existe opcion de pago mensual?**
+- [ ] **Nombre**: "Integral" puede leerse como "cubre todo" y el plan no cubre
+      prestaciones. El subtitulo y la letra chica lo aclaran, pero conviene vigilar que
+      no genere reclamos.
+- [ ] **No prometer 24/7**: hoy dice "todos los dias", sostenible para una persona sola.
+      Veinte planes son veinte personas que pueden escribir de madrugada.
 
 ## Pendientes de contenido
 

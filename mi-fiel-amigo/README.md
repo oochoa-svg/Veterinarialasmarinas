@@ -10,11 +10,12 @@ y paleta azul (principal) + verde (acento).
 mi-fiel-amigo/
 ├── public/
 │   ├── index.html         ← la landing completa (un solo archivo)
+│   ├── cartel-turnos.html ← cartel A5 con QR para la puerta (imprimible)
 │   ├── farmacia.html      ← catálogo de farmacia online (busca + WhatsApp)
 │   ├── farmacia-data.js   ← datos de productos (generados desde la lista de Arandu)
 │   └── img/
 │       ├── logo.png         ← logo (fondo transparente)
-│       ├── qr-turnos.png     ← QR a la agenda online de turnos (CanalVet)
+│       ├── qr-turnos.png     ← QR al pedido de turnos del sitio (#turnos)
 │       └── qr-turnos.svg     ← mismo QR en vectorial
 ├── firebase.json        ← configuración de hosting
 ├── .firebaserc          ← ID del proyecto Firebase (placeholder)
@@ -41,21 +42,50 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
   de llegada** (sin turno), exclusivamente. Contacto: **teléfono de línea /
   contestador** `011 4504-7282` + **mail**. No usa WhatsApp.
   Horario: **Lun–Vie 10–12:30 y 17:30–20 · Sáb 10–13**.
-- **Vet. Octavio Ochoa** — cubre los horarios en que María José no está.
-  Atiende a consulta, coordinando directamente **por WhatsApp** (sin agenda
-  online ni reserva telefónica). Número: el mismo de WhatsApp que usa la
-  farmacia online, `5491170623869`.
-  Horario: **Miércoles desde las 16:20 · Jueves 12:30–17:30** (viernes por
-  ahora no).
-- **Acción principal del sitio**: coordinar la consulta con el Vet. Octavio
-  por WhatsApp. El hero abre con un título institucional ("Cuidando la salud
-  de tu mejor amigo") y dos botones lado a lado — **"Consultar por
-  WhatsApp"** y **"Encargos de farmacia"** (lleva a `farmacia.html`). La
-  atención por orden de llegada con María José (teléfono) se explica como
-  vía secundaria.
-  La agenda online de CanalVet y el botón/QR de "Pedir turno" quedaron
-  desactivados (bloques comentados en `index.html`); no hay captura
-  automática de datos de la consulta, se coordina todo a mano por WhatsApp.
+- **Vet. Octavio Ochoa** — atiende **solo con turno reservado**, los
+  **miércoles y jueves de 15 a 17.30**. El turno se pide desde el sitio.
+  WhatsApp: `5491170623869` (el mismo de la farmacia online).
+- **Acción principal del sitio**: **pedir turno con el Vet. Octavio**. El
+  hero abre con el título institucional ("Cuidando la salud de tu mejor
+  amigo") y dos botones — **"Pedir un turno"** (lleva a `#turnos`) y
+  **"Encargos de farmacia"** (lleva a `farmacia.html`).
+
+### El sitio como primer filtro (`#turnos`)
+
+El problema que resuelve: la gente escribía al celular de Octavio por
+cualquier cosa (precios, horarios, stock, urgencias) porque el WhatsApp era
+la primera puerta de entrada del sitio. Ahora **ningún celular aparece a la
+vista**: el número se usa recién al final del formulario de turno.
+
+El bloque `#turnos` arranca con un triage de 4 opciones y solo una llega a
+WhatsApp:
+
+| Elige… | Qué pasa |
+|---|---|
+| Turno con el Vet. Octavio | Sigue al formulario → WhatsApp con todo cargado |
+| Consulta con la Vet. María José | Panel con horarios, dirección y teléfono. Termina ahí |
+| Precios, vacunas o castraciones | "Acercate en el horario de atención" + teléfono. Termina ahí |
+| Es una urgencia | En horario, venir a la veterinaria; fuera de horario, una 24 hs. Termina ahí |
+
+El camino del turno son 3 pasos: **día** (se generan solos los próximos
+miércoles y jueves, sin ofrecer el día de hoy), **horario** (15:00 a 17:00
+cada 30 min) y **datos** (tutor, mascota, especie, edad, si ya es paciente,
+motivo de una lista y detalle obligatorio). Antes de enviar se muestra el
+mensaje ya armado; recién al confirmar se abre `wa.me` con el texto completo.
+
+Toda la agenda vive en la constante `TURNOS` al inicio del `<script>` final
+de `index.html` — días, horarios, cuántas semanas hacia adelante y el número
+de WhatsApp se cambian ahí, en un solo lugar. **No hay agenda con
+disponibilidad real**: el horario elegido es una preferencia y se confirma a
+mano por WhatsApp.
+
+### Cartel para la puerta (`cartel-turnos.html`)
+
+Cartel A5 imprimible (`window.print()`, `@page size:A5`) con el QR a
+`https://mifielamigo.web.app/#turnos`, los dos modos de atención y los
+avisos de precios, teléfono y urgencias. Los QR `img/qr-turnos.png/.svg`
+apuntan a ese mismo destino (generados con `segno`, colores `#2b2b2b` sobre
+`#fbf6ee`).
 - **Recordatorio de vacunas** → por **mail** (pendiente de armar).
 
 ## Farmacia online (`farmacia.html`)
@@ -86,12 +116,25 @@ registrado como distribuidor salvo venta libre).
   PDF nuevo y se regenera `farmacia-data.js`.
 - Accesible desde el nav de `index.html` ("Farmacia online").
 
+### Reglas de derivación (las que pidió Octavio)
+
+- **Precios de vacunas, consultas, etc.** → acercarse a la veterinaria en el
+  horario de atención.
+- **Cualquier otra consulta** → teléfono `011 4504-7282`.
+- **Castraciones y otras cirugías** → llamar o acercarse a hablarlo con la
+  Vet. María José en su horario de atención.
+- **Urgencias** → en horario de atención, venir a la veterinaria; fuera de
+  horario, concurrir a una veterinaria de 24 hs. **No hay WhatsApp de
+  urgencias.**
+- **No hay pet shop**: no se venden alimentos ni accesorios. Los
+  medicamentos se encargan por `farmacia.html`.
+
 ## ⚠️ Pendiente de completar
 
 - [ ] **Email de María José**: falta la dirección de mail para mostrarla en
       contacto y usarla en el recordatorio de vacunas.
-- [x] **Horarios de Octavio**: Miércoles desde las 16:20 · Jueves 12:30–17:30
-      (el viernes, por ahora, no). Los de María José ya estaban cargados.
+- [x] **Horarios de Octavio**: miércoles y jueves de 15 a 17.30, solo con
+      turno reservado desde el sitio. Los de María José ya estaban cargados.
 - [x] **Servicios**: 3 tarjetas finales — Consultorio/Clínica, Emergencias en
       horario de consulta, Laboratorio clínico.
 - [x] **Reseñas**: 4,9 en Google + 3 reseñas reales (Johanna Vargas, Mariano A.,
@@ -103,10 +146,11 @@ registrado como distribuidor salvo venta libre).
 
 ## Para configurar después
 
-- [ ] **Captura de turnos / datos**: por ahora no hay agenda online (CanalVet
-      quedó desactivado); todo se coordina a mano por WhatsApp con Octavio.
-      Si vuelve a activarse una agenda online, reactivar los bloques
-      comentados en `index.html` y actualizar este README.
+- [x] **Captura de turnos / datos**: el formulario de `#turnos` arma el
+      mensaje de WhatsApp con día, horario, tutor, mascota, especie, edad,
+      si ya es paciente, motivo y detalle. No hay agenda con disponibilidad
+      real ni base de datos: si más adelante hace falta, el paso siguiente es
+      guardar cada pedido (Google Sheet / Firestore) además de abrir WhatsApp.
 - **Recordatorio de vacunas por mail**: pendiente de armar.
 
 ## Datos actuales

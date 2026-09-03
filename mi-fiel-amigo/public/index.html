@@ -1088,7 +1088,9 @@
     .como-btn:hover { background: var(--naranja-oscuro); transform: translateY(-2px); }
 
     /* ── TURNOS / ASISTENTE ── */
-    .turnos-section { background: var(--crema); }
+    .turnos-section { background: var(--crema); padding-top: 26px; }
+    .turnos-section .section-title { margin-bottom: 4px; }
+    .turnos-section .divider { margin-bottom: 18px; }
     .turnos-card {
       background: var(--blanco);
       border: 1px solid var(--linea);
@@ -1188,6 +1190,52 @@
       .como-grid { grid-template-columns: 1fr; }
     }
 
+
+    /* ── CABECERA COMPACTA ── */
+    .hero-slim { padding: 26px 24px 22px; margin-bottom: 0; }
+    .hero-slim .hero-emblem { width: 74px; margin-bottom: 8px; }
+    .hero-slim .hero-eyebrow { margin-bottom: 4px; }
+    .hero-horario { font-size: 14.5px; color: var(--carbon-suave); }
+    .hero-horario b { color: var(--carbon); }
+
+    /* ── BLOQUE PLEGADO: MÁS SOBRE LA VETERINARIA ── */
+    .mas {
+      max-width: 680px;
+      margin: 8px auto 40px;
+      padding: 0 24px;
+    }
+    .mas > summary {
+      list-style: none;
+      cursor: pointer;
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      border-radius: 16px;
+      padding: 16px 18px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 2px 12px;
+      transition: all 0.2s ease;
+    }
+    .mas > summary::-webkit-details-marker { display: none; }
+    .mas > summary:hover { border-color: var(--naranja); }
+    .mas > summary span {
+      font-family: 'Baloo 2', cursive;
+      font-size: 17px; font-weight: 700; color: var(--carbon);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .mas > summary span i { color: var(--naranja); font-size: 20px; }
+    .mas > summary small {
+      grid-column: 1; font-size: 13px; color: var(--muted); line-height: 1.45;
+    }
+    .mas > summary .mas-chev {
+      grid-column: 2; grid-row: 1 / span 2;
+      color: var(--muted); font-size: 22px; transition: transform 0.25s ease;
+    }
+    .mas[open] > summary .mas-chev { transform: rotate(180deg); }
+    .mas[open] > summary { border-color: var(--naranja); margin-bottom: 8px; }
+    .mas-cuerpo { animation: fadeUp 0.35s ease; }
+    .mas-cuerpo > section { margin-left: -24px; margin-right: -24px; }
   </style>
 </head>
 <body>
@@ -1253,96 +1301,31 @@
         <span>Veterinaria</span>
       </span>
     </a>
-    <div class="nav-acciones">
-      <a href="farmacia.html" class="nav-farmacia"><i class="ti ti-pill"></i> Farmacia</a>
-      <a href="#turnos" class="nav-cta"><i class="ti ti-calendar-plus"></i> Pedir turno</a>
-    </div>
+    <a href="farmacia.html" class="nav-farmacia"><i class="ti ti-pill"></i> Farmacia online</a>
   </nav>
 
-  <!-- HERO -->
-  <header class="hero">
-    <svg class="paw-bg" style="top:40px;left:-10px;width:90px;transform:rotate(-20deg)"><use href="#paw"/></svg>
-    <svg class="paw-bg" style="top:140px;right:30px;width:60px;transform:rotate(25deg)"><use href="#paw"/></svg>
-    <svg class="paw-bg" style="bottom:30px;left:40px;width:50px;transform:rotate(10deg)"><use href="#paw"/></svg>
+  <!-- CABECERA -->
+  <header class="hero hero-slim">
+    <svg class="paw-bg" style="top:20px;left:-10px;width:70px;transform:rotate(-20deg)"><use href="#paw"/></svg>
+    <svg class="paw-bg" style="bottom:10px;right:10px;width:55px;transform:rotate(25deg)"><use href="#paw"/></svg>
     <div class="hero-inner">
-      <div class="hero-emblem"><img src="img/logo.png" alt="Logo Mi Fiel Amigo Veterinaria" width="150" height="150" style="width:100%;height:auto;object-fit:contain;" /></div>
-      <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Villa del Parque · CABA</p>
-      <h1>Cuidando la salud de <em>tu mejor amigo</em></h1>
-      <p class="hero-sub">Con la Vet. María José González venís sin turno, por orden de llegada. Con el Vet. Octavio Ochoa se atiende con turno: reservalo acá, miércoles y jueves.</p>
-      <div class="hero-buttons">
-        <a class="btn-turno" href="#turnos">
-          <i class="ti ti-calendar-plus"></i> Pedir un turno
-        </a>
-        <a class="btn-farmacia" href="farmacia.html">
-          <i class="ti ti-pill"></i> Encargos de farmacia
-        </a>
-      </div>
-      <div class="hero-badges">
-        <div class="badge"><i class="ti ti-walk"></i> Sin turno · Vet. María José</div>
-        <div class="badge"><i class="ti ti-calendar-check"></i> Con turno · Vet. Octavio</div>
-      </div>
+      <div class="hero-emblem"><img src="img/logo.png" alt="Logo Mi Fiel Amigo Veterinaria" width="96" height="96" style="width:100%;height:auto;object-fit:contain;" /></div>
+      <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Cuenca 3526 · Villa del Parque, CABA</p>
+      <p class="hero-horario"><b>Lun a vie 10 a 12.30 y 17.30 a 20</b> · Sáb 10 a 13</p>
     </div>
   </header>
-
-  <!-- CÓMO ATENDEMOS -->
-  <section class="atencion-section" id="atencion">
-    <div class="section-inner">
-      <h2 class="section-title">Cómo atendemos</h2>
-      <p class="section-sub">Dos formas de atención. Fijate cuál te sirve antes de escribir.</p>
-      <div class="divider"></div>
-
-      <div class="como-grid">
-        <div class="como-card">
-          <span class="como-tag">Sin turno</span>
-          <div class="como-name">Vet. María José González</div>
-          <div class="como-role">Médica veterinaria · atención habitual</div>
-          <ul class="como-lines">
-            <li><i class="ti ti-clock"></i><span>Lunes a viernes <b>10 a 12.30</b> y <b>17.30 a 20</b></span></li>
-            <li><i class="ti ti-calendar-week"></i><span>Sábados <b>10 a 13</b></span></li>
-            <li><i class="ti ti-users"></i><span>Se atiende <b>únicamente por orden de llegada</b>: venís y listo</span></li>
-            <li><i class="ti ti-medical-cross"></i><span>Castraciones y cirugías se hablan <b>con ella</b>, en el local o por teléfono</span></li>
-          </ul>
-          <div class="como-foot">
-            <div class="como-nota">
-              No hace falta turno ni escribir por WhatsApp. <b>Precios de vacunas,
-              consultas, desparasitación y cirugías</b> se resuelven acercándote
-              a la veterinaria en el horario de atención.
-            </div>
-          </div>
-        </div>
-
-        <div class="como-card destacada">
-          <span class="como-tag">Con turno</span>
-          <div class="como-name">Vet. Octavio Ochoa</div>
-          <div class="como-role">Médico veterinario · solo con turno</div>
-          <ul class="como-lines">
-            <li><i class="ti ti-clock"></i><span>Miércoles y jueves de <b>15 a 17.30</b></span></li>
-            <li><i class="ti ti-calendar-check"></i><span>Solo <b>con turno reservado</b> desde esta página</span></li>
-            <li><i class="ti ti-file-description"></i><span>Completás un formulario corto y llega sabiendo de qué se trata</span></li>
-            <li><i class="ti ti-clock-hour-4"></i><span>Consulta con horario asignado, sin esperar en la sala</span></li>
-          </ul>
-          <div class="como-foot">
-            <a class="como-btn" href="#turnos"><i class="ti ti-calendar-plus"></i> Pedir turno</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- PEDIR TURNO -->
   <section class="turnos-section" id="turnos">
     <div class="section-inner">
-      <h2 class="section-title">Pedí tu turno</h2>
-      <p class="section-sub">Contanos qué necesitás y te llevamos al lugar correcto en 30 segundos</p>
+      <h1 class="section-title">¿Qué necesitás?</h1>
+      <p class="section-sub">Elegí una opción y te llevamos al lugar correcto en 30 segundos</p>
       <div class="divider"></div>
 
       <div class="turnos-card">
 
         <!-- PASO 0 · TRIAGE -->
         <div class="paso activo" id="paso-0" data-paso="0">
-          <div class="paso-num"><span>1</span> Empecemos</div>
-          <div class="paso-title">¿Qué necesitás?</div>
-          <p class="paso-sub">Elegí una opción para no perder tiempo.</p>
           <div class="opt-list">
             <button type="button" class="opt" data-ir="turno">
               <i class="ti ti-calendar-plus opt-ico"></i>
@@ -1351,6 +1334,10 @@
             <button type="button" class="opt" data-ir="sinturno">
               <i class="ti ti-door-enter opt-ico"></i>
               <span class="opt-txt"><b>Consulta con la Vet. María José</b><span>Sin turno, por orden de llegada</span></span>
+            </button>
+            <button type="button" class="opt" data-ir="aplicacion">
+              <i class="ti ti-vaccine opt-ico"></i>
+              <span class="opt-txt"><b>Aplicación de Cytopoint, Librela o ACS 16%</b><span>Coordinamos el día de la aplicación</span></span>
             </button>
             <button type="button" class="opt" data-ir="general">
               <i class="ti ti-help-circle opt-ico"></i>
@@ -1400,9 +1387,86 @@
           <div class="paso-nav"><button type="button" class="btn-volver" data-volver="0"><i class="ti ti-arrow-left"></i> Volver</button></div>
         </div>
 
+        <!-- APLICACIONES · CYTOPOINT / LIBRELA / ACS 16% -->
+        <div class="paso" id="paso-aplicacion" data-paso="aplicacion">
+          <div class="paso-num"><span><i class="ti ti-vaccine" style="font-size:12px"></i></span> Aplicaciones</div>
+          <div class="paso-title">Coordinemos la aplicación</div>
+          <p class="paso-sub">Completá estos datos y coordinamos el día por WhatsApp. Si la dosis hay que pedirla, te avisamos cuándo llega.</p>
+
+          <form id="aplic-form" novalidate>
+            <div class="form-group">
+              <label for="a-producto">¿Qué aplicación necesitás? <span class="req">*</span></label>
+              <select id="a-producto" required>
+                <option value="" selected disabled>Elegí…</option>
+                <option>Cytopoint</option>
+                <option>Librela</option>
+                <option>ACS 16%</option>
+                <option>No estoy seguro, me lo indicaron</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="a-tutor">Tu nombre y apellido <span class="req">*</span></label>
+              <input type="text" id="a-tutor" required autocomplete="name" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="a-mascota">Nombre de la mascota <span class="req">*</span></label>
+                <input type="text" id="a-mascota" required />
+              </div>
+              <div class="form-group">
+                <label for="a-especie">Especie <span class="req">*</span></label>
+                <select id="a-especie" required>
+                  <option value="" selected disabled>Elegí…</option>
+                  <option>Perro</option>
+                  <option>Gato</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="a-peso">Peso aproximado</label>
+                <input type="text" id="a-peso" placeholder="Ej: 12 kg" />
+              </div>
+              <div class="form-group">
+                <label for="a-previa">¿Ya se la aplicaron antes?</label>
+                <select id="a-previa">
+                  <option value="" selected disabled>Elegí…</option>
+                  <option>Sí, ya viene con el tratamiento</option>
+                  <option>No, sería la primera vez</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="a-ultima">Fecha de la última aplicación <span style="color:var(--muted);font-weight:500">(si tuvo)</span></label>
+              <input type="date" id="a-ultima" />
+            </div>
+            <div class="form-group">
+              <label for="a-detalle">Comentarios <span style="color:var(--muted);font-weight:500">(opcional)</span></label>
+              <textarea id="a-detalle" placeholder="Quién se la indicó, cómo viene respondiendo, si toma otra medicación…"></textarea>
+            </div>
+
+            <div class="preview">
+              <div class="preview-label"><i class="ti ti-brand-whatsapp"></i> Esto es lo que se te va a enviar</div>
+              <div class="preview-bubble" id="aplic-preview">Completá los datos para ver el mensaje.</div>
+            </div>
+
+            <div class="paso-nav">
+              <button type="button" class="btn-volver" data-volver="0"><i class="ti ti-arrow-left"></i> Volver</button>
+              <button type="submit" class="btn-wa-send" id="aplic-submit">
+                <i class="ti ti-brand-whatsapp"></i> Coordinar por WhatsApp
+              </button>
+            </div>
+            <p class="form-note">
+              Al enviar se abre WhatsApp con el mensaje ya escrito. La aplicación queda
+              coordinada cuando el Vet. Octavio te responde con el día.
+            </p>
+          </form>
+        </div>
+
         <!-- PASO 1 · DÍA -->
         <div class="paso" id="paso-1" data-paso="1">
-          <div class="paso-num"><span>2</span> Turno con el Vet. Octavio</div>
+          <div class="paso-num"><span>1</span> Turno con el Vet. Octavio</div>
           <div class="paso-title">¿Qué día te viene bien?</div>
           <p class="paso-sub">Atiende miércoles y jueves de 15 a 17.30, en Cuenca 3526.</p>
           <div class="chips" id="chips-dia"></div>
@@ -1411,7 +1475,7 @@
 
         <!-- PASO 2 · HORARIO -->
         <div class="paso" id="paso-2" data-paso="2">
-          <div class="paso-num"><span>3</span> Turno con el Vet. Octavio</div>
+          <div class="paso-num"><span>2</span> Turno con el Vet. Octavio</div>
           <div class="paso-title">¿A qué hora?</div>
           <p class="paso-sub">Elegí tu horario preferido. El vet. te lo confirma por WhatsApp; si justo está tomado, te propone el más cercano.</p>
           <div class="chips" id="chips-hora"></div>
@@ -1420,7 +1484,7 @@
 
         <!-- PASO 3 · DATOS -->
         <div class="paso" id="paso-3" data-paso="3">
-          <div class="paso-num"><span>4</span> Turno con el Vet. Octavio</div>
+          <div class="paso-num"><span>3</span> Turno con el Vet. Octavio</div>
           <div class="paso-title">Contanos de tu mascota</div>
           <p class="paso-sub">Completá estos datos y le llegan cargados por WhatsApp junto con el pedido de turno.</p>
 
@@ -1498,6 +1562,59 @@
           </form>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- MÁS SOBRE LA VETERINARIA (plegado) -->
+  <details class="mas">
+    <summary>
+      <span><i class="ti ti-info-circle"></i> Más sobre la veterinaria</span>
+      <small>Horarios, equipo, servicios, preguntas frecuentes y cómo llegar</small>
+      <i class="ti ti-chevron-down mas-chev"></i>
+    </summary>
+    <div class="mas-cuerpo">
+  <!-- CÓMO ATENDEMOS -->
+  <section class="atencion-section" id="atencion">
+    <div class="section-inner">
+      <h2 class="section-title">Cómo atendemos</h2>
+      <p class="section-sub">Dos formas de atención. Fijate cuál te sirve antes de escribir.</p>
+      <div class="divider"></div>
+
+      <div class="como-grid">
+        <div class="como-card">
+          <span class="como-tag">Sin turno</span>
+          <div class="como-name">Vet. María José González</div>
+          <div class="como-role">Médica veterinaria · atención habitual</div>
+          <ul class="como-lines">
+            <li><i class="ti ti-clock"></i><span>Lunes a viernes <b>10 a 12.30</b> y <b>17.30 a 20</b></span></li>
+            <li><i class="ti ti-calendar-week"></i><span>Sábados <b>10 a 13</b></span></li>
+            <li><i class="ti ti-users"></i><span>Se atiende <b>únicamente por orden de llegada</b>: venís y listo</span></li>
+            <li><i class="ti ti-medical-cross"></i><span>Castraciones y cirugías se hablan <b>con ella</b>, en el local o por teléfono</span></li>
+          </ul>
+          <div class="como-foot">
+            <div class="como-nota">
+              No hace falta turno ni escribir por WhatsApp. <b>Precios de vacunas,
+              consultas, desparasitación y cirugías</b> se resuelven acercándote
+              a la veterinaria en el horario de atención.
+            </div>
+          </div>
+        </div>
+
+        <div class="como-card destacada">
+          <span class="como-tag">Con turno</span>
+          <div class="como-name">Vet. Octavio Ochoa</div>
+          <div class="como-role">Médico veterinario · solo con turno</div>
+          <ul class="como-lines">
+            <li><i class="ti ti-clock"></i><span>Miércoles y jueves de <b>15 a 17.30</b></span></li>
+            <li><i class="ti ti-calendar-check"></i><span>Solo <b>con turno reservado</b> desde esta página</span></li>
+            <li><i class="ti ti-file-description"></i><span>Completás un formulario corto y llega sabiendo de qué se trata</span></li>
+            <li><i class="ti ti-clock-hour-4"></i><span>Consulta con horario asignado, sin esperar en la sala</span></li>
+          </ul>
+          <div class="como-foot">
+            <a class="como-btn" href="#turnos"><i class="ti ti-calendar-plus"></i> Pedir turno</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1769,6 +1886,9 @@
     </div>
   </section>
 
+    </div>
+  </details>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">
@@ -1778,10 +1898,7 @@
     <p>© 2026 · Cuenca 3526, Villa del Parque, CABA</p>
   </footer>
 
-  <!-- BOTÓN FLOTANTE · PEDIR TURNO -->
-  <a class="turno-float" href="#turnos" aria-label="Pedir un turno">
-    <i class="ti ti-calendar-plus"></i><span class="turno-label">Pedir turno</span>
-  </a>
+  <!-- El pedido de turno es el bloque principal de la página; no hace falta botón flotante -->
 
 
   <script>
@@ -1910,6 +2027,44 @@
         if (!sel.fecha || !sel.hora) { irA("1"); return; }
         if (!form.checkValidity()) { form.reportValidity(); return; }
         const url = "https://wa.me/" + TURNOS.whatsapp + "?text=" + encodeURIComponent(armarMensaje());
+        window.open(url, "_blank");
+      });
+
+      // ── Aplicaciones: Cytopoint, Librela y ACS 16% ──
+      const aForm = document.getElementById("aplic-form");
+      const aPreview = document.getElementById("aplic-preview");
+
+      function armarAplicacion() {
+        const lineas = [];
+        lineas.push("Hola Octavio! Quiero coordinar una aplicación en Mi Fiel Amigo.");
+        lineas.push("");
+        lineas.push("💉 " + (val("a-producto") || "-"));
+        lineas.push("👤 " + (val("a-tutor") || "-"));
+        lineas.push("");
+        const especie = val("a-especie");
+        const peso = val("a-peso");
+        let mascota = "🐾 " + (val("a-mascota") || "-");
+        if (especie) mascota += " · " + especie;
+        if (peso) mascota += " · " + peso;
+        lineas.push(mascota);
+        const previa = val("a-previa");
+        if (previa) lineas.push("🏥 " + previa);
+        const ultima = val("a-ultima");
+        if (ultima) lineas.push("📅 Última aplicación: " + ultima);
+        const detalle = val("a-detalle");
+        if (detalle) { lineas.push(""); lineas.push("📝 " + detalle); }
+        return lineas.join("\n");
+      }
+
+      function refrescarAplicacion() { aPreview.textContent = armarAplicacion(); }
+      aForm.addEventListener("input", refrescarAplicacion);
+      aForm.addEventListener("change", refrescarAplicacion);
+      refrescarAplicacion();
+
+      aForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!aForm.checkValidity()) { aForm.reportValidity(); return; }
+        const url = "https://wa.me/" + TURNOS.whatsapp + "?text=" + encodeURIComponent(armarAplicacion());
         window.open(url, "_blank");
       });
     })();

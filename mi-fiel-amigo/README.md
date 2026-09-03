@@ -46,10 +46,13 @@ Los colores están centralizados en variables CSS al inicio de `index.html`
 - **Vet. Octavio Ochoa** — atiende **solo con turno reservado**, los
   **miércoles y jueves de 15 a 17.30**. El turno se pide desde el sitio.
   WhatsApp: `5491170623869` (el mismo de la farmacia online).
-- **Acción principal del sitio**: **pedir turno con el Vet. Octavio**. El
-  hero abre con el título institucional ("Cuidando la salud de tu mejor
-  amigo") y dos botones — **"Pedir un turno"** (lleva a `#turnos`) y
-  **"Encargos de farmacia"** (lleva a `farmacia.html`).
+- **Acción principal del sitio**: **pedir turno / coordinar la consulta**.
+  La página es prácticamente sólo eso: una cabecera compacta (logo,
+  dirección y horario en una línea) y, apenas debajo, el bloque
+  `#turnos`. Todo lo demás — cómo atendemos, servicios, equipo, galería,
+  reseñas, FAQ, mapa y CTA — quedó dentro de un `<details class="mas">`
+  plegado ("Más sobre la veterinaria"): sigue en el HTML (los buscadores
+  lo indexan igual) pero no compite con la acción principal.
 
 ### El sitio como primer filtro (`#turnos`)
 
@@ -58,13 +61,14 @@ cualquier cosa (precios, horarios, stock, urgencias) porque el WhatsApp era
 la primera puerta de entrada del sitio. Ahora **ningún celular aparece a la
 vista**: el número se usa recién al final del formulario de turno.
 
-El bloque `#turnos` arranca con un triage de 4 opciones y solo una llega a
+El bloque `#turnos` arranca con un triage de 5 opciones y sólo dos llegan a
 WhatsApp:
 
 | Elige… | Qué pasa |
 |---|---|
 | Turno con el Vet. Octavio | Sigue al formulario → WhatsApp con todo cargado |
 | Consulta con la Vet. María José | Panel con horarios, dirección y teléfono. Termina ahí |
+| Aplicación de Cytopoint, Librela o ACS 16% | Formulario propio → WhatsApp para coordinar el día |
 | Precios, vacunas o castraciones | "Acercate en el horario de atención" + teléfono. Termina ahí |
 | Es una urgencia | En horario, venir a la veterinaria; fuera de horario, una 24 hs. Termina ahí |
 
@@ -79,6 +83,14 @@ de `index.html` — días, horarios, cuántas semanas hacia adelante y el númer
 de WhatsApp se cambian ahí, en un solo lugar. **No hay agenda con
 disponibilidad real**: el horario elegido es una preferencia y se confirma a
 mano por WhatsApp.
+
+### Aplicaciones (Cytopoint, Librela, ACS 16%)
+
+Camino aparte dentro de `#turnos`, sin selector de día: se piden
+**producto, tutor, mascota, especie, peso, si ya viene con el tratamiento,
+fecha de la última aplicación y comentarios**, y se arma un mensaje de
+WhatsApp para coordinar el día con el Vet. Octavio. Va sin elegir horario
+porque la aplicación puede depender de que haya que pedir la dosis.
 
 ### Carteles imprimibles
 

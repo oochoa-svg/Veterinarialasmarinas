@@ -100,11 +100,13 @@ Cartel A5 imprimible (`window.print()`, `@page size:A5`) con el QR a
 `https://mifielamigo.web.app/#turnos`, los dos modos de atención y los
 avisos de precios, teléfono y urgencias.
 
-**Calle / vidriera (`cartel-calle.html`)** — pensado para leerse desde la
-vereda, a través del vidrio: el título es el **horario de atención** (que es
-lo que la gente busca desde afuera), abajo los dos modos de atención y una
-franja azul con el QR grande. Botones para imprimir en **A4 o A3** (el A3
-cambia `@page` y escala el lienzo con `zoom`; para la vidriera conviene A3).
+**Calle / vidriera (`cartel-calle.html`)** — una sola cosa y nada más:
+**"Pedí tu turno" con el Vet. Octavio Ochoa**, el QR grande (88 mm en A4,
+124 mm en A3) y los **días de turno** (miércoles y jueves de 15 a 17.30).
+Sin horarios de María José, sin avisos ni teléfono en el cuerpo: desde la
+vereda tiene que leerse un solo mensaje. Botones para imprimir en **A4 o
+A3** (el A3 cambia `@page` y escala el lienzo con `zoom`; para la vidriera
+conviene A3). La información completa sigue en el cartel de la puerta.
 
 Los QR `img/qr-turnos.png/.svg` apuntan a
 `https://mifielamigo.web.app/#turnos` (generados con `segno`, colores

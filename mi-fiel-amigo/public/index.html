@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veterinaria Mi Fiel Amigo · Villa del Parque, CABA</title>
-  <meta name="description" content="Veterinaria Mi Fiel Amigo en Villa del Parque, CABA. Consultá por WhatsApp con el Vet. Octavio Ochoa. Atención por orden de llegada con la Vet. María José González." />
+  <meta name="description" content="Veterinaria Mi Fiel Amigo en Villa del Parque, CABA. Atención por orden de llegada con la Vet. María José González, y turnos online con el Vet. Octavio Ochoa los miércoles y jueves de 15 a 17.30." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0060A8" />
   <link rel="icon" href="img/logo.png" />
@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Veterinaria Mi Fiel Amigo · Villa del Parque" />
-  <meta property="og:description" content="Consultá por WhatsApp con el Vet. Octavio Ochoa. Atención por orden de llegada con la Vet. María José González." />
+  <meta property="og:description" content="Atención por orden de llegada con la Vet. María José González. Turnos online con el Vet. Octavio Ochoa." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:url" content="https://mifielamigo.web.app" />
@@ -24,7 +24,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Veterinaria Mi Fiel Amigo · Villa del Parque" />
-  <meta name="twitter:description" content="Consultá por WhatsApp con el Vet. Octavio Ochoa. Atención por orden de llegada con la Vet. María José González." />
+  <meta name="twitter:description" content="Atención por orden de llegada con la Vet. María José González. Turnos online con el Vet. Octavio Ochoa." />
   <meta name="twitter:image" content="https://mifielamigo.web.app/img/logo.png" />
 
   <!-- Google Fonts -->
@@ -52,7 +52,24 @@
       "addressCountry": "AR"
     },
     "areaServed": ["Villa del Parque", "Villa Devoto", "CABA"],
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "10:00", "closes": "12:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "17:30", "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00", "closes": "13:00"
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -62,13 +79,23 @@
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "¿Cómo pido un turno?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Con la Vet. María José González no hace falta turno: se atiende por orden de llegada en el horario de la veterinaria. Con el Vet. Octavio Ochoa el turno se reserva desde el sitio: elegís día y horario y completás un formulario con el motivo y los datos de tu mascota, que llega por WhatsApp. Atiende miércoles y jueves de 15 a 17.30." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Venden alimentos o accesorios?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No tenemos pet shop: no vendemos alimentos ni accesorios. Somos una clínica veterinaria. Los medicamentos que necesite tu mascota se pueden encargar por la farmacia online." }
+      },
+      {
+        "@type": "Question",
         "name": "¿Atienden urgencias?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos urgencias en nuestro horario de consulta. Llamanos al 011 4504-7282 y te indicamos cómo proceder lo antes posible." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, en el horario de atención: acercate a la veterinaria sin esperar respuesta a ningún mensaje. Fuera del horario de atención, concurrí a una veterinaria de urgencias de 24 hs." }
       },
       {
         "@type": "Question",
         "name": "¿Necesito turno o puedo ir directamente?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Con la Vet. María José González la atención es únicamente por orden de llegada, sin turno. Con el Vet. Octavio Ochoa la atención es a consulta, coordinando la consulta directamente por WhatsApp." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Con la Vet. María José González la atención es únicamente por orden de llegada, sin turno, de lunes a viernes de 10 a 12.30 y de 17.30 a 20, y los sábados de 10 a 13. Con el Vet. Octavio Ochoa la atención es solo con turno reservado, miércoles y jueves de 15 a 17.30." }
       },
       {
         "@type": "Question",
@@ -178,6 +205,20 @@
       white-space: nowrap;
     }
     .nav-farmacia:hover { text-decoration: underline; }
+    .nav-acciones { display: flex; align-items: center; gap: 14px; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--naranja); color: #fff;
+      padding: 9px 17px; border-radius: 999px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      white-space: nowrap; transition: all 0.2s ease;
+    }
+    .nav-cta:hover { background: var(--naranja-oscuro); transform: translateY(-1px); }
+    @media (max-width: 420px) {
+      .nav-acciones { gap: 9px; }
+      .nav-farmacia span, .nav-cta { font-size: 13px; }
+      .nav-cta { padding: 8px 13px; }
+    }
     /* ── HERO ── */
     .hero {
       position: relative;
@@ -1003,6 +1044,150 @@
       .cta-box { padding: 36px 22px; }
       .edu-card { padding: 26px 20px; }
     }
+
+    /* ── CÓMO ATENDEMOS ── */
+    .atencion-section { background: var(--blanco); }
+    .como-grid { display: grid; gap: 18px; grid-template-columns: 1fr 1fr; }
+    .como-card {
+      background: var(--crema);
+      border: 1px solid var(--linea);
+      border-radius: 18px;
+      padding: 22px 20px;
+      display: flex; flex-direction: column;
+    }
+    .como-card.destacada { background: var(--naranja-suave); border-color: var(--naranja-tinte); }
+    .como-tag {
+      align-self: flex-start;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--naranja-oscuro); background: var(--blanco);
+      border: 1px solid var(--naranja-tinte);
+      border-radius: 999px; padding: 4px 11px; margin-bottom: 12px;
+    }
+    .como-name { font-family: 'Baloo 2', cursive; font-size: 20px; font-weight: 700; color: var(--carbon); }
+    .como-role { font-size: 13px; color: var(--naranja-oscuro); font-weight: 700; margin-bottom: 12px; }
+    .como-lines { list-style: none; margin-bottom: 16px; }
+    .como-lines li {
+      display: flex; gap: 9px; align-items: flex-start;
+      font-size: 14px; color: var(--carbon-suave); padding: 5px 0;
+    }
+    .como-lines li i { color: var(--naranja-oscuro); font-size: 17px; flex-shrink: 0; margin-top: 2px; }
+    .como-lines li b { color: var(--carbon); }
+    .como-foot { margin-top: auto; }
+    .como-nota {
+      font-size: 13px; color: var(--muted); line-height: 1.55;
+      background: var(--blanco); border-radius: 12px; padding: 11px 13px;
+      border: 1px dashed var(--linea);
+    }
+    .como-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; background: var(--naranja); color: #fff;
+      font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700;
+      border: none; border-radius: 999px; padding: 12px 18px;
+      text-decoration: none; cursor: pointer; transition: all 0.2s ease;
+    }
+    .como-btn:hover { background: var(--naranja-oscuro); transform: translateY(-2px); }
+
+    /* ── TURNOS / ASISTENTE ── */
+    .turnos-section { background: var(--crema); }
+    .turnos-card {
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      border-radius: 20px;
+      padding: 26px 22px;
+      box-shadow: 0 10px 30px rgba(43,43,43,0.06);
+    }
+    .paso-num {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--naranja-oscuro); margin-bottom: 4px;
+    }
+    .paso-num span {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--naranja); color: #fff;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 11px; letter-spacing: 0;
+    }
+    .paso-title { font-family: 'Baloo 2', cursive; font-size: 19px; font-weight: 700; color: var(--carbon); margin-bottom: 4px; }
+    .paso-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.55; }
+    .paso { display: none; }
+    .paso.activo { display: block; animation: fadeUp 0.35s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    .opt-list { display: grid; gap: 10px; }
+    .opt {
+      display: flex; align-items: center; gap: 13px; text-align: left; width: 100%;
+      background: var(--crema); border: 1.5px solid var(--linea);
+      border-radius: 14px; padding: 13px 15px; cursor: pointer;
+      font-family: 'Nunito', sans-serif; color: var(--texto);
+      text-decoration: none; transition: all 0.18s ease;
+    }
+    .opt:hover { border-color: var(--naranja); background: var(--naranja-suave); transform: translateY(-1px); }
+    .opt i.opt-ico { color: var(--naranja-oscuro); font-size: 22px; flex-shrink: 0; }
+    .opt-txt b { display: block; font-size: 15px; font-weight: 700; color: var(--carbon); line-height: 1.3; }
+    .opt-txt span { display: block; font-size: 13px; color: var(--muted); line-height: 1.45; margin-top: 2px; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+    .chip {
+      background: var(--crema); border: 1.5px solid var(--linea);
+      border-radius: 999px; padding: 9px 16px; cursor: pointer;
+      font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; color: var(--carbon-suave);
+      transition: all 0.18s ease;
+    }
+    .chip:hover { border-color: var(--naranja); color: var(--naranja-oscuro); }
+    .chip.sel { background: var(--naranja); border-color: var(--naranja); color: #fff; }
+    .chip small { display: block; font-weight: 600; font-size: 11px; opacity: 0.85; }
+
+    .resumen {
+      background: var(--naranja-suave); border: 1px solid var(--naranja-tinte);
+      border-radius: 14px; padding: 13px 15px; margin-bottom: 18px;
+      font-size: 14px; color: var(--carbon);
+    }
+    .resumen b { font-weight: 700; }
+    .resumen i { color: var(--naranja-oscuro); margin-right: 6px; }
+
+    .preview {
+      background: #ECE5DD; border-radius: 14px; padding: 14px; margin: 4px 0 18px;
+    }
+    .preview-bubble {
+      background: #DCF8C6; border-radius: 12px; border-top-right-radius: 3px;
+      padding: 11px 13px; font-size: 13.5px; line-height: 1.6; color: #2b2b2b;
+      white-space: pre-line; box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    }
+    .preview-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+
+    .paso-nav { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+    .btn-volver {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; color: var(--muted);
+      padding: 10px 4px; display: inline-flex; align-items: center; gap: 5px;
+    }
+    .btn-volver:hover { color: var(--carbon); }
+    .btn-wa-send {
+      flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      background: var(--wa); color: #fff; border: none; border-radius: 999px;
+      font-family: 'Nunito', sans-serif; font-size: 15.5px; font-weight: 700;
+      padding: 14px 20px; cursor: pointer; text-decoration: none;
+      box-shadow: 0 8px 20px rgba(37,211,102,0.35); transition: all 0.2s ease;
+    }
+    .btn-wa-send:hover { transform: translateY(-2px); }
+    .btn-wa-send:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-wa-send i { font-size: 20px; }
+
+    .info-panel {
+      background: var(--crema); border: 1px solid var(--linea);
+      border-radius: 14px; padding: 16px 18px; font-size: 14.5px; line-height: 1.7; color: var(--carbon-suave);
+    }
+    .info-panel b { color: var(--carbon); }
+    .info-panel .dato {
+      display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;
+    }
+    .info-panel .dato i { color: var(--naranja-oscuro); font-size: 19px; margin-top: 2px; }
+    .info-panel a { color: var(--naranja-oscuro); font-weight: 700; }
+
+    @media (max-width: 700px) {
+      .como-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -1068,7 +1253,10 @@
         <span>Veterinaria</span>
       </span>
     </a>
-    <a href="farmacia.html" class="nav-farmacia"><i class="ti ti-pill"></i> Farmacia online</a>
+    <div class="nav-acciones">
+      <a href="farmacia.html" class="nav-farmacia"><i class="ti ti-pill"></i> Farmacia</a>
+      <a href="#turnos" class="nav-cta"><i class="ti ti-calendar-plus"></i> Pedir turno</a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -1080,21 +1268,239 @@
       <div class="hero-emblem"><img src="img/logo.png" alt="Logo Mi Fiel Amigo Veterinaria" width="150" height="150" style="width:100%;height:auto;object-fit:contain;" /></div>
       <p class="hero-eyebrow"><i class="ti ti-map-pin" style="font-size:14px"></i> Villa del Parque · CABA</p>
       <h1>Cuidando la salud de <em>tu mejor amigo</em></h1>
-      <p class="hero-sub">Consultá por WhatsApp con el Vet. Octavio Ochoa, en sus horarios de atención. Sin turno, por orden de llegada, con la Vet. María José González.</p>
+      <p class="hero-sub">Con la Vet. María José González venís sin turno, por orden de llegada. Con el Vet. Octavio Ochoa se atiende con turno: reservalo acá, miércoles y jueves.</p>
       <div class="hero-buttons">
-        <a class="btn-turno" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20coordinar%20una%20consulta." target="_blank" rel="noopener">
-          <i class="ti ti-brand-whatsapp"></i> Consultar por WhatsApp
+        <a class="btn-turno" href="#turnos">
+          <i class="ti ti-calendar-plus"></i> Pedir un turno
         </a>
         <a class="btn-farmacia" href="farmacia.html">
           <i class="ti ti-pill"></i> Encargos de farmacia
         </a>
       </div>
       <div class="hero-badges">
-        <div class="badge"><i class="ti ti-brand-whatsapp"></i> Por WhatsApp · Vet. Octavio</div>
         <div class="badge"><i class="ti ti-walk"></i> Sin turno · Vet. María José</div>
+        <div class="badge"><i class="ti ti-calendar-check"></i> Con turno · Vet. Octavio</div>
       </div>
     </div>
   </header>
+
+  <!-- CÓMO ATENDEMOS -->
+  <section class="atencion-section" id="atencion">
+    <div class="section-inner">
+      <h2 class="section-title">Cómo atendemos</h2>
+      <p class="section-sub">Dos formas de atención. Fijate cuál te sirve antes de escribir.</p>
+      <div class="divider"></div>
+
+      <div class="como-grid">
+        <div class="como-card">
+          <span class="como-tag">Sin turno</span>
+          <div class="como-name">Vet. María José González</div>
+          <div class="como-role">Médica veterinaria · atención habitual</div>
+          <ul class="como-lines">
+            <li><i class="ti ti-clock"></i><span>Lunes a viernes <b>10 a 12.30</b> y <b>17.30 a 20</b></span></li>
+            <li><i class="ti ti-calendar-week"></i><span>Sábados <b>10 a 13</b></span></li>
+            <li><i class="ti ti-users"></i><span>Se atiende <b>únicamente por orden de llegada</b>: venís y listo</span></li>
+            <li><i class="ti ti-medical-cross"></i><span>Castraciones y cirugías se hablan <b>con ella</b>, en el local o por teléfono</span></li>
+          </ul>
+          <div class="como-foot">
+            <div class="como-nota">
+              No hace falta turno ni escribir por WhatsApp. <b>Precios de vacunas,
+              consultas, desparasitación y cirugías</b> se resuelven acercándote
+              a la veterinaria en el horario de atención.
+            </div>
+          </div>
+        </div>
+
+        <div class="como-card destacada">
+          <span class="como-tag">Con turno</span>
+          <div class="como-name">Vet. Octavio Ochoa</div>
+          <div class="como-role">Médico veterinario · solo con turno</div>
+          <ul class="como-lines">
+            <li><i class="ti ti-clock"></i><span>Miércoles y jueves de <b>15 a 17.30</b></span></li>
+            <li><i class="ti ti-calendar-check"></i><span>Solo <b>con turno reservado</b> desde esta página</span></li>
+            <li><i class="ti ti-file-description"></i><span>Completás un formulario corto y llega sabiendo de qué se trata</span></li>
+            <li><i class="ti ti-clock-hour-4"></i><span>Consulta con horario asignado, sin esperar en la sala</span></li>
+          </ul>
+          <div class="como-foot">
+            <a class="como-btn" href="#turnos"><i class="ti ti-calendar-plus"></i> Pedir turno</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIR TURNO -->
+  <section class="turnos-section" id="turnos">
+    <div class="section-inner">
+      <h2 class="section-title">Pedí tu turno</h2>
+      <p class="section-sub">Contanos qué necesitás y te llevamos al lugar correcto en 30 segundos</p>
+      <div class="divider"></div>
+
+      <div class="turnos-card">
+
+        <!-- PASO 0 · TRIAGE -->
+        <div class="paso activo" id="paso-0" data-paso="0">
+          <div class="paso-num"><span>1</span> Empecemos</div>
+          <div class="paso-title">¿Qué necesitás?</div>
+          <p class="paso-sub">Elegí una opción para no perder tiempo.</p>
+          <div class="opt-list">
+            <button type="button" class="opt" data-ir="turno">
+              <i class="ti ti-calendar-plus opt-ico"></i>
+              <span class="opt-txt"><b>Turno con el Vet. Octavio</b><span>Miércoles o jueves, de 15 a 17.30</span></span>
+            </button>
+            <button type="button" class="opt" data-ir="sinturno">
+              <i class="ti ti-door-enter opt-ico"></i>
+              <span class="opt-txt"><b>Consulta con la Vet. María José</b><span>Sin turno, por orden de llegada</span></span>
+            </button>
+            <button type="button" class="opt" data-ir="general">
+              <i class="ti ti-help-circle opt-ico"></i>
+              <span class="opt-txt"><b>Precios, vacunas o castraciones</b><span>Se resuelve en el local o por teléfono</span></span>
+            </button>
+            <button type="button" class="opt" data-ir="urgencia">
+              <i class="ti ti-urgent opt-ico"></i>
+              <span class="opt-txt"><b>Es una urgencia</b><span>Mi mascota está descompuesta ahora</span></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- INFO · SIN TURNO -->
+        <div class="paso" id="paso-sinturno" data-paso="sinturno">
+          <div class="paso-title">Con la Vet. María José no hace falta turno</div>
+          <p class="paso-sub">Te acercás a la veterinaria y te atiende por orden de llegada.</p>
+          <div class="info-panel">
+            <div class="dato"><i class="ti ti-clock"></i><div><b>Lunes a viernes:</b> 10 a 12.30 y 17.30 a 20<br><b>Sábados:</b> 10 a 13</div></div>
+            <div class="dato"><i class="ti ti-map-pin"></i><div>Cuenca 3526, Villa del Parque · <a href="https://maps.app.goo.gl/Q4i8B3WC7TpmkzVq9" target="_blank" rel="noopener">ver en el mapa</a></div></div>
+            <div class="dato"><i class="ti ti-medical-cross"></i><div>Castraciones y otras cirugías se hablan con ella: acercate en su horario o llamá al <a href="tel:+541145047282">011 4504-7282</a></div></div>
+          </div>
+          <div class="paso-nav"><button type="button" class="btn-volver" data-volver="0"><i class="ti ti-arrow-left"></i> Volver</button></div>
+        </div>
+
+        <!-- INFO · CONSULTAS GENERALES -->
+        <div class="paso" id="paso-general" data-paso="general">
+          <div class="paso-title">Eso lo resolvemos en la veterinaria</div>
+          <p class="paso-sub">Precios de vacunas, consultas, castraciones y formas de pago.</p>
+          <div class="info-panel">
+            <div class="dato"><i class="ti ti-door-enter"></i><div><b>Acercate a la veterinaria en el horario de atención</b> y te lo respondemos en el momento: lun a vie 10 a 12.30 y 17.30 a 20, sáb 10 a 13.</div></div>
+            <div class="dato"><i class="ti ti-medical-cross"></i><div><b>Castraciones y otras cirugías:</b> llamá o acercate a hablarlo con la Vet. María José en su horario de atención.</div></div>
+            <div class="dato"><i class="ti ti-phone"></i><div>Para cualquier otra consulta, llamanos al <a href="tel:+541145047282">011 4504-7282</a>.</div></div>
+            <div class="dato"><i class="ti ti-pill"></i><div>¿Necesitás un medicamento? Hacé tu <a href="farmacia.html">encargo de farmacia</a>.</div></div>
+          </div>
+          <div class="paso-nav"><button type="button" class="btn-volver" data-volver="0"><i class="ti ti-arrow-left"></i> Volver</button></div>
+        </div>
+
+        <!-- INFO · URGENCIA -->
+        <div class="paso" id="paso-urgencia" data-paso="urgencia">
+          <div class="paso-title">Si es una urgencia, no esperes respuesta</div>
+          <p class="paso-sub">Una urgencia no se resuelve por mensaje. Movete.</p>
+          <div class="info-panel">
+            <div class="dato"><i class="ti ti-door-enter"></i><div><b>En horario de atención: vení directamente a la veterinaria.</b> Lun a vie 10 a 12.30 y 17.30 a 20, sáb 10 a 13.</div></div>
+            <div class="dato"><i class="ti ti-building-hospital"></i><div><b>Fuera de horario: acercate a una veterinaria de urgencias 24 hs.</b> No esperes al día siguiente.</div></div>
+            <div class="dato"><i class="ti ti-alert-triangle"></i><div>Golpes, convulsiones, vómitos repetidos, dificultad para respirar o intoxicación: salí para la guardia sin perder tiempo.</div></div>
+          </div>
+          <div class="paso-nav"><button type="button" class="btn-volver" data-volver="0"><i class="ti ti-arrow-left"></i> Volver</button></div>
+        </div>
+
+        <!-- PASO 1 · DÍA -->
+        <div class="paso" id="paso-1" data-paso="1">
+          <div class="paso-num"><span>2</span> Turno con el Vet. Octavio</div>
+          <div class="paso-title">¿Qué día te viene bien?</div>
+          <p class="paso-sub">Atiende miércoles y jueves de 15 a 17.30, en Cuenca 3526.</p>
+          <div class="chips" id="chips-dia"></div>
+          <div class="paso-nav"><button type="button" class="btn-volver" data-volver="0"><i class="ti ti-arrow-left"></i> Volver</button></div>
+        </div>
+
+        <!-- PASO 2 · HORARIO -->
+        <div class="paso" id="paso-2" data-paso="2">
+          <div class="paso-num"><span>3</span> Turno con el Vet. Octavio</div>
+          <div class="paso-title">¿A qué hora?</div>
+          <p class="paso-sub">Elegí tu horario preferido. El vet. te lo confirma por WhatsApp; si justo está tomado, te propone el más cercano.</p>
+          <div class="chips" id="chips-hora"></div>
+          <div class="paso-nav"><button type="button" class="btn-volver" data-volver="1"><i class="ti ti-arrow-left"></i> Volver</button></div>
+        </div>
+
+        <!-- PASO 3 · DATOS -->
+        <div class="paso" id="paso-3" data-paso="3">
+          <div class="paso-num"><span>4</span> Turno con el Vet. Octavio</div>
+          <div class="paso-title">Contanos de tu mascota</div>
+          <p class="paso-sub">Completá estos datos y le llegan cargados por WhatsApp junto con el pedido de turno.</p>
+
+          <div class="resumen" id="resumen-turno"></div>
+
+          <form id="turno-form" novalidate>
+            <div class="form-group">
+              <label for="t-tutor">Tu nombre y apellido <span class="req">*</span></label>
+              <input type="text" id="t-tutor" required autocomplete="name" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="t-mascota">Nombre de la mascota <span class="req">*</span></label>
+                <input type="text" id="t-mascota" required />
+              </div>
+              <div class="form-group">
+                <label for="t-especie">Especie <span class="req">*</span></label>
+                <select id="t-especie" required>
+                  <option value="" selected disabled>Elegí…</option>
+                  <option>Perro</option>
+                  <option>Gato</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="t-edad">Edad aproximada</label>
+                <input type="text" id="t-edad" placeholder="Ej: 3 años" />
+              </div>
+              <div class="form-group">
+                <label for="t-paciente">¿Ya lo atendimos antes?</label>
+                <select id="t-paciente">
+                  <option value="" selected disabled>Elegí…</option>
+                  <option>Sí, es paciente de la vete</option>
+                  <option>No, es la primera vez</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="t-motivo">Motivo de la consulta <span class="req">*</span></label>
+              <select id="t-motivo" required>
+                <option value="" selected disabled>Elegí…</option>
+                <option>Consulta clínica (está con algún síntoma)</option>
+                <option>Control / seguimiento</option>
+                <option>Vacunación</option>
+                <option>Castración o cirugía (consulta previa)</option>
+                <option>Análisis o estudios</option>
+                <option>Piel, oídos o alergias</option>
+                <option>Control de cachorro</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="t-detalle">Contame un poco más <span class="req">*</span></label>
+              <textarea id="t-detalle" required placeholder="Desde cuándo, qué le notás, si come y toma agua, si toma alguna medicación…"></textarea>
+            </div>
+
+            <div class="preview">
+              <div class="preview-label"><i class="ti ti-brand-whatsapp"></i> Esto es lo que se te va a enviar</div>
+              <div class="preview-bubble" id="wa-preview">Completá los datos para ver el mensaje.</div>
+            </div>
+
+            <div class="paso-nav">
+              <button type="button" class="btn-volver" data-volver="2"><i class="ti ti-arrow-left"></i> Volver</button>
+              <button type="submit" class="btn-wa-send" id="turno-submit">
+                <i class="ti ti-brand-whatsapp"></i> Enviar y reservar
+              </button>
+            </div>
+            <p class="form-note">
+              Al enviar se abre WhatsApp con todo el mensaje ya escrito: solo tenés que
+              apretar enviar. El turno queda confirmado cuando el Vet. Octavio te responde.
+              Usamos tus datos solo para atender a tu mascota.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- SERVICIOS -->
   <section>
@@ -1133,13 +1539,13 @@
           <div class="team-avatar"><svg class="caduceo" viewBox="0 0 100 100" role="img" aria-label="Médica veterinaria"><use href="#caduceo"/></svg></div>
           <div class="team-name">Vet. María José González</div>
           <div class="team-role">Médica Veterinaria</div>
-          <p class="team-note">Atención habitual, únicamente por orden de llegada — sin turno</p>
+          <p class="team-note">Atención habitual, únicamente por orden de llegada — sin turno.<br>Lun a vie 10 a 12.30 y 17.30 a 20 · Sáb 10 a 13</p>
         </div>
         <div class="team-card">
           <div class="team-avatar"><svg class="caduceo" viewBox="0 0 100 100" role="img" aria-label="Médico veterinario"><use href="#caduceo"/></svg></div>
           <div class="team-name">Vet. Octavio Ochoa</div>
           <div class="team-role">Médico Veterinario</div>
-          <p class="team-note">Atiende a consulta, coordinando por WhatsApp</p>
+          <p class="team-note">Atiende solo con turno reservado.<br>Miércoles y jueves de 15 a 17.30 · <a href="#turnos">pedir turno</a></p>
         </div>
       </div>
     </div>
@@ -1206,7 +1612,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="faq-section">
+  <section class="faq-section" id="faq">
     <div class="section-inner">
       <h2 class="section-title">Preguntas frecuentes</h2>
       <p class="section-sub">Lo que más nos consultan</p>
@@ -1214,11 +1620,44 @@
       <div class="faq-list">
 
         <details class="faq-item">
+          <summary>¿Cómo pido un turno? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Depende de con quién quieras atenderte. Con la <strong>Vet. María José González</strong>
+            no hace falta turno: venís en el horario de atención y te atiende por orden de llegada.
+            Con el <strong>Vet. Octavio Ochoa</strong> el turno se reserva desde
+            <a href="#turnos" style="color:var(--naranja-oscuro);font-weight:700">esta misma página</a>:
+            elegís día y horario, completás un formulario corto con el motivo y los datos de tu
+            mascota, y le llega todo cargado por WhatsApp. Atiende <strong>miércoles y jueves
+            de 15 a 17.30</strong>.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Puedo consultar cualquier cosa por WhatsApp? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            El WhatsApp es <strong>solo para reservar los turnos del Vet. Octavio</strong>, y se usa
+            desde el formulario de esta página. Para <strong>precios de vacunas, consultas y
+            castraciones, acercate a la veterinaria en el horario de atención</strong>. Para
+            cualquier otra consulta, <strong>llamanos al 011 4504-7282</strong>. Si tu mascota tiene
+            un problema de salud, lo que necesita es una consulta, no un mensaje.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>¿Venden alimentos o accesorios? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            <strong>No tenemos pet shop</strong>: no vendemos alimentos ni accesorios. Somos una
+            clínica veterinaria. Los <strong>medicamentos</strong> que necesite tu mascota los
+            podés encargar por la <a href="farmacia.html" style="color:var(--naranja-oscuro);font-weight:700">farmacia online</a>.
+          </div>
+        </details>
+
+        <details class="faq-item">
           <summary>¿Atienden urgencias? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
-            Sí. Atendemos <strong>urgencias en horario de consulta</strong>. Si tu mascota necesita
-            atención inmediata, llamanos al <strong>011 4504-7282</strong> y te indicamos cómo
-            proceder lo antes posible.
+            Sí, <strong>en el horario de atención</strong>: si tu mascota necesita atención inmediata,
+            <strong>acercate a la veterinaria</strong> sin esperar respuesta a ningún mensaje. Fuera del
+            horario de atención, <strong>concurrí a una veterinaria de urgencias de 24 hs</strong>.
           </div>
         </details>
 
@@ -1226,9 +1665,10 @@
           <summary>¿Necesito turno o puedo ir directamente? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
             Depende del profesional: con la <strong>Vet. María José González</strong>
-            la atención es <strong>únicamente por orden de llegada</strong>, sin turno. Con el
-            <strong>Vet. Octavio Ochoa</strong> la atención es a consulta, coordinando directamente
-            <strong>por WhatsApp</strong>.
+            la atención es <strong>únicamente por orden de llegada</strong>, sin turno, de lunes a
+            viernes de 10 a 12.30 y de 17.30 a 20, y los sábados de 10 a 13. Con el
+            <strong>Vet. Octavio Ochoa</strong> la atención es <strong>solo con turno reservado</strong>,
+            miércoles y jueves de 15 a 17.30.
           </div>
         </details>
 
@@ -1236,7 +1676,9 @@
           <summary>¿Hacen castraciones y cirugías? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
             Sí, realizamos <strong>castraciones y procedimientos quirúrgicos</strong> con la
-            evaluación previa correspondiente. Escribinos para coordinar día y los cuidados previos.
+            evaluación previa correspondiente. Para consultar por una castración o cirugía,
+            <strong>llamá al 011 4504-7282 o acercate a hablarlo con la Vet. María José</strong>
+            en su horario de atención.
           </div>
         </details>
 
@@ -1244,8 +1686,8 @@
           <summary>¿Cada cuánto tengo que vacunar y desparasitar? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
             La vacunación es anual y la desparasitación interna, en general, cada 3 meses. El plan
-            exacto depende de la edad y el estilo de vida de tu mascota. Escribinos y armamos el
-            calendario a medida.
+            exacto depende de la edad y el estilo de vida de tu mascota. Por precios de vacunas y
+            para armar el calendario, acercate a la veterinaria en el horario de atención.
           </div>
         </details>
 
@@ -1277,11 +1719,11 @@
           </div>
         </div>
         <div class="info-block">
-          <div class="info-icon-wrap"><i class="ti ti-brand-whatsapp"></i></div>
+          <div class="info-icon-wrap"><i class="ti ti-calendar-check"></i></div>
           <div>
-            <div class="info-label">Vet. Octavio · por WhatsApp</div>
-            <div class="info-val">Mié: desde las 16:20 · Jue: 12:30–17:30</div>
-            <div class="info-sub">Coordiná tu consulta por WhatsApp</div>
+            <div class="info-label">Con turno · Vet. Octavio</div>
+            <div class="info-val">Mié y Jue: 15–17:30</div>
+            <div class="info-sub">Reservá tu turno en esta página</div>
           </div>
         </div>
         <div class="info-block">
@@ -1289,7 +1731,7 @@
           <div>
             <div class="info-label">Teléfono / contestador</div>
             <div class="info-val"><a href="tel:+541145047282" style="color:var(--carbon);text-decoration:none;">011 4504-7282</a></div>
-            <div class="info-sub">Dejá tu mensaje o consultá por mail</div>
+            <div class="info-sub">Para consultas generales</div>
           </div>
         </div>
       </div>
@@ -1315,13 +1757,13 @@
       <svg class="paw-bg light" style="top:-10px;right:-10px;width:120px;transform:rotate(25deg);opacity:0.12"><use href="#paw"/></svg>
       <svg class="paw-bg light" style="bottom:-15px;left:-5px;width:80px;transform:rotate(-10deg);opacity:0.12"><use href="#paw"/></svg>
       <div class="hero-inner">
-        <h2 class="cta-title">Coordiná tu consulta con el Vet. Octavio Ochoa</h2>
-        <p class="cta-sub">Con el <strong>Vet. Octavio Ochoa</strong> coordiná tu consulta directamente por WhatsApp. La atención habitual, por orden de llegada, es únicamente con la <strong>Vet. María José González</strong>, sin turno.</p>
-        <a class="btn-turno" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20coordinar%20una%20consulta." target="_blank" rel="noopener" style="margin-bottom:14px;">
-          <i class="ti ti-brand-whatsapp"></i> Coordinar por WhatsApp
+        <h2 class="cta-title">Pedí tu turno con el Vet. Octavio Ochoa</h2>
+        <p class="cta-sub">Precios de vacunas, consultas y castraciones: acercate a la veterinaria en el horario de atención, donde te atiende la <strong>Vet. María José González</strong> por orden de llegada. Los turnos con el <strong>Vet. Octavio Ochoa</strong> se reservan acá.</p>
+        <a class="btn-turno" href="#turnos" style="margin-bottom:14px;">
+          <i class="ti ti-calendar-plus"></i> Pedir un turno
         </a>
         <a class="tel-link" href="tel:+541145047282">
-          <i class="ti ti-phone" style="font-size:13px;vertical-align:-1px;margin-right:4px;"></i> Por orden de llegada, llamá al 011 4504-7282
+          <i class="ti ti-phone" style="font-size:13px;vertical-align:-1px;margin-right:4px;"></i> Para cualquier otra consulta, llamá al 011 4504-7282
         </a>
       </div>
     </div>
@@ -1336,7 +1778,142 @@
     <p>© 2026 · Cuenca 3526, Villa del Parque, CABA</p>
   </footer>
 
-  <!-- BOTÓN FLOTANTE: pedir turno (agenda online CanalVet) desactivado por ahora -->
+  <!-- BOTÓN FLOTANTE · PEDIR TURNO -->
+  <a class="turno-float" href="#turnos" aria-label="Pedir un turno">
+    <i class="ti ti-calendar-plus"></i><span class="turno-label">Pedir turno</span>
+  </a>
+
+
+  <script>
+    // ── Asistente de turnos ──────────────────────────────────────────────
+    // Toda la configuración de la agenda de Octavio vive acá arriba.
+    const TURNOS = {
+      whatsapp: "5491170623869",   // número al que llega el turno (solo dígitos, con 549)
+      dias: [3, 4],                // 0=Dom … 3=Mié, 4=Jue
+      horarios: ["15:00", "15:30", "16:00", "16:30", "17:00"],
+      semanas: 3                   // cuántas semanas hacia adelante ofrecer
+    };
+
+    (function () {
+      const card = document.getElementById("turnos");
+      if (!card) return;
+
+      const DOW  = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+      const MES  = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+      const pasos = Array.from(card.querySelectorAll(".paso"));
+      const sel = { fecha: null, fechaTxt: "", hora: null };
+
+      function mostrar(id) {
+        pasos.forEach(function (p) { p.classList.toggle("activo", p.dataset.paso === String(id)); });
+      }
+      function irA(id) {
+        mostrar(id);
+        const y = card.getBoundingClientRect().top + window.scrollY - 70;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+
+      // Triage inicial
+      card.querySelectorAll("[data-ir]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          irA(b.dataset.ir === "turno" ? "1" : b.dataset.ir);
+        });
+      });
+      card.querySelectorAll("[data-volver]").forEach(function (b) {
+        b.addEventListener("click", function () { irA(b.dataset.volver); });
+      });
+
+      // Paso 1 · próximos miércoles y jueves
+      const contDias = document.getElementById("chips-dia");
+      const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+      const fechas = [];
+      for (let i = 1; i <= TURNOS.semanas * 7 + 1; i++) {
+        const d = new Date(hoy); d.setDate(hoy.getDate() + i);
+        if (TURNOS.dias.indexOf(d.getDay()) !== -1) fechas.push(d);
+      }
+      fechas.slice(0, TURNOS.dias.length * TURNOS.semanas).forEach(function (d) {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "chip";
+        const etiqueta = DOW[d.getDay()];
+        b.innerHTML = etiqueta.charAt(0).toUpperCase() + etiqueta.slice(1) +
+                      "<small>" + d.getDate() + " de " + MES[d.getMonth()] + "</small>";
+        b.addEventListener("click", function () {
+          contDias.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("sel"); });
+          b.classList.add("sel");
+          sel.fecha = d;
+          sel.fechaTxt = DOW[d.getDay()] + " " + d.getDate() + " de " + MES[d.getMonth()];
+          irA("2");
+        });
+        contDias.appendChild(b);
+      });
+
+      // Paso 2 · horarios
+      const contHoras = document.getElementById("chips-hora");
+      TURNOS.horarios.forEach(function (h) {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "chip";
+        b.textContent = h;
+        b.addEventListener("click", function () {
+          contHoras.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("sel"); });
+          b.classList.add("sel");
+          sel.hora = h;
+          pintarResumen();
+          irA("3");
+        });
+        contHoras.appendChild(b);
+      });
+
+      const resumen = document.getElementById("resumen-turno");
+      function pintarResumen() {
+        resumen.innerHTML = '<i class="ti ti-calendar-check"></i> <b>' +
+          sel.fechaTxt.charAt(0).toUpperCase() + sel.fechaTxt.slice(1) +
+          '</b> a las <b>' + sel.hora + '</b> · Vet. Octavio Ochoa';
+      }
+
+      // Paso 3 · datos y mensaje
+      const form = document.getElementById("turno-form");
+      const preview = document.getElementById("wa-preview");
+      const val = function (id) { return (document.getElementById(id).value || "").trim(); };
+
+      function armarMensaje() {
+        const lineas = [];
+        lineas.push("Hola Octavio! Quiero reservar un turno en Mi Fiel Amigo.");
+        lineas.push("");
+        lineas.push("📅 " + (sel.fechaTxt || "-") + " a las " + (sel.hora || "-"));
+        lineas.push("👤 " + (val("t-tutor") || "-"));
+        lineas.push("");
+        const especie = val("t-especie");
+        const edad = val("t-edad");
+        let mascota = "🐾 " + (val("t-mascota") || "-");
+        if (especie) mascota += " · " + especie;
+        if (edad) mascota += " · " + edad;
+        lineas.push(mascota);
+        const paciente = val("t-paciente");
+        if (paciente) lineas.push("🏥 " + paciente);
+        lineas.push("");
+        lineas.push("📋 Motivo: " + (val("t-motivo") || "-"));
+        const detalle = val("t-detalle");
+        if (detalle) lineas.push("📝 " + detalle);
+        return lineas.join("\n");
+      }
+
+      function refrescar() {
+        preview.textContent = armarMensaje();
+      }
+      form.addEventListener("input", refrescar);
+      form.addEventListener("change", refrescar);
+      refrescar();
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!sel.fecha || !sel.hora) { irA("1"); return; }
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        const url = "https://wa.me/" + TURNOS.whatsapp + "?text=" + encodeURIComponent(armarMensaje());
+        window.open(url, "_blank");
+      });
+    })();
+  </script>
 
 </body>
 </html>

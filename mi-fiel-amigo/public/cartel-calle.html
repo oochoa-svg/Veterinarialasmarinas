@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cartel de calle · Veterinaria Mi Fiel Amigo</title>
+<link rel="icon" href="img/logo.png" />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+<style id="pagesize">@page{ size:A4; margin:0; }</style>
+<style>
+  :root{
+    --azul:#0060A8;
+    --azul-oscuro:#004f86;
+    --verde:#78C018;
+    --carbon:#2B2B2B;
+    --crema:#FBF6EE;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:'Nunito',sans-serif; color:var(--carbon); background:#d9dde1; }
+
+  .toolbar{
+    position:sticky; top:0; z-index:10; background:var(--carbon); color:#fff;
+    padding:12px 18px; display:flex; align-items:center; justify-content:center;
+    gap:10px; font-size:14px; flex-wrap:wrap;
+  }
+  .toolbar button{
+    background:var(--azul); color:#fff; border:none; padding:10px 20px; border-radius:24px;
+    font-weight:700; font-size:14px; cursor:pointer; font-family:'Nunito',sans-serif;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .toolbar button.ghost{ background:transparent; border:1.5px solid rgba(255,255,255,0.35); }
+  .toolbar span{ opacity:0.7; font-size:12.5px; }
+
+  /* Lienzo A4; con .a3 escala todo x1.414 para imprimir en A3 */
+  .poster{
+    width:210mm; height:297mm; margin:18px auto; background:var(--crema);
+    box-shadow:0 6px 24px rgba(0,0,0,0.18);
+    padding:16mm 14mm 12mm;
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    position:relative; overflow:hidden;
+  }
+  body.a3 .poster{ width:297mm; height:420mm; padding:23mm 20mm 17mm; }
+  body.a3 .poster > *{ zoom:1.414; }
+
+  .franja{
+    position:absolute; left:0; right:0; top:0; height:9mm;
+    background:linear-gradient(90deg, var(--azul) 0 50%, var(--verde) 50% 100%);
+  }
+
+  .marca{ display:flex; align-items:center; justify-content:center; gap:12px; margin-top:4mm; }
+  .marca img{ width:26mm; height:26mm; object-fit:contain; }
+  .marca-txt{ text-align:left; }
+  .marca-txt b{
+    display:block; font-family:'Baloo 2',cursive; font-size:34px; line-height:1.05;
+    color:var(--carbon); font-weight:700;
+  }
+  .marca-txt span{
+    display:block; font-size:14px; font-weight:800; letter-spacing:4px;
+    text-transform:uppercase; color:var(--azul);
+  }
+
+  .titulo{
+    font-family:'Baloo 2',cursive; font-size:60px; line-height:1.02; font-weight:800;
+    color:var(--azul); margin:7mm 0 2mm;
+  }
+  .bajada{ font-size:20px; font-weight:700; color:#4A4A4A; margin-bottom:6mm; max-width:150mm; }
+
+  .horarios{
+    width:100%; background:#fff; border:2px solid var(--azul); border-radius:14px;
+    padding:6mm 6mm; margin-bottom:7mm;
+  }
+  .horarios .rot{
+    font-size:13px; font-weight:800; letter-spacing:3px; text-transform:uppercase;
+    color:var(--azul); margin-bottom:2mm;
+  }
+  .horarios .linea{ font-size:29px; font-weight:800; line-height:1.35; }
+  .horarios .linea small{ font-size:19px; font-weight:700; color:#6f6a60; }
+
+  .bloques{ display:flex; gap:5mm; width:100%; margin-bottom:7mm; }
+  .bloque{
+    flex:1; background:#fff; border:1px solid rgba(43,43,43,0.12); border-radius:14px;
+    padding:5mm 4mm; text-align:center;
+  }
+  .bloque .tag{
+    display:inline-block; font-size:11px; font-weight:800; letter-spacing:1.5px;
+    text-transform:uppercase; color:#fff; background:var(--verde);
+    border-radius:999px; padding:2px 12px; margin-bottom:3mm;
+  }
+  .bloque.turno .tag{ background:var(--azul); }
+  .bloque .quien{ font-family:'Baloo 2',cursive; font-size:22px; font-weight:700; color:var(--carbon); line-height:1.15; }
+  .bloque .como{ font-size:17px; font-weight:700; color:var(--azul); margin:1.5mm 0; }
+  .bloque .det{ font-size:15px; color:#6f6a60; line-height:1.45; }
+
+  .qr-fila{
+    display:flex; align-items:center; gap:6mm; width:100%;
+    background:var(--azul); border-radius:16px; padding:5mm 6mm; color:#fff; text-align:left;
+  }
+  .qr-fila img{ width:54mm; height:54mm; display:block; background:#fff; border-radius:10px; padding:2.5mm; flex-shrink:0; }
+  .qr-fila .qt{ font-family:'Baloo 2',cursive; font-size:35px; font-weight:700; line-height:1.1; margin-bottom:1.5mm; }
+  .qr-fila .qd{ font-size:17px; font-weight:600; line-height:1.45; opacity:0.95; }
+  .qr-fila .url{ font-family:'Baloo 2',cursive; font-size:21px; font-weight:700; margin-top:2mm; }
+
+  .pie{ margin-top:auto; padding-top:5mm; width:100%; }
+  .avisos{ display:flex; gap:4mm; margin-bottom:4mm; }
+  .aviso{
+    flex:1; background:#fff; border:1px solid rgba(43,43,43,0.12); border-radius:12px;
+    padding:3.5mm 4mm; font-size:14px; line-height:1.45; color:#6f6a60; text-align:left;
+  }
+  .aviso b{ display:block; color:var(--carbon); font-size:14.5px; margin-bottom:1mm; }
+  .direccion{ font-size:16px; font-weight:700; color:var(--carbon); }
+  .direccion span{ color:#8a8478; font-weight:600; }
+
+  @media print{
+    body{ background:#fff; }
+    .toolbar{ display:none; }
+    .poster{ margin:0; box-shadow:none; }
+  }
+  @media (max-width:760px){
+    .poster{ width:100%; height:auto; padding:10mm 7mm; }
+    body.a3 .poster{ width:100%; height:auto; }
+    body.a3 .poster > *{ zoom:1; }
+    .titulo{ font-size:42px; }
+    .bloques, .avisos{ flex-direction:column; }
+    .qr-fila{ flex-direction:column; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button onclick="imprimir('A4')"><i class="ti ti-printer"></i> Imprimir A4</button>
+  <button class="ghost" onclick="imprimir('A3')"><i class="ti ti-printer"></i> Imprimir A3</button>
+  <span>Para la vidriera: A3 se lee mejor desde la vereda</span>
+</div>
+
+<div class="poster">
+  <div class="franja"></div>
+
+  <div class="marca">
+    <img src="img/logo.png" alt="Logo Veterinaria Mi Fiel Amigo" />
+    <div class="marca-txt">
+      <b>Mi Fiel Amigo</b>
+      <span>Veterinaria</span>
+    </div>
+  </div>
+
+  <div class="titulo">Horarios de atención</div>
+  <div class="bajada">Cuenca 3526 · Villa del Parque</div>
+
+  <div class="horarios">
+    <div class="rot">Estamos abiertos</div>
+    <div class="linea">Lunes a viernes 10 a 12.30 y 17.30 a 20</div>
+    <div class="linea">Sábados 10 a 13 <small>· domingos cerrado</small></div>
+  </div>
+
+  <div class="bloques">
+    <div class="bloque">
+      <span class="tag">Sin turno</span>
+      <div class="quien">Vet. María José González</div>
+      <div class="como">Por orden de llegada</div>
+      <div class="det">Vení en el horario de atención.<br>No hace falta pedir turno.</div>
+    </div>
+    <div class="bloque turno">
+      <span class="tag">Con turno</span>
+      <div class="quien">Vet. Octavio Ochoa</div>
+      <div class="como">Miércoles y jueves 15 a 17.30</div>
+      <div class="det">Turnos solo desde la web.<br>Escaneá el código de abajo.</div>
+    </div>
+  </div>
+
+  <div class="qr-fila">
+    <img src="img/qr-turnos.png" alt="Código QR para pedir turno" />
+    <div>
+      <div class="qt">Pedí tu turno<br>con el celular</div>
+      <div class="qd">Apuntá la cámara al código, elegí día y horario y completá el formulario. Menos de un minuto.</div>
+      <div class="url">mifielamigo.web.app</div>
+    </div>
+  </div>
+
+  <div class="pie">
+    <div class="avisos">
+      <div class="aviso">
+        <b>Precios, vacunas y castraciones</b>
+        Acercate en el horario de atención o llamá al 011 4504-7282.
+      </div>
+      <div class="aviso">
+        <b>Urgencias</b>
+        En horario de atención, entrá. Fuera de horario, concurrí a una veterinaria de 24 hs.
+      </div>
+    </div>
+    <div class="direccion">Cuenca 3526, Villa del Parque, CABA <span>· Tel. 011 4504-7282</span></div>
+  </div>
+</div>
+
+<script>
+  function imprimir(tam) {
+    document.body.classList.toggle("a3", tam === "A3");
+    document.getElementById("pagesize").textContent = "@page{ size:" + tam + "; margin:0; }";
+    window.setTimeout(function () { window.print(); }, 120);
+  }
+</script>
+
+</body>
+</html>

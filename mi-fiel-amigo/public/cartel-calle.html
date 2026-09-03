@@ -61,54 +61,29 @@
   }
 
   .titulo{
-    font-family:'Baloo 2',cursive; font-size:60px; line-height:1.02; font-weight:800;
-    color:var(--azul); margin:7mm 0 2mm;
+    font-family:'Baloo 2',cursive; font-size:76px; line-height:1; font-weight:800;
+    color:var(--azul); margin:8mm 0 2mm;
   }
-  .bajada{ font-size:20px; font-weight:700; color:#4A4A4A; margin-bottom:6mm; max-width:150mm; }
+  .con-quien{ font-size:26px; font-weight:800; color:var(--carbon); margin-bottom:9mm; }
 
-  .horarios{
-    width:100%; background:#fff; border:2px solid var(--azul); border-radius:14px;
-    padding:6mm 6mm; margin-bottom:7mm;
-  }
-  .horarios .rot{
-    font-size:13px; font-weight:800; letter-spacing:3px; text-transform:uppercase;
-    color:var(--azul); margin-bottom:2mm;
-  }
-  .horarios .linea{ font-size:29px; font-weight:800; line-height:1.35; }
-  .horarios .linea small{ font-size:19px; font-weight:700; color:#6f6a60; }
+  .qr-box{ background:#fff; border-radius:18px; padding:6mm; box-shadow:0 8px 24px rgba(0,0,0,0.10); }
+  .qr-box img{ width:88mm; height:88mm; display:block; }
+  .qr-pie{ font-size:19px; font-weight:700; color:#6f6a60; margin-top:5mm; }
+  .url{ font-family:'Baloo 2',cursive; font-size:30px; font-weight:700; color:var(--carbon); margin-top:1mm; }
 
-  .bloques{ display:flex; gap:5mm; width:100%; margin-bottom:7mm; }
-  .bloque{
-    flex:1; background:#fff; border:1px solid rgba(43,43,43,0.12); border-radius:14px;
-    padding:5mm 4mm; text-align:center;
+  .dias{
+    width:100%; background:var(--azul); color:#fff; border-radius:16px;
+    padding:6mm 6mm 7mm; margin-top:9mm;
   }
-  .bloque .tag{
-    display:inline-block; font-size:11px; font-weight:800; letter-spacing:1.5px;
-    text-transform:uppercase; color:#fff; background:var(--verde);
-    border-radius:999px; padding:2px 12px; margin-bottom:3mm;
+  .dias-rot{
+    font-size:15px; font-weight:800; letter-spacing:3px; text-transform:uppercase;
+    opacity:0.85; margin-bottom:2mm;
   }
-  .bloque.turno .tag{ background:var(--azul); }
-  .bloque .quien{ font-family:'Baloo 2',cursive; font-size:22px; font-weight:700; color:var(--carbon); line-height:1.15; }
-  .bloque .como{ font-size:17px; font-weight:700; color:var(--azul); margin:1.5mm 0; }
-  .bloque .det{ font-size:15px; color:#6f6a60; line-height:1.45; }
+  .dias-val{ font-family:'Baloo 2',cursive; font-size:44px; font-weight:700; line-height:1.05; }
+  .dias-hora{ font-size:30px; font-weight:800; margin-top:1mm; }
 
-  .qr-fila{
-    display:flex; align-items:center; gap:6mm; width:100%;
-    background:var(--azul); border-radius:16px; padding:5mm 6mm; color:#fff; text-align:left;
-  }
-  .qr-fila img{ width:54mm; height:54mm; display:block; background:#fff; border-radius:10px; padding:2.5mm; flex-shrink:0; }
-  .qr-fila .qt{ font-family:'Baloo 2',cursive; font-size:35px; font-weight:700; line-height:1.1; margin-bottom:1.5mm; }
-  .qr-fila .qd{ font-size:17px; font-weight:600; line-height:1.45; opacity:0.95; }
-  .qr-fila .url{ font-family:'Baloo 2',cursive; font-size:21px; font-weight:700; margin-top:2mm; }
-
-  .pie{ margin-top:auto; padding-top:5mm; width:100%; }
-  .avisos{ display:flex; gap:4mm; margin-bottom:4mm; }
-  .aviso{
-    flex:1; background:#fff; border:1px solid rgba(43,43,43,0.12); border-radius:12px;
-    padding:3.5mm 4mm; font-size:14px; line-height:1.45; color:#6f6a60; text-align:left;
-  }
-  .aviso b{ display:block; color:var(--carbon); font-size:14.5px; margin-bottom:1mm; }
-  .direccion{ font-size:16px; font-weight:700; color:var(--carbon); }
+  .pie{ margin-top:auto; padding-top:6mm; width:100%; }
+  .direccion{ font-size:17px; font-weight:700; color:var(--carbon); }
   .direccion span{ color:#8a8478; font-weight:600; }
 
   @media print{
@@ -120,9 +95,8 @@
     .poster{ width:100%; height:auto; padding:10mm 7mm; }
     body.a3 .poster{ width:100%; height:auto; }
     body.a3 .poster > *{ zoom:1; }
-    .titulo{ font-size:42px; }
-    .bloques, .avisos{ flex-direction:column; }
-    .qr-fila{ flex-direction:column; text-align:center; }
+    .titulo{ font-size:52px; }
+    .qr-box img{ width:70mm; height:70mm; }
   }
 </style>
 </head>
@@ -145,50 +119,22 @@
     </div>
   </div>
 
-  <div class="titulo">Horarios de atención</div>
-  <div class="bajada">Cuenca 3526 · Villa del Parque</div>
+  <div class="titulo">Pedí tu turno</div>
+  <div class="con-quien">con el Vet. Octavio Ochoa</div>
 
-  <div class="horarios">
-    <div class="rot">Estamos abiertos</div>
-    <div class="linea">Lunes a viernes 10 a 12.30 y 17.30 a 20</div>
-    <div class="linea">Sábados 10 a 13 <small>· domingos cerrado</small></div>
-  </div>
-
-  <div class="bloques">
-    <div class="bloque">
-      <span class="tag">Sin turno</span>
-      <div class="quien">Vet. María José González</div>
-      <div class="como">Por orden de llegada</div>
-      <div class="det">Vení en el horario de atención.<br>No hace falta pedir turno.</div>
-    </div>
-    <div class="bloque turno">
-      <span class="tag">Con turno</span>
-      <div class="quien">Vet. Octavio Ochoa</div>
-      <div class="como">Miércoles y jueves 15 a 17.30</div>
-      <div class="det">Turnos solo desde la web.<br>Escaneá el código de abajo.</div>
-    </div>
-  </div>
-
-  <div class="qr-fila">
+  <div class="qr-box">
     <img src="img/qr-turnos.png" alt="Código QR para pedir turno" />
-    <div>
-      <div class="qt">Pedí tu turno<br>con el celular</div>
-      <div class="qd">Apuntá la cámara al código, elegí día y horario y completá el formulario. Menos de un minuto.</div>
-      <div class="url">mifielamigo.web.app</div>
-    </div>
+  </div>
+  <div class="qr-pie">Escaneá con la cámara del celular</div>
+  <div class="url">mifielamigo.web.app</div>
+
+  <div class="dias">
+    <div class="dias-rot">Días de turno</div>
+    <div class="dias-val">Miércoles y jueves</div>
+    <div class="dias-hora">de 15 a 17.30</div>
   </div>
 
   <div class="pie">
-    <div class="avisos">
-      <div class="aviso">
-        <b>Precios, vacunas y castraciones</b>
-        Acercate en el horario de atención o llamá al 011 4504-7282.
-      </div>
-      <div class="aviso">
-        <b>Urgencias</b>
-        En horario de atención, entrá. Fuera de horario, concurrí a una veterinaria de 24 hs.
-      </div>
-    </div>
     <div class="direccion">Cuenca 3526, Villa del Parque, CABA <span>· Tel. 011 4504-7282</span></div>
   </div>
 </div>

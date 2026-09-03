@@ -11,6 +11,7 @@ mi-fiel-amigo/
 ├── public/
 │   ├── index.html         ← la landing completa (un solo archivo)
 │   ├── cartel-turnos.html ← cartel A5 con QR para la puerta (imprimible)
+│   ├── cartel-calle.html  ← cartel A4/A3 para la vidriera (imprimible)
 │   ├── farmacia.html      ← catálogo de farmacia online (busca + WhatsApp)
 │   ├── farmacia-data.js   ← datos de productos (generados desde la lista de Arandu)
 │   └── img/
@@ -79,13 +80,23 @@ de WhatsApp se cambian ahí, en un solo lugar. **No hay agenda con
 disponibilidad real**: el horario elegido es una preferencia y se confirma a
 mano por WhatsApp.
 
-### Cartel para la puerta (`cartel-turnos.html`)
+### Carteles imprimibles
+
+**Puerta (`cartel-turnos.html`)**
 
 Cartel A5 imprimible (`window.print()`, `@page size:A5`) con el QR a
 `https://mifielamigo.web.app/#turnos`, los dos modos de atención y los
-avisos de precios, teléfono y urgencias. Los QR `img/qr-turnos.png/.svg`
-apuntan a ese mismo destino (generados con `segno`, colores `#2b2b2b` sobre
-`#fbf6ee`).
+avisos de precios, teléfono y urgencias.
+
+**Calle / vidriera (`cartel-calle.html`)** — pensado para leerse desde la
+vereda, a través del vidrio: el título es el **horario de atención** (que es
+lo que la gente busca desde afuera), abajo los dos modos de atención y una
+franja azul con el QR grande. Botones para imprimir en **A4 o A3** (el A3
+cambia `@page` y escala el lienzo con `zoom`; para la vidriera conviene A3).
+
+Los QR `img/qr-turnos.png/.svg` apuntan a
+`https://mifielamigo.web.app/#turnos` (generados con `segno`, colores
+`#2b2b2b` sobre `#fbf6ee`).
 - **Recordatorio de vacunas** → por **mail** (pendiente de armar).
 
 ## Farmacia online (`farmacia.html`)

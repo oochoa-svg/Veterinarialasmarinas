@@ -8,7 +8,7 @@ profesional, no el local.
 vet-octavio/
 ├── public/
 │   ├── index.html       ← la landing completa (un solo archivo)
-│   └── img/             ← foto de perfil y miniaturas de videos (pendiente)
+│   └── img/             ← foto de perfil, logo y certificados (pendiente)
 ├── firebase.json        ← hosting, site "vetoctavio8a"
 ├── .firebaserc          ← proyecto Firebase (veterinarialasmarinas)
 └── README.md
@@ -16,18 +16,97 @@ vet-octavio/
 
 ## Rol de la landing dentro de la estrategia
 
-La coordinación de turnos y las consultas **no** se resuelven acá: eso lo maneja
-Octavio por WhatsApp, apoyado en Meta Business IA. La landing cumple otras funciones:
+Octavio paga anuncios (Meta Ads) que traen tráfico directo a este sitio. La landing es
+un **filtro antes del WhatsApp**: nadie ve un número de celular clickeable en ningún
+lado (ni en el hero, ni en el nav, ni en el footer, ni en el botón flotante). Todo el
+sitio empuja a completar el formulario de `#turno`, y **recién ahí**, al final, se abre
+WhatsApp con el mensaje ya armado.
 
-- **Que lo conozcan**: trayectoria, formación y matrículas.
-- **Explicar el Plan Basico**, que es demasiado extenso para un chat o un posteo.
-- **SEO**: es el único canal que capta a quien busca "veterinario a domicilio
-  <barrio>" en Google y todavía no lo conoce. Por eso las zonas se nombran una por una.
+El problema que esto resuelve: sin filtro, cualquiera que ve el número escribe "hola,
+una consulta" y hay que ir preguntando de a poco zona, mascota y motivo. Con el
+formulario, el primer mensaje ya llega completo.
+
+Más allá del filtro, la landing también:
+
+- **Que lo conozcan**: trayectoria, formación, matrículas y certificados reales.
+- **SEO**: captar a quien busca "veterinario a domicilio `<barrio>`" en Google y
+  todavía no lo conoce. Por eso las zonas se nombran una por una (ver más abajo).
 - **Contenido**: videos y material de Canal Veterinario.
 
-Todos los CTA van a WhatsApp con un **mensaje prearmado distinto según la sección**
-(consulta a domicilio, Plan Basico, consulta general), para saber de dónde viene
-cada mensaje sin necesidad de tracking.
+## El filtro (`#turno`)
+
+Arranca con un triage de 2 opciones:
+
+| Elige… | Qué pasa |
+|---|---|
+| Coordinar una consulta a domicilio | Sigue el formulario de 3 pasos → WhatsApp con todo cargado |
+| Es urgente | Panel: si es grave, ir directo a una veterinaria de urgencias 24 hs (una visita a domicilio coordinada por WhatsApp no es lo más rápido). Igual puede seguir al formulario si prefiere. |
+
+El formulario tiene 3 pasos:
+
+1. **Zona** — buscador/desplegable (ver siguiente sección), no la nube de tags que
+   había antes.
+2. **Mascota y motivo** — nombre, especie, edad, motivo de consulta (select).
+3. **Preferencia de día/horario + datos del tutor** — chips de día (Martes a Sábado +
+   "Cualquiera") y de franja horaria (Mañana/Tarde/Lo que tengas), nombre del tutor y
+   comentarios. Antes de enviar se previsualiza el mensaje tal cual se va a mandar.
+
+El botón final abre `wa.me` con el mensaje armado por JS (función `armarMensaje()` en
+el `<script>` de `index.html`). El número de WhatsApp está en la constante
+`OCTAVIO_WHATSAPP` al principio del script — cambiarlo es una sola línea.
+
+### Por qué NO hay selector de fecha/hora fijo (como en Mi Fiel Amigo)
+
+Mi Fiel Amigo tiene un horario fijo semanal (miércoles y jueves, 15 a 17.30), así que
+ahí el formulario genera fechas concretas ("miércoles 9 de septiembre"). **Acá no**,
+porque Octavio describió su disponibilidad a domicilio como cambiante:
+
+> Lunes por lo pronto no. Martes a la mañana, miércoles 15 a 20, jueves y viernes con
+> más disponibilidad — y a partir del miércoles 16 empieza a trabajar día por medio en
+> otra veterinaria, así que algunos miércoles va a estar libre para domicilios y otros
+> no (miércoles 23 sí, por ejemplo).
+
+Con ese patrón, ofrecer una fecha puntual generada automáticamente ("elegí miércoles
+16") habría sido activamente incorrecto en cuanto empiece el esquema día por medio. En
+vez de eso, el formulario pide una **preferencia** (días de la semana + franja horaria)
+que se manda como dato informativo, y el día/horario exacto **siempre se confirma por
+WhatsApp**, como aclara el texto arriba de los chips. Si en algún momento el horario a
+domicilio se vuelve estable, ahí sí conviene pasar a un selector de fechas concretas
+como el de Mi Fiel Amigo.
+
+## Zona: buscador en vez de nube de tags
+
+Antes había una sección "Dónde atiendo" con dos tarjetas de chips (Zona Norte / CABA).
+Ahora ese contenido es el **paso 1 del formulario**: un input con autocompletado
+(`#zona-input` + `#zona-lista`) que filtra por texto y agrupa por Zona Norte / CABA a
+medida que se escribe. Si el barrio no está en la lista, se puede escribir igual y
+avanzar («¿No ves tu barrio? Escribilo igual»).
+
+Como los nombres de los barrios ya no están todos visibles de entrada (aparecen recién
+al escribir en el buscador), se agregó un párrafo chico (`.zcobertura`) debajo del
+buscador con **todos los barrios en texto plano**, para no perder el valor SEO que
+tenía la nube de tags original (la razón por la que se nombran uno por uno sigue
+siendo la misma: captar búsquedas por barrio).
+
+## Certificados de formación continua — falta el material real
+
+En "Quién te va a atender" → "Formación continua" hay un carrusel horizontal
+(`.cert-track`, con scroll-snap y flechas en desktop) pensado para las fotos reales de
+los certificados/diplomas de Octavio. **Hoy tiene 3 placeholders** (`.cert-placeholder`,
+con borde punteado y el texto "Certificado (falta subir foto)") porque no hay fotos
+reales cargadas todavía.
+
+Para completarlo: agregar los archivos a `img/` (ej. `cert-01.jpg`, `cert-02.jpg`, …) y
+reemplazar cada placeholder por:
+
+```html
+<figure class="cert-card">
+  <img src="img/cert-01.jpg" loading="lazy" alt="Certificado: <nombre del curso> — Octavio Ochoa" />
+</figure>
+```
+
+No hay límite de cantidad: el carrusel scrollea para el costado (swipe en mobile,
+flechas en desktop) sin importar cuántas se agreguen.
 
 ## Identidad de marca
 
@@ -39,10 +118,15 @@ Mi Fiel Amigo), para que se lea como una marca aparte:
 - Ámbar (acento): `#E8A33D`
 - Carbón: `#2B2B2B` · Crema: `#FBF6EE`
 - Tipografías: Baloo 2 (títulos) + Nunito (texto), igual que el resto del ecosistema
+- El violeta (`.btn-turno`, `.turno-float`, chips, botón "Siguiente") se reserva para
+  **"llevar al formulario"**. El verde de WhatsApp (`.btn-wa-send`) se reserva
+  exclusivamente para el botón que de verdad abre WhatsApp, al final del formulario —
+  para que un clic en violeta nunca se confunda con "esto abre el chat".
 
 ## Datos
 
-- WhatsApp (laboral): **11 7062-3869** → `wa.me/5491170623869`
+- WhatsApp (laboral, solo en el JS del formulario — no aparece como link en ningún
+  otro lado de la página): **11 7062-3869** → constante `OCTAVIO_WHATSAPP` en `index.html`
 - Instagram: **@vetoctavio8a**
 - Matrículas: **MP 16465 · MN 11170**
 - Formación: Médico Veterinario (UBA, 2024), Intensificación en Pequeños Animales
@@ -62,72 +146,25 @@ Mi Fiel Amigo), para que se lea como una marca aparte:
   Villa Santa Rita, Monte Castro, Villa Real, Versalles, Floresta, Villa Urquiza,
   Parque Chas.
 
-Se mencionan por nombre a propósito: es lo que permite aparecer en búsquedas por barrio.
+Están en el array `ZONAS` del `<script>` (buscador del paso 1) y en el párrafo
+`.zcobertura` (texto plano para SEO) — hay que mantener ambos en sync si cambia la
+cobertura.
 
-## Plan Basico (3 meses) — desde $65.000
+## Plan Básico — eliminado
 
-**Plan 100% a distancia.** Se rediseñó por completo: la primera version incluia una
-consulta a domicilio con vacunacion, que suelta se cobra $120.000. Es decir, entregaba
-$120.000 de servicio por $65.000, mas un reintegro de $25.000 — perdia plata en el
-escenario base, no en el peor.
-
-Los numeros reales del negocio:
-
-| Servicio | Precio suelto | Costo directo |
-|---|---|---|
-| Consulta a domicilio | $65.000 | traslado + tiempo |
-| Vacunacion completa a domicilio | $120.000 | $16.000 de insumos |
-
-Como Octavio no tiene veterinaria propia, el plan se acota a lo que si puede sostener
-solo: acompañamiento profesional a distancia, que ademas no tiene insumos y es su
-producto de mayor margen.
-
-**Incluye**: WhatsApp todos los dias, teleconsultas por videollamada, triage
-(si necesita presencial o no), seguimiento de cronicos y nutricional, ordenes de
-estudios y recetas, derivaciones coordinadas y certificados de salud.
-
-**No incluye** (y la pagina lo dice explicitamente): prestaciones presenciales, que se
-abonan en la veterinaria donde se realicen; visitas a domicilio y vacunacion, que se
-cotizan aparte con precio preferencial.
-
-Se sacaron el reintegro de $25.000 y el antiparasitario trimestral.
-
-### Posicionamiento frente a la competencia
-
-No compite con una obra social para mascotas (AVSIM, Ike, Puppis One), que cubre el
-**costo de las prestaciones** en una red anonima. Tampoco con las plataformas de
-telemedicina (HolaVet, VEL), donde atiende el veterinario de guardia que este.
-
-El diferencial es que **siempre es el mismo profesional**, con nombre y matricula, que
-conoce la historia del paciente. Por eso el precio ($21.600/mes) esta por encima de la
-telemedicina generica: no es lo mismo que se vende.
-
-### Pendiente de definir
-
-- [ ] **¿Por mascota o por hogar?** Al ser 100% remoto no hay insumos y el costo no
-      escala por animal: responder el WhatsApp de un hogar con tres gatos no cuesta el
-      triple. Conviene **por hogar**; hoy la pagina no lo afirma.
-- [x] ~~Que pasa al vencer los 3 meses~~ → se renueva automaticamente por **debito
-      automatico**, con baja avisando.
-- [x] ~~Nombre~~ → **Plan Basico**. Se descarto "Integral" (sugiere que cubre todo) y
-      tambien "Cobertura Basica": "cobertura" es lenguaje de seguros y refuerza justo
-      la confusion con una obra social que la pagina trata de evitar. "Basico" ademas
-      deja lugar natural al upsell.
-- [x] ~~Precio unico~~ → **"desde $65.000"**, con un bloque que invita a ajustar el plan
-      por WhatsApp. La landing informa, el upsell se conversa en el chat.
-- [ ] **Boton de arrepentimiento**: en Argentina, la venta online con debito recurrente
-      exige mostrar como cancelar de forma visible y sencilla (Ley 24.240 y Res.
-      424/2020). Hoy la letra chica dice que se da de baja avisando; si el cobro pasa a
-      hacerse desde la web conviene revisarlo con mas detalle.
-- [ ] **No prometer 24/7**: hoy dice "todos los dias", sostenible para una persona sola.
-      Veinte planes son veinte personas que pueden escribir de madrugada.
+La landing tenía un "Plan Básico" (3 meses, $65.000, débito automático, acompañamiento
+100% a distancia). **Se sacó por completo** de `index.html` (sección, CSS y menciones
+en nav/hero/FAQ): Octavio pidió enfocar el sitio en el filtro de consultas a domicilio.
+Si se retoma en el futuro, el diseño y el análisis de precios/posicionamiento que se
+había hecho quedó en el historial de git de este README (versión anterior a este
+cambio) — no hace falta rehacer ese trabajo desde cero.
 
 ## Pendientes de contenido
 
 - [x] ~~Foto de perfil~~ → `img/octavio.jpg`, recortada de la foto con la perra negra.
-      Se descartó la del gato blanco: tiene vía y vendaje, se lee como paciente
-      internado y choca con el mensaje de "sin estrés".
 - [x] ~~Logo~~ → `img/logo.png`, extraído del retrato con fondo hecho transparente.
+- [ ] **Fotos reales de certificados** para el carrusel de "Formación continua" (ver
+      sección de arriba) — hoy son 3 placeholders.
 - [ ] **Videos propios dirigidos a dueños** en la sección "Para que decidas informado"
       (hoy hay 3 tarjetas de ejemplo). **No reutilizar material de Canal Veterinario
       Live**: esa plataforma le habla a colegas veterinarios, no a dueños de mascotas.
@@ -147,4 +184,5 @@ la landing. Los videos para dueños hay que producirlos aparte.
 
 Las preguntas frecuentes de la landing y la base de conocimiento de la IA deben decir
 lo mismo. Conviene tratar el bloque FAQ de `index.html` como la fuente de verdad y
-copiar de ahí a Meta, no al revés.
+copiar de ahí a Meta, no al revés. El FAQ también está como JSON-LD (`FAQPage`) para
+que Google pueda mostrarlo como resultado enriquecido.

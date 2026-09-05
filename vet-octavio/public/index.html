@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vet. Octavio Ochoa · Veterinario de cabecera a domicilio · Zona Norte y CABA</title>
-  <meta name="description" content="Veterinario de cabecera a domicilio en Zona Norte y CABA. Consultas, vacunación y seguimiento para perros y gatos, en tu casa. Vet. Octavio Ochoa, UBA. MP 16465 · MN 11170." />
+  <meta name="description" content="Veterinario de cabecera a domicilio en Zona Norte y CABA. Completá el formulario con tu zona y tu mascota, y coordinamos por WhatsApp. Vet. Octavio Ochoa, UBA. MP 16465 · MN 11170." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -55,6 +55,44 @@
         "serviceType": "Veterinario de cabecera a domicilio"
       }
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cómo pido una consulta a domicilio?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Completá el formulario de esta página: tu zona, tu mascota y el motivo de la consulta. Con esa información te escribo por WhatsApp para confirmar el día y el horario." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué no hay un número de WhatsApp para escribir directo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Para que la primera consulta llegue completa, sin ese primer mensaje suelto que después hay que ir completando de a poco. El formulario ordena esa información y así respondo más rápido." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto sale la consulta a domicilio?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Depende de la zona y de lo que necesite tu mascota. Completá el formulario y te paso el valor exacto por WhatsApp." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Atendés urgencias?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Si es algo grave, lo más rápido es ir directo a una veterinaria de urgencias de 24 hs. Para lo que puede esperar unas horas, contame por el formulario y coordinamos." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Atendés todos los días?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Habitualmente coordino domicilios de martes a viernes; por ahora no los lunes. El día y el horario exacto cambian semana a semana según mi agenda, así que se confirman por WhatsApp después de completar el formulario." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si mi mascota necesita algo que no se puede hacer en casa?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Te lo digo desde el principio y coordino la derivación a un centro con el equipamiento necesario, en Zona Norte o CABA. La atención presencial se abona en la veterinaria donde se realice." }
+      }
+    ]
   }
   </script>
 
@@ -128,7 +166,7 @@
     .hero {
       position: relative; overflow: hidden;
       background: linear-gradient(160deg, var(--petroleo-suave) 0%, var(--crema) 62%);
-      padding: 60px 22px 62px;
+      padding: 52px 22px 46px;
       text-align: center;
     }
     .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 2; }
@@ -138,10 +176,10 @@
       color: var(--petroleo-oscuro); font-size: 13px; font-weight: 700;
       padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
     }
-    .hero h1 { font-size: 46px; font-weight: 800; color: var(--carbon); }
+    .hero h1 { font-size: 44px; font-weight: 800; color: var(--carbon); }
     .hero h1 em { font-style: normal; color: var(--petroleo); }
-    .hero-sub { font-size: 18px; color: var(--carbon-suave); margin-top: 16px; }
-    .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+    .hero-sub { font-size: 17px; color: var(--carbon-suave); margin-top: 14px; }
+    .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
     .btn-wa {
       display: inline-flex; align-items: center; gap: 9px;
       background: linear-gradient(135deg, #25D366, #1da851); color: #fff;
@@ -149,8 +187,19 @@
       padding: 15px 30px; border-radius: 999px;
       box-shadow: 0 9px 22px rgba(37,211,102,0.34);
       transition: transform .2s, box-shadow .2s;
+      border: none; cursor: pointer;
     }
     .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 13px 27px rgba(37,211,102,0.42); }
+    .btn-turno {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: linear-gradient(135deg, var(--petroleo), var(--petroleo-oscuro)); color: #fff;
+      text-decoration: none; font-weight: 800; font-size: 17px;
+      padding: 15px 30px; border-radius: 999px;
+      box-shadow: 0 9px 22px rgba(74,36,112,0.30);
+      transition: transform .2s, box-shadow .2s;
+      border: none; cursor: pointer;
+    }
+    .btn-turno:hover { transform: translateY(-2px); box-shadow: 0 13px 27px rgba(74,36,112,0.38); }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
       background: transparent; color: var(--petroleo-oscuro);
@@ -159,7 +208,7 @@
       padding: 13px 24px; border-radius: 999px; transition: background .2s;
     }
     .btn-ghost:hover { background: var(--petroleo-suave); }
-    .hero-badges { display: flex; gap: 9px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
+    .hero-badges { display: flex; gap: 9px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
     .badge {
       background: var(--blanco); border: 1px solid var(--gris-claro);
       font-size: 13px; font-weight: 700; color: var(--carbon-suave);
@@ -168,11 +217,164 @@
     }
     .badge i { color: var(--petroleo); font-size: 15px; }
     .paw-bg { position: absolute; color: var(--petroleo); opacity: 0.05; pointer-events: none; }
-    @media (max-width: 620px) { .hero h1 { font-size: 34px; } .hero-sub { font-size: 16px; } }
+    @media (max-width: 620px) { .hero h1 { font-size: 32px; } .hero-sub { font-size: 15.5px; } }
 
     /* ── SECCIONES ── */
     section { padding: 62px 0; }
     .alt-section { background: var(--blanco); }
+
+    /* ── FILTRO / PEDÍ TU CONSULTA ── */
+    .turno-section { padding-top: 44px; background: var(--blanco); }
+    .turno-card {
+      max-width: 640px; margin: 0 auto;
+      background: var(--crema); border: 1px solid var(--gris-claro);
+      border-radius: 22px; padding: 30px 26px;
+      box-shadow: 0 14px 40px rgba(43,43,43,0.07);
+    }
+    @media (max-width: 560px) { .turno-card { padding: 24px 18px; } }
+
+    .paso { display: none; }
+    .paso.activo { display: block; animation: fadeUp .35s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    .paso-num {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--petroleo-oscuro); margin-bottom: 4px;
+    }
+    .paso-num span {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--petroleo); color: #fff;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 11px;
+    }
+    .paso-title { font-family: 'Baloo 2', cursive; font-size: 20px; font-weight: 800; color: var(--carbon); margin-bottom: 4px; }
+    .paso-sub { font-size: 14px; color: var(--gris); margin-bottom: 18px; line-height: 1.55; }
+
+    .opt-list { display: grid; gap: 10px; }
+    .opt {
+      display: flex; align-items: center; gap: 13px; text-align: left; width: 100%;
+      background: var(--blanco); border: 1.5px solid var(--gris-claro);
+      border-radius: 14px; padding: 14px 16px; cursor: pointer;
+      font-family: 'Nunito', sans-serif; color: var(--carbon);
+      transition: all .18s ease;
+    }
+    .opt:hover { border-color: var(--petroleo); background: var(--petroleo-suave); transform: translateY(-1px); }
+    .opt i.opt-ico { color: var(--petroleo); font-size: 22px; flex-shrink: 0; }
+    .opt-txt b { display: block; font-size: 15px; font-weight: 800; color: var(--carbon); line-height: 1.3; }
+    .opt-txt span { display: block; font-size: 13px; color: var(--gris); line-height: 1.45; margin-top: 2px; }
+
+    .info-panel {
+      background: var(--blanco); border: 1px solid var(--gris-claro);
+      border-radius: 14px; padding: 16px 18px; font-size: 14.5px; line-height: 1.7; color: var(--carbon-suave);
+    }
+    .info-panel b { color: var(--carbon); }
+    .info-panel .dato { display: flex; gap: 10px; align-items: flex-start; margin-top: 10px; }
+    .info-panel .dato:first-child { margin-top: 0; }
+    .info-panel .dato i { color: var(--petroleo); font-size: 19px; margin-top: 2px; }
+
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; font-size: 13.5px; font-weight: 700; color: var(--carbon-suave); margin-bottom: 6px; }
+    .form-group .req { color: var(--ambar-oscuro); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; border: 1.5px solid var(--gris-claro); background: var(--blanco);
+      border-radius: 11px; padding: 11px 13px; font-family: 'Nunito', sans-serif; font-size: 14.5px; color: var(--carbon);
+    }
+    .form-group textarea { min-height: 78px; resize: vertical; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--petroleo);
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+    .chip {
+      background: var(--blanco); border: 1.5px solid var(--gris-claro);
+      border-radius: 999px; padding: 9px 16px; cursor: pointer;
+      font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; color: var(--carbon-suave);
+      transition: all .18s ease;
+    }
+    .chip:hover { border-color: var(--petroleo); color: var(--petroleo-oscuro); }
+    .chip.sel { background: var(--petroleo); border-color: var(--petroleo); color: #fff; }
+
+    .resumen {
+      background: var(--petroleo-suave); border: 1px solid var(--petroleo-tinte);
+      border-radius: 14px; padding: 13px 15px; margin-bottom: 18px; font-size: 14px; color: var(--carbon);
+    }
+    .resumen i { color: var(--petroleo-oscuro); margin-right: 6px; }
+
+    .preview { background: #ECE5DD; border-radius: 14px; padding: 14px; margin: 4px 0 18px; }
+    .preview-label { font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gris); margin-bottom: 8px; }
+    .preview-bubble {
+      background: #DCF8C6; border-radius: 12px; border-top-right-radius: 3px;
+      padding: 11px 13px; font-size: 13.5px; line-height: 1.6; color: #2b2b2b;
+      white-space: pre-line; box-shadow: 0 1px 2px rgba(0,0,0,.08);
+    }
+
+    .paso-nav { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+    .btn-volver {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; color: var(--gris);
+      padding: 10px 4px; display: inline-flex; align-items: center; gap: 5px;
+    }
+    .btn-volver:hover { color: var(--carbon); }
+    .btn-volver.derecha { margin-left: auto; color: var(--petroleo-oscuro); }
+    .btn-siguiente {
+      flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      background: linear-gradient(135deg, var(--petroleo), var(--petroleo-oscuro)); color: #fff; border: none; border-radius: 999px;
+      font-family: 'Nunito', sans-serif; font-size: 15.5px; font-weight: 800;
+      padding: 14px 20px; cursor: pointer;
+      box-shadow: 0 8px 20px rgba(74,36,112,.28); transition: all .2s ease;
+    }
+    .btn-siguiente:hover { transform: translateY(-2px); }
+    .btn-siguiente:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-wa-send {
+      flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      background: linear-gradient(135deg, #25D366, #1da851); color: #fff; border: none; border-radius: 999px;
+      font-family: 'Nunito', sans-serif; font-size: 15.5px; font-weight: 800;
+      padding: 14px 20px; cursor: pointer;
+      box-shadow: 0 8px 20px rgba(37,211,102,.32); transition: all .2s ease;
+    }
+    .btn-wa-send:hover { transform: translateY(-2px); }
+    .form-note { font-size: 12.5px; color: var(--gris); line-height: 1.6; margin-top: 12px; text-align: left; }
+
+    /* buscador de zona */
+    .zbuscador { position: relative; }
+    .zbuscador input {
+      width: 100%; border: 1.5px solid var(--gris-claro); background: var(--blanco);
+      border-radius: 12px; padding: 13px 42px 13px 16px; font-family: 'Nunito', sans-serif;
+      font-size: 15px; color: var(--carbon);
+    }
+    .zbuscador input:focus { outline: none; border-color: var(--petroleo); }
+    .zbuscador .zico { position: absolute; right: 14px; top: 13px; color: var(--gris); font-size: 20px; pointer-events: none; }
+    .zlista {
+      margin-top: 8px; max-height: 230px; overflow-y: auto;
+      border: 1px solid var(--gris-claro); border-radius: 12px; background: var(--blanco);
+    }
+    .zlista:empty { display: none; border: none; }
+    .zgrupo-label {
+      font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--petroleo-oscuro); background: var(--petroleo-suave);
+      padding: 7px 14px;
+    }
+    .zitem {
+      display: block; width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 11px 15px; font-family: 'Nunito', sans-serif; font-size: 14.5px; color: var(--carbon);
+      border-top: 1px solid var(--gris-claro);
+    }
+    .zitem:hover { background: var(--petroleo-suave); }
+    .zvacio { padding: 12px 15px; font-size: 13.5px; color: var(--gris); }
+    .zelegida {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      margin-top: 10px; background: var(--petroleo-suave); border: 1px solid var(--petroleo-tinte);
+      border-radius: 12px; padding: 11px 15px;
+    }
+    .zelegida[hidden] { display: none; }
+    .zelegida b { color: var(--petroleo-oscuro); font-size: 14.5px; }
+    .zelegida button { background: none; border: none; color: var(--gris); font-size: 13px; font-weight: 700; cursor: pointer; }
+    .zelegida button:hover { color: var(--carbon); }
+    .zcobertura { font-size: 12px; color: var(--gris); line-height: 1.75; margin-top: 14px; text-align: left; }
+    .zcobertura b { color: var(--carbon-suave); }
 
     /* ── CABECERA (concepto) ── */
     .cab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 8px; }
@@ -210,72 +412,9 @@
     }
     .nota-consultorio b { color: var(--petroleo-oscuro); }
 
-    /* ── PLAN ── */
-    .plan-section { background: linear-gradient(160deg, var(--petroleo-oscuro), var(--petroleo)); color: #fff; }
-    .plan-section .section-title { color: #fff; }
-    .plan-section .section-sub { color: rgba(255,255,255,0.82); }
-    .plan-section .divider { background: var(--ambar); }
-    .plan-box {
-      max-width: 720px; margin: 0 auto;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 24px; padding: 34px 30px;
-      backdrop-filter: blur(4px);
-    }
-    .plan-price { text-align: center; margin-bottom: 26px; }
-    .plan-desde {
-      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 14px;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: rgba(255,255,255,0.7); margin-bottom: 2px;
-    }
-    .plan-amount { font-family: 'Baloo 2', cursive; font-size: 52px; font-weight: 800; line-height: 1; color: #fff; }
-    .plan-mas {
-      margin-top: 22px; padding: 16px 18px;
-      background: rgba(232,163,61,0.14); border: 1px dashed rgba(232,163,61,0.55);
-      border-radius: 14px; font-size: 15px;
-      display: flex; gap: 12px; align-items: flex-start;
-    }
-    .plan-mas i { color: var(--ambar); font-size: 21px; flex-shrink: 0; margin-top: 2px; }
-    .plan-per { font-size: 15px; color: rgba(255,255,255,0.85); margin-top: 6px; }
-    .plan-permes { display: inline-block; margin-top: 10px; background: var(--ambar); color: #3a2a08; font-weight: 800; font-size: 14px; padding: 6px 16px; border-radius: 999px; }
-    .plan-first {
-      background: rgba(232,163,61,0.16); border: 1px solid rgba(232,163,61,0.45);
-      border-radius: 14px; padding: 16px 18px; margin-bottom: 22px;
-      font-size: 15px; display: flex; gap: 12px; align-items: flex-start;
-    }
-    .plan-first i { color: var(--ambar); font-size: 22px; flex-shrink: 0; }
-    .plan-list { list-style: none; display: grid; gap: 12px; }
-    .plan-list li { display: flex; gap: 11px; align-items: flex-start; font-size: 15px; }
-    .plan-list i { color: var(--ambar); font-size: 19px; flex-shrink: 0; margin-top: 2px; }
-    .plan-destacado { background: rgba(255,255,255,0.10); border-radius: 12px; padding: 12px 14px; margin: 0 -4px; }
-    .plan-fine {
-      margin-top: 24px; padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.16);
-      font-size: 13px; color: rgba(255,255,255,0.75);
-      display: grid; gap: 7px;
-    }
-    .plan-fine div { display: flex; gap: 8px; align-items: flex-start; }
-    .plan-fine i { flex-shrink: 0; margin-top: 3px; }
-    .plan-cta { text-align: center; margin-top: 28px; }
-
-    /* ── ZONAS ── */
-    .zona-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
-    .zona-card {
-      background: var(--blanco); border: 1px solid var(--gris-claro);
-      border-radius: 18px; padding: 26px 24px;
-    }
-    .zona-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-    .zona-head i { color: var(--petroleo); font-size: 22px; }
-    .zona-head h3 { font-size: 19px; font-weight: 800; }
-    .zona-tags { display: flex; flex-wrap: wrap; gap: 7px; }
-    .zona-tag {
-      background: var(--petroleo-suave); color: var(--petroleo-oscuro);
-      font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px;
-    }
-    .zona-nota { text-align: center; font-size: 14.5px; color: var(--gris); margin-top: 26px; }
-
     /* ── SOBRE MÍ ── */
     .sobre-grid { display: grid; grid-template-columns: 260px 1fr; gap: 38px; align-items: start; }
+    .sobre-grid > div { min-width: 0; }
     @media (max-width: 760px) { .sobre-grid { grid-template-columns: 1fr; gap: 26px; } }
     .sobre-foto {
       width: 100%; aspect-ratio: 1; border-radius: 22px; overflow: hidden;
@@ -307,6 +446,37 @@
       padding: 5px 11px; border-radius: 999px;
     }
     .alt-section .form-tag { background: var(--blanco); }
+
+    /* ── CARRUSEL DE CERTIFICADOS ── */
+    .cert-wrap { position: relative; margin-top: 18px; }
+    .cert-track {
+      display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
+      padding-bottom: 6px; scrollbar-width: thin;
+    }
+    .cert-track::-webkit-scrollbar { height: 6px; }
+    .cert-track::-webkit-scrollbar-thumb { background: var(--petroleo-tinte); border-radius: 4px; }
+    .cert-card {
+      flex: 0 0 auto; width: 190px; scroll-snap-align: start;
+      border-radius: 14px; overflow: hidden; border: 1px solid var(--gris-claro);
+      background: var(--blanco);
+    }
+    .cert-card img { width: 100%; height: 250px; object-fit: cover; display: block; }
+    .cert-placeholder {
+      width: 190px; height: 250px; flex: 0 0 auto; scroll-snap-align: start;
+      border: 1.5px dashed var(--petroleo-tinte); border-radius: 14px;
+      background: var(--petroleo-suave); color: var(--petroleo);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+      font-size: 13px; font-weight: 700; text-align: center; padding: 14px; line-height: 1.4;
+    }
+    .cert-placeholder i { font-size: 26px; }
+    .cert-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--gris-claro);
+      background: #fff; color: var(--petroleo); cursor: pointer; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(43,43,43,.14);
+    }
+    .cert-nav.prev { left: -14px; } .cert-nav.next { right: -14px; }
+    @media (max-width: 760px) { .cert-nav { display: none; } }
 
     /* ── CONTENIDO ── */
     .cont-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
@@ -370,21 +540,21 @@
     .footer-links a:hover { color: #fff; }
     .footer-legal { font-size: 12px; color: rgba(251,246,238,0.5); margin-top: 10px; }
 
-    /* ── WHATSAPP FLOTANTE ── */
-    .wa-float {
+    /* ── BOTÓN FLOTANTE ── */
+    .turno-float {
       position: fixed; right: 22px; bottom: 22px; z-index: 70;
       display: inline-flex; align-items: center; gap: 9px;
-      background: #25D366; color: #fff; text-decoration: none;
+      background: linear-gradient(135deg, var(--petroleo), var(--petroleo-oscuro)); color: #fff; text-decoration: none;
       font-weight: 800; font-size: 15px; padding: 14px 20px; border-radius: 999px;
-      box-shadow: 0 8px 22px rgba(37,211,102,0.42);
+      box-shadow: 0 8px 22px rgba(74,36,112,.40);
       transition: transform .2s;
     }
-    .wa-float:hover { transform: scale(1.05); }
-    .wa-float i { font-size: 22px; }
+    .turno-float:hover { transform: scale(1.05); }
+    .turno-float i { font-size: 22px; }
     @media (max-width: 560px) {
-      .wa-float { right: 16px; bottom: 18px; padding: 14px; }
-      .wa-float .wa-label { display: none; }
-      .wa-float i { font-size: 26px; }
+      .turno-float { right: 16px; bottom: 18px; padding: 14px; }
+      .turno-float .tf-label { display: none; }
+      .turno-float i { font-size: 26px; }
     }
   </style>
 </head>
@@ -406,8 +576,8 @@
            alt="Vet. Octavio Ochoa — MP 16465 · MN 11170" />
       <span class="brand-tag-nav">Veterinario de cabecera</span>
     </a>
-    <a class="nav-cta" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
-      <i class="ti ti-brand-whatsapp"></i> <span class="nav-cta-label">Escribime</span>
+    <a class="nav-cta" href="#turno">
+      <i class="ti ti-calendar-plus"></i> <span class="nav-cta-label">Pedir consulta</span>
     </a>
   </nav>
 
@@ -423,11 +593,11 @@
         en el tiempo. Atiendo a domicilio, donde tu perro o tu gato están tranquilos.
       </p>
       <div class="hero-buttons">
-        <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20coordinar%20una%20consulta%20a%20domicilio." target="_blank" rel="noopener">
-          <i class="ti ti-brand-whatsapp"></i> Coordinar una consulta
+        <a class="btn-turno" href="#turno">
+          <i class="ti ti-calendar-plus"></i> Pedir mi consulta
         </a>
-        <a class="btn-ghost" href="#plan">
-          <i class="ti ti-shield-heart"></i> Conocer el Plan Básico
+        <a class="btn-ghost" href="#sobre-mi">
+          <i class="ti ti-user"></i> Conoceme
         </a>
       </div>
       <div class="hero-badges">
@@ -437,6 +607,182 @@
       </div>
     </div>
   </header>
+
+  <!-- FILTRO / PEDÍ TU CONSULTA -->
+  <section class="turno-section" id="turno">
+    <div class="section-inner">
+      <h2 class="section-title" style="font-size:30px">Pedí tu consulta a domicilio</h2>
+      <p class="section-sub">Completá estos datos y coordinamos por WhatsApp — sin ida y vuelta de mensajes sueltos</p>
+      <div class="divider"></div>
+
+      <div class="turno-card">
+
+        <!-- PASO 0 · TRIAGE -->
+        <div class="paso activo" data-paso="0">
+          <div class="opt-list">
+            <button type="button" class="opt" data-ir="zona">
+              <i class="ti ti-calendar-plus opt-ico"></i>
+              <span class="opt-txt"><b>Coordinar una consulta a domicilio</b><span>Vacunación, control, seguimiento o lo que necesite tu mascota</span></span>
+            </button>
+            <button type="button" class="opt" data-ir="urgencia">
+              <i class="ti ti-urgent opt-ico"></i>
+              <span class="opt-txt"><b>Es urgente</b><span>Mi mascota está mal ahora mismo</span></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PANEL · URGENCIA -->
+        <div class="paso" data-paso="urgencia">
+          <div class="paso-title">Si es grave, no esperes</div>
+          <p class="paso-sub">Una visita a domicilio coordinada por WhatsApp no es lo más rápido para una urgencia real.</p>
+          <div class="info-panel">
+            <div class="dato"><i class="ti ti-building-hospital"></i><div><b>Convulsiones, dificultad para respirar, sangrado que no para, golpes fuertes o intoxicación:</b> andá directo a una veterinaria de urgencias de 24 hs. Es más rápido que coordinar una visita.</div></div>
+            <div class="dato"><i class="ti ti-clock"></i><div>Si es algo que puede esperar unas horas y preferís que la vea en tu casa, seguí y coordinamos.</div></div>
+          </div>
+          <div class="paso-nav">
+            <button type="button" class="btn-volver" data-volver="0"><i class="ti ti-arrow-left"></i> Volver</button>
+            <button type="button" class="btn-volver derecha" data-ir="zona">Igual quiero coordinar <i class="ti ti-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- PASO 1 · ZONA -->
+        <div class="paso" data-paso="zona">
+          <div class="paso-num"><span>1</span> Tu zona</div>
+          <div class="paso-title">¿En qué zona estás?</div>
+          <p class="paso-sub">Atiendo en Zona Norte y en varios barrios de CABA.</p>
+
+          <div class="zbuscador">
+            <input type="text" id="zona-input" placeholder="Escribí tu barrio…" autocomplete="off" />
+            <i class="ti ti-search zico"></i>
+            <div class="zlista" id="zona-lista"></div>
+          </div>
+          <div class="zelegida" id="zona-elegida" hidden>
+            <span><i class="ti ti-map-pin" style="color:var(--petroleo-oscuro)"></i> <b id="zona-elegida-txt"></b></span>
+            <button type="button" id="zona-cambiar">Cambiar</button>
+          </div>
+          <p class="form-note">¿No ves tu barrio en la lista? Escribilo igual — según el día puedo acercarme.</p>
+
+          <p class="zcobertura">
+            <b>Zona Norte:</b> Vicente López, Olivos, La Lucila, Martínez, Acassuso, San Isidro, Beccar, Boulogne,
+            Victoria, San Fernando, Virreyes, Tigre, Rincón de Milberg, Don Torcuato, General Pacheco, Nordelta, Benavídez.
+            <b>CABA:</b> Villa del Parque, Villa Devoto, Villa Pueyrredón, Agronomía, La Paternal, Villa Santa Rita,
+            Monte Castro, Villa Real, Versalles, Floresta, Villa Urquiza, Parque Chas.
+          </p>
+
+          <div class="paso-nav" style="margin-top:18px">
+            <button type="button" class="btn-volver" data-volver="0"><i class="ti ti-arrow-left"></i> Volver</button>
+            <button type="button" class="btn-siguiente" id="zona-siguiente" disabled>Siguiente <i class="ti ti-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- PASO 2 · MASCOTA Y MOTIVO -->
+        <div class="paso" data-paso="mascota">
+          <div class="paso-num"><span>2</span> Tu mascota</div>
+          <div class="paso-title">Contame de tu mascota</div>
+          <p class="paso-sub">Así llego sabiendo qué esperar.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="p-mascota">Nombre de la mascota <span class="req">*</span></label>
+              <input type="text" id="p-mascota" required />
+            </div>
+            <div class="form-group">
+              <label for="p-especie">Especie <span class="req">*</span></label>
+              <select id="p-especie" required>
+                <option value="" selected disabled>Elegí…</option>
+                <option>Perro</option>
+                <option>Gato</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="p-edad">Edad aproximada</label>
+            <input type="text" id="p-edad" placeholder="Ej: 3 años" />
+          </div>
+          <div class="form-group">
+            <label for="p-motivo">Motivo de la consulta <span class="req">*</span></label>
+            <select id="p-motivo" required>
+              <option value="" selected disabled>Elegí…</option>
+              <option>Consulta clínica (está con algún síntoma)</option>
+              <option>Control / seguimiento</option>
+              <option>Vacunación</option>
+              <option>Desparasitación</option>
+              <option>Paciente crónico</option>
+              <option>Control de cachorro o geriátrico</option>
+              <option>Extracción de muestras para análisis</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+          <div class="paso-nav">
+            <button type="button" class="btn-volver" data-volver="zona"><i class="ti ti-arrow-left"></i> Volver</button>
+            <button type="button" class="btn-siguiente" id="mascota-siguiente">Siguiente <i class="ti ti-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- PASO 3 · PREFERENCIA + DATOS + PREVIEW -->
+        <div class="paso" data-paso="datos">
+          <div class="paso-num"><span>3</span> Último paso</div>
+          <div class="paso-title">¿Qué día te viene mejor?</div>
+          <p class="paso-sub">
+            Mi agenda de domicilios cambia semana a semana — esto es una preferencia, el día y el horario
+            exacto lo confirmamos por WhatsApp. Por ahora no coordino domicilios los lunes.
+          </p>
+
+          <div class="resumen" id="resumen-zona"></div>
+
+          <form id="turno-form" novalidate>
+            <div class="form-group">
+              <label>Días que te vienen bien <span style="color:var(--gris);font-weight:600">(podés marcar más de uno)</span></label>
+              <div class="chips" id="chips-dia">
+                <button type="button" class="chip" data-dia="Martes">Martes</button>
+                <button type="button" class="chip" data-dia="Miércoles">Miércoles</button>
+                <button type="button" class="chip" data-dia="Jueves">Jueves</button>
+                <button type="button" class="chip" data-dia="Viernes">Viernes</button>
+                <button type="button" class="chip" data-dia="Sábado">Sábado</button>
+                <button type="button" class="chip" data-dia="Cualquiera">Cualquiera</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Franja horaria</label>
+              <div class="chips" id="chips-franja">
+                <button type="button" class="chip" data-franja="Mañana">Mañana</button>
+                <button type="button" class="chip" data-franja="Tarde">Tarde</button>
+                <button type="button" class="chip" data-franja="Lo que tengas">Lo que tengas</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="p-tutor">Tu nombre y apellido <span class="req">*</span></label>
+              <input type="text" id="p-tutor" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="p-detalle">Comentarios <span style="color:var(--gris);font-weight:600">(opcional)</span></label>
+              <textarea id="p-detalle" placeholder="Desde cuándo, qué le notás, alguna referencia para llegar…"></textarea>
+            </div>
+
+            <div class="preview">
+              <div class="preview-label"><i class="ti ti-brand-whatsapp"></i> Esto es lo que se te va a enviar</div>
+              <div class="preview-bubble" id="wa-preview">Completá los datos para ver el mensaje.</div>
+            </div>
+
+            <div class="paso-nav">
+              <button type="button" class="btn-volver" data-volver="mascota"><i class="ti ti-arrow-left"></i> Volver</button>
+              <button type="submit" class="btn-wa-send" id="turno-submit">
+                <i class="ti ti-brand-whatsapp"></i> Enviar por WhatsApp
+              </button>
+            </div>
+            <p class="form-note">
+              Al enviar se abre WhatsApp con el mensaje ya escrito. La consulta queda coordinada
+              cuando te respondo con el día y el horario. Uso tus datos solo para esa consulta.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- QUÉ ES UN VETERINARIO DE CABECERA -->
   <section>
@@ -532,124 +878,8 @@
     </div>
   </section>
 
-  <!-- PLAN CABECERA -->
-  <section class="plan-section" id="plan">
-    <div class="section-inner">
-      <h2 class="section-title">Plan Básico</h2>
-      <p class="section-sub">Tres meses con tu veterinario disponible, a distancia</p>
-      <div class="divider"></div>
-
-      <div class="plan-box">
-        <div class="plan-price">
-          <div class="plan-desde">desde</div>
-          <div class="plan-amount">$65.000</div>
-          <div class="plan-per">por 3 meses · débito automático</div>
-          <div class="plan-permes">Equivale a $21.600 por mes</div>
-        </div>
-
-        <div class="plan-first">
-          <i class="ti ti-user-heart"></i>
-          <div>
-            <b>No es una guardia con veterinarios rotativos.</b> Me escribís a mí,
-            te contesto yo, y conozco la historia de tu mascota de una consulta a la otra.
-          </div>
-        </div>
-
-        <ul class="plan-list">
-          <li class="plan-destacado">
-            <i class="ti ti-brand-whatsapp"></i>
-            <div>
-              <b>Consultas por WhatsApp todos los días.</b> Sin límite de mensajes
-              y sin sacar turno para preguntar.
-            </div>
-          </li>
-          <li><i class="ti ti-device-laptop"></i><div><b>Teleconsultas</b> por videollamada cuando haga falta ver a tu mascota.</div></li>
-          <li><i class="ti ti-stethoscope"></i><div><b>Te digo si necesita atención presencial</b> o si se resuelve a distancia, sin que gastes de más.</div></li>
-          <li><i class="ti ti-chart-line"></i><div><b>Seguimiento</b> de tratamientos, pacientes crónicos y planes nutricionales.</div></li>
-          <li><i class="ti ti-file-text"></i><div><b>Órdenes de estudios y recetas</b> cuando corresponda.</div></li>
-          <li><i class="ti ti-map-pin-share"></i><div><b>Derivaciones coordinadas.</b> Si necesita cirugía, radiografía o ecografía, te digo a dónde ir y lo arreglo yo.</div></li>
-          <li><i class="ti ti-file-certificate"></i><div><b>Certificados de salud</b> sin costo.</div></li>
-        </ul>
-
-        <div class="plan-mas">
-          <i class="ti ti-plus"></i>
-          <div>
-            <b>¿Tu mascota necesita más?</b> El plan se ajusta a lo que haga falta —
-            más seguimiento, visitas, vacunación. Escribime y lo armamos a medida.
-          </div>
-        </div>
-
-        <div class="plan-fine">
-          <div><i class="ti ti-point"></i><span>Se renueva automáticamente cada 3 meses por <b>débito automático</b>. Podés darlo de baja cuando quieras, avisándome.</span></div>
-          <div><i class="ti ti-point"></i><span>Es un plan de <b>acompañamiento profesional a distancia</b>: no es una obra social ni cubre el costo de las prestaciones.</span></div>
-          <div><i class="ti ti-point"></i><span>Si hace falta atención presencial, se realiza en veterinarias de Zona Norte y CABA, y se abona en el lugar según la veterinaria.</span></div>
-          <div><i class="ti ti-point"></i><span>Las visitas a domicilio y la vacunación se cotizan aparte, con precio preferencial para quienes tienen el plan.</span></div>
-        </div>
-
-        <div class="plan-cta">
-          <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Me%20interesa%20el%20Plan%20B%C3%A1sico." target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp"></i> Quiero el Plan Básico
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ZONAS -->
-  <section>
-    <div class="section-inner">
-      <h2 class="section-title">Dónde atiendo</h2>
-      <p class="section-sub">Zona Norte y barrios de CABA</p>
-      <div class="divider"></div>
-      <div class="zona-wrap">
-        <div class="zona-card">
-          <div class="zona-head"><i class="ti ti-map-2"></i><h3>Zona Norte</h3></div>
-          <div class="zona-tags">
-            <span class="zona-tag">Vicente López</span>
-            <span class="zona-tag">Olivos</span>
-            <span class="zona-tag">La Lucila</span>
-            <span class="zona-tag">Martínez</span>
-            <span class="zona-tag">Acassuso</span>
-            <span class="zona-tag">San Isidro</span>
-            <span class="zona-tag">Beccar</span>
-            <span class="zona-tag">Boulogne</span>
-            <span class="zona-tag">Victoria</span>
-            <span class="zona-tag">San Fernando</span>
-            <span class="zona-tag">Virreyes</span>
-            <span class="zona-tag">Tigre</span>
-            <span class="zona-tag">Rincón de Milberg</span>
-            <span class="zona-tag">Don Torcuato</span>
-            <span class="zona-tag">General Pacheco</span>
-            <span class="zona-tag">Nordelta</span>
-            <span class="zona-tag">Benavídez</span>
-          </div>
-        </div>
-        <div class="zona-card">
-          <div class="zona-head"><i class="ti ti-building-community"></i><h3>CABA</h3></div>
-          <div class="zona-tags">
-            <span class="zona-tag">Villa del Parque</span>
-            <span class="zona-tag">Villa Devoto</span>
-            <span class="zona-tag">Villa Pueyrredón</span>
-            <span class="zona-tag">Agronomía</span>
-            <span class="zona-tag">La Paternal</span>
-            <span class="zona-tag">Villa Santa Rita</span>
-            <span class="zona-tag">Monte Castro</span>
-            <span class="zona-tag">Villa Real</span>
-            <span class="zona-tag">Versalles</span>
-            <span class="zona-tag">Floresta</span>
-            <span class="zona-tag">Villa Urquiza</span>
-            <span class="zona-tag">Parque Chas</span>
-          </div>
-        </div>
-      </div>
-      <p class="zona-nota">
-        ¿No ves tu barrio? Escribime igual — según el día y la zona puedo acercarme.
-      </p>
-    </div>
-  </section>
-
   <!-- SOBRE MÍ -->
-  <section class="alt-section">
+  <section class="alt-section" id="sobre-mi">
     <div class="section-inner">
       <h2 class="section-title">Quién te va a atender</h2>
       <div class="divider"></div>
@@ -694,6 +924,19 @@
               <span class="form-tag">Ehrlichiosis</span>
               <span class="form-tag">Anatomía felina</span>
               <span class="form-tag">Cirugía de pequeños animales</span>
+            </div>
+
+            <div class="cert-wrap">
+              <div class="cert-track" id="cert-track">
+                <!-- TODO: reemplazar por fotos reales de certificados/diplomas de Octavio.
+                     Cada uno: <figure class="cert-card"><img src="img/cert-XX.jpg" loading="lazy"
+                     alt="Certificado: <nombre del curso> — Octavio Ochoa" /></figure> -->
+                <div class="cert-placeholder"><i class="ti ti-certificate"></i>Certificado<br>(falta subir foto)</div>
+                <div class="cert-placeholder"><i class="ti ti-certificate"></i>Certificado<br>(falta subir foto)</div>
+                <div class="cert-placeholder"><i class="ti ti-certificate"></i>Certificado<br>(falta subir foto)</div>
+              </div>
+              <button type="button" class="cert-nav prev" aria-label="Certificado anterior"><i class="ti ti-chevron-left"></i></button>
+              <button type="button" class="cert-nav next" aria-label="Certificado siguiente"><i class="ti ti-chevron-right"></i></button>
             </div>
           </div>
 
@@ -747,30 +990,48 @@
   </section>
 
   <!-- FAQ -->
-  <section class="alt-section">
+  <section class="alt-section" id="faq">
     <div class="section-inner">
       <h2 class="section-title">Preguntas frecuentes</h2>
       <div class="divider"></div>
       <div class="faq-list">
         <details class="faq-item">
-          <summary>¿Cómo saco un turno? <i class="ti ti-chevron-down chev"></i></summary>
+          <summary>¿Cómo pido una consulta a domicilio? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
-            Escribime por WhatsApp y coordinamos día, horario y zona. La coordinación
-            la hago yo directamente, no pasás por una recepción.
+            Completá el <a href="#turno" style="color:var(--petroleo-oscuro);font-weight:700">formulario de esta página</a>:
+            tu zona, tu mascota y el motivo de la consulta. Con esa información te escribo por WhatsApp
+            para confirmar el día y el horario.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Por qué no hay un número de WhatsApp para escribir directo? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Para que la primera consulta llegue completa, sin ese primer mensaje suelto que después
+            hay que ir completando de a poco. El formulario ordena esa información y así respondo
+            más rápido.
           </div>
         </details>
         <details class="faq-item">
           <summary>¿Cuánto sale la consulta a domicilio? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
-            El valor depende de la zona y de lo que necesite tu mascota. Escribime
-            contándome dónde estás y qué le pasa, y te paso el valor exacto.
+            Depende de la zona y de lo que necesite tu mascota. Completá el formulario y te paso
+            el valor exacto por WhatsApp.
           </div>
         </details>
         <details class="faq-item">
           <summary>¿Atendés urgencias? <i class="ti ti-chevron-down chev"></i></summary>
           <div class="faq-answer">
-            Escribime y te oriento lo antes posible. Si es algo que requiere internación
-            o cirugía, te indico a dónde ir sin que pierdas tiempo.
+            Si es algo grave (convulsiones, dificultad para respirar, golpes fuertes, intoxicación),
+            lo más rápido es ir directo a una veterinaria de urgencias de 24 hs. Para lo que puede
+            esperar unas horas, contame por el formulario y coordinamos.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>¿Atendés todos los días? <i class="ti ti-chevron-down chev"></i></summary>
+          <div class="faq-answer">
+            Habitualmente coordino domicilios de martes a viernes; por ahora no los lunes. El día
+            y el horario exacto cambian semana a semana según mi agenda, así que se confirman por
+            WhatsApp después de completar el formulario.
           </div>
         </details>
         <details class="faq-item">
@@ -779,14 +1040,6 @@
             Te lo digo desde el principio y coordino la derivación a un centro con el
             equipamiento necesario, en Zona Norte o CABA. La atención presencial se abona
             en la veterinaria donde se realice.
-          </div>
-        </details>
-        <details class="faq-item">
-          <summary>¿El Plan Básico reemplaza a una obra social? <i class="ti ti-chevron-down chev"></i></summary>
-          <div class="faq-answer">
-            No, son cosas distintas y se complementan. Una obra social cubre el costo de las
-            prestaciones. El Plan Básico es acompañamiento profesional: te digo qué le pasa
-            a tu mascota, si necesita una consulta presencial y a dónde conviene ir.
           </div>
         </details>
       </div>
@@ -798,12 +1051,12 @@
     <div class="cta-box">
       <svg class="paw-bg" style="top:-10px;right:-10px;width:120px;transform:rotate(25deg);opacity:0.12;color:#fff"><use href="#paw"/></svg>
       <svg class="paw-bg" style="bottom:-15px;left:-5px;width:80px;transform:rotate(-10deg);opacity:0.12;color:#fff"><use href="#paw"/></svg>
-      <h2 class="cta-title">Empecemos por una consulta</h2>
+      <h2 class="cta-title">Empecemos por tu zona</h2>
       <p class="cta-sub">
-        Contame qué le pasa a tu mascota y dónde estás. Te respondo yo, directamente.
+        Contame dónde estás y qué necesita tu mascota. Completá el formulario y coordinamos por WhatsApp.
       </p>
-      <a class="btn-wa" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
-        <i class="ti ti-brand-whatsapp"></i> Escribime por WhatsApp
+      <a class="btn-turno" href="#turno">
+        <i class="ti ti-calendar-plus"></i> Pedir mi consulta
       </a>
       <div>
         <a class="cta-ig" href="https://www.instagram.com/vetoctavio8a/" target="_blank" rel="noopener">
@@ -818,17 +1071,198 @@
     <div class="footer-name">Vet. Octavio Ochoa</div>
     <div class="footer-mat">MP 16465 · MN 11170</div>
     <div class="footer-links">
-      <a href="https://wa.me/5491170623869" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> 11 7062-3869</a>
+      <a href="#turno"><i class="ti ti-calendar-plus"></i> Pedir turno</a>
       <a href="https://www.instagram.com/vetoctavio8a/" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i> @vetoctavio8a</a>
     </div>
     <div class="footer-legal">Atención veterinaria a domicilio · Zona Norte y CABA</div>
   </footer>
 
-  <!-- WHATSAPP FLOTANTE -->
-  <a class="wa-float" href="https://wa.me/5491170623869?text=Hola%20Octavio!%20Quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Octavio Ochoa">
-    <i class="ti ti-brand-whatsapp"></i>
-    <span class="wa-label">Escribime</span>
+  <!-- BOTÓN FLOTANTE -->
+  <a class="turno-float" href="#turno" aria-label="Pedir mi consulta a domicilio">
+    <i class="ti ti-calendar-plus"></i>
+    <span class="tf-label">Pedir turno</span>
   </a>
+
+  <script>
+    // ── Filtro / pedido de consulta ──────────────────────────────────────
+    const OCTAVIO_WHATSAPP = "5491170623869";
+
+    (function () {
+      const card = document.querySelector(".turno-card");
+      if (!card) return;
+
+      const pasos = Array.from(card.querySelectorAll(".paso"));
+      function mostrar(id) {
+        pasos.forEach(function (p) { p.classList.toggle("activo", p.dataset.paso === String(id)); });
+        const y = card.getBoundingClientRect().top + window.scrollY - 90;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+      card.querySelectorAll("[data-ir]").forEach(function (b) {
+        b.addEventListener("click", function () { mostrar(b.dataset.ir); });
+      });
+      card.querySelectorAll("[data-volver]").forEach(function (b) {
+        b.addEventListener("click", function () { mostrar(b.dataset.volver); });
+      });
+
+      // ── Paso 1: buscador de zona ──
+      const ZONAS = {
+        "Zona Norte": ["Vicente López","Olivos","La Lucila","Martínez","Acassuso","San Isidro","Beccar","Boulogne","Victoria","San Fernando","Virreyes","Tigre","Rincón de Milberg","Don Torcuato","General Pacheco","Nordelta","Benavídez"],
+        "CABA": ["Villa del Parque","Villa Devoto","Villa Pueyrredón","Agronomía","La Paternal","Villa Santa Rita","Monte Castro","Villa Real","Versalles","Floresta","Villa Urquiza","Parque Chas"]
+      };
+      const zInput = document.getElementById("zona-input");
+      const zLista = document.getElementById("zona-lista");
+      const zElegida = document.getElementById("zona-elegida");
+      const zElegidaTxt = document.getElementById("zona-elegida-txt");
+      const zCambiar = document.getElementById("zona-cambiar");
+      const zSiguiente = document.getElementById("zona-siguiente");
+      const resumenZona = document.getElementById("resumen-zona");
+      let zona = "";
+
+      function pintarLista(filtro) {
+        const q = (filtro || "").trim().toLowerCase();
+        let html = "";
+        Object.keys(ZONAS).forEach(function (grupo) {
+          const items = ZONAS[grupo].filter(function (b) { return b.toLowerCase().indexOf(q) !== -1; });
+          if (!items.length) return;
+          html += '<div class="zgrupo-label">' + grupo + "</div>";
+          items.forEach(function (b) {
+            html += '<button type="button" class="zitem" data-zona="' + b + '">' + b + "</button>";
+          });
+        });
+        if (!html && q) html = '<div class="zvacio">No encontré ese barrio — podés escribirlo igual y avanzar.</div>';
+        zLista.innerHTML = html;
+        zLista.querySelectorAll(".zitem").forEach(function (it) {
+          it.addEventListener("click", function () { elegirZona(it.dataset.zona); });
+        });
+      }
+
+      function elegirZona(nombre) {
+        zona = nombre;
+        zInput.value = "";
+        zLista.innerHTML = "";
+        zElegidaTxt.textContent = nombre;
+        zElegida.hidden = false;
+        zInput.style.display = "none";
+        zSiguiente.disabled = false;
+        pintarResumenZona();
+      }
+
+      function pintarResumenZona() {
+        resumenZona.innerHTML = '<i class="ti ti-map-pin"></i> Consulta en <b>' + (zona || "-") + "</b>";
+      }
+
+      zInput.addEventListener("focus", function () { pintarLista(zInput.value); });
+      zInput.addEventListener("input", function () {
+        zona = zInput.value.trim();
+        zSiguiente.disabled = !zona;
+        pintarLista(zInput.value);
+      });
+      zCambiar.addEventListener("click", function () {
+        zona = "";
+        zElegida.hidden = true;
+        zInput.style.display = "";
+        zInput.value = "";
+        zInput.focus();
+        zSiguiente.disabled = true;
+      });
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".zbuscador")) zLista.innerHTML = "";
+      });
+      zSiguiente.addEventListener("click", function () {
+        if (!zona) return;
+        pintarResumenZona();
+        mostrar("mascota");
+      });
+
+      // ── Paso 2: mascota / motivo ──
+      const pMascota = document.getElementById("p-mascota");
+      const pEspecie = document.getElementById("p-especie");
+      const pMotivo = document.getElementById("p-motivo");
+      document.getElementById("mascota-siguiente").addEventListener("click", function () {
+        if (!pMascota.reportValidity()) return;
+        if (!pEspecie.reportValidity()) return;
+        if (!pMotivo.reportValidity()) return;
+        mostrar("datos");
+      });
+
+      // ── Paso 3: preferencia + tutor + preview ──
+      const diasSel = new Set();
+      card.querySelectorAll("#chips-dia .chip").forEach(function (c) {
+        c.addEventListener("click", function () {
+          if (c.dataset.dia === "Cualquiera") {
+            card.querySelectorAll("#chips-dia .chip").forEach(function (x) { x.classList.remove("sel"); diasSel.delete(x.dataset.dia); });
+            c.classList.add("sel");
+            diasSel.add("Cualquiera");
+          } else {
+            const cualquiera = card.querySelector('#chips-dia .chip[data-dia="Cualquiera"]');
+            cualquiera.classList.remove("sel");
+            diasSel.delete("Cualquiera");
+            c.classList.toggle("sel");
+            if (c.classList.contains("sel")) diasSel.add(c.dataset.dia); else diasSel.delete(c.dataset.dia);
+          }
+          refrescar();
+        });
+      });
+      let franja = "";
+      card.querySelectorAll("#chips-franja .chip").forEach(function (c) {
+        c.addEventListener("click", function () {
+          card.querySelectorAll("#chips-franja .chip").forEach(function (x) { x.classList.remove("sel"); });
+          c.classList.add("sel");
+          franja = c.dataset.franja;
+          refrescar();
+        });
+      });
+
+      const pTutor = document.getElementById("p-tutor");
+      const pDetalle = document.getElementById("p-detalle");
+      const preview = document.getElementById("wa-preview");
+      const form = document.getElementById("turno-form");
+
+      function armarMensaje() {
+        const lineas = [];
+        lineas.push("Hola Octavio! Quiero coordinar una consulta a domicilio.");
+        lineas.push("");
+        lineas.push("📍 Zona: " + (zona || "-"));
+        lineas.push("👤 " + (pTutor.value.trim() || "-"));
+        lineas.push("");
+        let masc = "🐾 " + (pMascota.value.trim() || "-");
+        if (pEspecie.value) masc += " · " + pEspecie.value;
+        const edad = document.getElementById("p-edad").value.trim();
+        if (edad) masc += " · " + edad;
+        lineas.push(masc);
+        lineas.push("📋 Motivo: " + (pMotivo.value || "-"));
+        const dias = Array.from(diasSel);
+        if (dias.length || franja) {
+          lineas.push("🗓️ Prefiere: " + [dias.join(", "), franja].filter(Boolean).join(" · "));
+        }
+        const det = pDetalle.value.trim();
+        if (det) { lineas.push(""); lineas.push("📝 " + det); }
+        return lineas.join("\n");
+      }
+      function refrescar() { preview.textContent = armarMensaje(); }
+      [pTutor, pDetalle].forEach(function (el) { el.addEventListener("input", refrescar); });
+      refrescar();
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        const url = "https://wa.me/" + OCTAVIO_WHATSAPP + "?text=" + encodeURIComponent(armarMensaje());
+        window.open(url, "_blank");
+      });
+    })();
+
+    // ── Carrusel de certificados ──
+    (function () {
+      const track = document.getElementById("cert-track");
+      if (!track) return;
+      document.querySelectorAll(".cert-nav").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const dir = btn.classList.contains("prev") ? -1 : 1;
+          track.scrollBy({ left: dir * 210, behavior: "smooth" });
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
